@@ -10,7 +10,7 @@ using System.Data.OleDb;
 
 namespace ConnectCsharpToMysql
 {
-    class DBConnect
+    public class DBConnect
     {
         private OleDbConnection connection;
         private string server;
