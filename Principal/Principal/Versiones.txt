@@ -1,0 +1,13 @@
+Versiones en GitHub:
+
+v.0 Pruebas al agregar cosas
+
+v.100 Pantallas
+
+v.200 DB
+
+v.300 Funciones
+
+v.400 Extras
+
+v.500 Diseño
