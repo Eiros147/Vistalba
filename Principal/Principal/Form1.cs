@@ -34,7 +34,8 @@ namespace Principal
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-
+            NuevoUsuario nuform = new NuevoUsuario();
+            nuform.ShowDialog();
         }
     }
 }

@@ -28,8 +28,13 @@ namespace Principal
         private void NuevoUsuario_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'club_VistalbaDataSet.Socio' Puede moverla o quitarla según sea necesario.
-            this.socioTableAdapter.Fill(this.club_VistalbaDataSet.Socio);
+            //this.socioTableAdapter.Fill(this.club_VistalbaDataSet.Socio);
 
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
