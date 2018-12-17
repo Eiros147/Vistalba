@@ -50,7 +50,7 @@
             this.txtCelular = new System.Windows.Forms.TextBox();
             this.socioFechaNacDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnSiguiente = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.rbSi = new System.Windows.Forms.RadioButton();
             this.rbNo = new System.Windows.Forms.RadioButton();
@@ -238,14 +238,15 @@
             this.label1.TabIndex = 25;
             this.label1.Text = "label1";
             // 
-            // btnGuardar
+            // btnSiguiente
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(7, 376);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
-            this.btnGuardar.TabIndex = 26;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnSiguiente.Location = new System.Drawing.Point(7, 376);
+            this.btnSiguiente.Name = "btnSiguiente";
+            this.btnSiguiente.Size = new System.Drawing.Size(75, 23);
+            this.btnSiguiente.TabIndex = 26;
+            this.btnSiguiente.Text = "Siguiente";
+            this.btnSiguiente.UseVisualStyleBackColor = true;
+            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
             // 
             // btnCancelar
             // 
@@ -286,7 +287,7 @@
             this.gboxGrupo.Controls.Add(this.cbGrupo);
             this.gboxGrupo.Controls.Add(this.rbNo);
             this.gboxGrupo.Controls.Add(this.rbSi);
-            this.gboxGrupo.Location = new System.Drawing.Point(7, 288);
+            this.gboxGrupo.Location = new System.Drawing.Point(12, 239);
             this.gboxGrupo.Name = "gboxGrupo";
             this.gboxGrupo.Size = new System.Drawing.Size(321, 82);
             this.gboxGrupo.TabIndex = 31;
@@ -316,7 +317,7 @@
             this.ClientSize = new System.Drawing.Size(360, 411);
             this.Controls.Add(this.gboxGrupo);
             this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.btnSiguiente);
             this.Controls.Add(this.label1);
             this.Controls.Add(socioIDLabel);
             this.Controls.Add(socioNombreLabel);
@@ -361,7 +362,7 @@
         private System.Windows.Forms.TextBox txtCelular;
         private System.Windows.Forms.DateTimePicker socioFechaNacDateTimePicker;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnSiguiente;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.RadioButton rbSi;
         private System.Windows.Forms.RadioButton rbNo;

@@ -48,5 +48,10 @@ namespace Principal
         {
             cbGrupo.Visible = false;
         }
+
+        private void btnSiguiente_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
