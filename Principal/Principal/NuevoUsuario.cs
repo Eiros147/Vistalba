@@ -38,5 +38,15 @@ namespace Principal
         {
             this.Close();
         }
+
+        private void rbSi_CheckedChanged(object sender, EventArgs e)
+        {
+            cbGrupo.Visible = true;
+        }
+
+        private void rbNo_CheckedChanged(object sender, EventArgs e)
+        {
+            cbGrupo.Visible = false;
+        }
     }
 }
