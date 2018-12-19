@@ -7,13 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Threading;
 
 namespace Principal
 {
-    public partial class Form1 : Form
+    public partial class ModificarUsuario : Form
     {
-        public Form1()
+        public ModificarUsuario()
         {
             InitializeComponent();
         }
@@ -26,17 +25,13 @@ namespace Principal
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void ModificarUsuario_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'club_VistalbaDataSet.Grupo' Puede moverla o quitarla según sea necesario.
+            this.grupoTableAdapter.Fill(this.club_VistalbaDataSet.Grupo);
             // TODO: esta línea de código carga datos en la tabla 'club_VistalbaDataSet.Socio' Puede moverla o quitarla según sea necesario.
             this.socioTableAdapter.Fill(this.club_VistalbaDataSet.Socio);
 
-        }
-
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            NuevoUsuario nuform = new NuevoUsuario();
-            nuform.ShowDialog();
         }
     }
 }

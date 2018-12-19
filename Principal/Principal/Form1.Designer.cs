@@ -34,10 +34,6 @@
             this.socioTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.SocioTableAdapter();
             this.tableAdapterManager = new Principal.Club_VistalbaDataSetTableAdapters.TableAdapterManager();
             this.socioDataGridView = new System.Windows.Forms.DataGridView();
-            this.btnNuevo = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +43,10 @@
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.btnAbrir = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.socioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.socioDataGridView)).BeginInit();
@@ -100,45 +100,6 @@
             this.socioDataGridView.Name = "socioDataGridView";
             this.socioDataGridView.Size = new System.Drawing.Size(901, 335);
             this.socioDataGridView.TabIndex = 1;
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnNuevo.Location = new System.Drawing.Point(12, 379);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(75, 39);
-            this.btnNuevo.TabIndex = 2;
-            this.btnNuevo.Text = "Nuevo";
-            this.btnNuevo.UseVisualStyleBackColor = true;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button2.Location = new System.Drawing.Point(108, 379);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 39);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(576, 389);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(256, 20);
-            this.textBox1.TabIndex = 4;
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBuscar.Location = new System.Drawing.Point(838, 379);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 39);
-            this.btnBuscar.TabIndex = 5;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -194,6 +155,45 @@
             this.dataGridViewTextBoxColumn10.HeaderText = "Fecha Ult Pago";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnNuevo.Location = new System.Drawing.Point(12, 379);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(75, 39);
+            this.btnNuevo.TabIndex = 2;
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // btnAbrir
+            // 
+            this.btnAbrir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnAbrir.Location = new System.Drawing.Point(108, 379);
+            this.btnAbrir.Name = "btnAbrir";
+            this.btnAbrir.Size = new System.Drawing.Size(75, 39);
+            this.btnAbrir.TabIndex = 3;
+            this.btnAbrir.Text = "Abrir";
+            this.btnAbrir.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.Location = new System.Drawing.Point(576, 389);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(256, 20);
+            this.textBox1.TabIndex = 4;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBuscar.Location = new System.Drawing.Point(838, 379);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 39);
+            this.btnBuscar.TabIndex = 5;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -201,7 +201,7 @@
             this.ClientSize = new System.Drawing.Size(925, 430);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnAbrir);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.socioDataGridView);
             this.Name = "Form1";
@@ -223,7 +223,7 @@
         private Club_VistalbaDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridView socioDataGridView;
         private System.Windows.Forms.Button btnNuevo;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnAbrir;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
