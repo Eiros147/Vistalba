@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label saludIDLabel;
-            System.Windows.Forms.Label socioIDLabel;
             System.Windows.Forms.Label saludAlergiaLabel;
             System.Windows.Forms.Label saludAlergiaDescLabel;
             System.Windows.Forms.Label saludSangreLabel;
@@ -38,12 +36,11 @@
             System.Windows.Forms.Label saludObraSocLabel;
             System.Windows.Forms.Label saludTelEmLabel;
             System.Windows.Forms.Label saludExtraLabel;
+            System.Windows.Forms.Label socioNombreLabel;
             this.club_VistalbaDataSet = new Principal.Club_VistalbaDataSet();
             this.saludBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.saludTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.SaludTableAdapter();
             this.tableAdapterManager = new Principal.Club_VistalbaDataSetTableAdapters.TableAdapterManager();
-            this.saludIDTextBox = new System.Windows.Forms.TextBox();
-            this.socioIDTextBox = new System.Windows.Forms.TextBox();
             this.saludAlergiaCheckBox = new System.Windows.Forms.CheckBox();
             this.saludAlergiaDescTextBox = new System.Windows.Forms.TextBox();
             this.saludSangreTextBox = new System.Windows.Forms.TextBox();
@@ -51,8 +48,9 @@
             this.saludObraSocTextBox = new System.Windows.Forms.TextBox();
             this.saludTelEmTextBox = new System.Windows.Forms.TextBox();
             this.saludExtraTextBox = new System.Windows.Forms.TextBox();
-            saludIDLabel = new System.Windows.Forms.Label();
-            socioIDLabel = new System.Windows.Forms.Label();
+            this.socioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.socioTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.SocioTableAdapter();
+            this.label1 = new System.Windows.Forms.Label();
             saludAlergiaLabel = new System.Windows.Forms.Label();
             saludAlergiaDescLabel = new System.Windows.Forms.Label();
             saludSangreLabel = new System.Windows.Forms.Label();
@@ -60,90 +58,74 @@
             saludObraSocLabel = new System.Windows.Forms.Label();
             saludTelEmLabel = new System.Windows.Forms.Label();
             saludExtraLabel = new System.Windows.Forms.Label();
+            socioNombreLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.saludBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.socioBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // saludIDLabel
-            // 
-            saludIDLabel.AutoSize = true;
-            saludIDLabel.Location = new System.Drawing.Point(12, 40);
-            saludIDLabel.Name = "saludIDLabel";
-            saludIDLabel.Size = new System.Drawing.Size(49, 13);
-            saludIDLabel.TabIndex = 1;
-            saludIDLabel.Text = "salud ID:";
-            // 
-            // socioIDLabel
-            // 
-            socioIDLabel.AutoSize = true;
-            socioIDLabel.Location = new System.Drawing.Point(12, 66);
-            socioIDLabel.Name = "socioIDLabel";
-            socioIDLabel.Size = new System.Drawing.Size(49, 13);
-            socioIDLabel.TabIndex = 3;
-            socioIDLabel.Text = "socio ID:";
             // 
             // saludAlergiaLabel
             // 
             saludAlergiaLabel.AutoSize = true;
-            saludAlergiaLabel.Location = new System.Drawing.Point(12, 94);
+            saludAlergiaLabel.Location = new System.Drawing.Point(12, 46);
             saludAlergiaLabel.Name = "saludAlergiaLabel";
-            saludAlergiaLabel.Size = new System.Drawing.Size(70, 13);
+            saludAlergiaLabel.Size = new System.Drawing.Size(42, 13);
             saludAlergiaLabel.TabIndex = 5;
-            saludAlergiaLabel.Text = "salud Alergia:";
+            saludAlergiaLabel.Text = "Alergia:";
             // 
             // saludAlergiaDescLabel
             // 
             saludAlergiaDescLabel.AutoSize = true;
-            saludAlergiaDescLabel.Location = new System.Drawing.Point(12, 122);
+            saludAlergiaDescLabel.Location = new System.Drawing.Point(12, 74);
             saludAlergiaDescLabel.Name = "saludAlergiaDescLabel";
-            saludAlergiaDescLabel.Size = new System.Drawing.Size(98, 13);
+            saludAlergiaDescLabel.Size = new System.Drawing.Size(70, 13);
             saludAlergiaDescLabel.TabIndex = 7;
-            saludAlergiaDescLabel.Text = "salud Alergia Desc:";
+            saludAlergiaDescLabel.Text = "Alergia Desc:";
             // 
             // saludSangreLabel
             // 
             saludSangreLabel.AutoSize = true;
-            saludSangreLabel.Location = new System.Drawing.Point(12, 148);
+            saludSangreLabel.Location = new System.Drawing.Point(12, 104);
             saludSangreLabel.Name = "saludSangreLabel";
-            saludSangreLabel.Size = new System.Drawing.Size(72, 13);
+            saludSangreLabel.Size = new System.Drawing.Size(44, 13);
             saludSangreLabel.TabIndex = 9;
-            saludSangreLabel.Text = "salud Sangre:";
+            saludSangreLabel.Text = "Sangre:";
             // 
             // saludMedLabel
             // 
             saludMedLabel.AutoSize = true;
-            saludMedLabel.Location = new System.Drawing.Point(12, 174);
+            saludMedLabel.Location = new System.Drawing.Point(12, 130);
             saludMedLabel.Name = "saludMedLabel";
-            saludMedLabel.Size = new System.Drawing.Size(59, 13);
+            saludMedLabel.Size = new System.Drawing.Size(79, 13);
             saludMedLabel.TabIndex = 11;
-            saludMedLabel.Text = "salud Med:";
+            saludMedLabel.Text = "Medicamentos:";
             // 
             // saludObraSocLabel
             // 
             saludObraSocLabel.AutoSize = true;
-            saludObraSocLabel.Location = new System.Drawing.Point(12, 200);
+            saludObraSocLabel.Location = new System.Drawing.Point(12, 156);
             saludObraSocLabel.Name = "saludObraSocLabel";
-            saludObraSocLabel.Size = new System.Drawing.Size(83, 13);
+            saludObraSocLabel.Size = new System.Drawing.Size(55, 13);
             saludObraSocLabel.TabIndex = 13;
-            saludObraSocLabel.Text = "salud Obra Soc:";
+            saludObraSocLabel.Text = "Obra Soc:";
             // 
             // saludTelEmLabel
             // 
             saludTelEmLabel.AutoSize = true;
-            saludTelEmLabel.Location = new System.Drawing.Point(12, 226);
+            saludTelEmLabel.Location = new System.Drawing.Point(12, 182);
             saludTelEmLabel.Name = "saludTelEmLabel";
-            saludTelEmLabel.Size = new System.Drawing.Size(71, 13);
+            saludTelEmLabel.Size = new System.Drawing.Size(43, 13);
             saludTelEmLabel.TabIndex = 15;
-            saludTelEmLabel.Text = "salud Tel Em:";
+            saludTelEmLabel.Text = "Tel Em:";
             // 
             // saludExtraLabel
             // 
             saludExtraLabel.AutoSize = true;
-            saludExtraLabel.Location = new System.Drawing.Point(12, 252);
+            saludExtraLabel.Location = new System.Drawing.Point(12, 208);
             saludExtraLabel.Name = "saludExtraLabel";
-            saludExtraLabel.Size = new System.Drawing.Size(62, 13);
+            saludExtraLabel.Size = new System.Drawing.Size(34, 13);
             saludExtraLabel.TabIndex = 17;
-            saludExtraLabel.Text = "salud Extra:";
+            saludExtraLabel.Text = "Extra:";
             // 
             // club_VistalbaDataSet
             // 
@@ -171,26 +153,10 @@
             this.tableAdapterManager.SocioTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Principal.Club_VistalbaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // saludIDTextBox
-            // 
-            this.saludIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.saludBindingSource, "saludID", true));
-            this.saludIDTextBox.Location = new System.Drawing.Point(116, 37);
-            this.saludIDTextBox.Name = "saludIDTextBox";
-            this.saludIDTextBox.Size = new System.Drawing.Size(104, 20);
-            this.saludIDTextBox.TabIndex = 2;
-            // 
-            // socioIDTextBox
-            // 
-            this.socioIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.saludBindingSource, "socioID", true));
-            this.socioIDTextBox.Location = new System.Drawing.Point(116, 63);
-            this.socioIDTextBox.Name = "socioIDTextBox";
-            this.socioIDTextBox.Size = new System.Drawing.Size(104, 20);
-            this.socioIDTextBox.TabIndex = 4;
-            // 
             // saludAlergiaCheckBox
             // 
             this.saludAlergiaCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.saludBindingSource, "saludAlergia", true));
-            this.saludAlergiaCheckBox.Location = new System.Drawing.Point(116, 89);
+            this.saludAlergiaCheckBox.Location = new System.Drawing.Point(116, 41);
             this.saludAlergiaCheckBox.Name = "saludAlergiaCheckBox";
             this.saludAlergiaCheckBox.Size = new System.Drawing.Size(104, 24);
             this.saludAlergiaCheckBox.TabIndex = 6;
@@ -201,7 +167,7 @@
             // 
             this.saludAlergiaDescTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.saludBindingSource, "saludAlergiaDesc", true));
             this.saludAlergiaDescTextBox.Enabled = false;
-            this.saludAlergiaDescTextBox.Location = new System.Drawing.Point(116, 119);
+            this.saludAlergiaDescTextBox.Location = new System.Drawing.Point(116, 71);
             this.saludAlergiaDescTextBox.Name = "saludAlergiaDescTextBox";
             this.saludAlergiaDescTextBox.Size = new System.Drawing.Size(104, 20);
             this.saludAlergiaDescTextBox.TabIndex = 8;
@@ -209,7 +175,7 @@
             // saludSangreTextBox
             // 
             this.saludSangreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.saludBindingSource, "saludSangre", true));
-            this.saludSangreTextBox.Location = new System.Drawing.Point(116, 145);
+            this.saludSangreTextBox.Location = new System.Drawing.Point(116, 101);
             this.saludSangreTextBox.Name = "saludSangreTextBox";
             this.saludSangreTextBox.Size = new System.Drawing.Size(104, 20);
             this.saludSangreTextBox.TabIndex = 10;
@@ -217,7 +183,7 @@
             // saludMedTextBox
             // 
             this.saludMedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.saludBindingSource, "saludMed", true));
-            this.saludMedTextBox.Location = new System.Drawing.Point(116, 171);
+            this.saludMedTextBox.Location = new System.Drawing.Point(116, 127);
             this.saludMedTextBox.Name = "saludMedTextBox";
             this.saludMedTextBox.Size = new System.Drawing.Size(104, 20);
             this.saludMedTextBox.TabIndex = 12;
@@ -225,7 +191,7 @@
             // saludObraSocTextBox
             // 
             this.saludObraSocTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.saludBindingSource, "saludObraSoc", true));
-            this.saludObraSocTextBox.Location = new System.Drawing.Point(116, 197);
+            this.saludObraSocTextBox.Location = new System.Drawing.Point(116, 153);
             this.saludObraSocTextBox.Name = "saludObraSocTextBox";
             this.saludObraSocTextBox.Size = new System.Drawing.Size(104, 20);
             this.saludObraSocTextBox.TabIndex = 14;
@@ -233,7 +199,7 @@
             // saludTelEmTextBox
             // 
             this.saludTelEmTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.saludBindingSource, "saludTelEm", true));
-            this.saludTelEmTextBox.Location = new System.Drawing.Point(116, 223);
+            this.saludTelEmTextBox.Location = new System.Drawing.Point(116, 179);
             this.saludTelEmTextBox.Name = "saludTelEmTextBox";
             this.saludTelEmTextBox.Size = new System.Drawing.Size(104, 20);
             this.saludTelEmTextBox.TabIndex = 16;
@@ -241,20 +207,45 @@
             // saludExtraTextBox
             // 
             this.saludExtraTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.saludBindingSource, "saludExtra", true));
-            this.saludExtraTextBox.Location = new System.Drawing.Point(116, 249);
+            this.saludExtraTextBox.Location = new System.Drawing.Point(116, 205);
             this.saludExtraTextBox.Name = "saludExtraTextBox";
             this.saludExtraTextBox.Size = new System.Drawing.Size(104, 20);
             this.saludExtraTextBox.TabIndex = 18;
+            // 
+            // socioBindingSource
+            // 
+            this.socioBindingSource.DataMember = "Socio";
+            this.socioBindingSource.DataSource = this.club_VistalbaDataSet;
+            // 
+            // socioTableAdapter
+            // 
+            this.socioTableAdapter.ClearBeforeFill = true;
+            // 
+            // socioNombreLabel
+            // 
+            socioNombreLabel.AutoSize = true;
+            socioNombreLabel.Location = new System.Drawing.Point(12, 23);
+            socioNombreLabel.Name = "socioNombreLabel";
+            socioNombreLabel.Size = new System.Drawing.Size(47, 13);
+            socioNombreLabel.TabIndex = 18;
+            socioNombreLabel.Text = "Nombre:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(113, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(89, 13);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Nombre del socio";
             // 
             // NuevoSalud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(293, 348);
-            this.Controls.Add(saludIDLabel);
-            this.Controls.Add(this.saludIDTextBox);
-            this.Controls.Add(socioIDLabel);
-            this.Controls.Add(this.socioIDTextBox);
+            this.ClientSize = new System.Drawing.Size(242, 251);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(socioNombreLabel);
             this.Controls.Add(saludAlergiaLabel);
             this.Controls.Add(this.saludAlergiaCheckBox);
             this.Controls.Add(saludAlergiaDescLabel);
@@ -274,6 +265,7 @@
             this.Load += new System.EventHandler(this.NuevoSalud_Load);
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.saludBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.socioBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -285,8 +277,6 @@
         private System.Windows.Forms.BindingSource saludBindingSource;
         private Club_VistalbaDataSetTableAdapters.SaludTableAdapter saludTableAdapter;
         private Club_VistalbaDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.TextBox saludIDTextBox;
-        private System.Windows.Forms.TextBox socioIDTextBox;
         private System.Windows.Forms.CheckBox saludAlergiaCheckBox;
         private System.Windows.Forms.TextBox saludAlergiaDescTextBox;
         private System.Windows.Forms.TextBox saludSangreTextBox;
@@ -294,5 +284,8 @@
         private System.Windows.Forms.TextBox saludObraSocTextBox;
         private System.Windows.Forms.TextBox saludTelEmTextBox;
         private System.Windows.Forms.TextBox saludExtraTextBox;
+        private System.Windows.Forms.BindingSource socioBindingSource;
+        private Club_VistalbaDataSetTableAdapters.SocioTableAdapter socioTableAdapter;
+        private System.Windows.Forms.Label label1;
     }
 }

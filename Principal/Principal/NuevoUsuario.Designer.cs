@@ -240,7 +240,7 @@
             // 
             // btnSiguiente
             // 
-            this.btnSiguiente.Location = new System.Drawing.Point(7, 376);
+            this.btnSiguiente.Location = new System.Drawing.Point(7, 327);
             this.btnSiguiente.Name = "btnSiguiente";
             this.btnSiguiente.Size = new System.Drawing.Size(75, 23);
             this.btnSiguiente.TabIndex = 26;
@@ -250,7 +250,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(250, 376);
+            this.btnCancelar.Location = new System.Drawing.Point(255, 327);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 27;
@@ -314,7 +314,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(360, 411);
+            this.ClientSize = new System.Drawing.Size(349, 368);
             this.Controls.Add(this.gboxGrupo);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSiguiente);
