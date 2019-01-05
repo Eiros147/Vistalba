@@ -51,6 +51,9 @@
     <Compile Include="Actividades.Designer.cs">
       <DependentUpon>Actividades.cs</DependentUpon>
     </Compile>
+    <Compile Include="Club_VistalbaDataSet.cs">
+      <DependentUpon>Club_VistalbaDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Club_VistalbaDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
