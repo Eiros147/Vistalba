@@ -36,9 +36,9 @@ namespace Principal
         private void NuevoSalud_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'club_VistalbaDataSet.Socio' Puede moverla o quitarla según sea necesario.
-            this.socioTableAdapter.Fill(this.club_VistalbaDataSet.Socio);
+            //this.socioTableAdapter.Fill(this.club_VistalbaDataSet.Socio);
             // TODO: esta línea de código carga datos en la tabla 'club_VistalbaDataSet.Salud' Puede moverla o quitarla según sea necesario.
-            this.saludTableAdapter.Fill(this.club_VistalbaDataSet.Salud);
+            //this.saludTableAdapter.Fill(this.club_VistalbaDataSet.Salud);
 
         }
     }

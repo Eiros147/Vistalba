@@ -33,7 +33,7 @@
             this.socioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.socioTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.SocioTableAdapter();
             this.tableAdapterManager = new Principal.Club_VistalbaDataSetTableAdapters.TableAdapterManager();
-            this.socioDataGridView = new System.Windows.Forms.DataGridView();
+            this.dgvSocio = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,11 +45,11 @@
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnAbrir = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.socioBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.socioDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSocio)).BeginInit();
             this.SuspendLayout();
             // 
             // club_VistalbaDataSet
@@ -78,14 +78,14 @@
             this.tableAdapterManager.SocioTableAdapter = this.socioTableAdapter;
             this.tableAdapterManager.UpdateOrder = Principal.Club_VistalbaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // socioDataGridView
+            // dgvSocio
             // 
-            this.socioDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvSocio.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.socioDataGridView.AutoGenerateColumns = false;
-            this.socioDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.socioDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvSocio.AutoGenerateColumns = false;
+            this.dgvSocio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSocio.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
@@ -95,11 +95,11 @@
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9,
             this.dataGridViewTextBoxColumn10});
-            this.socioDataGridView.DataSource = this.socioBindingSource;
-            this.socioDataGridView.Location = new System.Drawing.Point(12, 28);
-            this.socioDataGridView.Name = "socioDataGridView";
-            this.socioDataGridView.Size = new System.Drawing.Size(901, 335);
-            this.socioDataGridView.TabIndex = 1;
+            this.dgvSocio.DataSource = this.socioBindingSource;
+            this.dgvSocio.Location = new System.Drawing.Point(12, 28);
+            this.dgvSocio.Name = "dgvSocio";
+            this.dgvSocio.Size = new System.Drawing.Size(901, 335);
+            this.dgvSocio.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -176,13 +176,13 @@
             this.btnAbrir.Text = "Abrir";
             this.btnAbrir.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtBusqueda
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(576, 389);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(256, 20);
-            this.textBox1.TabIndex = 4;
+            this.txtBusqueda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBusqueda.Location = new System.Drawing.Point(576, 389);
+            this.txtBusqueda.Name = "txtBusqueda";
+            this.txtBusqueda.Size = new System.Drawing.Size(256, 20);
+            this.txtBusqueda.TabIndex = 4;
             // 
             // btnBuscar
             // 
@@ -193,6 +193,7 @@
             this.btnBuscar.TabIndex = 5;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // Form1
             // 
@@ -200,16 +201,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(925, 430);
             this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtBusqueda);
             this.Controls.Add(this.btnAbrir);
             this.Controls.Add(this.btnNuevo);
-            this.Controls.Add(this.socioDataGridView);
+            this.Controls.Add(this.dgvSocio);
             this.Name = "Form1";
             this.Text = "Club Vistalba";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.socioBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.socioDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSocio)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,10 +222,10 @@
         private System.Windows.Forms.BindingSource socioBindingSource;
         private Club_VistalbaDataSetTableAdapters.SocioTableAdapter socioTableAdapter;
         private Club_VistalbaDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.DataGridView socioDataGridView;
+        private System.Windows.Forms.DataGridView dgvSocio;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnAbrir;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBusqueda;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;

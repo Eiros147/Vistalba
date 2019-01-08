@@ -42,6 +42,7 @@
             this.clubVistalbaDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.actividadesBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.dgvActividades = new System.Windows.Forms.DataGridView();
+            this.txtBusqueda = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.actividadesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profesionalBindingSource)).BeginInit();
@@ -124,14 +125,23 @@
             this.dgvActividades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvActividades.Location = new System.Drawing.Point(12, 21);
             this.dgvActividades.Name = "dgvActividades";
-            this.dgvActividades.Size = new System.Drawing.Size(717, 357);
+            this.dgvActividades.Size = new System.Drawing.Size(764, 343);
             this.dgvActividades.TabIndex = 0;
+            // 
+            // txtBusqueda
+            // 
+            this.txtBusqueda.Location = new System.Drawing.Point(409, 383);
+            this.txtBusqueda.Name = "txtBusqueda";
+            this.txtBusqueda.Size = new System.Drawing.Size(367, 20);
+            this.txtBusqueda.TabIndex = 1;
+            this.txtBusqueda.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // Actividades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(788, 425);
+            this.ClientSize = new System.Drawing.Size(788, 415);
+            this.Controls.Add(this.txtBusqueda);
             this.Controls.Add(this.dgvActividades);
             this.Name = "Actividades";
             this.Text = "Actividades";
@@ -147,6 +157,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.actividadesBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvActividades)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -165,5 +176,6 @@
         private System.Windows.Forms.BindingSource clubVistalbaDataSetBindingSource;
         private System.Windows.Forms.BindingSource actividadesBindingSource2;
         private System.Windows.Forms.DataGridView dgvActividades;
+        private System.Windows.Forms.TextBox txtBusqueda;
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using System.Data.OleDb;
 
 namespace Principal
 {
@@ -17,6 +18,9 @@ namespace Principal
         {
             InitializeComponent();
         }
+
+        OleDbConnection conexion = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Mi PC\Documents\Proyecto Club\Vistalba\Vistalba\Principal\Principal\Club Vistalba.accdb;
+Persist Security Info=False;");
 
         private void socioBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
@@ -37,6 +41,20 @@ namespace Principal
         {
             NuevoUsuario nuform = new NuevoUsuario();
             nuform.ShowDialog();
+        }
+
+        void busqueda()
+        {
+            DataTable dtDatos = new DataTable();
+            string cadena = ("SELECT socioNombre, socioDNI, socioDireccion, socioMail, socioTelefono, socioCelular, socioFechaNac, socioFechaIng, socioFechaUltPago FROM Socio WHERE socioNombre LIKE '" + txtBusqueda.Text + "%'");
+            OleDbDataAdapter data = new OleDbDataAdapter(cadena, conexion);
+            data.Fill(dtDatos);
+            dgvSocio.DataSource = dtDatos;
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            busqueda();
         }
     }
 }

@@ -55,5 +55,18 @@ Persist Security Info=False;";
             }
         }
 
+        void busqueda()
+        {
+            DataTable dtDatos = new DataTable();
+            string cadena = ("SELECT Actividades.actNombre, Actividades.actDesc, Actividades.actMeses, Profesional.profNombre FROM(Actividades INNER JOIN Profesional ON Actividades.profId = Profesional.profId) WHERE actNombre LIKE '" + txtBusqueda.Text + "%'");
+            OleDbDataAdapter data = new OleDbDataAdapter(cadena, conActv);
+            data.Fill(dtDatos);
+            dgvActividades.DataSource = dtDatos;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            busqueda();
+        }
     }
 }
