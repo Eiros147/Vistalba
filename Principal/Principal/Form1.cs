@@ -56,5 +56,23 @@ Persist Security Info=False;");
         {
             busqueda();
         }
+
+        private void dgvSocio_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ModificarUsuario modificar = new ModificarUsuario();
+
+            modificar.txtNombre.Text = dgvSocio.CurrentRow.Cells[0].Value.ToString();
+
+            modificar.ShowDialog();
+        }
+
+        private void dgvSocio_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //ModificarUsuario modificar = new ModificarUsuario();
+
+           // modificar.txtNombre.Text = dgvSocio.CurrentRow.Cells[0].Value.ToString();
+
+            //modificar.ShowDialog();
+        }
     }
 }

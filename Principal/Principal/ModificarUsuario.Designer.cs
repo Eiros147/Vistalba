@@ -46,7 +46,7 @@
             this.socioTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.SocioTableAdapter();
             this.tableAdapterManager = new Principal.Club_VistalbaDataSetTableAdapters.TableAdapterManager();
             this.grupoTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.GrupoTableAdapter();
-            this.socioNombreTextBox = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.socioDNITextBox = new System.Windows.Forms.TextBox();
             this.socioDireccionTextBox = new System.Windows.Forms.TextBox();
             this.socioMailTextBox = new System.Windows.Forms.TextBox();
@@ -218,13 +218,13 @@
             // 
             this.grupoTableAdapter.ClearBeforeFill = true;
             // 
-            // socioNombreTextBox
+            // txtNombre
             // 
-            this.socioNombreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.socioBindingSource, "socioNombre", true));
-            this.socioNombreTextBox.Location = new System.Drawing.Point(130, 32);
-            this.socioNombreTextBox.Name = "socioNombreTextBox";
-            this.socioNombreTextBox.Size = new System.Drawing.Size(200, 20);
-            this.socioNombreTextBox.TabIndex = 4;
+            this.txtNombre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.socioBindingSource, "socioNombre", true));
+            this.txtNombre.Location = new System.Drawing.Point(130, 32);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(200, 20);
+            this.txtNombre.TabIndex = 4;
             // 
             // socioDNITextBox
             // 
@@ -352,7 +352,7 @@
             this.Controls.Add(this.lblID);
             this.Controls.Add(socioIDLabel);
             this.Controls.Add(socioNombreLabel);
-            this.Controls.Add(this.socioNombreTextBox);
+            this.Controls.Add(this.txtNombre);
             this.Controls.Add(socioDNILabel);
             this.Controls.Add(this.socioDNITextBox);
             this.Controls.Add(socioDireccionLabel);
@@ -388,12 +388,6 @@
         private System.Windows.Forms.BindingSource socioBindingSource;
         private Club_VistalbaDataSetTableAdapters.SocioTableAdapter socioTableAdapter;
         private Club_VistalbaDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.TextBox socioNombreTextBox;
-        private System.Windows.Forms.TextBox socioDNITextBox;
-        private System.Windows.Forms.TextBox socioDireccionTextBox;
-        private System.Windows.Forms.TextBox socioMailTextBox;
-        private System.Windows.Forms.TextBox socioTelefonoTextBox;
-        private System.Windows.Forms.TextBox socioCelularTextBox;
         private System.Windows.Forms.DateTimePicker socioFechaNacDateTimePicker;
         private System.Windows.Forms.DateTimePicker socioFechaIngDateTimePicker;
         private System.Windows.Forms.DateTimePicker socioFechaUltPagoDateTimePicker;
@@ -404,5 +398,11 @@
         private System.Windows.Forms.TextBox txtGrupo;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        public System.Windows.Forms.TextBox txtNombre;
+        public System.Windows.Forms.TextBox socioDNITextBox;
+        public System.Windows.Forms.TextBox socioDireccionTextBox;
+        public System.Windows.Forms.TextBox socioMailTextBox;
+        public System.Windows.Forms.TextBox socioTelefonoTextBox;
+        public System.Windows.Forms.TextBox socioCelularTextBox;
     }
 }

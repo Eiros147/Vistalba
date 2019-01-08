@@ -98,8 +98,11 @@
             this.dgvSocio.DataSource = this.socioBindingSource;
             this.dgvSocio.Location = new System.Drawing.Point(12, 28);
             this.dgvSocio.Name = "dgvSocio";
+            this.dgvSocio.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSocio.Size = new System.Drawing.Size(901, 335);
             this.dgvSocio.TabIndex = 1;
+            this.dgvSocio.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSocio_CellContentClick);
+            this.dgvSocio.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSocio_CellContentDoubleClick);
             // 
             // dataGridViewTextBoxColumn2
             // 
