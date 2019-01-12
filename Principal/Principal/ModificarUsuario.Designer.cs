@@ -47,20 +47,23 @@
             this.tableAdapterManager = new Principal.Club_VistalbaDataSetTableAdapters.TableAdapterManager();
             this.grupoTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.GrupoTableAdapter();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.socioDNITextBox = new System.Windows.Forms.TextBox();
-            this.socioDireccionTextBox = new System.Windows.Forms.TextBox();
-            this.socioMailTextBox = new System.Windows.Forms.TextBox();
-            this.socioTelefonoTextBox = new System.Windows.Forms.TextBox();
-            this.socioCelularTextBox = new System.Windows.Forms.TextBox();
-            this.socioFechaNacDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.socioFechaIngDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.socioFechaUltPagoDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.catIdTextBox = new System.Windows.Forms.TextBox();
+            this.txtDNI = new System.Windows.Forms.TextBox();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
+            this.txtMail = new System.Windows.Forms.TextBox();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.txtCelular = new System.Windows.Forms.TextBox();
+            this.dtpNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.dtpIngreso = new System.Windows.Forms.DateTimePicker();
+            this.dtpPago = new System.Windows.Forms.DateTimePicker();
             this.lblID = new System.Windows.Forms.Label();
             this.grupoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtGrupo = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.btnHabilitar = new System.Windows.Forms.Button();
+            this.btnSalud = new System.Windows.Forms.Button();
+            this.btnGrupo = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.cbCategoria = new System.Windows.Forms.ComboBox();
             socioIDLabel = new System.Windows.Forms.Label();
             socioNombreLabel = new System.Windows.Forms.Label();
             socioDNILabel = new System.Windows.Forms.Label();
@@ -221,83 +224,84 @@
             // txtNombre
             // 
             this.txtNombre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.socioBindingSource, "socioNombre", true));
+            this.txtNombre.Enabled = false;
             this.txtNombre.Location = new System.Drawing.Point(130, 32);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(200, 20);
+            this.txtNombre.Size = new System.Drawing.Size(281, 20);
             this.txtNombre.TabIndex = 4;
             // 
-            // socioDNITextBox
+            // txtDNI
             // 
-            this.socioDNITextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.socioBindingSource, "socioDNI", true));
-            this.socioDNITextBox.Location = new System.Drawing.Point(130, 58);
-            this.socioDNITextBox.Name = "socioDNITextBox";
-            this.socioDNITextBox.Size = new System.Drawing.Size(200, 20);
-            this.socioDNITextBox.TabIndex = 6;
+            this.txtDNI.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.socioBindingSource, "socioDNI", true));
+            this.txtDNI.Enabled = false;
+            this.txtDNI.Location = new System.Drawing.Point(130, 58);
+            this.txtDNI.Name = "txtDNI";
+            this.txtDNI.Size = new System.Drawing.Size(281, 20);
+            this.txtDNI.TabIndex = 6;
             // 
-            // socioDireccionTextBox
+            // txtDireccion
             // 
-            this.socioDireccionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.socioBindingSource, "socioDireccion", true));
-            this.socioDireccionTextBox.Location = new System.Drawing.Point(130, 84);
-            this.socioDireccionTextBox.Name = "socioDireccionTextBox";
-            this.socioDireccionTextBox.Size = new System.Drawing.Size(200, 20);
-            this.socioDireccionTextBox.TabIndex = 8;
+            this.txtDireccion.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.socioBindingSource, "socioDireccion", true));
+            this.txtDireccion.Enabled = false;
+            this.txtDireccion.Location = new System.Drawing.Point(130, 84);
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(281, 20);
+            this.txtDireccion.TabIndex = 8;
             // 
-            // socioMailTextBox
+            // txtMail
             // 
-            this.socioMailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.socioBindingSource, "socioMail", true));
-            this.socioMailTextBox.Location = new System.Drawing.Point(130, 110);
-            this.socioMailTextBox.Name = "socioMailTextBox";
-            this.socioMailTextBox.Size = new System.Drawing.Size(200, 20);
-            this.socioMailTextBox.TabIndex = 10;
+            this.txtMail.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.socioBindingSource, "socioMail", true));
+            this.txtMail.Enabled = false;
+            this.txtMail.Location = new System.Drawing.Point(130, 110);
+            this.txtMail.Name = "txtMail";
+            this.txtMail.Size = new System.Drawing.Size(281, 20);
+            this.txtMail.TabIndex = 10;
+            this.txtMail.TextChanged += new System.EventHandler(this.socioMailTextBox_TextChanged);
             // 
-            // socioTelefonoTextBox
+            // txtTelefono
             // 
-            this.socioTelefonoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.socioBindingSource, "socioTelefono", true));
-            this.socioTelefonoTextBox.Location = new System.Drawing.Point(130, 136);
-            this.socioTelefonoTextBox.Name = "socioTelefonoTextBox";
-            this.socioTelefonoTextBox.Size = new System.Drawing.Size(200, 20);
-            this.socioTelefonoTextBox.TabIndex = 12;
+            this.txtTelefono.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.socioBindingSource, "socioTelefono", true));
+            this.txtTelefono.Enabled = false;
+            this.txtTelefono.Location = new System.Drawing.Point(130, 136);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(281, 20);
+            this.txtTelefono.TabIndex = 12;
             // 
-            // socioCelularTextBox
+            // txtCelular
             // 
-            this.socioCelularTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.socioBindingSource, "socioCelular", true));
-            this.socioCelularTextBox.Location = new System.Drawing.Point(130, 162);
-            this.socioCelularTextBox.Name = "socioCelularTextBox";
-            this.socioCelularTextBox.Size = new System.Drawing.Size(200, 20);
-            this.socioCelularTextBox.TabIndex = 14;
+            this.txtCelular.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.socioBindingSource, "socioCelular", true));
+            this.txtCelular.Enabled = false;
+            this.txtCelular.Location = new System.Drawing.Point(130, 162);
+            this.txtCelular.Name = "txtCelular";
+            this.txtCelular.Size = new System.Drawing.Size(281, 20);
+            this.txtCelular.TabIndex = 14;
             // 
-            // socioFechaNacDateTimePicker
+            // dtpNacimiento
             // 
-            this.socioFechaNacDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.socioBindingSource, "socioFechaNac", true));
-            this.socioFechaNacDateTimePicker.Location = new System.Drawing.Point(130, 188);
-            this.socioFechaNacDateTimePicker.Name = "socioFechaNacDateTimePicker";
-            this.socioFechaNacDateTimePicker.Size = new System.Drawing.Size(200, 20);
-            this.socioFechaNacDateTimePicker.TabIndex = 16;
+            this.dtpNacimiento.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.socioBindingSource, "socioFechaNac", true));
+            this.dtpNacimiento.Enabled = false;
+            this.dtpNacimiento.Location = new System.Drawing.Point(130, 188);
+            this.dtpNacimiento.Name = "dtpNacimiento";
+            this.dtpNacimiento.Size = new System.Drawing.Size(200, 20);
+            this.dtpNacimiento.TabIndex = 16;
             // 
-            // socioFechaIngDateTimePicker
+            // dtpIngreso
             // 
-            this.socioFechaIngDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.socioBindingSource, "socioFechaIng", true));
-            this.socioFechaIngDateTimePicker.Location = new System.Drawing.Point(130, 214);
-            this.socioFechaIngDateTimePicker.Name = "socioFechaIngDateTimePicker";
-            this.socioFechaIngDateTimePicker.Size = new System.Drawing.Size(200, 20);
-            this.socioFechaIngDateTimePicker.TabIndex = 18;
+            this.dtpIngreso.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.socioBindingSource, "socioFechaIng", true));
+            this.dtpIngreso.Enabled = false;
+            this.dtpIngreso.Location = new System.Drawing.Point(130, 214);
+            this.dtpIngreso.Name = "dtpIngreso";
+            this.dtpIngreso.Size = new System.Drawing.Size(200, 20);
+            this.dtpIngreso.TabIndex = 18;
             // 
-            // socioFechaUltPagoDateTimePicker
+            // dtpPago
             // 
-            this.socioFechaUltPagoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.socioBindingSource, "socioFechaUltPago", true));
-            this.socioFechaUltPagoDateTimePicker.Location = new System.Drawing.Point(130, 240);
-            this.socioFechaUltPagoDateTimePicker.Name = "socioFechaUltPagoDateTimePicker";
-            this.socioFechaUltPagoDateTimePicker.Size = new System.Drawing.Size(200, 20);
-            this.socioFechaUltPagoDateTimePicker.TabIndex = 20;
-            // 
-            // catIdTextBox
-            // 
-            this.catIdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.socioBindingSource, "catId", true));
-            this.catIdTextBox.Location = new System.Drawing.Point(130, 292);
-            this.catIdTextBox.Name = "catIdTextBox";
-            this.catIdTextBox.Size = new System.Drawing.Size(200, 20);
-            this.catIdTextBox.TabIndex = 24;
-            this.catIdTextBox.Visible = false;
+            this.dtpPago.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.socioBindingSource, "socioFechaUltPago", true));
+            this.dtpPago.Enabled = false;
+            this.dtpPago.Location = new System.Drawing.Point(130, 240);
+            this.dtpPago.Name = "dtpPago";
+            this.dtpPago.Size = new System.Drawing.Size(200, 20);
+            this.dtpPago.TabIndex = 20;
             // 
             // lblID
             // 
@@ -316,37 +320,80 @@
             // txtGrupo
             // 
             this.txtGrupo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.grupoBindingSource, "grupoApellido", true));
+            this.txtGrupo.Enabled = false;
             this.txtGrupo.Location = new System.Drawing.Point(130, 266);
             this.txtGrupo.Name = "txtGrupo";
-            this.txtGrupo.Size = new System.Drawing.Size(200, 20);
+            this.txtGrupo.Size = new System.Drawing.Size(281, 20);
             this.txtGrupo.TabIndex = 26;
             this.txtGrupo.Visible = false;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(12, 331);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 34);
-            this.button1.TabIndex = 27;
-            this.button1.Text = "Siguiente";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(258, 331);
+            this.button2.Location = new System.Drawing.Point(336, 331);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 34);
             this.button2.TabIndex = 28;
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnHabilitar
+            // 
+            this.btnHabilitar.Location = new System.Drawing.Point(12, 331);
+            this.btnHabilitar.Name = "btnHabilitar";
+            this.btnHabilitar.Size = new System.Drawing.Size(75, 34);
+            this.btnHabilitar.TabIndex = 29;
+            this.btnHabilitar.Text = "Habilitar";
+            this.btnHabilitar.UseVisualStyleBackColor = true;
+            this.btnHabilitar.Click += new System.EventHandler(this.btnHabilitar_Click);
+            // 
+            // btnSalud
+            // 
+            this.btnSalud.Location = new System.Drawing.Point(93, 331);
+            this.btnSalud.Name = "btnSalud";
+            this.btnSalud.Size = new System.Drawing.Size(75, 34);
+            this.btnSalud.TabIndex = 30;
+            this.btnSalud.Text = "Salud";
+            this.btnSalud.UseVisualStyleBackColor = true;
+            // 
+            // btnGrupo
+            // 
+            this.btnGrupo.Location = new System.Drawing.Point(174, 331);
+            this.btnGrupo.Name = "btnGrupo";
+            this.btnGrupo.Size = new System.Drawing.Size(75, 34);
+            this.btnGrupo.TabIndex = 31;
+            this.btnGrupo.Text = "Grupo";
+            this.btnGrupo.UseVisualStyleBackColor = true;
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Location = new System.Drawing.Point(255, 331);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(75, 34);
+            this.btnGuardar.TabIndex = 32;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // cbCategoria
+            // 
+            this.cbCategoria.FormattingEnabled = true;
+            this.cbCategoria.Location = new System.Drawing.Point(130, 292);
+            this.cbCategoria.Name = "cbCategoria";
+            this.cbCategoria.Size = new System.Drawing.Size(281, 21);
+            this.cbCategoria.TabIndex = 33;
             // 
             // ModificarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(345, 377);
+            this.ClientSize = new System.Drawing.Size(426, 377);
+            this.Controls.Add(this.cbCategoria);
+            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.btnGrupo);
+            this.Controls.Add(this.btnSalud);
+            this.Controls.Add(this.btnHabilitar);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(grupoApellidoLabel);
             this.Controls.Add(this.txtGrupo);
             this.Controls.Add(this.lblID);
@@ -354,23 +401,22 @@
             this.Controls.Add(socioNombreLabel);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(socioDNILabel);
-            this.Controls.Add(this.socioDNITextBox);
+            this.Controls.Add(this.txtDNI);
             this.Controls.Add(socioDireccionLabel);
-            this.Controls.Add(this.socioDireccionTextBox);
+            this.Controls.Add(this.txtDireccion);
             this.Controls.Add(socioMailLabel);
-            this.Controls.Add(this.socioMailTextBox);
+            this.Controls.Add(this.txtMail);
             this.Controls.Add(socioTelefonoLabel);
-            this.Controls.Add(this.socioTelefonoTextBox);
+            this.Controls.Add(this.txtTelefono);
             this.Controls.Add(socioCelularLabel);
-            this.Controls.Add(this.socioCelularTextBox);
+            this.Controls.Add(this.txtCelular);
             this.Controls.Add(socioFechaNacLabel);
-            this.Controls.Add(this.socioFechaNacDateTimePicker);
+            this.Controls.Add(this.dtpNacimiento);
             this.Controls.Add(socioFechaIngLabel);
-            this.Controls.Add(this.socioFechaIngDateTimePicker);
+            this.Controls.Add(this.dtpIngreso);
             this.Controls.Add(socioFechaUltPagoLabel);
-            this.Controls.Add(this.socioFechaUltPagoDateTimePicker);
+            this.Controls.Add(this.dtpPago);
             this.Controls.Add(catIdLabel);
-            this.Controls.Add(this.catIdTextBox);
             this.Name = "ModificarUsuario";
             this.Text = "ModificarUsuario";
             this.Load += new System.EventHandler(this.ModificarUsuario_Load);
@@ -388,21 +434,24 @@
         private System.Windows.Forms.BindingSource socioBindingSource;
         private Club_VistalbaDataSetTableAdapters.SocioTableAdapter socioTableAdapter;
         private Club_VistalbaDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.DateTimePicker socioFechaNacDateTimePicker;
-        private System.Windows.Forms.DateTimePicker socioFechaIngDateTimePicker;
-        private System.Windows.Forms.DateTimePicker socioFechaUltPagoDateTimePicker;
-        private System.Windows.Forms.TextBox catIdTextBox;
+        private System.Windows.Forms.DateTimePicker dtpNacimiento;
+        private System.Windows.Forms.DateTimePicker dtpIngreso;
+        private System.Windows.Forms.DateTimePicker dtpPago;
         private Club_VistalbaDataSetTableAdapters.GrupoTableAdapter grupoTableAdapter;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.BindingSource grupoBindingSource;
         private System.Windows.Forms.TextBox txtGrupo;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         public System.Windows.Forms.TextBox txtNombre;
-        public System.Windows.Forms.TextBox socioDNITextBox;
-        public System.Windows.Forms.TextBox socioDireccionTextBox;
-        public System.Windows.Forms.TextBox socioMailTextBox;
-        public System.Windows.Forms.TextBox socioTelefonoTextBox;
-        public System.Windows.Forms.TextBox socioCelularTextBox;
+        public System.Windows.Forms.TextBox txtDNI;
+        public System.Windows.Forms.TextBox txtDireccion;
+        public System.Windows.Forms.TextBox txtMail;
+        public System.Windows.Forms.TextBox txtTelefono;
+        public System.Windows.Forms.TextBox txtCelular;
+        private System.Windows.Forms.Button btnHabilitar;
+        private System.Windows.Forms.Button btnSalud;
+        private System.Windows.Forms.Button btnGrupo;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.ComboBox cbCategoria;
     }
 }
