@@ -49,7 +49,7 @@
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.txtCelular = new System.Windows.Forms.TextBox();
             this.socioFechaNacDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblSocioID = new System.Windows.Forms.Label();
             this.btnSiguiente = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.rbSi = new System.Windows.Forms.RadioButton();
@@ -229,18 +229,18 @@
             this.socioFechaNacDateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.socioFechaNacDateTimePicker.TabIndex = 16;
             // 
-            // label1
+            // lblSocioID
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(127, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 25;
-            this.label1.Text = "label1";
+            this.lblSocioID.AutoSize = true;
+            this.lblSocioID.Location = new System.Drawing.Point(127, 24);
+            this.lblSocioID.Name = "lblSocioID";
+            this.lblSocioID.Size = new System.Drawing.Size(35, 13);
+            this.lblSocioID.TabIndex = 25;
+            this.lblSocioID.Text = "label1";
             // 
             // btnSiguiente
             // 
-            this.btnSiguiente.Location = new System.Drawing.Point(7, 327);
+            this.btnSiguiente.Location = new System.Drawing.Point(15, 375);
             this.btnSiguiente.Name = "btnSiguiente";
             this.btnSiguiente.Size = new System.Drawing.Size(75, 23);
             this.btnSiguiente.TabIndex = 26;
@@ -250,7 +250,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(255, 327);
+            this.btnCancelar.Location = new System.Drawing.Point(255, 375);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 27;
@@ -314,11 +314,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(349, 368);
+            this.ClientSize = new System.Drawing.Size(349, 410);
             this.Controls.Add(this.gboxGrupo);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSiguiente);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblSocioID);
             this.Controls.Add(socioIDLabel);
             this.Controls.Add(socioNombreLabel);
             this.Controls.Add(this.txtNombre);
@@ -361,7 +361,7 @@
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.TextBox txtCelular;
         private System.Windows.Forms.DateTimePicker socioFechaNacDateTimePicker;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblSocioID;
         private System.Windows.Forms.Button btnSiguiente;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.RadioButton rbSi;
