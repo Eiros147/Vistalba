@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
 
+
 namespace Principal
 {
     public partial class NuevoUsuario : Form
@@ -16,7 +17,7 @@ namespace Principal
 
         OleDbConnection conNuevo = new OleDbConnection();
 
-        public NuevoUsuario()
+        public NuevoUsuario( )
         {
             InitializeComponent();
             conNuevo.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Mi PC\Documents\Proyecto Club\Vistalba\Vistalba\Principal\Principal\Club Vistalba.accdb;
@@ -73,6 +74,7 @@ Persist Security Info=False;";
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+            
         }
 
         private void rbSi_CheckedChanged(object sender, EventArgs e)
@@ -89,6 +91,13 @@ Persist Security Info=False;";
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             guardar();
+
+            txtNombre.Enabled = false;
+            txtDireccion.Enabled = false;
+            txtCelular.Enabled = false;
+            txtDNI.Enabled = false;
+            txtMail.Enabled = false;
+            txtTelefono.Enabled = false;
         }
 
         private void guardar()
@@ -98,12 +107,15 @@ Persist Security Info=False;";
                 conNuevo.Open();
                 OleDbCommand command = new OleDbCommand();
                 command.Connection = conNuevo;
-                string query = "INSERT Socio SET socioNombre ='" + txtNombre + "', socioDNI ='" + txtDNI + "', socioDireccion ='" + txtDireccion + "', socioMail ='" + txtMail + "', socioTelefono ='" + txtTelefono + "', socioCelular ='" + txtCelular + "', socioFechaNac ='" + dtpNacimiento + "'";
+                string query = "INSERT INTO Socio (socioNombre, socioDNI, socioDireccion, socioMail, socioTelefono, socioCelular) VALUES('" + txtNombre.Text + "','" + txtDNI.Text + "','" + txtDireccion.Text + "','" + txtMail.Text + "','" + txtTelefono.Text + "','" + txtCelular.Text + "')";
                 command.CommandText = query;
 
                 command.ExecuteNonQuery();
-
+                MessageBox.Show("Socio guardado");
                 conNuevo.Close();
+
+                
+
             }
             catch (Exception ex)
             {

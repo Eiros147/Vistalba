@@ -14,6 +14,7 @@ namespace Principal
 {
     public partial class Form1 : Form
     {
+
         public Form1()
         {
             InitializeComponent();
@@ -41,6 +42,7 @@ Persist Security Info=False;");
         {
             NuevoUsuario nuform = new NuevoUsuario();
             nuform.ShowDialog();
+            this.Refresh();
         }
 
         void busqueda()
