@@ -62,6 +62,11 @@ Persist Security Info=False;");
             ModificarUsuario modificar = new ModificarUsuario();
 
             modificar.txtNombre.Text = dgvSocio.CurrentRow.Cells[0].Value.ToString();
+            modificar.txtDireccion.Text = dgvSocio.CurrentRow.Cells[2].Value.ToString();
+            modificar.txtDNI.Text = dgvSocio.CurrentRow.Cells[1].Value.ToString();
+            modificar.txtCelular.Text = dgvSocio.CurrentRow.Cells[5].Value.ToString();
+            modificar.txtMail.Text = dgvSocio.CurrentRow.Cells[3].Value.ToString();
+            modificar.txtTelefono.Text = dgvSocio.CurrentRow.Cells[4].Value.ToString();
 
             modificar.ShowDialog();
         }
@@ -73,6 +78,11 @@ Persist Security Info=False;");
            // modificar.txtNombre.Text = dgvSocio.CurrentRow.Cells[0].Value.ToString();
 
             //modificar.ShowDialog();
+        }
+
+        private void txtBusqueda_TextChanged(object sender, EventArgs e)
+        {
+            busqueda();
         }
     }
 }

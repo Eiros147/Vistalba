@@ -48,9 +48,9 @@
             this.txtMail = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.txtCelular = new System.Windows.Forms.TextBox();
-            this.socioFechaNacDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.dtpNacimiento = new System.Windows.Forms.DateTimePicker();
             this.lblSocioID = new System.Windows.Forms.Label();
-            this.btnSiguiente = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.rbSi = new System.Windows.Forms.RadioButton();
             this.rbNo = new System.Windows.Forms.RadioButton();
@@ -221,13 +221,13 @@
             this.txtCelular.Size = new System.Drawing.Size(200, 20);
             this.txtCelular.TabIndex = 14;
             // 
-            // socioFechaNacDateTimePicker
+            // dtpNacimiento
             // 
-            this.socioFechaNacDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.socioBindingSource, "socioFechaNac", true));
-            this.socioFechaNacDateTimePicker.Location = new System.Drawing.Point(130, 203);
-            this.socioFechaNacDateTimePicker.Name = "socioFechaNacDateTimePicker";
-            this.socioFechaNacDateTimePicker.Size = new System.Drawing.Size(200, 20);
-            this.socioFechaNacDateTimePicker.TabIndex = 16;
+            this.dtpNacimiento.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.socioBindingSource, "socioFechaNac", true));
+            this.dtpNacimiento.Location = new System.Drawing.Point(130, 203);
+            this.dtpNacimiento.Name = "dtpNacimiento";
+            this.dtpNacimiento.Size = new System.Drawing.Size(200, 20);
+            this.dtpNacimiento.TabIndex = 16;
             // 
             // lblSocioID
             // 
@@ -238,15 +238,15 @@
             this.lblSocioID.TabIndex = 25;
             this.lblSocioID.Text = "label1";
             // 
-            // btnSiguiente
+            // btnGuardar
             // 
-            this.btnSiguiente.Location = new System.Drawing.Point(15, 375);
-            this.btnSiguiente.Name = "btnSiguiente";
-            this.btnSiguiente.Size = new System.Drawing.Size(75, 23);
-            this.btnSiguiente.TabIndex = 26;
-            this.btnSiguiente.Text = "Siguiente";
-            this.btnSiguiente.UseVisualStyleBackColor = true;
-            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
+            this.btnGuardar.Location = new System.Drawing.Point(15, 375);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.TabIndex = 26;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnCancelar
             // 
@@ -317,7 +317,7 @@
             this.ClientSize = new System.Drawing.Size(349, 410);
             this.Controls.Add(this.gboxGrupo);
             this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnSiguiente);
+            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.lblSocioID);
             this.Controls.Add(socioIDLabel);
             this.Controls.Add(socioNombreLabel);
@@ -333,7 +333,7 @@
             this.Controls.Add(socioCelularLabel);
             this.Controls.Add(this.txtCelular);
             this.Controls.Add(socioFechaNacLabel);
-            this.Controls.Add(this.socioFechaNacDateTimePicker);
+            this.Controls.Add(this.dtpNacimiento);
             this.Name = "NuevoUsuario";
             this.Text = "Crear Usuario Nuevo";
             this.Load += new System.EventHandler(this.NuevoUsuario_Load);
@@ -360,9 +360,9 @@
         private System.Windows.Forms.TextBox txtMail;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.TextBox txtCelular;
-        private System.Windows.Forms.DateTimePicker socioFechaNacDateTimePicker;
+        private System.Windows.Forms.DateTimePicker dtpNacimiento;
         private System.Windows.Forms.Label lblSocioID;
-        private System.Windows.Forms.Button btnSiguiente;
+        private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.RadioButton rbSi;
         private System.Windows.Forms.RadioButton rbNo;

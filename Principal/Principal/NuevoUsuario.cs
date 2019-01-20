@@ -41,14 +41,22 @@ Persist Security Info=False;";
                 string query = "SELECT socioID FROM Socio";
                 OleDbCommand command = new OleDbCommand(query,conNuevo);
 
-                OleDbDataReader dr = command.ExecuteReader();
-                bool exito = dr.Read();
-                if (exito)
+                OleDbDataReader lector = command.ExecuteReader();
+
+                lector.Read();
+
+                int socioid = lector.GetOrdinal("socioID");
+
+                while (lector.Read())
                 {
-                    lblSocioID.Text = dr.GetString(0);
+                    MessageBox.Show("socioID={0}", Convert.ToString(lector.GetInt32(socioid)));
                 }
-                               
-                
+                //lblSocioID.Text = (lector["socioID"].ToString());
+                lector.Close();
+
+                MessageBox.Show("Conectado");
+
+
                 conNuevo.Close();
             }
             catch (Exception ex)
@@ -72,8 +80,30 @@ Persist Security Info=False;";
             cbGrupo.Visible = false;
         }
 
-        private void btnSiguiente_Click(object sender, EventArgs e)
+
+        private void btnGuardar_Click(object sender, EventArgs e)
         {
+            guardar();
+        }
+
+        private void guardar()
+        {
+            try
+            {
+                conNuevo.Open();
+                OleDbCommand command = new OleDbCommand();
+                command.Connection = conNuevo;
+                string query = "INSERT Socio SET socioNombre ='" + txtNombre + "', socioDNI ='" + txtDNI + "', socioDireccion ='" + txtDireccion + "', socioMail ='" + txtMail + "', socioTelefono ='" + txtTelefono + "', socioCelular ='" + txtCelular + "', socioFechaNac ='" + dtpNacimiento + "'";
+                command.CommandText = query;
+
+                command.ExecuteNonQuery();
+
+                conNuevo.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al guardar" + ex.Message);
+            }
 
         }
     }

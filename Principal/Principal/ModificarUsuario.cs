@@ -84,7 +84,7 @@ Persist Security Info=False;";
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al guardar" + ex.Message);
+                MessageBox.Show("Error al guardar " + ex.Message);
             }
         }
     }
