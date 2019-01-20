@@ -38,7 +38,7 @@ Persist Security Info=False;";
             try
             {
                 conNuevo.Open();
-                string query = "SELECT socioID FROM Socio";
+                string query = "SELECT TOP 2 socioID FROM Socio ORDER BY socioID DESC ";
                 OleDbCommand command = new OleDbCommand(query,conNuevo);
 
                 OleDbDataReader lector = command.ExecuteReader();
@@ -47,11 +47,16 @@ Persist Security Info=False;";
 
                 int socioid = lector.GetOrdinal("socioID");
 
-                while (lector.Read())
-                {
-                    MessageBox.Show("socioID={0}", Convert.ToString(lector.GetInt32(socioid)));
-                }
-                //lblSocioID.Text = (lector["socioID"].ToString());
+                lector.Read();
+                
+                //MessageBox.Show("ID socio: " +"socioID={0]", Convert.ToString(lector.GetInt32(socioid)));
+                int temporal = lector.GetInt32(socioid);
+                temporal = temporal + 2;
+                string segundotemp = Convert.ToString(temporal);
+
+                lblSocioID.Text = segundotemp;
+                
+                //lblSocioID.Text = temporal;
                 lector.Close();
 
                 MessageBox.Show("Conectado");
