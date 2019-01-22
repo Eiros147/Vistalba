@@ -41,6 +41,7 @@
             System.Windows.Forms.Label socioFechaUltPagoLabel;
             System.Windows.Forms.Label catIdLabel;
             System.Windows.Forms.Label grupoApellidoLabel;
+            System.Windows.Forms.Label socioIDLabel1;
             this.club_VistalbaDataSet = new Principal.Club_VistalbaDataSet();
             this.socioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.socioTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.SocioTableAdapter();
@@ -64,6 +65,7 @@
             this.btnGrupo = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.cbCategoria = new System.Windows.Forms.ComboBox();
+            this.socioIDLabel2 = new System.Windows.Forms.Label();
             socioIDLabel = new System.Windows.Forms.Label();
             socioNombreLabel = new System.Windows.Forms.Label();
             socioDNILabel = new System.Windows.Forms.Label();
@@ -76,6 +78,7 @@
             socioFechaUltPagoLabel = new System.Windows.Forms.Label();
             catIdLabel = new System.Windows.Forms.Label();
             grupoApellidoLabel = new System.Windows.Forms.Label();
+            socioIDLabel1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.socioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grupoBindingSource)).BeginInit();
@@ -392,11 +395,31 @@
             this.cbCategoria.TabIndex = 33;
             this.cbCategoria.Visible = false;
             // 
+            // socioIDLabel1
+            // 
+            socioIDLabel1.AutoSize = true;
+            socioIDLabel1.Location = new System.Drawing.Point(200, 9);
+            socioIDLabel1.Name = "socioIDLabel1";
+            socioIDLabel1.Size = new System.Drawing.Size(49, 13);
+            socioIDLabel1.TabIndex = 33;
+            socioIDLabel1.Text = "socio ID:";
+            // 
+            // socioIDLabel2
+            // 
+            this.socioIDLabel2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.socioBindingSource, "socioID", true));
+            this.socioIDLabel2.Location = new System.Drawing.Point(255, 9);
+            this.socioIDLabel2.Name = "socioIDLabel2";
+            this.socioIDLabel2.Size = new System.Drawing.Size(100, 23);
+            this.socioIDLabel2.TabIndex = 34;
+            this.socioIDLabel2.Text = "label1";
+            // 
             // ModificarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(426, 377);
+            this.ClientSize = new System.Drawing.Size(431, 385);
+            this.Controls.Add(socioIDLabel1);
+            this.Controls.Add(this.socioIDLabel2);
             this.Controls.Add(this.cbCategoria);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnGrupo);
@@ -462,5 +485,6 @@
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.ComboBox cbCategoria;
         public System.Windows.Forms.Label lblID;
+        public System.Windows.Forms.Label socioIDLabel2;
     }
 }

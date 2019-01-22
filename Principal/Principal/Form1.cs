@@ -63,7 +63,7 @@ Persist Security Info=False;");
         {
             ModificarUsuario modificar = new ModificarUsuario();
 
-            //modificar.lblID.Text = ;
+            modificar.socioIDLabel2.Text = "";
             modificar.txtNombre.Text = dgvSocio.CurrentRow.Cells[0].Value.ToString();
             modificar.txtDireccion.Text = dgvSocio.CurrentRow.Cells[2].Value.ToString();
             modificar.txtDNI.Text = dgvSocio.CurrentRow.Cells[1].Value.ToString();

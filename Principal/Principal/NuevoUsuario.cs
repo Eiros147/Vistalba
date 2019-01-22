@@ -42,7 +42,7 @@ Persist Security Info=False;";
             {
                 conNuevo.Open();
                 string query = "SELECT TOP 1 socioID FROM Socio ORDER BY socioID DESC ";
-                OleDbCommand command = new OleDbCommand(query,conNuevo);
+                OleDbCommand command = new OleDbCommand(query, conNuevo);
 
                 OleDbDataReader lector = command.ExecuteReader();
 
@@ -51,8 +51,7 @@ Persist Security Info=False;";
                 int socioid = lector.GetOrdinal("socioID");
 
                 lector.Read();
-                
-                //MessageBox.Show("ID socio: " +"socioID={0]", Convert.ToString(lector.GetInt32(socioid)));
+
                 int temporal = lector.GetInt32(socioid);
                 temporal = temporal + 2;
                 string segundotemp = Convert.ToString(temporal);
@@ -65,11 +64,15 @@ Persist Security Info=False;";
                 MessageBox.Show("Conectado");
 
 
-                conNuevo.Close();
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al conectarse" + ex);
+            }
+            finally
+            {
+                conNuevo.Close();
             }
         }
 
@@ -109,7 +112,6 @@ Persist Security Info=False;";
 
                 command.ExecuteNonQuery();
                 MessageBox.Show("Socio guardado");
-                conNuevo.Close();
 
                 
 
@@ -117,6 +119,10 @@ Persist Security Info=False;";
             catch (Exception ex)
             {
                 MessageBox.Show("Error al guardar" + ex.Message);
+            }
+            finally
+            {
+                conNuevo.Close();
             }
 
         }

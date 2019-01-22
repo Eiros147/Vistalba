@@ -80,11 +80,16 @@ Persist Security Info=False;";
 
                 command.ExecuteNonQuery();
 
-                conModificar.Close();
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al guardar " + ex.Message);
+            }
+            finally
+            {
+                conModificar.Close();
+                conModificar.Dispose();
             }
         }
 
