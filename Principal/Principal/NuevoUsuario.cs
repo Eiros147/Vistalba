@@ -44,7 +44,7 @@ Persist Security Info=False;";
                 string query = "SELECT TOP 1 socioID FROM Socio ORDER BY socioID DESC ";
                 OleDbCommand command = new OleDbCommand(query, conNuevo);
 
-                OleDbDataReader lector = command.ExecuteReader();
+                /*OleDbDataReader lector = command.ExecuteReader();
 
                 lector.Read();
 
@@ -61,10 +61,12 @@ Persist Security Info=False;";
                 //lblSocioID.Text = temporal;
                 lector.Close();
 
-                MessageBox.Show("Conectado");
+                MessageBox.Show("Conectado");*/
 
-
-                
+                string temporal = command.ExecuteScalar().ToString();
+                int numero = Int32.Parse(temporal);
+                numero = numero + 1;
+                lblSocioID.Text = numero.ToString();
             }
             catch (Exception ex)
             {

@@ -22,6 +22,7 @@ namespace Principal
 
         OleDbConnection conexion = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Mi PC\Documents\Proyecto Club\Vistalba\Vistalba\Principal\Principal\Club Vistalba.accdb;
 Persist Security Info=False;");
+        OleDbCommand comando = new OleDbCommand();
 
         private void socioBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
@@ -35,7 +36,7 @@ Persist Security Info=False;");
         {
             // TODO: esta línea de código carga datos en la tabla 'club_VistalbaDataSet.Socio' Puede moverla o quitarla según sea necesario.
             this.socioTableAdapter.Fill(this.club_VistalbaDataSet.Socio);
-
+            this.Refresh();
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -54,16 +55,19 @@ Persist Security Info=False;");
             dgvSocio.DataSource = dtDatos;
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
+        void modificar()
         {
-            busqueda();
-        }
+            conexion.Open();
+            string query = "Select socioID FROM socio WHERE socioNombre='" + dgvSocio.CurrentRow.Cells[0].Value.ToString() + "'";
+            
+            comando.Connection = conexion;
+            comando.CommandText = query;
 
-        private void dgvSocio_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
+            string temporal = comando.ExecuteScalar().ToString();
+
             ModificarUsuario modificar = new ModificarUsuario();
 
-            modificar.socioIDLabel2.Text = "";
+            modificar.lblID.Text = temporal;
             modificar.txtNombre.Text = dgvSocio.CurrentRow.Cells[0].Value.ToString();
             modificar.txtDireccion.Text = dgvSocio.CurrentRow.Cells[2].Value.ToString();
             modificar.txtDNI.Text = dgvSocio.CurrentRow.Cells[1].Value.ToString();
@@ -72,6 +76,18 @@ Persist Security Info=False;");
             modificar.txtTelefono.Text = dgvSocio.CurrentRow.Cells[4].Value.ToString();
 
             modificar.ShowDialog();
+
+            conexion.Close();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            busqueda();
+        }
+
+        private void dgvSocio_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            modificar();
         }
 
         private void dgvSocio_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -86,6 +102,11 @@ Persist Security Info=False;");
         private void txtBusqueda_TextChanged(object sender, EventArgs e)
         {
             busqueda();
+        }
+
+        private void btnAbrir_Click(object sender, EventArgs e)
+        {
+            modificar();
         }
     }
 }
