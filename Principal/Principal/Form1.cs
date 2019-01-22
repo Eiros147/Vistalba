@@ -36,14 +36,17 @@ Persist Security Info=False;");
         {
             // TODO: esta línea de código carga datos en la tabla 'club_VistalbaDataSet.Socio' Puede moverla o quitarla según sea necesario.
             this.socioTableAdapter.Fill(this.club_VistalbaDataSet.Socio);
+            this.dgvSocio.EndEdit();
             this.Refresh();
+            this.dgvSocio.Refresh();
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             NuevoUsuario nuform = new NuevoUsuario();
             nuform.ShowDialog();
-            dgvSocio.Refresh();
+            this.dgvSocio.EndEdit();
+            this.dgvSocio.Refresh();
         }
 
         void busqueda()
@@ -102,11 +105,18 @@ Persist Security Info=False;");
         private void txtBusqueda_TextChanged(object sender, EventArgs e)
         {
             busqueda();
+            this.dgvSocio.EndEdit();
         }
 
         private void btnAbrir_Click(object sender, EventArgs e)
         {
             modificar();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Refresh();
+            this.dgvSocio.Refresh();
         }
     }
 }
