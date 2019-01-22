@@ -43,7 +43,7 @@ Persist Security Info=False;");
         {
             NuevoUsuario nuform = new NuevoUsuario();
             nuform.ShowDialog();
-            this.Refresh();
+            dgvSocio.Refresh();
         }
 
         void busqueda()

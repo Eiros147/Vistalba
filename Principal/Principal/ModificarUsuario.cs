@@ -75,7 +75,7 @@ Persist Security Info=False;";
                 conModificar.Open();
                 OleDbCommand command = new OleDbCommand();
                 command.Connection = conModificar;
-                string query = "UPDATE Socio SET socioNombre ='" + txtNombre.Text + "', socioDNI ='" + txtDNI.Text + "', socioDireccion ='" + txtDireccion.Text + "', socioMail ='" + txtMail.Text + "', socioTelefono ='" + txtTelefono.Text + "', socioCelular ='" + txtCelular.Text + "' WHERE socioID=";
+                string query = "UPDATE Socio SET socioNombre ='" + txtNombre.Text + "', socioDNI ='" + txtDNI.Text + "', socioDireccion ='" + txtDireccion.Text + "', socioMail ='" + txtMail.Text + "', socioTelefono ='" + txtTelefono.Text + "', socioCelular ='" + txtCelular.Text + "' WHERE socioID='" + lblID.ToString() + "'";
                 command.CommandText = query;
 
                 command.ExecuteNonQuery();
