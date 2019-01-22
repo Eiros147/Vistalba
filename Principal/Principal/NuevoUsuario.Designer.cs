@@ -314,7 +314,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(349, 410);
+            this.ClientSize = new System.Drawing.Size(356, 418);
             this.Controls.Add(this.gboxGrupo);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);

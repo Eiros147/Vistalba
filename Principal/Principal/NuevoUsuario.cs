@@ -36,10 +36,12 @@ Persist Security Info=False;";
         {
             // TODO: esta línea de código carga datos en la tabla 'club_VistalbaDataSet.Socio' Puede moverla o quitarla según sea necesario.
             //this.socioTableAdapter.Fill(this.club_VistalbaDataSet.Socio);
+
+
             try
             {
                 conNuevo.Open();
-                string query = "SELECT TOP 2 socioID FROM Socio ORDER BY socioID DESC ";
+                string query = "SELECT TOP 1 socioID FROM Socio ORDER BY socioID DESC ";
                 OleDbCommand command = new OleDbCommand(query,conNuevo);
 
                 OleDbDataReader lector = command.ExecuteReader();
@@ -92,12 +94,7 @@ Persist Security Info=False;";
         {
             guardar();
 
-            txtNombre.Enabled = false;
-            txtDireccion.Enabled = false;
-            txtCelular.Enabled = false;
-            txtDNI.Enabled = false;
-            txtMail.Enabled = false;
-            txtTelefono.Enabled = false;
+            this.Refresh();
         }
 
         private void guardar()

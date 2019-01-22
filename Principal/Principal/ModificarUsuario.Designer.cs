@@ -278,17 +278,22 @@
             // 
             // dtpNacimiento
             // 
+            this.dtpNacimiento.CustomFormat = "dd-MM-yyyy";
             this.dtpNacimiento.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.socioBindingSource, "socioFechaNac", true));
             this.dtpNacimiento.Enabled = false;
             this.dtpNacimiento.Location = new System.Drawing.Point(130, 188);
+            this.dtpNacimiento.MaxDate = new System.DateTime(2019, 12, 25, 23, 59, 59, 0);
+            this.dtpNacimiento.MinDate = new System.DateTime(1950, 1, 1, 0, 0, 0, 0);
             this.dtpNacimiento.Name = "dtpNacimiento";
             this.dtpNacimiento.Size = new System.Drawing.Size(200, 20);
             this.dtpNacimiento.TabIndex = 16;
             // 
             // dtpIngreso
             // 
+            this.dtpIngreso.CustomFormat = "dd-MM-yyyy";
             this.dtpIngreso.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.socioBindingSource, "socioFechaIng", true));
             this.dtpIngreso.Enabled = false;
+            this.dtpIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpIngreso.Location = new System.Drawing.Point(130, 214);
             this.dtpIngreso.Name = "dtpIngreso";
             this.dtpIngreso.Size = new System.Drawing.Size(200, 20);
@@ -296,8 +301,10 @@
             // 
             // dtpPago
             // 
+            this.dtpPago.CustomFormat = "dd-MM-yyyy";
             this.dtpPago.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.socioBindingSource, "socioFechaUltPago", true));
             this.dtpPago.Enabled = false;
+            this.dtpPago.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpPago.Location = new System.Drawing.Point(130, 240);
             this.dtpPago.Name = "dtpPago";
             this.dtpPago.Size = new System.Drawing.Size(200, 20);
@@ -377,11 +384,13 @@
             // 
             // cbCategoria
             // 
+            this.cbCategoria.Enabled = false;
             this.cbCategoria.FormattingEnabled = true;
             this.cbCategoria.Location = new System.Drawing.Point(130, 292);
             this.cbCategoria.Name = "cbCategoria";
             this.cbCategoria.Size = new System.Drawing.Size(281, 21);
             this.cbCategoria.TabIndex = 33;
+            this.cbCategoria.Visible = false;
             // 
             // ModificarUsuario
             // 
@@ -438,7 +447,6 @@
         private System.Windows.Forms.DateTimePicker dtpIngreso;
         private System.Windows.Forms.DateTimePicker dtpPago;
         private Club_VistalbaDataSetTableAdapters.GrupoTableAdapter grupoTableAdapter;
-        private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.BindingSource grupoBindingSource;
         private System.Windows.Forms.TextBox txtGrupo;
         private System.Windows.Forms.Button button2;
@@ -453,5 +461,6 @@
         private System.Windows.Forms.Button btnGrupo;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.ComboBox cbCategoria;
+        public System.Windows.Forms.Label lblID;
     }
 }

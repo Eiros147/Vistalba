@@ -68,14 +68,14 @@ Persist Security Info=False;";
 
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
+        private void guardar()
         {
             try
             {
                 conModificar.Open();
                 OleDbCommand command = new OleDbCommand();
                 command.Connection = conModificar;
-                string query = "UPDATE Socio SET socioNombre ='" + txtNombre + "', socioDNI ='" + txtDNI + "', socioDireccion ='" + txtDireccion + "', socioMail ='" + txtMail + "', socioTelefono ='" + txtTelefono + "', socioCelular ='" + txtCelular + "', socioFechaNac ='" + dtpNacimiento + "'";
+                string query = "UPDATE Socio SET socioNombre ='" + txtNombre.Text + "', socioDNI ='" + txtDNI.Text + "', socioDireccion ='" + txtDireccion.Text + "', socioMail ='" + txtMail.Text + "', socioTelefono ='" + txtTelefono.Text + "', socioCelular ='" + txtCelular.Text + "' WHERE socioID=";
                 command.CommandText = query;
 
                 command.ExecuteNonQuery();
@@ -86,6 +86,11 @@ Persist Security Info=False;";
             {
                 MessageBox.Show("Error al guardar " + ex.Message);
             }
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            guardar();
         }
     }
 }
