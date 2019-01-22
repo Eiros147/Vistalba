@@ -41,7 +41,7 @@ Persist Security Info=False;";
             //this.grupoTableAdapter.Fill(this.club_VistalbaDataSet.Grupo);
             // TODO: esta línea de código carga datos en la tabla 'club_VistalbaDataSet.Socio' Puede moverla o quitarla según sea necesario.
             //this.socioTableAdapter.Fill(this.club_VistalbaDataSet.Socio);
-
+            cargargenero();
         }
 
         private void btnHabilitar_Click(object sender, EventArgs e)
@@ -70,12 +70,23 @@ Persist Security Info=False;";
 
         private void guardar()
         {
+            int flag;
+            if (rbHombre.Checked)
+            {
+                flag = 1;
+            }
+            else
+            {
+                flag = 0;
+            }
+
+
             try
             {
                 conModificar.Open();
                 OleDbCommand command = new OleDbCommand();
                 command.Connection = conModificar;
-                string query = "UPDATE Socio SET socioNombre ='" + txtNombre.Text + "', socioDNI ='" + txtDNI.Text + "', socioDireccion ='" + txtDireccion.Text + "', socioMail ='" + txtMail.Text + "', socioTelefono ='" + txtTelefono.Text + "', socioCelular ='" + txtCelular.Text + "' WHERE socioID='" + lblID.ToString() + "'";
+                string query = "UPDATE Socio SET socioNombre ='" + txtNombre.Text + "', socioDNI ='" + txtDNI.Text + "', socioDireccion ='" + txtDireccion.Text + "', socioMail ='" + txtMail.Text + "', socioTelefono ='" + txtTelefono.Text + "', socioCelular ='" + txtCelular.Text + "', socioGenero ='" + flag + "' WHERE socioID='" + lblID.ToString() + "'";
                 command.CommandText = query;
 
                 command.ExecuteNonQuery();
@@ -90,6 +101,38 @@ Persist Security Info=False;";
             {
                 conModificar.Close();
                 conModificar.Dispose();
+            }
+        }
+
+        private void cargargenero()
+        {
+            try
+            {
+                conModificar.Open();
+                OleDbCommand command = new OleDbCommand();
+                command.Connection = conModificar;
+                string query = "SELECT socioGenero FROM Socio WHERE socioID='" + lblID.Text + "'";
+                command.CommandText = query;
+
+                string temporal = command.ExecuteScalar().ToString();
+
+                MessageBox.Show(temporal);
+
+                /*if ()
+                {
+                    if (e.Value is bool)
+                    {
+                        bool value = (bool)e.Value;
+                        e.Value = (value) ? "Hombre" : "Mujer";
+                        e.FormattingApplied = true;
+                    }
+                }*/
+
+                conModificar.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al conectarse" + ex);
             }
         }
 

@@ -41,6 +41,7 @@
             System.Windows.Forms.Label socioFechaUltPagoLabel;
             System.Windows.Forms.Label catIdLabel;
             System.Windows.Forms.Label grupoApellidoLabel;
+            System.Windows.Forms.Label label1;
             this.club_VistalbaDataSet = new Principal.Club_VistalbaDataSet();
             this.socioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.socioTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.SocioTableAdapter();
@@ -64,6 +65,11 @@
             this.btnGrupo = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.cbCategoria = new System.Windows.Forms.ComboBox();
+            this.rbHombre = new System.Windows.Forms.RadioButton();
+            this.rbMujer = new System.Windows.Forms.RadioButton();
+            this.lblNotas = new System.Windows.Forms.Label();
+            this.txtNotas = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             socioIDLabel = new System.Windows.Forms.Label();
             socioNombreLabel = new System.Windows.Forms.Label();
             socioDNILabel = new System.Windows.Forms.Label();
@@ -76,9 +82,11 @@
             socioFechaUltPagoLabel = new System.Windows.Forms.Label();
             catIdLabel = new System.Windows.Forms.Label();
             grupoApellidoLabel = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.socioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grupoBindingSource)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // socioIDLabel
@@ -147,7 +155,7 @@
             // socioFechaNacLabel
             // 
             socioFechaNacLabel.AutoSize = true;
-            socioFechaNacLabel.Location = new System.Drawing.Point(12, 192);
+            socioFechaNacLabel.Location = new System.Drawing.Point(12, 233);
             socioFechaNacLabel.Name = "socioFechaNacLabel";
             socioFechaNacLabel.Size = new System.Drawing.Size(63, 13);
             socioFechaNacLabel.TabIndex = 15;
@@ -156,7 +164,7 @@
             // socioFechaIngLabel
             // 
             socioFechaIngLabel.AutoSize = true;
-            socioFechaIngLabel.Location = new System.Drawing.Point(12, 218);
+            socioFechaIngLabel.Location = new System.Drawing.Point(12, 259);
             socioFechaIngLabel.Name = "socioFechaIngLabel";
             socioFechaIngLabel.Size = new System.Drawing.Size(58, 13);
             socioFechaIngLabel.TabIndex = 17;
@@ -165,7 +173,7 @@
             // socioFechaUltPagoLabel
             // 
             socioFechaUltPagoLabel.AutoSize = true;
-            socioFechaUltPagoLabel.Location = new System.Drawing.Point(12, 244);
+            socioFechaUltPagoLabel.Location = new System.Drawing.Point(12, 285);
             socioFechaUltPagoLabel.Name = "socioFechaUltPagoLabel";
             socioFechaUltPagoLabel.Size = new System.Drawing.Size(84, 13);
             socioFechaUltPagoLabel.TabIndex = 19;
@@ -174,7 +182,7 @@
             // catIdLabel
             // 
             catIdLabel.AutoSize = true;
-            catIdLabel.Location = new System.Drawing.Point(12, 295);
+            catIdLabel.Location = new System.Drawing.Point(12, 432);
             catIdLabel.Name = "catIdLabel";
             catIdLabel.Size = new System.Drawing.Size(55, 13);
             catIdLabel.TabIndex = 23;
@@ -184,7 +192,7 @@
             // grupoApellidoLabel
             // 
             grupoApellidoLabel.AutoSize = true;
-            grupoApellidoLabel.Location = new System.Drawing.Point(12, 269);
+            grupoApellidoLabel.Location = new System.Drawing.Point(12, 406);
             grupoApellidoLabel.Name = "grupoApellidoLabel";
             grupoApellidoLabel.Size = new System.Drawing.Size(39, 13);
             grupoApellidoLabel.TabIndex = 25;
@@ -235,6 +243,7 @@
             this.txtDNI.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.socioBindingSource, "socioDNI", true));
             this.txtDNI.Enabled = false;
             this.txtDNI.Location = new System.Drawing.Point(130, 58);
+            this.txtDNI.MaxLength = 8;
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.Size = new System.Drawing.Size(281, 20);
             this.txtDNI.TabIndex = 6;
@@ -263,6 +272,7 @@
             this.txtTelefono.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.socioBindingSource, "socioTelefono", true));
             this.txtTelefono.Enabled = false;
             this.txtTelefono.Location = new System.Drawing.Point(130, 136);
+            this.txtTelefono.MaxLength = 15;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(281, 20);
             this.txtTelefono.TabIndex = 12;
@@ -272,6 +282,7 @@
             this.txtCelular.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.socioBindingSource, "socioCelular", true));
             this.txtCelular.Enabled = false;
             this.txtCelular.Location = new System.Drawing.Point(130, 162);
+            this.txtCelular.MaxLength = 15;
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(281, 20);
             this.txtCelular.TabIndex = 14;
@@ -281,7 +292,7 @@
             this.dtpNacimiento.CustomFormat = "dd-MM-yyyy";
             this.dtpNacimiento.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.socioBindingSource, "socioFechaNac", true));
             this.dtpNacimiento.Enabled = false;
-            this.dtpNacimiento.Location = new System.Drawing.Point(130, 188);
+            this.dtpNacimiento.Location = new System.Drawing.Point(130, 229);
             this.dtpNacimiento.MaxDate = new System.DateTime(2019, 12, 25, 23, 59, 59, 0);
             this.dtpNacimiento.MinDate = new System.DateTime(1950, 1, 1, 0, 0, 0, 0);
             this.dtpNacimiento.Name = "dtpNacimiento";
@@ -294,7 +305,7 @@
             this.dtpIngreso.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.socioBindingSource, "socioFechaIng", true));
             this.dtpIngreso.Enabled = false;
             this.dtpIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpIngreso.Location = new System.Drawing.Point(130, 214);
+            this.dtpIngreso.Location = new System.Drawing.Point(130, 255);
             this.dtpIngreso.Name = "dtpIngreso";
             this.dtpIngreso.Size = new System.Drawing.Size(200, 20);
             this.dtpIngreso.TabIndex = 18;
@@ -305,7 +316,7 @@
             this.dtpPago.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.socioBindingSource, "socioFechaUltPago", true));
             this.dtpPago.Enabled = false;
             this.dtpPago.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpPago.Location = new System.Drawing.Point(130, 240);
+            this.dtpPago.Location = new System.Drawing.Point(130, 281);
             this.dtpPago.Name = "dtpPago";
             this.dtpPago.Size = new System.Drawing.Size(200, 20);
             this.dtpPago.TabIndex = 20;
@@ -328,7 +339,7 @@
             // 
             this.txtGrupo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.grupoBindingSource, "grupoApellido", true));
             this.txtGrupo.Enabled = false;
-            this.txtGrupo.Location = new System.Drawing.Point(130, 266);
+            this.txtGrupo.Location = new System.Drawing.Point(130, 403);
             this.txtGrupo.Name = "txtGrupo";
             this.txtGrupo.Size = new System.Drawing.Size(281, 20);
             this.txtGrupo.TabIndex = 26;
@@ -336,7 +347,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(336, 331);
+            this.button2.Location = new System.Drawing.Point(336, 456);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 34);
             this.button2.TabIndex = 28;
@@ -346,7 +357,7 @@
             // 
             // btnHabilitar
             // 
-            this.btnHabilitar.Location = new System.Drawing.Point(12, 331);
+            this.btnHabilitar.Location = new System.Drawing.Point(12, 456);
             this.btnHabilitar.Name = "btnHabilitar";
             this.btnHabilitar.Size = new System.Drawing.Size(75, 34);
             this.btnHabilitar.TabIndex = 29;
@@ -356,7 +367,7 @@
             // 
             // btnSalud
             // 
-            this.btnSalud.Location = new System.Drawing.Point(93, 331);
+            this.btnSalud.Location = new System.Drawing.Point(93, 456);
             this.btnSalud.Name = "btnSalud";
             this.btnSalud.Size = new System.Drawing.Size(75, 34);
             this.btnSalud.TabIndex = 30;
@@ -365,7 +376,7 @@
             // 
             // btnGrupo
             // 
-            this.btnGrupo.Location = new System.Drawing.Point(174, 331);
+            this.btnGrupo.Location = new System.Drawing.Point(174, 456);
             this.btnGrupo.Name = "btnGrupo";
             this.btnGrupo.Size = new System.Drawing.Size(75, 34);
             this.btnGrupo.TabIndex = 31;
@@ -374,7 +385,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(255, 331);
+            this.btnGuardar.Location = new System.Drawing.Point(255, 456);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 34);
             this.btnGuardar.TabIndex = 32;
@@ -386,17 +397,83 @@
             // 
             this.cbCategoria.Enabled = false;
             this.cbCategoria.FormattingEnabled = true;
-            this.cbCategoria.Location = new System.Drawing.Point(130, 292);
+            this.cbCategoria.Location = new System.Drawing.Point(130, 429);
             this.cbCategoria.Name = "cbCategoria";
             this.cbCategoria.Size = new System.Drawing.Size(281, 21);
             this.cbCategoria.TabIndex = 33;
             this.cbCategoria.Visible = false;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(12, 191);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(45, 13);
+            label1.TabIndex = 34;
+            label1.Text = "Genero:";
+            // 
+            // rbHombre
+            // 
+            this.rbHombre.AutoSize = true;
+            this.rbHombre.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.socioBindingSource, "socioGenero", true));
+            this.rbHombre.Location = new System.Drawing.Point(0, 12);
+            this.rbHombre.Name = "rbHombre";
+            this.rbHombre.Size = new System.Drawing.Size(62, 17);
+            this.rbHombre.TabIndex = 35;
+            this.rbHombre.TabStop = true;
+            this.rbHombre.Text = "Hombre";
+            this.rbHombre.UseVisualStyleBackColor = true;
+            // 
+            // rbMujer
+            // 
+            this.rbMujer.AutoSize = true;
+            this.rbMujer.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.socioBindingSource, "socioGenero", true));
+            this.rbMujer.Location = new System.Drawing.Point(68, 12);
+            this.rbMujer.Name = "rbMujer";
+            this.rbMujer.Size = new System.Drawing.Size(51, 17);
+            this.rbMujer.TabIndex = 36;
+            this.rbMujer.TabStop = true;
+            this.rbMujer.Text = "Mujer";
+            this.rbMujer.UseVisualStyleBackColor = true;
+            // 
+            // lblNotas
+            // 
+            this.lblNotas.AutoSize = true;
+            this.lblNotas.Location = new System.Drawing.Point(12, 311);
+            this.lblNotas.Name = "lblNotas";
+            this.lblNotas.Size = new System.Drawing.Size(35, 13);
+            this.lblNotas.TabIndex = 37;
+            this.lblNotas.Text = "Notas";
+            // 
+            // txtNotas
+            // 
+            this.txtNotas.Location = new System.Drawing.Point(130, 311);
+            this.txtNotas.Multiline = true;
+            this.txtNotas.Name = "txtNotas";
+            this.txtNotas.Size = new System.Drawing.Size(281, 86);
+            this.txtNotas.TabIndex = 38;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rbMujer);
+            this.groupBox1.Controls.Add(this.rbHombre);
+            this.groupBox1.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.socioBindingSource, "socioGenero", true));
+            this.groupBox1.Location = new System.Drawing.Point(130, 188);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(200, 35);
+            this.groupBox1.TabIndex = 39;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
             // ModificarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(431, 385);
+            this.ClientSize = new System.Drawing.Size(425, 502);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.txtNotas);
+            this.Controls.Add(this.lblNotas);
+            this.Controls.Add(label1);
             this.Controls.Add(this.cbCategoria);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnGrupo);
@@ -432,6 +509,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.socioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grupoBindingSource)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -462,5 +541,10 @@
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.ComboBox cbCategoria;
         public System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.RadioButton rbHombre;
+        private System.Windows.Forms.RadioButton rbMujer;
+        private System.Windows.Forms.Label lblNotas;
+        private System.Windows.Forms.TextBox txtNotas;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

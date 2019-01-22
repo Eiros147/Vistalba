@@ -34,6 +34,8 @@ Persist Security Info=False;");
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'club_VistalbaDataSet.Salud' Puede moverla o quitarla según sea necesario.
+            this.saludTableAdapter.Fill(this.club_VistalbaDataSet.Salud);
             // TODO: esta línea de código carga datos en la tabla 'club_VistalbaDataSet.Socio' Puede moverla o quitarla según sea necesario.
             this.socioTableAdapter.Fill(this.club_VistalbaDataSet.Socio);
             this.dgvSocio.EndEdit();
@@ -52,11 +54,12 @@ Persist Security Info=False;");
         void busqueda()
         {
             DataTable dtDatos = new DataTable();
-            string cadena = ("SELECT socioNombre, socioDNI, socioDireccion, socioMail, socioTelefono, socioCelular, socioFechaNac, socioFechaIng, socioFechaUltPago FROM Socio WHERE socioNombre LIKE '" + txtBusqueda.Text + "%'");
+            string cadena = ("SELECT socioNombre, socioDNI, socioDireccion, socioMail, socioTelefono, socioCelular, socioFechaNac, socioFechaIng, socioFechaUltPago, socioGenero FROM Socio WHERE socioNombre LIKE '" + txtBusqueda.Text + "%'");
             OleDbDataAdapter data = new OleDbDataAdapter(cadena, conexion);
             data.Fill(dtDatos);
             dgvSocio.DataSource = dtDatos;
         }
+
 
         void modificar()
         {
@@ -77,6 +80,7 @@ Persist Security Info=False;");
             modificar.txtCelular.Text = dgvSocio.CurrentRow.Cells[5].Value.ToString();
             modificar.txtMail.Text = dgvSocio.CurrentRow.Cells[3].Value.ToString();
             modificar.txtTelefono.Text = dgvSocio.CurrentRow.Cells[4].Value.ToString();
+            
 
             modificar.ShowDialog();
 
@@ -117,6 +121,25 @@ Persist Security Info=False;");
         {
             this.Refresh();
             this.dgvSocio.Refresh();
+        }
+
+        private void dgvSocio_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if(e.ColumnIndex == 6)
+            {
+                if(e.Value is bool)
+                {
+                    bool value = (bool)e.Value;
+                    e.Value = (value) ? "Hombre" : "Mujer";
+                    e.FormattingApplied = true;
+                }
+            }
+        }
+
+        private void smiActividades_Click(object sender, EventArgs e)
+        {
+            Actividades nuacts = new Actividades();
+            nuacts.ShowDialog();
         }
     }
 }
