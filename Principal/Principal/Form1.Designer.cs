@@ -52,6 +52,9 @@
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.smiActividades = new System.Windows.Forms.ToolStripMenuItem();
+            this.smiProfesionales = new System.Windows.Forms.ToolStripMenuItem();
+            this.smiGrupos = new System.Windows.Forms.ToolStripMenuItem();
+            this.smiCategorias = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.socioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSocio)).BeginInit();
@@ -229,7 +232,10 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.smiActividades});
+            this.smiActividades,
+            this.smiProfesionales,
+            this.smiGrupos,
+            this.smiCategorias});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(925, 24);
@@ -242,6 +248,24 @@
             this.smiActividades.Size = new System.Drawing.Size(80, 20);
             this.smiActividades.Text = "Actividades";
             this.smiActividades.Click += new System.EventHandler(this.smiActividades_Click);
+            // 
+            // smiProfesionales
+            // 
+            this.smiProfesionales.Name = "smiProfesionales";
+            this.smiProfesionales.Size = new System.Drawing.Size(89, 20);
+            this.smiProfesionales.Text = "Profesionales";
+            // 
+            // smiGrupos
+            // 
+            this.smiGrupos.Name = "smiGrupos";
+            this.smiGrupos.Size = new System.Drawing.Size(57, 20);
+            this.smiGrupos.Text = "Grupos";
+            // 
+            // smiCategorias
+            // 
+            this.smiCategorias.Name = "smiCategorias";
+            this.smiCategorias.Size = new System.Drawing.Size(75, 20);
+            this.smiCategorias.Text = "Categorias";
             // 
             // Form1
             // 
@@ -294,6 +318,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem smiActividades;
+        private System.Windows.Forms.ToolStripMenuItem smiProfesionales;
+        private System.Windows.Forms.ToolStripMenuItem smiGrupos;
+        private System.Windows.Forms.ToolStripMenuItem smiCategorias;
     }
 }
 

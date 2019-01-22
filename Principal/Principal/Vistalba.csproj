@@ -66,6 +66,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModificarActividad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificarActividad.Designer.cs">
+      <DependentUpon>ModificarActividad.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModificarSalud.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,12 @@
     </Compile>
     <Compile Include="ModificarUsuario.Designer.cs">
       <DependentUpon>ModificarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NuevaActividad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NuevaActividad.Designer.cs">
+      <DependentUpon>NuevaActividad.cs</DependentUpon>
     </Compile>
     <Compile Include="NuevoSalud.cs">
       <SubType>Form</SubType>
@@ -104,11 +116,17 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ModificarActividad.resx">
+      <DependentUpon>ModificarActividad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ModificarSalud.resx">
       <DependentUpon>ModificarSalud.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModificarUsuario.resx">
       <DependentUpon>ModificarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NuevaActividad.resx">
+      <DependentUpon>NuevaActividad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NuevoSalud.resx">
       <DependentUpon>NuevoSalud.cs</DependentUpon>

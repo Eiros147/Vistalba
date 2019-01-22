@@ -35,24 +35,25 @@
             this.tableAdapterManager = new Principal.Club_VistalbaDataSetTableAdapters.TableAdapterManager();
             this.profesionalBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.profesionalTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.ProfesionalTableAdapter();
-            this.profesionalActividadesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.profesionalBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.profesionalActividadesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.actividadesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.clubVistalbaDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.actividadesBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.dgvActividades = new System.Windows.Forms.DataGridView();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.profesionalActividadesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.profesionalActividadesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.actividadesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profesionalBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.profesionalActividadesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profesionalBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.profesionalActividadesBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.actividadesBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clubVistalbaDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.actividadesBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvActividades)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profesionalActividadesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profesionalActividadesBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // club_VistalbaDataSet
@@ -90,20 +91,10 @@
             // 
             this.profesionalTableAdapter.ClearBeforeFill = true;
             // 
-            // profesionalActividadesBindingSource
-            // 
-            this.profesionalActividadesBindingSource.DataMember = "ProfesionalActividades";
-            this.profesionalActividadesBindingSource.DataSource = this.profesionalBindingSource;
-            // 
             // profesionalBindingSource1
             // 
             this.profesionalBindingSource1.DataMember = "Profesional";
             this.profesionalBindingSource1.DataSource = this.club_VistalbaDataSet;
-            // 
-            // profesionalActividadesBindingSource1
-            // 
-            this.profesionalActividadesBindingSource1.DataMember = "ProfesionalActividades";
-            this.profesionalActividadesBindingSource1.DataSource = this.profesionalBindingSource;
             // 
             // actividadesBindingSource1
             // 
@@ -127,6 +118,7 @@
             this.dgvActividades.Name = "dgvActividades";
             this.dgvActividades.Size = new System.Drawing.Size(764, 343);
             this.dgvActividades.TabIndex = 0;
+            this.dgvActividades.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvActividades_CellClick);
             // 
             // txtBusqueda
             // 
@@ -136,11 +128,32 @@
             this.txtBusqueda.TabIndex = 1;
             this.txtBusqueda.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Location = new System.Drawing.Point(12, 376);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(90, 32);
+            this.btnNuevo.TabIndex = 2;
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // profesionalActividadesBindingSource
+            // 
+            this.profesionalActividadesBindingSource.DataMember = "ProfesionalActividades";
+            this.profesionalActividadesBindingSource.DataSource = this.profesionalBindingSource;
+            // 
+            // profesionalActividadesBindingSource1
+            // 
+            this.profesionalActividadesBindingSource1.DataMember = "ProfesionalActividades";
+            this.profesionalActividadesBindingSource1.DataSource = this.profesionalBindingSource;
+            // 
             // Actividades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(788, 415);
+            this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.txtBusqueda);
             this.Controls.Add(this.dgvActividades);
             this.Name = "Actividades";
@@ -149,13 +162,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.actividadesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profesionalBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.profesionalActividadesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profesionalBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.profesionalActividadesBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.actividadesBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clubVistalbaDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.actividadesBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvActividades)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profesionalActividadesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profesionalActividadesBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -177,5 +190,6 @@
         private System.Windows.Forms.BindingSource actividadesBindingSource2;
         private System.Windows.Forms.DataGridView dgvActividades;
         private System.Windows.Forms.TextBox txtBusqueda;
+        private System.Windows.Forms.Button btnNuevo;
     }
 }

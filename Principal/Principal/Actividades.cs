@@ -68,5 +68,17 @@ Persist Security Info=False;";
         {
             busqueda();
         }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            NuevaActividad nuovo = new NuevaActividad();
+            nuovo.ShowDialog();
+        }
+
+        private void dgvActividades_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ModificarActividad neu = new ModificarActividad();
+            neu.ShowDialog();
+        }
     }
 }
