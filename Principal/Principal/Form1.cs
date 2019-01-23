@@ -29,7 +29,6 @@ Persist Security Info=False;");
             this.Validate();
             this.socioBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.club_VistalbaDataSet);
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -60,7 +59,6 @@ Persist Security Info=False;");
             dgvSocio.DataSource = dtDatos;
         }
 
-
         void modificar()
         {
             conexion.Open();
@@ -81,7 +79,6 @@ Persist Security Info=False;");
             modificar.txtMail.Text = dgvSocio.CurrentRow.Cells[3].Value.ToString();
             modificar.txtTelefono.Text = dgvSocio.CurrentRow.Cells[4].Value.ToString();
             
-
             modificar.ShowDialog();
 
             conexion.Close();
