@@ -20,7 +20,7 @@ namespace Principal
         public NuevoUsuario( )
         {
             InitializeComponent();
-            conNuevo.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Mi PC\Documents\Proyecto Club\Vistalba\Vistalba\Principal\Principal\Club Vistalba.accdb;
+            conNuevo.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Club Vistalba.accdb;
 Persist Security Info=False;";
         }
 

@@ -20,7 +20,7 @@ namespace Principal
             InitializeComponent();
         }
 
-        OleDbConnection conexion = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Mi PC\Documents\Proyecto Club\Vistalba\Vistalba\Principal\Principal\Club Vistalba.accdb;
+        OleDbConnection conexion = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Club Vistalba.accdb;
 Persist Security Info=False;");
         OleDbCommand comando = new OleDbCommand();
 

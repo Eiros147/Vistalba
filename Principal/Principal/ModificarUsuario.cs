@@ -18,7 +18,7 @@ namespace Principal
         public ModificarUsuario()
         {
             InitializeComponent();
-            conModificar.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|Principal\Club Vistalba.accdb;
+            conModificar.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Club Vistalba.accdb;
 Persist Security Info=False;";
         }
 
