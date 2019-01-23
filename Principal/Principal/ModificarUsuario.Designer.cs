@@ -199,6 +199,15 @@
             grupoApellidoLabel.Text = "Grupo:";
             grupoApellidoLabel.Visible = false;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(12, 191);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(45, 13);
+            label1.TabIndex = 34;
+            label1.Text = "Genero:";
+            // 
             // club_VistalbaDataSet
             // 
             this.club_VistalbaDataSet.DataSetName = "Club_VistalbaDataSet";
@@ -220,6 +229,7 @@
             this.tableAdapterManager.CategoriaTableAdapter = null;
             this.tableAdapterManager.CuotaTableAdapter = null;
             this.tableAdapterManager.GrupoTableAdapter = this.grupoTableAdapter;
+            this.tableAdapterManager.MensualTableAdapter = null;
             this.tableAdapterManager.ProfesionalTableAdapter = null;
             this.tableAdapterManager.SaludTableAdapter = null;
             this.tableAdapterManager.SocioTableAdapter = this.socioTableAdapter;
@@ -403,15 +413,6 @@
             this.cbCategoria.TabIndex = 33;
             this.cbCategoria.Visible = false;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(12, 191);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(45, 13);
-            label1.TabIndex = 34;
-            label1.Text = "Genero:";
-            // 
             // rbHombre
             // 
             this.rbHombre.AutoSize = true;
@@ -544,7 +545,7 @@
         private System.Windows.Forms.RadioButton rbHombre;
         private System.Windows.Forms.RadioButton rbMujer;
         private System.Windows.Forms.Label lblNotas;
-        private System.Windows.Forms.TextBox txtNotas;
         private System.Windows.Forms.GroupBox groupBox1;
+        public System.Windows.Forms.TextBox txtNotas;
     }
 }

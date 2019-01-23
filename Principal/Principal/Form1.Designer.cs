@@ -34,11 +34,6 @@
             this.socioTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.SocioTableAdapter();
             this.tableAdapterManager = new Principal.Club_VistalbaDataSetTableAdapters.TableAdapterManager();
             this.dgvSocio = new System.Windows.Forms.DataGridView();
-            this.btnNuevo = new System.Windows.Forms.Button();
-            this.btnAbrir = new System.Windows.Forms.Button();
-            this.txtBusqueda = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.saludTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.SaludTableAdapter();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,13 +44,18 @@
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.btnAbrir = new System.Windows.Forms.Button();
+            this.txtBusqueda = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.saludTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.SaludTableAdapter();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.smiActividades = new System.Windows.Forms.ToolStripMenuItem();
             this.smiProfesionales = new System.Windows.Forms.ToolStripMenuItem();
             this.smiGrupos = new System.Windows.Forms.ToolStripMenuItem();
             this.smiCategorias = new System.Windows.Forms.ToolStripMenuItem();
-            this.socioSaludBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.smiPagos = new System.Windows.Forms.ToolStripMenuItem();
+            this.socioSaludBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.socioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSocio)).BeginInit();
@@ -84,6 +84,7 @@
             this.tableAdapterManager.CategoriaTableAdapter = null;
             this.tableAdapterManager.CuotaTableAdapter = null;
             this.tableAdapterManager.GrupoTableAdapter = null;
+            this.tableAdapterManager.MensualTableAdapter = null;
             this.tableAdapterManager.ProfesionalTableAdapter = null;
             this.tableAdapterManager.SaludTableAdapter = null;
             this.tableAdapterManager.SocioTableAdapter = this.socioTableAdapter;
@@ -116,52 +117,6 @@
             this.dgvSocio.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSocio_CellContentClick);
             this.dgvSocio.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSocio_CellContentDoubleClick);
             this.dgvSocio.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvSocio_CellFormatting);
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnNuevo.Location = new System.Drawing.Point(12, 379);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(75, 39);
-            this.btnNuevo.TabIndex = 2;
-            this.btnNuevo.Text = "Nuevo";
-            this.btnNuevo.UseVisualStyleBackColor = true;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
-            // btnAbrir
-            // 
-            this.btnAbrir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnAbrir.Location = new System.Drawing.Point(108, 379);
-            this.btnAbrir.Name = "btnAbrir";
-            this.btnAbrir.Size = new System.Drawing.Size(75, 39);
-            this.btnAbrir.TabIndex = 3;
-            this.btnAbrir.Text = "Abrir";
-            this.btnAbrir.UseVisualStyleBackColor = true;
-            this.btnAbrir.Click += new System.EventHandler(this.btnAbrir_Click);
-            // 
-            // txtBusqueda
-            // 
-            this.txtBusqueda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBusqueda.Location = new System.Drawing.Point(576, 389);
-            this.txtBusqueda.Name = "txtBusqueda";
-            this.txtBusqueda.Size = new System.Drawing.Size(337, 20);
-            this.txtBusqueda.TabIndex = 4;
-            this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(224, 386);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(69, 32);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // saludTableAdapter
-            // 
-            this.saludTableAdapter.ClearBeforeFill = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -225,6 +180,52 @@
             this.dataGridViewTextBoxColumn10.HeaderText = "Fecha Ult Pago";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnNuevo.Location = new System.Drawing.Point(12, 379);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(75, 39);
+            this.btnNuevo.TabIndex = 2;
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // btnAbrir
+            // 
+            this.btnAbrir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnAbrir.Location = new System.Drawing.Point(108, 379);
+            this.btnAbrir.Name = "btnAbrir";
+            this.btnAbrir.Size = new System.Drawing.Size(75, 39);
+            this.btnAbrir.TabIndex = 3;
+            this.btnAbrir.Text = "Abrir";
+            this.btnAbrir.UseVisualStyleBackColor = true;
+            this.btnAbrir.Click += new System.EventHandler(this.btnAbrir_Click);
+            // 
+            // txtBusqueda
+            // 
+            this.txtBusqueda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBusqueda.Location = new System.Drawing.Point(576, 389);
+            this.txtBusqueda.Name = "txtBusqueda";
+            this.txtBusqueda.Size = new System.Drawing.Size(337, 20);
+            this.txtBusqueda.TabIndex = 4;
+            this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(224, 386);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(69, 32);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // saludTableAdapter
+            // 
+            this.saludTableAdapter.ClearBeforeFill = true;
+            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -251,6 +252,7 @@
             this.smiProfesionales.Name = "smiProfesionales";
             this.smiProfesionales.Size = new System.Drawing.Size(89, 20);
             this.smiProfesionales.Text = "Profesionales";
+            this.smiProfesionales.Click += new System.EventHandler(this.smiProfesionales_Click);
             // 
             // smiGrupos
             // 
@@ -264,16 +266,17 @@
             this.smiCategorias.Size = new System.Drawing.Size(75, 20);
             this.smiCategorias.Text = "Categorias";
             // 
-            // socioSaludBindingSource
-            // 
-            this.socioSaludBindingSource.DataMember = "SocioSalud";
-            this.socioSaludBindingSource.DataSource = this.socioBindingSource;
-            // 
             // smiPagos
             // 
             this.smiPagos.Name = "smiPagos";
             this.smiPagos.Size = new System.Drawing.Size(51, 20);
             this.smiPagos.Text = "Pagos";
+            this.smiPagos.Click += new System.EventHandler(this.smiPagos_Click);
+            // 
+            // socioSaludBindingSource
+            // 
+            this.socioSaludBindingSource.DataMember = "SocioSalud";
+            this.socioSaludBindingSource.DataSource = this.socioBindingSource;
             // 
             // Form1
             // 

@@ -72,6 +72,18 @@
     <Compile Include="ModificarActividad.Designer.cs">
       <DependentUpon>ModificarActividad.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModificarActividades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificarActividades.Designer.cs">
+      <DependentUpon>ModificarActividades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarProfesional.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificarProfesional.Designer.cs">
+      <DependentUpon>ModificarProfesional.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModificarSalud.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +101,12 @@
     </Compile>
     <Compile Include="NuevaActividad.Designer.cs">
       <DependentUpon>NuevaActividad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NuevoProfesional.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NuevoProfesional.Designer.cs">
+      <DependentUpon>NuevoProfesional.cs</DependentUpon>
     </Compile>
     <Compile Include="NuevoSalud.cs">
       <SubType>Form</SubType>
@@ -108,6 +126,18 @@
     <Compile Include="NuevoUsuarioGrupo.Designer.cs">
       <DependentUpon>NuevoUsuarioGrupo.cs</DependentUpon>
     </Compile>
+    <Compile Include="PagosMensuales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PagosMensuales.Designer.cs">
+      <DependentUpon>PagosMensuales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Profesionales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Profesionales.Designer.cs">
+      <DependentUpon>Profesionales.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Actividades.resx">
@@ -119,6 +149,12 @@
     <EmbeddedResource Include="ModificarActividad.resx">
       <DependentUpon>ModificarActividad.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ModificarActividades.resx">
+      <DependentUpon>ModificarActividades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarProfesional.resx">
+      <DependentUpon>ModificarProfesional.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ModificarSalud.resx">
       <DependentUpon>ModificarSalud.cs</DependentUpon>
     </EmbeddedResource>
@@ -128,6 +164,9 @@
     <EmbeddedResource Include="NuevaActividad.resx">
       <DependentUpon>NuevaActividad.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NuevoProfesional.resx">
+      <DependentUpon>NuevoProfesional.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NuevoSalud.resx">
       <DependentUpon>NuevoSalud.cs</DependentUpon>
     </EmbeddedResource>
@@ -136,6 +175,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NuevoUsuarioGrupo.resx">
       <DependentUpon>NuevoUsuarioGrupo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PagosMensuales.resx">
+      <DependentUpon>PagosMensuales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Profesionales.resx">
+      <DependentUpon>Profesionales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

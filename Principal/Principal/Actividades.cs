@@ -80,5 +80,11 @@ Persist Security Info=False;";
             ModificarActividad neu = new ModificarActividad();
             neu.ShowDialog();
         }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            ModificarActividad neu = new ModificarActividad();
+            neu.ShowDialog();
+        }
     }
 }

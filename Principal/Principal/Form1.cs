@@ -79,6 +79,7 @@ Persist Security Info=False;");
             modificar.txtMail.Text = dgvSocio.CurrentRow.Cells[3].Value.ToString();
             modificar.txtTelefono.Text = dgvSocio.CurrentRow.Cells[4].Value.ToString();
             
+            
             modificar.ShowDialog();
 
             conexion.Close();
@@ -137,6 +138,18 @@ Persist Security Info=False;");
         {
             Actividades nuacts = new Actividades();
             nuacts.ShowDialog();
+        }
+
+        private void smiPagos_Click(object sender, EventArgs e)
+        {
+            PagosMensuales nupagos = new PagosMensuales();
+            nupagos.ShowDialog();
+        }
+
+        private void smiProfesionales_Click(object sender, EventArgs e)
+        {
+            Profesionales nuprof = new Profesionales();
+            nuprof.ShowDialog();
         }
     }
 }

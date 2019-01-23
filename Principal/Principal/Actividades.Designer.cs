@@ -44,6 +44,7 @@
             this.btnNuevo = new System.Windows.Forms.Button();
             this.profesionalActividadesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.profesionalActividadesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.btnModificar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.actividadesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profesionalBindingSource)).BeginInit();
@@ -77,6 +78,7 @@
             this.tableAdapterManager.CategoriaTableAdapter = null;
             this.tableAdapterManager.CuotaTableAdapter = null;
             this.tableAdapterManager.GrupoTableAdapter = null;
+            this.tableAdapterManager.MensualTableAdapter = null;
             this.tableAdapterManager.ProfesionalTableAdapter = null;
             this.tableAdapterManager.SaludTableAdapter = null;
             this.tableAdapterManager.SocioTableAdapter = null;
@@ -148,11 +150,22 @@
             this.profesionalActividadesBindingSource1.DataMember = "ProfesionalActividades";
             this.profesionalActividadesBindingSource1.DataSource = this.profesionalBindingSource;
             // 
+            // btnModificar
+            // 
+            this.btnModificar.Location = new System.Drawing.Point(108, 376);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(90, 32);
+            this.btnModificar.TabIndex = 3;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
             // Actividades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(788, 415);
+            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.txtBusqueda);
             this.Controls.Add(this.dgvActividades);
@@ -191,5 +204,6 @@
         private System.Windows.Forms.DataGridView dgvActividades;
         private System.Windows.Forms.TextBox txtBusqueda;
         private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.Button btnModificar;
     }
 }
