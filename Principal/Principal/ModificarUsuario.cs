@@ -18,7 +18,7 @@ namespace Principal
         public ModificarUsuario()
         {
             InitializeComponent();
-            conModificar.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Mi PC\Documents\Proyecto Club\Vistalba\Vistalba\Principal\Principal\Club Vistalba.accdb;
+            conModificar.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|Principal\Club Vistalba.accdb;
 Persist Security Info=False;";
         }
 
@@ -41,7 +41,7 @@ Persist Security Info=False;";
             //this.grupoTableAdapter.Fill(this.club_VistalbaDataSet.Grupo);
             // TODO: esta línea de código carga datos en la tabla 'club_VistalbaDataSet.Socio' Puede moverla o quitarla según sea necesario.
             //this.socioTableAdapter.Fill(this.club_VistalbaDataSet.Socio);
-            cargargenero();
+            //cargargenero();
         }
 
         private void btnHabilitar_Click(object sender, EventArgs e)

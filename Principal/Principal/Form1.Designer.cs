@@ -38,7 +38,6 @@
             this.btnAbrir = new System.Windows.Forms.Button();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.socioSaludBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.saludTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.SaludTableAdapter();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,11 +54,13 @@
             this.smiProfesionales = new System.Windows.Forms.ToolStripMenuItem();
             this.smiGrupos = new System.Windows.Forms.ToolStripMenuItem();
             this.smiCategorias = new System.Windows.Forms.ToolStripMenuItem();
+            this.socioSaludBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.smiPagos = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.socioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSocio)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.socioSaludBindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.socioSaludBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // club_VistalbaDataSet
@@ -158,11 +159,6 @@
             this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // socioSaludBindingSource
-            // 
-            this.socioSaludBindingSource.DataMember = "SocioSalud";
-            this.socioSaludBindingSource.DataSource = this.socioBindingSource;
-            // 
             // saludTableAdapter
             // 
             this.saludTableAdapter.ClearBeforeFill = true;
@@ -235,7 +231,8 @@
             this.smiActividades,
             this.smiProfesionales,
             this.smiGrupos,
-            this.smiCategorias});
+            this.smiCategorias,
+            this.smiPagos});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(925, 24);
@@ -267,6 +264,17 @@
             this.smiCategorias.Size = new System.Drawing.Size(75, 20);
             this.smiCategorias.Text = "Categorias";
             // 
+            // socioSaludBindingSource
+            // 
+            this.socioSaludBindingSource.DataMember = "SocioSalud";
+            this.socioSaludBindingSource.DataSource = this.socioBindingSource;
+            // 
+            // smiPagos
+            // 
+            this.smiPagos.Name = "smiPagos";
+            this.smiPagos.Size = new System.Drawing.Size(51, 20);
+            this.smiPagos.Text = "Pagos";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -285,9 +293,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.socioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSocio)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.socioSaludBindingSource)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.socioSaludBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -321,6 +329,7 @@
         private System.Windows.Forms.ToolStripMenuItem smiProfesionales;
         private System.Windows.Forms.ToolStripMenuItem smiGrupos;
         private System.Windows.Forms.ToolStripMenuItem smiCategorias;
+        private System.Windows.Forms.ToolStripMenuItem smiPagos;
     }
 }
 
