@@ -42,6 +42,7 @@
             System.Windows.Forms.Label catIdLabel;
             System.Windows.Forms.Label grupoApellidoLabel;
             System.Windows.Forms.Label label1;
+            System.Windows.Forms.Label socioEstadoLabel;
             this.club_VistalbaDataSet = new Principal.Club_VistalbaDataSet();
             this.socioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.socioTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.SocioTableAdapter();
@@ -70,6 +71,7 @@
             this.lblNotas = new System.Windows.Forms.Label();
             this.txtNotas = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.socioEstadoCheckBox = new System.Windows.Forms.CheckBox();
             socioIDLabel = new System.Windows.Forms.Label();
             socioNombreLabel = new System.Windows.Forms.Label();
             socioDNILabel = new System.Windows.Forms.Label();
@@ -83,6 +85,7 @@
             catIdLabel = new System.Windows.Forms.Label();
             grupoApellidoLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
+            socioEstadoLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.socioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grupoBindingSource)).BeginInit();
@@ -282,7 +285,7 @@
             this.txtTelefono.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.socioBindingSource, "socioTelefono", true));
             this.txtTelefono.Enabled = false;
             this.txtTelefono.Location = new System.Drawing.Point(130, 136);
-            this.txtTelefono.MaxLength = 15;
+            this.txtTelefono.MaxLength = 20;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(281, 20);
             this.txtTelefono.TabIndex = 12;
@@ -292,7 +295,7 @@
             this.txtCelular.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.socioBindingSource, "socioCelular", true));
             this.txtCelular.Enabled = false;
             this.txtCelular.Location = new System.Drawing.Point(130, 162);
-            this.txtCelular.MaxLength = 15;
+            this.txtCelular.MaxLength = 20;
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(281, 20);
             this.txtCelular.TabIndex = 14;
@@ -357,7 +360,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(336, 456);
+            this.button2.Location = new System.Drawing.Point(336, 527);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 34);
             this.button2.TabIndex = 28;
@@ -367,7 +370,7 @@
             // 
             // btnHabilitar
             // 
-            this.btnHabilitar.Location = new System.Drawing.Point(12, 456);
+            this.btnHabilitar.Location = new System.Drawing.Point(12, 527);
             this.btnHabilitar.Name = "btnHabilitar";
             this.btnHabilitar.Size = new System.Drawing.Size(75, 34);
             this.btnHabilitar.TabIndex = 29;
@@ -377,7 +380,7 @@
             // 
             // btnSalud
             // 
-            this.btnSalud.Location = new System.Drawing.Point(93, 456);
+            this.btnSalud.Location = new System.Drawing.Point(93, 527);
             this.btnSalud.Name = "btnSalud";
             this.btnSalud.Size = new System.Drawing.Size(75, 34);
             this.btnSalud.TabIndex = 30;
@@ -386,7 +389,7 @@
             // 
             // btnGrupo
             // 
-            this.btnGrupo.Location = new System.Drawing.Point(174, 456);
+            this.btnGrupo.Location = new System.Drawing.Point(174, 527);
             this.btnGrupo.Name = "btnGrupo";
             this.btnGrupo.Size = new System.Drawing.Size(75, 34);
             this.btnGrupo.TabIndex = 31;
@@ -395,7 +398,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(255, 456);
+            this.btnGuardar.Location = new System.Drawing.Point(255, 527);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 34);
             this.btnGuardar.TabIndex = 32;
@@ -466,11 +469,32 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
+            // socioEstadoLabel
+            // 
+            socioEstadoLabel.AutoSize = true;
+            socioEstadoLabel.Location = new System.Drawing.Point(12, 470);
+            socioEstadoLabel.Name = "socioEstadoLabel";
+            socioEstadoLabel.Size = new System.Drawing.Size(71, 13);
+            socioEstadoLabel.TabIndex = 39;
+            socioEstadoLabel.Text = "socio Estado:";
+            // 
+            // socioEstadoCheckBox
+            // 
+            this.socioEstadoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.socioBindingSource, "socioEstado", true));
+            this.socioEstadoCheckBox.Location = new System.Drawing.Point(130, 465);
+            this.socioEstadoCheckBox.Name = "socioEstadoCheckBox";
+            this.socioEstadoCheckBox.Size = new System.Drawing.Size(104, 24);
+            this.socioEstadoCheckBox.TabIndex = 40;
+            this.socioEstadoCheckBox.Text = "checkBox1";
+            this.socioEstadoCheckBox.UseVisualStyleBackColor = true;
+            // 
             // ModificarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(425, 502);
+            this.ClientSize = new System.Drawing.Size(434, 581);
+            this.Controls.Add(socioEstadoLabel);
+            this.Controls.Add(this.socioEstadoCheckBox);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtNotas);
             this.Controls.Add(this.lblNotas);
@@ -547,5 +571,6 @@
         private System.Windows.Forms.Label lblNotas;
         private System.Windows.Forms.GroupBox groupBox1;
         public System.Windows.Forms.TextBox txtNotas;
+        private System.Windows.Forms.CheckBox socioEstadoCheckBox;
     }
 }

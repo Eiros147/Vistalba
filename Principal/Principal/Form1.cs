@@ -151,5 +151,10 @@ Persist Security Info=False;");
             Profesionales nuprof = new Profesionales();
             nuprof.ShowDialog();
         }
+
+        private void toolStripTextBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

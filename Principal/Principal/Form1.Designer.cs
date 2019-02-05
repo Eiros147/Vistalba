@@ -56,6 +56,7 @@
             this.smiCategorias = new System.Windows.Forms.ToolStripMenuItem();
             this.smiPagos = new System.Windows.Forms.ToolStripMenuItem();
             this.socioSaludBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.socioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSocio)).BeginInit();
@@ -233,7 +234,8 @@
             this.smiProfesionales,
             this.smiGrupos,
             this.smiCategorias,
-            this.smiPagos});
+            this.smiPagos,
+            this.toolStripTextBox1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(925, 24);
@@ -277,6 +279,13 @@
             // 
             this.socioSaludBindingSource.DataMember = "SocioSalud";
             this.socioSaludBindingSource.DataSource = this.socioBindingSource;
+            // 
+            // toolStripTextBox1
+            // 
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.Size = new System.Drawing.Size(75, 20);
+            this.toolStripTextBox1.Text = "Categorias";
+            this.toolStripTextBox1.Click += new System.EventHandler(this.toolStripTextBox1_Click);
             // 
             // Form1
             // 
@@ -333,6 +342,7 @@
         private System.Windows.Forms.ToolStripMenuItem smiGrupos;
         private System.Windows.Forms.ToolStripMenuItem smiCategorias;
         private System.Windows.Forms.ToolStripMenuItem smiPagos;
+        private System.Windows.Forms.ToolStripMenuItem toolStripTextBox1;
     }
 }
 

@@ -891,7 +891,15 @@ namespace Principal {
             
             private global::System.Data.DataColumn columncatID;
             
-            private global::System.Data.DataColumn columncatDesc;
+            private global::System.Data.DataColumn columncatNombre;
+            
+            private global::System.Data.DataColumn columncatDescripcion;
+            
+            private global::System.Data.DataColumn columncatYear;
+            
+            private global::System.Data.DataColumn columncatPrecio;
+            
+            private global::System.Data.DataColumn columncatGenero;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -936,9 +944,41 @@ namespace Principal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn catDescColumn {
+            public global::System.Data.DataColumn catNombreColumn {
                 get {
-                    return this.columncatDesc;
+                    return this.columncatNombre;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn catDescripcionColumn {
+                get {
+                    return this.columncatDescripcion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn catYearColumn {
+                get {
+                    return this.columncatYear;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn catPrecioColumn {
+                get {
+                    return this.columncatPrecio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn catGeneroColumn {
+                get {
+                    return this.columncatGenero;
                 }
             }
             
@@ -979,11 +1019,15 @@ namespace Principal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public CategoriaRow AddCategoriaRow(string catDesc) {
+            public CategoriaRow AddCategoriaRow(string catNombre, string catDescripcion, string catYear, string catPrecio, string catGenero) {
                 CategoriaRow rowCategoriaRow = ((CategoriaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        catDesc};
+                        catNombre,
+                        catDescripcion,
+                        catYear,
+                        catPrecio,
+                        catGenero};
                 rowCategoriaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCategoriaRow);
                 return rowCategoriaRow;
@@ -1014,7 +1058,11 @@ namespace Principal {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
                 this.columncatID = base.Columns["catID"];
-                this.columncatDesc = base.Columns["catDesc"];
+                this.columncatNombre = base.Columns["catNombre"];
+                this.columncatDescripcion = base.Columns["catDescripcion"];
+                this.columncatYear = base.Columns["catYear"];
+                this.columncatPrecio = base.Columns["catPrecio"];
+                this.columncatGenero = base.Columns["catGenero"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1022,8 +1070,16 @@ namespace Principal {
             private void InitClass() {
                 this.columncatID = new global::System.Data.DataColumn("catID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncatID);
-                this.columncatDesc = new global::System.Data.DataColumn("catDesc", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncatDesc);
+                this.columncatNombre = new global::System.Data.DataColumn("catNombre", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncatNombre);
+                this.columncatDescripcion = new global::System.Data.DataColumn("catDescripcion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncatDescripcion);
+                this.columncatYear = new global::System.Data.DataColumn("catYear", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncatYear);
+                this.columncatPrecio = new global::System.Data.DataColumn("catPrecio", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncatPrecio);
+                this.columncatGenero = new global::System.Data.DataColumn("catGenero", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncatGenero);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columncatID}, true));
                 this.columncatID.AutoIncrement = true;
@@ -1031,7 +1087,11 @@ namespace Principal {
                 this.columncatID.AutoIncrementStep = -1;
                 this.columncatID.AllowDBNull = false;
                 this.columncatID.Unique = true;
-                this.columncatDesc.MaxLength = 255;
+                this.columncatNombre.MaxLength = 255;
+                this.columncatDescripcion.MaxLength = 255;
+                this.columncatYear.MaxLength = 255;
+                this.columncatPrecio.MaxLength = 255;
+                this.columncatGenero.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2481,6 +2541,8 @@ namespace Principal {
             
             private global::System.Data.DataColumn columnsocioNotas;
             
+            private global::System.Data.DataColumn columnsocioEstado;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public SocioDataTable() {
@@ -2628,6 +2690,14 @@ namespace Principal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn socioEstadoColumn {
+                get {
+                    return this.columnsocioEstado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2663,7 +2733,7 @@ namespace Principal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public SocioRow AddSocioRow(string socioNombre, int socioDNI, string socioDireccion, string socioMail, int socioTelefono, int socioCelular, System.DateTime socioFechaNac, System.DateTime socioFechaIng, System.DateTime socioFechaUltPago, GrupoRow parentGrupoRowByGrupoSocio, string catId, bool socioGenero, string socioNotas) {
+            public SocioRow AddSocioRow(string socioNombre, int socioDNI, string socioDireccion, string socioMail, int socioTelefono, int socioCelular, System.DateTime socioFechaNac, System.DateTime socioFechaIng, System.DateTime socioFechaUltPago, GrupoRow parentGrupoRowByGrupoSocio, string catId, bool socioGenero, string socioNotas, bool socioEstado) {
                 SocioRow rowSocioRow = ((SocioRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -2679,7 +2749,8 @@ namespace Principal {
                         null,
                         catId,
                         socioGenero,
-                        socioNotas};
+                        socioNotas,
+                        socioEstado};
                 if ((parentGrupoRowByGrupoSocio != null)) {
                     columnValuesArray[10] = parentGrupoRowByGrupoSocio[0];
                 }
@@ -2726,6 +2797,7 @@ namespace Principal {
                 this.columncatId = base.Columns["catId"];
                 this.columnsocioGenero = base.Columns["socioGenero"];
                 this.columnsocioNotas = base.Columns["socioNotas"];
+                this.columnsocioEstado = base.Columns["socioEstado"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2759,6 +2831,8 @@ namespace Principal {
                 base.Columns.Add(this.columnsocioGenero);
                 this.columnsocioNotas = new global::System.Data.DataColumn("socioNotas", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnsocioNotas);
+                this.columnsocioEstado = new global::System.Data.DataColumn("socioEstado", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsocioEstado);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnsocioID}, true));
                 this.columnsocioID.AutoIncrement = true;
@@ -3514,30 +3588,142 @@ namespace Principal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string catDesc {
+            public string catNombre {
                 get {
                     try {
-                        return ((string)(this[this.tableCategoria.catDescColumn]));
+                        return ((string)(this[this.tableCategoria.catNombreColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'catDesc\' de la tabla \'Categoria\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'catNombre\' de la tabla \'Categoria\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableCategoria.catDescColumn] = value;
+                    this[this.tableCategoria.catNombreColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IscatDescNull() {
-                return this.IsNull(this.tableCategoria.catDescColumn);
+            public string catDescripcion {
+                get {
+                    try {
+                        return ((string)(this[this.tableCategoria.catDescripcionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'catDescripcion\' de la tabla \'Categoria\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCategoria.catDescripcionColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetcatDescNull() {
-                this[this.tableCategoria.catDescColumn] = global::System.Convert.DBNull;
+            public string catYear {
+                get {
+                    try {
+                        return ((string)(this[this.tableCategoria.catYearColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'catYear\' de la tabla \'Categoria\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCategoria.catYearColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string catPrecio {
+                get {
+                    try {
+                        return ((string)(this[this.tableCategoria.catPrecioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'catPrecio\' de la tabla \'Categoria\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCategoria.catPrecioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string catGenero {
+                get {
+                    try {
+                        return ((string)(this[this.tableCategoria.catGeneroColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'catGenero\' de la tabla \'Categoria\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCategoria.catGeneroColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IscatNombreNull() {
+                return this.IsNull(this.tableCategoria.catNombreColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetcatNombreNull() {
+                this[this.tableCategoria.catNombreColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IscatDescripcionNull() {
+                return this.IsNull(this.tableCategoria.catDescripcionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetcatDescripcionNull() {
+                this[this.tableCategoria.catDescripcionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IscatYearNull() {
+                return this.IsNull(this.tableCategoria.catYearColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetcatYearNull() {
+                this[this.tableCategoria.catYearColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IscatPrecioNull() {
+                return this.IsNull(this.tableCategoria.catPrecioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetcatPrecioNull() {
+                this[this.tableCategoria.catPrecioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IscatGeneroNull() {
+                return this.IsNull(this.tableCategoria.catGeneroColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetcatGeneroNull() {
+                this[this.tableCategoria.catGeneroColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4405,6 +4591,22 @@ namespace Principal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool socioEstado {
+                get {
+                    try {
+                        return ((bool)(this[this.tableSocio.socioEstadoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'socioEstado\' de la tabla \'Socio\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSocio.socioEstadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public GrupoRow GrupoRow {
                 get {
                     return ((GrupoRow)(this.GetParentRow(this.Table.ParentRelations["GrupoSocio"])));
@@ -4568,6 +4770,18 @@ namespace Principal {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetsocioNotasNull() {
                 this[this.tableSocio.socioNotasColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IssocioEstadoNull() {
+                return this.IsNull(this.tableSocio.socioEstadoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetsocioEstadoNull() {
+                this[this.tableSocio.socioEstadoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5780,30 +5994,57 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Categoria";
             tableMapping.ColumnMappings.Add("catID", "catID");
-            tableMapping.ColumnMappings.Add("catDesc", "catDesc");
+            tableMapping.ColumnMappings.Add("catNombre", "catNombre");
+            tableMapping.ColumnMappings.Add("catDescripcion", "catDescripcion");
+            tableMapping.ColumnMappings.Add("catYear", "catYear");
+            tableMapping.ColumnMappings.Add("catPrecio", "catPrecio");
+            tableMapping.ColumnMappings.Add("catGenero", "catGenero");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `Categoria` WHERE ((`catID` = ?) AND ((? = 1 AND `catDesc` IS NULL) O" +
-                "R (`catDesc` = ?)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `Categoria` WHERE ((`catID` = ?) AND ((? = 1 AND `catDescripcion` IS NULL) OR (`catDescripcion` = ?)) AND ((? = 1 AND `catGenero` IS NULL) OR (`catGenero` = ?)) AND ((? = 1 AND `catNombre` IS NULL) OR (`catNombre` = ?)) AND ((? = 1 AND `catPrecio` IS NULL) OR (`catPrecio` = ?)) AND ((? = 1 AND `catYear` IS NULL) OR (`catYear` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_catID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "catID", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_catDesc", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "catDesc", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_catDesc", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "catDesc", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_catDescripcion", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "catDescripcion", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_catDescripcion", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "catDescripcion", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_catGenero", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "catGenero", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_catGenero", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "catGenero", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_catNombre", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "catNombre", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_catNombre", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "catNombre", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_catPrecio", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "catPrecio", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_catPrecio", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "catPrecio", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_catYear", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "catYear", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_catYear", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "catYear", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `Categoria` (`catDesc`) VALUES (?)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `Categoria` (`catDescripcion`, `catGenero`, `catNombre`, `catPrecio`," +
+                " `catYear`) VALUES (?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("catDesc", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "catDesc", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("catDescripcion", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "catDescripcion", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("catGenero", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "catGenero", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("catNombre", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "catNombre", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("catPrecio", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "catPrecio", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("catYear", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "catYear", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `Categoria` SET `catDesc` = ? WHERE ((`catID` = ?) AND ((? = 1 AND `catDes" +
-                "c` IS NULL) OR (`catDesc` = ?)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `Categoria` SET `catDescripcion` = ?, `catGenero` = ?, `catNombre` = ?, `catPrecio` = ?, `catYear` = ? WHERE ((`catID` = ?) AND ((? = 1 AND `catDescripcion` IS NULL) OR (`catDescripcion` = ?)) AND ((? = 1 AND `catGenero` IS NULL) OR (`catGenero` = ?)) AND ((? = 1 AND `catNombre` IS NULL) OR (`catNombre` = ?)) AND ((? = 1 AND `catPrecio` IS NULL) OR (`catPrecio` = ?)) AND ((? = 1 AND `catYear` IS NULL) OR (`catYear` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("catDesc", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "catDesc", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("catDescripcion", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "catDescripcion", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("catGenero", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "catGenero", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("catNombre", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "catNombre", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("catPrecio", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "catPrecio", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("catYear", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "catYear", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_catID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "catID", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_catDesc", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "catDesc", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_catDesc", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "catDesc", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_catDescripcion", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "catDescripcion", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_catDescripcion", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "catDescripcion", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_catGenero", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "catGenero", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_catGenero", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "catGenero", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_catNombre", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "catNombre", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_catNombre", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "catNombre", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_catPrecio", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "catPrecio", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_catPrecio", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "catPrecio", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_catYear", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "catYear", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_catYear", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "catYear", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5819,7 +6060,8 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT catID, catDesc FROM Categoria";
+            this._commandCollection[0].CommandText = "SELECT catID, catDescripcion, catGenero, catNombre, catPrecio, catYear FROM Categ" +
+                "oria";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -5880,15 +6122,47 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_catID, string Original_catDesc) {
+        public virtual int Delete(int Original_catID, string Original_catDescripcion, string Original_catGenero, string Original_catNombre, string Original_catPrecio, string Original_catYear) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_catID));
-            if ((Original_catDesc == null)) {
+            if ((Original_catDescripcion == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_catDesc));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_catDescripcion));
+            }
+            if ((Original_catGenero == null)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_catGenero));
+            }
+            if ((Original_catNombre == null)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_catNombre));
+            }
+            if ((Original_catPrecio == null)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_catPrecio));
+            }
+            if ((Original_catYear == null)) {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_catYear));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -5910,12 +6184,36 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string catDesc) {
-            if ((catDesc == null)) {
+        public virtual int Insert(string catDescripcion, string catGenero, string catNombre, string catPrecio, string catYear) {
+            if ((catDescripcion == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(catDesc));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(catDescripcion));
+            }
+            if ((catGenero == null)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(catGenero));
+            }
+            if ((catNombre == null)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(catNombre));
+            }
+            if ((catPrecio == null)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(catPrecio));
+            }
+            if ((catYear == null)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(catYear));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -5937,21 +6235,77 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string catDesc, int Original_catID, string Original_catDesc) {
-            if ((catDesc == null)) {
+        public virtual int Update(string catDescripcion, string catGenero, string catNombre, string catPrecio, string catYear, int Original_catID, string Original_catDescripcion, string Original_catGenero, string Original_catNombre, string Original_catPrecio, string Original_catYear) {
+            if ((catDescripcion == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(catDesc));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(catDescripcion));
             }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Original_catID));
-            if ((Original_catDesc == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((object)(1));
+            if ((catGenero == null)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(catGenero));
+            }
+            if ((catNombre == null)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(catNombre));
+            }
+            if ((catPrecio == null)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_catDesc));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(catPrecio));
+            }
+            if ((catYear == null)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(catYear));
+            }
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_catID));
+            if ((Original_catDescripcion == null)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_catDescripcion));
+            }
+            if ((Original_catGenero == null)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_catGenero));
+            }
+            if ((Original_catNombre == null)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_catNombre));
+            }
+            if ((Original_catPrecio == null)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_catPrecio));
+            }
+            if ((Original_catYear == null)) {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_catYear));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -7750,10 +8104,11 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("catId", "catId");
             tableMapping.ColumnMappings.Add("socioGenero", "socioGenero");
             tableMapping.ColumnMappings.Add("socioNotas", "socioNotas");
+            tableMapping.ColumnMappings.Add("socioEstado", "socioEstado");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `Socio` WHERE ((`socioID` = ?) AND ((? = 1 AND `socioNombre` IS NULL) OR (`socioNombre` = ?)) AND ((? = 1 AND `socioDNI` IS NULL) OR (`socioDNI` = ?)) AND ((? = 1 AND `socioDireccion` IS NULL) OR (`socioDireccion` = ?)) AND ((? = 1 AND `socioMail` IS NULL) OR (`socioMail` = ?)) AND ((? = 1 AND `socioTelefono` IS NULL) OR (`socioTelefono` = ?)) AND ((? = 1 AND `socioCelular` IS NULL) OR (`socioCelular` = ?)) AND ((? = 1 AND `socioFechaNac` IS NULL) OR (`socioFechaNac` = ?)) AND ((? = 1 AND `socioFechaIng` IS NULL) OR (`socioFechaIng` = ?)) AND ((? = 1 AND `socioFechaUltPago` IS NULL) OR (`socioFechaUltPago` = ?)) AND ((? = 1 AND `grupoId` IS NULL) OR (`grupoId` = ?)) AND ((? = 1 AND `catId` IS NULL) OR (`catId` = ?)) AND ((? = 1 AND `socioGenero` IS NULL) OR (`socioGenero` = ?)) AND ((? = 1 AND `socioNotas` IS NULL) OR (`socioNotas` = ?)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `Socio` WHERE ((`socioID` = ?) AND ((? = 1 AND `socioNombre` IS NULL) OR (`socioNombre` = ?)) AND ((? = 1 AND `socioDNI` IS NULL) OR (`socioDNI` = ?)) AND ((? = 1 AND `socioDireccion` IS NULL) OR (`socioDireccion` = ?)) AND ((? = 1 AND `socioMail` IS NULL) OR (`socioMail` = ?)) AND ((? = 1 AND `socioTelefono` IS NULL) OR (`socioTelefono` = ?)) AND ((? = 1 AND `socioCelular` IS NULL) OR (`socioCelular` = ?)) AND ((? = 1 AND `socioFechaNac` IS NULL) OR (`socioFechaNac` = ?)) AND ((? = 1 AND `socioFechaIng` IS NULL) OR (`socioFechaIng` = ?)) AND ((? = 1 AND `socioFechaUltPago` IS NULL) OR (`socioFechaUltPago` = ?)) AND ((? = 1 AND `grupoId` IS NULL) OR (`grupoId` = ?)) AND ((? = 1 AND `catId` IS NULL) OR (`catId` = ?)) AND ((? = 1 AND `socioGenero` IS NULL) OR (`socioGenero` = ?)) AND ((? = 1 AND `socioNotas` IS NULL) OR (`socioNotas` = ?)) AND ((? = 1 AND `socioEstado` IS NULL) OR (`socioEstado` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_socioID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "socioID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_socioNombre", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "socioNombre", global::System.Data.DataRowVersion.Original, true, null));
@@ -7782,9 +8137,11 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_socioGenero", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "socioGenero", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_socioNotas", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "socioNotas", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_socioNotas", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "socioNotas", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_socioEstado", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "socioEstado", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_socioEstado", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "socioEstado", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO `Socio` (`socioNombre`, `socioDNI`, `socioDireccion`, `socioMail`, `socioTelefono`, `socioCelular`, `socioFechaNac`, `socioFechaIng`, `socioFechaUltPago`, `grupoId`, `catId`, `socioGenero`, `socioNotas`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO `Socio` (`socioNombre`, `socioDNI`, `socioDireccion`, `socioMail`, `socioTelefono`, `socioCelular`, `socioFechaNac`, `socioFechaIng`, `socioFechaUltPago`, `grupoId`, `catId`, `socioGenero`, `socioNotas`, `socioEstado`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("socioNombre", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "socioNombre", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("socioDNI", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "socioDNI", global::System.Data.DataRowVersion.Current, false, null));
@@ -7799,9 +8156,10 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("catId", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "catId", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("socioGenero", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "socioGenero", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("socioNotas", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "socioNotas", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("socioEstado", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "socioEstado", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `Socio` SET `socioNombre` = ?, `socioDNI` = ?, `socioDireccion` = ?, `socioMail` = ?, `socioTelefono` = ?, `socioCelular` = ?, `socioFechaNac` = ?, `socioFechaIng` = ?, `socioFechaUltPago` = ?, `grupoId` = ?, `catId` = ?, `socioGenero` = ?, `socioNotas` = ? WHERE ((`socioID` = ?) AND ((? = 1 AND `socioNombre` IS NULL) OR (`socioNombre` = ?)) AND ((? = 1 AND `socioDNI` IS NULL) OR (`socioDNI` = ?)) AND ((? = 1 AND `socioDireccion` IS NULL) OR (`socioDireccion` = ?)) AND ((? = 1 AND `socioMail` IS NULL) OR (`socioMail` = ?)) AND ((? = 1 AND `socioTelefono` IS NULL) OR (`socioTelefono` = ?)) AND ((? = 1 AND `socioCelular` IS NULL) OR (`socioCelular` = ?)) AND ((? = 1 AND `socioFechaNac` IS NULL) OR (`socioFechaNac` = ?)) AND ((? = 1 AND `socioFechaIng` IS NULL) OR (`socioFechaIng` = ?)) AND ((? = 1 AND `socioFechaUltPago` IS NULL) OR (`socioFechaUltPago` = ?)) AND ((? = 1 AND `grupoId` IS NULL) OR (`grupoId` = ?)) AND ((? = 1 AND `catId` IS NULL) OR (`catId` = ?)) AND ((? = 1 AND `socioGenero` IS NULL) OR (`socioGenero` = ?)) AND ((? = 1 AND `socioNotas` IS NULL) OR (`socioNotas` = ?)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `Socio` SET `socioNombre` = ?, `socioDNI` = ?, `socioDireccion` = ?, `socioMail` = ?, `socioTelefono` = ?, `socioCelular` = ?, `socioFechaNac` = ?, `socioFechaIng` = ?, `socioFechaUltPago` = ?, `grupoId` = ?, `catId` = ?, `socioGenero` = ?, `socioNotas` = ?, `socioEstado` = ? WHERE ((`socioID` = ?) AND ((? = 1 AND `socioNombre` IS NULL) OR (`socioNombre` = ?)) AND ((? = 1 AND `socioDNI` IS NULL) OR (`socioDNI` = ?)) AND ((? = 1 AND `socioDireccion` IS NULL) OR (`socioDireccion` = ?)) AND ((? = 1 AND `socioMail` IS NULL) OR (`socioMail` = ?)) AND ((? = 1 AND `socioTelefono` IS NULL) OR (`socioTelefono` = ?)) AND ((? = 1 AND `socioCelular` IS NULL) OR (`socioCelular` = ?)) AND ((? = 1 AND `socioFechaNac` IS NULL) OR (`socioFechaNac` = ?)) AND ((? = 1 AND `socioFechaIng` IS NULL) OR (`socioFechaIng` = ?)) AND ((? = 1 AND `socioFechaUltPago` IS NULL) OR (`socioFechaUltPago` = ?)) AND ((? = 1 AND `grupoId` IS NULL) OR (`grupoId` = ?)) AND ((? = 1 AND `catId` IS NULL) OR (`catId` = ?)) AND ((? = 1 AND `socioGenero` IS NULL) OR (`socioGenero` = ?)) AND ((? = 1 AND `socioNotas` IS NULL) OR (`socioNotas` = ?)) AND ((? = 1 AND `socioEstado` IS NULL) OR (`socioEstado` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("socioNombre", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "socioNombre", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("socioDNI", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "socioDNI", global::System.Data.DataRowVersion.Current, false, null));
@@ -7816,6 +8174,7 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("catId", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "catId", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("socioGenero", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "socioGenero", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("socioNotas", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "socioNotas", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("socioEstado", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "socioEstado", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_socioID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "socioID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_socioNombre", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "socioNombre", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_socioNombre", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "socioNombre", global::System.Data.DataRowVersion.Original, false, null));
@@ -7843,6 +8202,8 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_socioGenero", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "socioGenero", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_socioNotas", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "socioNotas", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_socioNotas", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "socioNotas", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_socioEstado", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "socioEstado", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_socioEstado", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "socioEstado", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7860,7 +8221,7 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT socioID, socioNombre, socioDNI, socioDireccion, socioMail, socioTelefono, " +
                 "socioCelular, socioFechaNac, socioFechaIng, socioFechaUltPago, grupoId, catId, s" +
-                "ocioGenero, socioNotas FROM Socio";
+                "ocioGenero, socioNotas, socioEstado FROM Socio";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -7921,7 +8282,7 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_socioID, string Original_socioNombre, global::System.Nullable<int> Original_socioDNI, string Original_socioDireccion, string Original_socioMail, global::System.Nullable<int> Original_socioTelefono, global::System.Nullable<int> Original_socioCelular, global::System.Nullable<global::System.DateTime> Original_socioFechaNac, global::System.Nullable<global::System.DateTime> Original_socioFechaIng, global::System.Nullable<global::System.DateTime> Original_socioFechaUltPago, global::System.Nullable<int> Original_grupoId, string Original_catId, bool Original_socioGenero, string Original_socioNotas) {
+        public virtual int Delete(int Original_socioID, string Original_socioNombre, global::System.Nullable<int> Original_socioDNI, string Original_socioDireccion, string Original_socioMail, global::System.Nullable<int> Original_socioTelefono, global::System.Nullable<int> Original_socioCelular, global::System.Nullable<global::System.DateTime> Original_socioFechaNac, global::System.Nullable<global::System.DateTime> Original_socioFechaIng, global::System.Nullable<global::System.DateTime> Original_socioFechaUltPago, global::System.Nullable<int> Original_grupoId, string Original_catId, bool Original_socioGenero, string Original_socioNotas, bool Original_socioEstado) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_socioID));
             if ((Original_socioNombre == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -8021,6 +8382,8 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
                 this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[26].Value = ((string)(Original_socioNotas));
             }
+            this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(0));
+            this.Adapter.DeleteCommand.Parameters[28].Value = ((bool)(Original_socioEstado));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -8041,7 +8404,7 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string socioNombre, global::System.Nullable<int> socioDNI, string socioDireccion, string socioMail, global::System.Nullable<int> socioTelefono, global::System.Nullable<int> socioCelular, global::System.Nullable<global::System.DateTime> socioFechaNac, global::System.Nullable<global::System.DateTime> socioFechaIng, global::System.Nullable<global::System.DateTime> socioFechaUltPago, global::System.Nullable<int> grupoId, string catId, bool socioGenero, string socioNotas) {
+        public virtual int Insert(string socioNombre, global::System.Nullable<int> socioDNI, string socioDireccion, string socioMail, global::System.Nullable<int> socioTelefono, global::System.Nullable<int> socioCelular, global::System.Nullable<global::System.DateTime> socioFechaNac, global::System.Nullable<global::System.DateTime> socioFechaIng, global::System.Nullable<global::System.DateTime> socioFechaUltPago, global::System.Nullable<int> grupoId, string catId, bool socioGenero, string socioNotas, bool socioEstado) {
             if ((socioNombre == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -8115,6 +8478,7 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[12].Value = ((string)(socioNotas));
             }
+            this.Adapter.InsertCommand.Parameters[13].Value = ((bool)(socioEstado));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -8149,6 +8513,7 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
                     string catId, 
                     bool socioGenero, 
                     string socioNotas, 
+                    bool socioEstado, 
                     int Original_socioID, 
                     string Original_socioNombre, 
                     global::System.Nullable<int> Original_socioDNI, 
@@ -8162,7 +8527,8 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
                     global::System.Nullable<int> Original_grupoId, 
                     string Original_catId, 
                     bool Original_socioGenero, 
-                    string Original_socioNotas) {
+                    string Original_socioNotas, 
+                    bool Original_socioEstado) {
             if ((socioNombre == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -8236,105 +8602,108 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(socioNotas));
             }
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_socioID));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((bool)(socioEstado));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_socioID));
             if ((Original_socioNombre == null)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_socioNombre));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_socioNombre));
             }
             if ((Original_socioDNI.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_socioDNI.Value));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_socioDNI.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             if ((Original_socioDireccion == null)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_socioDireccion));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_socioDireccion));
             }
             if ((Original_socioMail == null)) {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_socioMail));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_socioMail));
             }
             if ((Original_socioTelefono.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((int)(Original_socioTelefono.Value));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((int)(Original_socioTelefono.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             if ((Original_socioCelular.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((int)(Original_socioCelular.Value));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((int)(Original_socioCelular.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
             if ((Original_socioFechaNac.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((System.DateTime)(Original_socioFechaNac.Value));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((System.DateTime)(Original_socioFechaNac.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
             }
             if ((Original_socioFechaIng.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((System.DateTime)(Original_socioFechaIng.Value));
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((System.DateTime)(Original_socioFechaIng.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
             }
             if ((Original_socioFechaUltPago.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((System.DateTime)(Original_socioFechaUltPago.Value));
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((System.DateTime)(Original_socioFechaUltPago.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
             }
             if ((Original_grupoId.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((int)(Original_grupoId.Value));
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((int)(Original_grupoId.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
             }
             if ((Original_catId == null)) {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((string)(Original_catId));
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((string)(Original_catId));
             }
-            this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(0));
-            this.Adapter.UpdateCommand.Parameters[37].Value = ((bool)(Original_socioGenero));
+            this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(0));
+            this.Adapter.UpdateCommand.Parameters[38].Value = ((bool)(Original_socioGenero));
             if ((Original_socioNotas == null)) {
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[39].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[40].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((string)(Original_socioNotas));
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((string)(Original_socioNotas));
             }
+            this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(0));
+            this.Adapter.UpdateCommand.Parameters[42].Value = ((bool)(Original_socioEstado));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
