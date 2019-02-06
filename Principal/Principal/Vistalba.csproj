@@ -45,21 +45,142 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Actividades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Actividades.Designer.cs">
+      <DependentUpon>Actividades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Club_VistalbaDataSet.cs">
+      <DependentUpon>Club_VistalbaDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Club_VistalbaDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Club_VistalbaDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DBConnect.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModificarActividad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificarActividad.Designer.cs">
+      <DependentUpon>ModificarActividad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarActividades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificarActividades.Designer.cs">
+      <DependentUpon>ModificarActividades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarProfesional.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificarProfesional.Designer.cs">
+      <DependentUpon>ModificarProfesional.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarSalud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificarSalud.Designer.cs">
+      <DependentUpon>ModificarSalud.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificarUsuario.Designer.cs">
+      <DependentUpon>ModificarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NuevaActividad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NuevaActividad.Designer.cs">
+      <DependentUpon>NuevaActividad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NuevoProfesional.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NuevoProfesional.Designer.cs">
+      <DependentUpon>NuevoProfesional.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NuevoSalud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NuevoSalud.Designer.cs">
+      <DependentUpon>NuevoSalud.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NuevoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NuevoUsuario.Designer.cs">
+      <DependentUpon>NuevoUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NuevoUsuarioGrupo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NuevoUsuarioGrupo.Designer.cs">
+      <DependentUpon>NuevoUsuarioGrupo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PagosMensuales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PagosMensuales.Designer.cs">
+      <DependentUpon>PagosMensuales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Profesionales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Profesionales.Designer.cs">
+      <DependentUpon>Profesionales.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Actividades.resx">
+      <DependentUpon>Actividades.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarActividad.resx">
+      <DependentUpon>ModificarActividad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarActividades.resx">
+      <DependentUpon>ModificarActividades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarProfesional.resx">
+      <DependentUpon>ModificarProfesional.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarSalud.resx">
+      <DependentUpon>ModificarSalud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarUsuario.resx">
+      <DependentUpon>ModificarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NuevaActividad.resx">
+      <DependentUpon>NuevaActividad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NuevoProfesional.resx">
+      <DependentUpon>NuevoProfesional.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NuevoSalud.resx">
+      <DependentUpon>NuevoSalud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NuevoUsuario.resx">
+      <DependentUpon>NuevoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NuevoUsuarioGrupo.resx">
+      <DependentUpon>NuevoUsuarioGrupo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PagosMensuales.resx">
+      <DependentUpon>PagosMensuales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Profesionales.resx">
+      <DependentUpon>Profesionales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
