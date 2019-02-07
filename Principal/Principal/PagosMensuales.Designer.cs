@@ -37,40 +37,40 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.clubVistalbaDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.mensualDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvPagos = new System.Windows.Forms.DataGridView();
+            this.socioIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mesEneroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mesFebreroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mesMarzoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mesAbrilDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mesMayoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mesJunioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mesJulioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mesAgostoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mesSeptiembreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mesOctubreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mesNoviembreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mesDiciembreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mesEneroPagoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mesFebreroPagoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mesMarzoPagoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mesAbrilPagoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mesMayoPagoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mesJunioPagoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mesJulioPagoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mesAgostoPagoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mesSeptiembrePagoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mesOctubrePagoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mesNoviembrePagoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mesDiciembrePagoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mesDerechoUnoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mesDerechoDosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mesDeudaAnteriorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mesTotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mensualBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clubVistalbaDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mensualDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPagos)).BeginInit();
             this.SuspendLayout();
             // 
             // club_VistalbaDataSet
@@ -130,226 +130,226 @@
             this.clubVistalbaDataSetBindingSource.DataSource = this.club_VistalbaDataSet;
             this.clubVistalbaDataSetBindingSource.Position = 0;
             // 
-            // mensualDataGridView
+            // dgvPagos
             // 
-            this.mensualDataGridView.AutoGenerateColumns = false;
-            this.mensualDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.mensualDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12,
-            this.dataGridViewTextBoxColumn13,
-            this.dataGridViewTextBoxColumn14,
-            this.dataGridViewTextBoxColumn15,
-            this.dataGridViewTextBoxColumn16,
-            this.dataGridViewTextBoxColumn17,
-            this.dataGridViewTextBoxColumn18,
-            this.dataGridViewTextBoxColumn19,
-            this.dataGridViewTextBoxColumn20,
-            this.dataGridViewTextBoxColumn21,
-            this.dataGridViewTextBoxColumn22,
-            this.dataGridViewTextBoxColumn23,
-            this.dataGridViewTextBoxColumn24,
-            this.dataGridViewTextBoxColumn25,
-            this.dataGridViewTextBoxColumn26,
-            this.dataGridViewTextBoxColumn27,
-            this.dataGridViewTextBoxColumn28,
-            this.dataGridViewTextBoxColumn29});
-            this.mensualDataGridView.DataSource = this.mensualBindingSource;
-            this.mensualDataGridView.Location = new System.Drawing.Point(12, 12);
-            this.mensualDataGridView.Name = "mensualDataGridView";
-            this.mensualDataGridView.Size = new System.Drawing.Size(923, 351);
-            this.mensualDataGridView.TabIndex = 4;
+            this.dgvPagos.AutoGenerateColumns = false;
+            this.dgvPagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPagos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.socioIDDataGridViewTextBoxColumn,
+            this.mesEneroDataGridViewTextBoxColumn,
+            this.mesFebreroDataGridViewTextBoxColumn,
+            this.mesMarzoDataGridViewTextBoxColumn,
+            this.mesAbrilDataGridViewTextBoxColumn,
+            this.mesMayoDataGridViewTextBoxColumn,
+            this.mesJunioDataGridViewTextBoxColumn,
+            this.mesJulioDataGridViewTextBoxColumn,
+            this.mesAgostoDataGridViewTextBoxColumn,
+            this.mesSeptiembreDataGridViewTextBoxColumn,
+            this.mesOctubreDataGridViewTextBoxColumn,
+            this.mesNoviembreDataGridViewTextBoxColumn,
+            this.mesDiciembreDataGridViewTextBoxColumn,
+            this.mesEneroPagoDataGridViewTextBoxColumn,
+            this.mesFebreroPagoDataGridViewTextBoxColumn,
+            this.mesMarzoPagoDataGridViewTextBoxColumn,
+            this.mesAbrilPagoDataGridViewTextBoxColumn,
+            this.mesMayoPagoDataGridViewTextBoxColumn,
+            this.mesJunioPagoDataGridViewTextBoxColumn,
+            this.mesJulioPagoDataGridViewTextBoxColumn,
+            this.mesAgostoPagoDataGridViewTextBoxColumn,
+            this.mesSeptiembrePagoDataGridViewTextBoxColumn,
+            this.mesOctubrePagoDataGridViewTextBoxColumn,
+            this.mesNoviembrePagoDataGridViewTextBoxColumn,
+            this.mesDiciembrePagoDataGridViewTextBoxColumn,
+            this.mesDerechoUnoDataGridViewTextBoxColumn,
+            this.mesDerechoDosDataGridViewTextBoxColumn,
+            this.mesDeudaAnteriorDataGridViewTextBoxColumn,
+            this.mesTotalDataGridViewTextBoxColumn});
+            this.dgvPagos.DataSource = this.mensualBindingSource;
+            this.dgvPagos.Location = new System.Drawing.Point(12, 12);
+            this.dgvPagos.Name = "dgvPagos";
+            this.dgvPagos.Size = new System.Drawing.Size(923, 311);
+            this.dgvPagos.TabIndex = 5;
             // 
-            // dataGridViewTextBoxColumn1
+            // socioIDDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "socioID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "socioID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.socioIDDataGridViewTextBoxColumn.DataPropertyName = "socioID";
+            this.socioIDDataGridViewTextBoxColumn.HeaderText = "socioID";
+            this.socioIDDataGridViewTextBoxColumn.Name = "socioIDDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn2
+            // mesEneroDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "mesEnero";
-            this.dataGridViewTextBoxColumn2.HeaderText = "mesEnero";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.mesEneroDataGridViewTextBoxColumn.DataPropertyName = "mesEnero";
+            this.mesEneroDataGridViewTextBoxColumn.HeaderText = "mesEnero";
+            this.mesEneroDataGridViewTextBoxColumn.Name = "mesEneroDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn3
+            // mesFebreroDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "mesFebrero";
-            this.dataGridViewTextBoxColumn3.HeaderText = "mesFebrero";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.mesFebreroDataGridViewTextBoxColumn.DataPropertyName = "mesFebrero";
+            this.mesFebreroDataGridViewTextBoxColumn.HeaderText = "mesFebrero";
+            this.mesFebreroDataGridViewTextBoxColumn.Name = "mesFebreroDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn4
+            // mesMarzoDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "mesMarzo";
-            this.dataGridViewTextBoxColumn4.HeaderText = "mesMarzo";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.mesMarzoDataGridViewTextBoxColumn.DataPropertyName = "mesMarzo";
+            this.mesMarzoDataGridViewTextBoxColumn.HeaderText = "mesMarzo";
+            this.mesMarzoDataGridViewTextBoxColumn.Name = "mesMarzoDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn5
+            // mesAbrilDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "mesAbril";
-            this.dataGridViewTextBoxColumn5.HeaderText = "mesAbril";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.mesAbrilDataGridViewTextBoxColumn.DataPropertyName = "mesAbril";
+            this.mesAbrilDataGridViewTextBoxColumn.HeaderText = "mesAbril";
+            this.mesAbrilDataGridViewTextBoxColumn.Name = "mesAbrilDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn6
+            // mesMayoDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "mesMayo";
-            this.dataGridViewTextBoxColumn6.HeaderText = "mesMayo";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.mesMayoDataGridViewTextBoxColumn.DataPropertyName = "mesMayo";
+            this.mesMayoDataGridViewTextBoxColumn.HeaderText = "mesMayo";
+            this.mesMayoDataGridViewTextBoxColumn.Name = "mesMayoDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn7
+            // mesJunioDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "mesJunio";
-            this.dataGridViewTextBoxColumn7.HeaderText = "mesJunio";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.mesJunioDataGridViewTextBoxColumn.DataPropertyName = "mesJunio";
+            this.mesJunioDataGridViewTextBoxColumn.HeaderText = "mesJunio";
+            this.mesJunioDataGridViewTextBoxColumn.Name = "mesJunioDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn8
+            // mesJulioDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "mesJulio";
-            this.dataGridViewTextBoxColumn8.HeaderText = "mesJulio";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.mesJulioDataGridViewTextBoxColumn.DataPropertyName = "mesJulio";
+            this.mesJulioDataGridViewTextBoxColumn.HeaderText = "mesJulio";
+            this.mesJulioDataGridViewTextBoxColumn.Name = "mesJulioDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn9
+            // mesAgostoDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "mesAgosto";
-            this.dataGridViewTextBoxColumn9.HeaderText = "mesAgosto";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.mesAgostoDataGridViewTextBoxColumn.DataPropertyName = "mesAgosto";
+            this.mesAgostoDataGridViewTextBoxColumn.HeaderText = "mesAgosto";
+            this.mesAgostoDataGridViewTextBoxColumn.Name = "mesAgostoDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn10
+            // mesSeptiembreDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "mesSeptiembre";
-            this.dataGridViewTextBoxColumn10.HeaderText = "mesSeptiembre";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.mesSeptiembreDataGridViewTextBoxColumn.DataPropertyName = "mesSeptiembre";
+            this.mesSeptiembreDataGridViewTextBoxColumn.HeaderText = "mesSeptiembre";
+            this.mesSeptiembreDataGridViewTextBoxColumn.Name = "mesSeptiembreDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn11
+            // mesOctubreDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "mesOctubre";
-            this.dataGridViewTextBoxColumn11.HeaderText = "mesOctubre";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.mesOctubreDataGridViewTextBoxColumn.DataPropertyName = "mesOctubre";
+            this.mesOctubreDataGridViewTextBoxColumn.HeaderText = "mesOctubre";
+            this.mesOctubreDataGridViewTextBoxColumn.Name = "mesOctubreDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn12
+            // mesNoviembreDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "mesNoviembre";
-            this.dataGridViewTextBoxColumn12.HeaderText = "mesNoviembre";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.mesNoviembreDataGridViewTextBoxColumn.DataPropertyName = "mesNoviembre";
+            this.mesNoviembreDataGridViewTextBoxColumn.HeaderText = "mesNoviembre";
+            this.mesNoviembreDataGridViewTextBoxColumn.Name = "mesNoviembreDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn13
+            // mesDiciembreDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "mesDiciembre";
-            this.dataGridViewTextBoxColumn13.HeaderText = "mesDiciembre";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.mesDiciembreDataGridViewTextBoxColumn.DataPropertyName = "mesDiciembre";
+            this.mesDiciembreDataGridViewTextBoxColumn.HeaderText = "mesDiciembre";
+            this.mesDiciembreDataGridViewTextBoxColumn.Name = "mesDiciembreDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn14
+            // mesEneroPagoDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "mesEneroPago";
-            this.dataGridViewTextBoxColumn14.HeaderText = "mesEneroPago";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.mesEneroPagoDataGridViewTextBoxColumn.DataPropertyName = "mesEneroPago";
+            this.mesEneroPagoDataGridViewTextBoxColumn.HeaderText = "mesEneroPago";
+            this.mesEneroPagoDataGridViewTextBoxColumn.Name = "mesEneroPagoDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn15
+            // mesFebreroPagoDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn15.DataPropertyName = "mesFebreroPago";
-            this.dataGridViewTextBoxColumn15.HeaderText = "mesFebreroPago";
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.mesFebreroPagoDataGridViewTextBoxColumn.DataPropertyName = "mesFebreroPago";
+            this.mesFebreroPagoDataGridViewTextBoxColumn.HeaderText = "mesFebreroPago";
+            this.mesFebreroPagoDataGridViewTextBoxColumn.Name = "mesFebreroPagoDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn16
+            // mesMarzoPagoDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn16.DataPropertyName = "mesMarzoPago";
-            this.dataGridViewTextBoxColumn16.HeaderText = "mesMarzoPago";
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.mesMarzoPagoDataGridViewTextBoxColumn.DataPropertyName = "mesMarzoPago";
+            this.mesMarzoPagoDataGridViewTextBoxColumn.HeaderText = "mesMarzoPago";
+            this.mesMarzoPagoDataGridViewTextBoxColumn.Name = "mesMarzoPagoDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn17
+            // mesAbrilPagoDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn17.DataPropertyName = "mesAbrilPago";
-            this.dataGridViewTextBoxColumn17.HeaderText = "mesAbrilPago";
-            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            this.mesAbrilPagoDataGridViewTextBoxColumn.DataPropertyName = "mesAbrilPago";
+            this.mesAbrilPagoDataGridViewTextBoxColumn.HeaderText = "mesAbrilPago";
+            this.mesAbrilPagoDataGridViewTextBoxColumn.Name = "mesAbrilPagoDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn18
+            // mesMayoPagoDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn18.DataPropertyName = "mesMayoPago";
-            this.dataGridViewTextBoxColumn18.HeaderText = "mesMayoPago";
-            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            this.mesMayoPagoDataGridViewTextBoxColumn.DataPropertyName = "mesMayoPago";
+            this.mesMayoPagoDataGridViewTextBoxColumn.HeaderText = "mesMayoPago";
+            this.mesMayoPagoDataGridViewTextBoxColumn.Name = "mesMayoPagoDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn19
+            // mesJunioPagoDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn19.DataPropertyName = "mesJunioPago";
-            this.dataGridViewTextBoxColumn19.HeaderText = "mesJunioPago";
-            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            this.mesJunioPagoDataGridViewTextBoxColumn.DataPropertyName = "mesJunioPago";
+            this.mesJunioPagoDataGridViewTextBoxColumn.HeaderText = "mesJunioPago";
+            this.mesJunioPagoDataGridViewTextBoxColumn.Name = "mesJunioPagoDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn20
+            // mesJulioPagoDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn20.DataPropertyName = "mesJulioPago";
-            this.dataGridViewTextBoxColumn20.HeaderText = "mesJulioPago";
-            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
+            this.mesJulioPagoDataGridViewTextBoxColumn.DataPropertyName = "mesJulioPago";
+            this.mesJulioPagoDataGridViewTextBoxColumn.HeaderText = "mesJulioPago";
+            this.mesJulioPagoDataGridViewTextBoxColumn.Name = "mesJulioPagoDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn21
+            // mesAgostoPagoDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn21.DataPropertyName = "mesAgostoPago";
-            this.dataGridViewTextBoxColumn21.HeaderText = "mesAgostoPago";
-            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
+            this.mesAgostoPagoDataGridViewTextBoxColumn.DataPropertyName = "mesAgostoPago";
+            this.mesAgostoPagoDataGridViewTextBoxColumn.HeaderText = "mesAgostoPago";
+            this.mesAgostoPagoDataGridViewTextBoxColumn.Name = "mesAgostoPagoDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn22
+            // mesSeptiembrePagoDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn22.DataPropertyName = "mesSeptiembrePago";
-            this.dataGridViewTextBoxColumn22.HeaderText = "mesSeptiembrePago";
-            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
+            this.mesSeptiembrePagoDataGridViewTextBoxColumn.DataPropertyName = "mesSeptiembrePago";
+            this.mesSeptiembrePagoDataGridViewTextBoxColumn.HeaderText = "mesSeptiembrePago";
+            this.mesSeptiembrePagoDataGridViewTextBoxColumn.Name = "mesSeptiembrePagoDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn23
+            // mesOctubrePagoDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn23.DataPropertyName = "mesOctubrePago";
-            this.dataGridViewTextBoxColumn23.HeaderText = "mesOctubrePago";
-            this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
+            this.mesOctubrePagoDataGridViewTextBoxColumn.DataPropertyName = "mesOctubrePago";
+            this.mesOctubrePagoDataGridViewTextBoxColumn.HeaderText = "mesOctubrePago";
+            this.mesOctubrePagoDataGridViewTextBoxColumn.Name = "mesOctubrePagoDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn24
+            // mesNoviembrePagoDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn24.DataPropertyName = "mesNoviembrePago";
-            this.dataGridViewTextBoxColumn24.HeaderText = "mesNoviembrePago";
-            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
+            this.mesNoviembrePagoDataGridViewTextBoxColumn.DataPropertyName = "mesNoviembrePago";
+            this.mesNoviembrePagoDataGridViewTextBoxColumn.HeaderText = "mesNoviembrePago";
+            this.mesNoviembrePagoDataGridViewTextBoxColumn.Name = "mesNoviembrePagoDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn25
+            // mesDiciembrePagoDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn25.DataPropertyName = "mesDiciembrePago";
-            this.dataGridViewTextBoxColumn25.HeaderText = "mesDiciembrePago";
-            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
+            this.mesDiciembrePagoDataGridViewTextBoxColumn.DataPropertyName = "mesDiciembrePago";
+            this.mesDiciembrePagoDataGridViewTextBoxColumn.HeaderText = "mesDiciembrePago";
+            this.mesDiciembrePagoDataGridViewTextBoxColumn.Name = "mesDiciembrePagoDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn26
+            // mesDerechoUnoDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn26.DataPropertyName = "mesDerechoUno";
-            this.dataGridViewTextBoxColumn26.HeaderText = "mesDerechoUno";
-            this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
+            this.mesDerechoUnoDataGridViewTextBoxColumn.DataPropertyName = "mesDerechoUno";
+            this.mesDerechoUnoDataGridViewTextBoxColumn.HeaderText = "mesDerechoUno";
+            this.mesDerechoUnoDataGridViewTextBoxColumn.Name = "mesDerechoUnoDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn27
+            // mesDerechoDosDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn27.DataPropertyName = "mesDerechoDos";
-            this.dataGridViewTextBoxColumn27.HeaderText = "mesDerechoDos";
-            this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
+            this.mesDerechoDosDataGridViewTextBoxColumn.DataPropertyName = "mesDerechoDos";
+            this.mesDerechoDosDataGridViewTextBoxColumn.HeaderText = "mesDerechoDos";
+            this.mesDerechoDosDataGridViewTextBoxColumn.Name = "mesDerechoDosDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn28
+            // mesDeudaAnteriorDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn28.DataPropertyName = "mesDeudaAnterior";
-            this.dataGridViewTextBoxColumn28.HeaderText = "mesDeudaAnterior";
-            this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
+            this.mesDeudaAnteriorDataGridViewTextBoxColumn.DataPropertyName = "mesDeudaAnterior";
+            this.mesDeudaAnteriorDataGridViewTextBoxColumn.HeaderText = "mesDeudaAnterior";
+            this.mesDeudaAnteriorDataGridViewTextBoxColumn.Name = "mesDeudaAnteriorDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn29
+            // mesTotalDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn29.DataPropertyName = "mesTotal";
-            this.dataGridViewTextBoxColumn29.HeaderText = "mesTotal";
-            this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
+            this.mesTotalDataGridViewTextBoxColumn.DataPropertyName = "mesTotal";
+            this.mesTotalDataGridViewTextBoxColumn.HeaderText = "mesTotal";
+            this.mesTotalDataGridViewTextBoxColumn.Name = "mesTotalDataGridViewTextBoxColumn";
             // 
             // PagosMensuales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(947, 421);
-            this.Controls.Add(this.mensualDataGridView);
+            this.Controls.Add(this.dgvPagos);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
@@ -359,7 +359,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mensualBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clubVistalbaDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mensualDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPagos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -375,35 +375,35 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.BindingSource clubVistalbaDataSetBindingSource;
-        private System.Windows.Forms.DataGridView mensualDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn25;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn26;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn27;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn28;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn29;
+        private System.Windows.Forms.DataGridView dgvPagos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn socioIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mesEneroDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mesFebreroDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mesMarzoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mesAbrilDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mesMayoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mesJunioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mesJulioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mesAgostoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mesSeptiembreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mesOctubreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mesNoviembreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mesDiciembreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mesEneroPagoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mesFebreroPagoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mesMarzoPagoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mesAbrilPagoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mesMayoPagoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mesJunioPagoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mesJulioPagoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mesAgostoPagoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mesSeptiembrePagoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mesOctubrePagoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mesNoviembrePagoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mesDiciembrePagoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mesDerechoUnoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mesDerechoDosDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mesDeudaAnteriorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mesTotalDataGridViewTextBoxColumn;
     }
 }
