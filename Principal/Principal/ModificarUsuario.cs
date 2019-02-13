@@ -88,6 +88,8 @@ Persist Security Info=False;";
                 OleDbCommand command = new OleDbCommand();
                 command.Connection = conModificar;
                 string query = "UPDATE Socio SET socioNombre = '" + txtNombre.Text + "', socioDNI = " + txtDNI.Text + ", socioDireccion = '" + txtDireccion.Text + "', socioMail = '" + txtMail.Text + "', socioTelefono = " + txtTelefono.Text + ", socioCelular = " + txtCelular.Text + ", socioGenero = '" + flag + "' WHERE socioID = " + lblID.Text + "";
+
+                string seters = "socioNombre = '" + txtNombre.Text + "', socioDNI = " + txtDNI.Text + ", socioDireccion = '" + txtDireccion.Text + "', socioMail = '" + txtMail.Text + "', socioTelefono = " + txtTelefono.Text + ", socioCelular = " + txtCelular.Text + ", socioGenero = '" + flag + "' WHERE socioID = " + lblID.Text + "";
                 command.CommandText = query;
 
                 command.ExecuteNonQuery();
@@ -96,12 +98,13 @@ Persist Security Info=False;";
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al guardar " + ex.Message);
+                MessageBox.Show("Error al guardar: " + ex.Message);
             }
             finally
             {
                 conModificar.Close();
                 conModificar.Dispose();
+                this.Refresh();
             }
         }
 

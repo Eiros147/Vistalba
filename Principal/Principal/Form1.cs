@@ -183,5 +183,10 @@ Persist Security Info=False;");
             Profesionales nuprof = new Profesionales();
             nuprof.ShowDialog();
         }
+
+        private void Form1_Activated(object sender, EventArgs e)
+        {
+
+        }
     }
 }
