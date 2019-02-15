@@ -122,6 +122,31 @@ namespace Principal
                 MessageBox.Show("Error " + ex);
             }
         }
+
+        //Llenar textboxs
+        public void Llenartextbox(string valores, string tabla, string key, int id)
+        {
+            try
+            {
+                string query = "SELECT " + valores + " FROM " + tabla + " WHERE " + key + " = " + id + "";
+                AbrirCon();
+
+                OleDbCommand comando = new OleDbCommand(query, conexion);
+
+                DataTable dt = new DataTable();
+                OleDbDataReader lector = null;
+                lector = comando.ExecuteReader();
+
+                while (lector.Read())
+                {
+
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error " + ex);
+            }
+        }
     }
 
 
