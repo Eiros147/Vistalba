@@ -107,8 +107,6 @@ namespace Principal
 
                 OleDbCommand comando = new OleDbCommand(query, conexion);
 
-                MessageBox.Show(query);
-
                 OleDbDataAdapter da = new OleDbDataAdapter(comando);
                 DataTable dt = new DataTable();
                 da.Fill(dt);

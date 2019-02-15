@@ -33,34 +33,12 @@ Persist Security Info=False;");
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            try
-            {
-                conexion.Open();
-                OleDbCommand command = new OleDbCommand();
-                command.Connection = conexion;
-                string query = "SELECT socioNombre, socioDNI, socioDireccion, socioMail, socioTelefono, socioCelular, socioFechaIng, socioFechaUltPago, socioFechaNac, socioGenero  FROM socio";
-                command.CommandText = query;
+            Metodos cargametodo = new Metodos();
+            string tabla = "Socio";
+            string valores = "socioNombre, socioDNI, socioDireccion, socioMail, socioTelefono, socioCelular, socioFechaIng, socioFechaUltPago, socioFechaNac, socioGenero";
 
-                OleDbDataAdapter da = new OleDbDataAdapter(command);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                dgvSocio.DataSource = dt;
-
-                conexion.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al conectarse" + ex);
-            }
-
-
-            //// TODO: esta línea de código carga datos en la tabla 'club_VistalbaDataSet.Salud' Puede moverla o quitarla según sea necesario.
-            //this.saludTableAdapter.Fill(this.club_VistalbaDataSet.Salud);
-            //// TODO: esta línea de código carga datos en la tabla 'club_VistalbaDataSet.Socio' Puede moverla o quitarla según sea necesario.
-            //this.socioTableAdapter.Fill(this.club_VistalbaDataSet.Socio);
-            //this.dgvSocio.EndEdit();
-            //this.Refresh();
-            //this.dgvSocio.Refresh();
+            cargametodo.Inicializar();
+            cargametodo.Llenardgv(tabla, valores, dgvSocio);
 
 
         }
@@ -193,25 +171,7 @@ Persist Security Info=False;");
             cargametodo.Inicializar();
             cargametodo.Llenardgv(tabla, valores, dgvSocio);
 
-            //try
-            //{
-            //    conexion.Open();
-            //    OleDbCommand command = new OleDbCommand();
-            //    command.Connection = conexion;
-            //    string query = "SELECT socioNombre, socioDNI, socioDireccion, socioMail, socioTelefono, socioCelular, socioFechaIng, socioFechaUltPago, socioFechaNac, socioGenero  FROM socio";
-            //    command.CommandText = query;
-
-            //    OleDbDataAdapter da = new OleDbDataAdapter(command);
-            //    DataTable dt = new DataTable();
-            //    da.Fill(dt);
-            //    dgvSocio.DataSource = dt;
-
-            //    conexion.Close();
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("Error al conectarse" + ex);
-            //}
+            
         }
     }
 }
