@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.OleDb;
 using System.Windows.Forms;
+using System.Data;
 
 namespace Principal
 {
@@ -52,15 +53,77 @@ namespace Principal
         }
 
         //Insertar
-        public void Insertar(string tabla,int id, string seters)
+        public void Insertar(string tabla, string seters, string valores)
         {
-            if(tabla == "Socio")
-            {
+            try
+                {
+                    string query = "INSERT INTO " + tabla + " (" + seters + ") VALUES (" + valores + ")";
+                    AbrirCon();
 
-            }
-            string query = "insert into ";
+                    OleDbCommand comando = new OleDbCommand(query, conexion);
+
+                    //Ejecutar query
+
+                    comando.ExecuteNonQuery();
+                    this.CerrarCon();
+                    MessageBox.Show("Nuevo "+tabla+" guardado");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error " + ex);
+
+             }
         }
 
+        //Actualizar
+        public void Update(string tabla, int id, string valores, string key)
+        {
+            try
+            {
+                string query = "UPDATE "+tabla+" SET "+valores+" WHERE "+key+ " = "+id+"";
+                AbrirCon();
+
+                OleDbCommand comando = new OleDbCommand(query, conexion);
+
+                MessageBox.Show(query);
+
+                comando.ExecuteNonQuery();
+                this.CerrarCon();
+                MessageBox.Show(tabla + " actualizado");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error " + ex);
+            }
+        }
+
+        //Llenar tabla
+        public void Llenardgv (string tabla, string valores, DataGridView dgv)
+        {
+            try
+            {
+                string query = "SELECT " +valores+ " FROM "+tabla;
+                AbrirCon();
+
+                OleDbCommand comando = new OleDbCommand(query, conexion);
+
+                MessageBox.Show(query);
+
+                OleDbDataAdapter da = new OleDbDataAdapter(comando);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dgv.DataSource = dt;
+
+                comando.ExecuteNonQuery();
+
+                this.CerrarCon();
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error " + ex);
+            }
+        }
     }
 
 

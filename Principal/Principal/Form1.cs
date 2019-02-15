@@ -186,7 +186,32 @@ Persist Security Info=False;");
 
         private void Form1_Activated(object sender, EventArgs e)
         {
+            Metodos cargametodo = new Metodos();
+            string tabla = "Socio";
+            string valores = "socioNombre, socioDNI, socioDireccion, socioMail, socioTelefono, socioCelular, socioFechaIng, socioFechaUltPago, socioFechaNac, socioGenero";
 
+            cargametodo.Inicializar();
+            cargametodo.Llenardgv(tabla, valores, dgvSocio);
+
+            //try
+            //{
+            //    conexion.Open();
+            //    OleDbCommand command = new OleDbCommand();
+            //    command.Connection = conexion;
+            //    string query = "SELECT socioNombre, socioDNI, socioDireccion, socioMail, socioTelefono, socioCelular, socioFechaIng, socioFechaUltPago, socioFechaNac, socioGenero  FROM socio";
+            //    command.CommandText = query;
+
+            //    OleDbDataAdapter da = new OleDbDataAdapter(command);
+            //    DataTable dt = new DataTable();
+            //    da.Fill(dt);
+            //    dgvSocio.DataSource = dt;
+
+            //    conexion.Close();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Error al conectarse" + ex);
+            //}
         }
     }
 }

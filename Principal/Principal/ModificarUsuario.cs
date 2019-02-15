@@ -37,11 +37,7 @@ Persist Security Info=False;";
 
         private void ModificarUsuario_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'club_VistalbaDataSet.Grupo' Puede moverla o quitarla según sea necesario.
-            //this.grupoTableAdapter.Fill(this.club_VistalbaDataSet.Grupo);
-            // TODO: esta línea de código carga datos en la tabla 'club_VistalbaDataSet.Socio' Puede moverla o quitarla según sea necesario.
-            //this.socioTableAdapter.Fill(this.club_VistalbaDataSet.Socio);
-            //cargargenero();
+            
         }
 
         private void btnHabilitar_Click(object sender, EventArgs e)
@@ -81,64 +77,18 @@ Persist Security Info=False;";
                 flag = 0;
             }
 
+            string seters = "socioNombre = '" + txtNombre.Text + "', socioDNI = " + txtDNI.Text + ", socioDireccion = '" + txtDireccion.Text + "', socioMail = '" + txtMail.Text + "', socioTelefono = " + txtTelefono.Text + ", socioCelular = " + txtCelular.Text + ", socioGenero = " + flag;
+            string tabla = "Socio";
+            string key = "socioID";
+            int id = Convert.ToInt32(lblID.Text);
 
-            try
-            {
-                conModificar.Open();
-                OleDbCommand command = new OleDbCommand();
-                command.Connection = conModificar;
-                string query = "UPDATE Socio SET socioNombre = '" + txtNombre.Text + "', socioDNI = " + txtDNI.Text + ", socioDireccion = '" + txtDireccion.Text + "', socioMail = '" + txtMail.Text + "', socioTelefono = " + txtTelefono.Text + ", socioCelular = " + txtCelular.Text + ", socioGenero = '" + flag + "' WHERE socioID = " + lblID.Text + "";
+            Metodos modMetodo = new Metodos();
+            modMetodo.Inicializar();
 
-                string seters = "socioNombre = '" + txtNombre.Text + "', socioDNI = " + txtDNI.Text + ", socioDireccion = '" + txtDireccion.Text + "', socioMail = '" + txtMail.Text + "', socioTelefono = " + txtTelefono.Text + ", socioCelular = " + txtCelular.Text + ", socioGenero = '" + flag + "' WHERE socioID = " + lblID.Text + "";
-                command.CommandText = query;
+            modMetodo.Update(tabla, id, seters, key);
 
-                command.ExecuteNonQuery();
-
-                
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al guardar: " + ex.Message);
-            }
-            finally
-            {
-                conModificar.Close();
-                conModificar.Dispose();
-                this.Refresh();
-            }
         }
 
-        private void cargargenero()
-        {
-            try
-            {
-                conModificar.Open();
-                OleDbCommand command = new OleDbCommand();
-                command.Connection = conModificar;
-                string query = "SELECT socioGenero FROM Socio WHERE socioID='" + lblID.Text + "'";
-                command.CommandText = query;
-
-                string temporal = command.ExecuteScalar().ToString();
-
-                MessageBox.Show(temporal);
-
-                /*if ()
-                {
-                    if (e.Value is bool)
-                    {
-                        bool value = (bool)e.Value;
-                        e.Value = (value) ? "Hombre" : "Mujer";
-                        e.FormattingApplied = true;
-                    }
-                }*/
-
-                conModificar.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al conectarse" + ex);
-            }
-        }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {

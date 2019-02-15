@@ -44,24 +44,6 @@ Persist Security Info=False;";
                 string query = "SELECT TOP 1 socioID FROM Socio ORDER BY socioID DESC ";
                 OleDbCommand command = new OleDbCommand(query, conNuevo);
 
-                /*OleDbDataReader lector = command.ExecuteReader();
-
-                lector.Read();
-
-                int socioid = lector.GetOrdinal("socioID");
-
-                lector.Read();
-
-                int temporal = lector.GetInt32(socioid);
-                temporal = temporal + 2;
-                string segundotemp = Convert.ToString(temporal);
-
-                lblSocioID.Text = segundotemp;
-                
-                //lblSocioID.Text = temporal;
-                lector.Close();
-
-                MessageBox.Show("Conectado");*/
 
                 string temporal = command.ExecuteScalar().ToString();
                 int numero = Int32.Parse(temporal);
@@ -104,29 +86,14 @@ Persist Security Info=False;";
 
         private void guardar()
         {
-            try
-            {
-                conNuevo.Open();
-                OleDbCommand command = new OleDbCommand();
-                command.Connection = conNuevo;
-                string query = "INSERT INTO Socio (socioNombre, socioDNI, socioDireccion, socioMail, socioTelefono, socioCelular) VALUES('" + txtNombre.Text + "','" + txtDNI.Text + "','" + txtDireccion.Text + "','" + txtMail.Text + "','" + txtTelefono.Text + "','" + txtCelular.Text + "')";
-                command.CommandText = query;
+            Metodos nuevometodo = new Metodos();
+            nuevometodo.Inicializar();
 
-                command.ExecuteNonQuery();
-                MessageBox.Show("Socio guardado");
+            string tabla = "Socio";
+            string seters = "socioNombre, socioDNI, socioDireccion, socioMail, socioTelefono, socioCelular";
+            string valores = "'" + txtNombre.Text + "','" + txtDNI.Text + "','" + txtDireccion.Text + "','" + txtMail.Text + "','" + txtTelefono.Text + "','" + txtCelular.Text + "'";
 
-                
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al guardar" + ex.Message);
-            }
-            finally
-            {
-                conNuevo.Close();
-            }
-
+            nuevometodo.Insertar(tabla,seters,valores);
         }
     }
 }
