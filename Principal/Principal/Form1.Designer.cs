@@ -34,16 +34,6 @@
             this.socioTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.SocioTableAdapter();
             this.tableAdapterManager = new Principal.Club_VistalbaDataSetTableAdapters.TableAdapterManager();
             this.dgvSocio = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.socioGenero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnAbrir = new System.Windows.Forms.Button();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
@@ -56,6 +46,19 @@
             this.smiCategorias = new System.Windows.Forms.ToolStripMenuItem();
             this.smiPagos = new System.Windows.Forms.ToolStripMenuItem();
             this.socioSaludBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.socioGenero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.socioCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.socioNivel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.smiInactivos = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.socioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSocio)).BeginInit();
@@ -107,7 +110,9 @@
             this.socioGenero,
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10});
+            this.dataGridViewTextBoxColumn10,
+            this.socioCategoria,
+            this.socioNivel});
             this.dgvSocio.DataSource = this.socioBindingSource;
             this.dgvSocio.Location = new System.Drawing.Point(12, 28);
             this.dgvSocio.Name = "dgvSocio";
@@ -117,6 +122,105 @@
             this.dgvSocio.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSocio_CellContentClick);
             this.dgvSocio.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSocio_CellContentDoubleClick);
             this.dgvSocio.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvSocio_CellFormatting);
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnNuevo.Location = new System.Drawing.Point(12, 379);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(75, 39);
+            this.btnNuevo.TabIndex = 2;
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // btnAbrir
+            // 
+            this.btnAbrir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnAbrir.Location = new System.Drawing.Point(108, 379);
+            this.btnAbrir.Name = "btnAbrir";
+            this.btnAbrir.Size = new System.Drawing.Size(75, 39);
+            this.btnAbrir.TabIndex = 3;
+            this.btnAbrir.Text = "Abrir";
+            this.btnAbrir.UseVisualStyleBackColor = true;
+            this.btnAbrir.Click += new System.EventHandler(this.btnAbrir_Click);
+            // 
+            // txtBusqueda
+            // 
+            this.txtBusqueda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBusqueda.Location = new System.Drawing.Point(576, 389);
+            this.txtBusqueda.Name = "txtBusqueda";
+            this.txtBusqueda.Size = new System.Drawing.Size(337, 20);
+            this.txtBusqueda.TabIndex = 4;
+            this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(224, 386);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(69, 32);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // saludTableAdapter
+            // 
+            this.saludTableAdapter.ClearBeforeFill = true;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.smiActividades,
+            this.smiProfesionales,
+            this.smiGrupos,
+            this.smiCategorias,
+            this.smiPagos,
+            this.smiInactivos});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(925, 24);
+            this.menuStrip1.TabIndex = 6;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // smiActividades
+            // 
+            this.smiActividades.Name = "smiActividades";
+            this.smiActividades.Size = new System.Drawing.Size(80, 20);
+            this.smiActividades.Text = "Actividades";
+            this.smiActividades.Click += new System.EventHandler(this.smiActividades_Click);
+            // 
+            // smiProfesionales
+            // 
+            this.smiProfesionales.Name = "smiProfesionales";
+            this.smiProfesionales.Size = new System.Drawing.Size(89, 20);
+            this.smiProfesionales.Text = "Profesionales";
+            this.smiProfesionales.Click += new System.EventHandler(this.smiProfesionales_Click);
+            // 
+            // smiGrupos
+            // 
+            this.smiGrupos.Name = "smiGrupos";
+            this.smiGrupos.Size = new System.Drawing.Size(57, 20);
+            this.smiGrupos.Text = "Grupos";
+            // 
+            // smiCategorias
+            // 
+            this.smiCategorias.Name = "smiCategorias";
+            this.smiCategorias.Size = new System.Drawing.Size(75, 20);
+            this.smiCategorias.Text = "Categorias";
+            // 
+            // smiPagos
+            // 
+            this.smiPagos.Name = "smiPagos";
+            this.smiPagos.Size = new System.Drawing.Size(51, 20);
+            this.smiPagos.Text = "Pagos";
+            this.smiPagos.Click += new System.EventHandler(this.smiPagos_Click);
+            // 
+            // socioSaludBindingSource
+            // 
+            this.socioSaludBindingSource.DataMember = "SocioSalud";
+            this.socioSaludBindingSource.DataSource = this.socioBindingSource;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -180,103 +284,24 @@
             this.dataGridViewTextBoxColumn10.HeaderText = "Fecha Ult Pago";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             // 
-            // btnNuevo
+            // socioCategoria
             // 
-            this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnNuevo.Location = new System.Drawing.Point(12, 379);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(75, 39);
-            this.btnNuevo.TabIndex = 2;
-            this.btnNuevo.Text = "Nuevo";
-            this.btnNuevo.UseVisualStyleBackColor = true;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            this.socioCategoria.DataPropertyName = "socioCategoria";
+            this.socioCategoria.HeaderText = "socioCategoria";
+            this.socioCategoria.Name = "socioCategoria";
             // 
-            // btnAbrir
+            // socioNivel
             // 
-            this.btnAbrir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnAbrir.Location = new System.Drawing.Point(108, 379);
-            this.btnAbrir.Name = "btnAbrir";
-            this.btnAbrir.Size = new System.Drawing.Size(75, 39);
-            this.btnAbrir.TabIndex = 3;
-            this.btnAbrir.Text = "Abrir";
-            this.btnAbrir.UseVisualStyleBackColor = true;
-            this.btnAbrir.Click += new System.EventHandler(this.btnAbrir_Click);
+            this.socioNivel.DataPropertyName = "socioNivel";
+            this.socioNivel.HeaderText = "socioNivel";
+            this.socioNivel.Name = "socioNivel";
             // 
-            // txtBusqueda
+            // smiInactivos
             // 
-            this.txtBusqueda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBusqueda.Location = new System.Drawing.Point(576, 389);
-            this.txtBusqueda.Name = "txtBusqueda";
-            this.txtBusqueda.Size = new System.Drawing.Size(337, 20);
-            this.txtBusqueda.TabIndex = 4;
-            this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(224, 386);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(69, 32);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // saludTableAdapter
-            // 
-            this.saludTableAdapter.ClearBeforeFill = true;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.smiActividades,
-            this.smiProfesionales,
-            this.smiGrupos,
-            this.smiCategorias,
-            this.smiPagos});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(925, 24);
-            this.menuStrip1.TabIndex = 6;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // smiActividades
-            // 
-            this.smiActividades.Name = "smiActividades";
-            this.smiActividades.Size = new System.Drawing.Size(80, 20);
-            this.smiActividades.Text = "Actividades";
-            this.smiActividades.Click += new System.EventHandler(this.smiActividades_Click);
-            // 
-            // smiProfesionales
-            // 
-            this.smiProfesionales.Name = "smiProfesionales";
-            this.smiProfesionales.Size = new System.Drawing.Size(89, 20);
-            this.smiProfesionales.Text = "Profesionales";
-            this.smiProfesionales.Click += new System.EventHandler(this.smiProfesionales_Click);
-            // 
-            // smiGrupos
-            // 
-            this.smiGrupos.Name = "smiGrupos";
-            this.smiGrupos.Size = new System.Drawing.Size(57, 20);
-            this.smiGrupos.Text = "Grupos";
-            // 
-            // smiCategorias
-            // 
-            this.smiCategorias.Name = "smiCategorias";
-            this.smiCategorias.Size = new System.Drawing.Size(75, 20);
-            this.smiCategorias.Text = "Categorias";
-            // 
-            // smiPagos
-            // 
-            this.smiPagos.Name = "smiPagos";
-            this.smiPagos.Size = new System.Drawing.Size(51, 20);
-            this.smiPagos.Text = "Pagos";
-            this.smiPagos.Click += new System.EventHandler(this.smiPagos_Click);
-            // 
-            // socioSaludBindingSource
-            // 
-            this.socioSaludBindingSource.DataMember = "SocioSalud";
-            this.socioSaludBindingSource.DataSource = this.socioBindingSource;
+            this.smiInactivos.Name = "smiInactivos";
+            this.smiInactivos.Size = new System.Drawing.Size(66, 20);
+            this.smiInactivos.Text = "Inactivos";
+            this.smiInactivos.Click += new System.EventHandler(this.smiInactivos_Click);
             // 
             // Form1
             // 
@@ -317,6 +342,13 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.BindingSource socioSaludBindingSource;
         private Club_VistalbaDataSetTableAdapters.SaludTableAdapter saludTableAdapter;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem smiActividades;
+        private System.Windows.Forms.ToolStripMenuItem smiProfesionales;
+        private System.Windows.Forms.ToolStripMenuItem smiGrupos;
+        private System.Windows.Forms.ToolStripMenuItem smiCategorias;
+        private System.Windows.Forms.ToolStripMenuItem smiPagos;
+        public System.Windows.Forms.DataGridView dgvSocio;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
@@ -327,13 +359,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem smiActividades;
-        private System.Windows.Forms.ToolStripMenuItem smiProfesionales;
-        private System.Windows.Forms.ToolStripMenuItem smiGrupos;
-        private System.Windows.Forms.ToolStripMenuItem smiCategorias;
-        private System.Windows.Forms.ToolStripMenuItem smiPagos;
-        public System.Windows.Forms.DataGridView dgvSocio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn socioCategoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn socioNivel;
+        private System.Windows.Forms.ToolStripMenuItem smiInactivos;
     }
 }
 

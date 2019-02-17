@@ -166,13 +166,18 @@ Persist Security Info=False;");
         {
             Metodos cargametodo = new Metodos();
             string tabla = "Socio";
-            string valores = "socioNombre, socioDNI, socioDireccion, socioMail, socioTelefono, socioCelular, socioFechaIng, socioFechaUltPago, socioFechaNac, socioGenero";
+            string valores = "socioNombre, socioDNI, socioDireccion, socioMail, socioTelefono, socioCelular, socioFechaIng, socioFechaUltPago, socioFechaNac, socioGenero, socioCategoria, socioNivel";
             string condicion = "socioEstado LIKE true";
 
             cargametodo.Inicializar();
-            cargametodo.Llenardgv(tabla, valores, dgvSocio);
-            //cargametodo.Llenardgvcondiciones(tabla, valores, dgvSocio, condicion);
+            cargametodo.Llenardgvcondiciones(tabla, valores, dgvSocio, condicion);
             
+        }
+
+        private void smiInactivos_Click(object sender, EventArgs e)
+        {
+            SociosInactivos neuinactivos = new SociosInactivos();
+            neuinactivos.ShowDialog();
         }
     }
 }

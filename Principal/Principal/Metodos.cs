@@ -102,7 +102,7 @@ namespace Principal
         {
             try
             {
-                string query = "SELECT " +valores+ " FROM "+tabla;
+                string query = "SELECT "+valores+" FROM "+tabla;
                 AbrirCon();
 
                 OleDbCommand comando = new OleDbCommand(query, conexion);
