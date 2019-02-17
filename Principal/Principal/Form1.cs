@@ -34,8 +34,9 @@ Persist Security Info=False;");
         private void Form1_Load(object sender, EventArgs e)
         {
             Metodos cargametodo = new Metodos();
-            string tabla = "Socio";
+            string tabla = " Socio";
             string valores = "socioNombre, socioDNI, socioDireccion, socioMail, socioTelefono, socioCelular, socioFechaIng, socioFechaUltPago, socioFechaNac, socioGenero";
+            
 
             cargametodo.Inicializar();
             cargametodo.Llenardgv(tabla, valores, dgvSocio);
@@ -53,6 +54,15 @@ Persist Security Info=False;");
 
         void busqueda()
         {
+            /*Metodos busqueda = new Metodos();
+            string valores = "socioNombre, socioDNI, socioDireccion, socioMail, socioTelefono, socioCelular, socioFechaNac, socioFechaIng, socioFechaUltPago, socioGenero";
+            string tabla = " Socio";
+            string key = "socioNombre";
+            string nombre = txtBusqueda.Text + "%'";
+
+            busqueda.Inicializar();
+            busqueda.Buscar(valores, tabla, key, nombre, dgvSocio);*/
+
             DataTable dtDatos = new DataTable();
             string cadena = ("SELECT socioNombre, socioDNI, socioDireccion, socioMail, socioTelefono, socioCelular, socioFechaNac, socioFechaIng, socioFechaUltPago, socioGenero FROM Socio WHERE socioNombre LIKE '" + txtBusqueda.Text + "%'");
             OleDbDataAdapter data = new OleDbDataAdapter(cadena, conexion);
@@ -87,7 +97,6 @@ Persist Security Info=False;");
             {
                 modificar.rbMujer.Checked = true;
             }
-            
             
 
             modificar.ShowDialog();
@@ -164,13 +173,14 @@ Persist Security Info=False;");
 
         private void Form1_Activated(object sender, EventArgs e)
         {
-            Metodos cargametodo = new Metodos();
-            string tabla = "Socio";
-            string valores = "socioNombre, socioDNI, socioDireccion, socioMail, socioTelefono, socioCelular, socioFechaIng, socioFechaUltPago, socioFechaNac, socioGenero";
+            Metodos cargarmetodo = new Metodos();
+            string tabla = " Socio";
+            string valores = "socioNombre, socioDNI, socioDireccion, socioMail, socioTelefono, socioCelular, socioFechaIng, socioFechaUltPago, socioFechaNac, socioGenero, socioCategoria, socioNivel";
+            string condiciones = "socioEstado = " + 1;
 
-            cargametodo.Inicializar();
-            cargametodo.Llenardgv(tabla, valores, dgvSocio);
-
+            cargarmetodo.Inicializar();
+            //cargarmetodo.Llenardgvcondicion(tabla, valores, dgvSocio, condiciones);
+            cargarmetodo.Llenardgv(tabla, valores, dgvSocio);
             
         }
     }
