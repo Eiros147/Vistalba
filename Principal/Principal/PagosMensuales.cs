@@ -32,25 +32,33 @@ Persist Security Info=False;");
 
         private void PagosMensuales_Load(object sender, EventArgs e)
         {
-            try
-            {
-                conPagos.Open();
-                OleDbCommand command = new OleDbCommand();
-                command.Connection = conPagos;
-                string query = "SELECT * FROM Mensual";
-                command.CommandText = query;
+            Metodos cargapagos = new Metodos();
+            cargapagos.Inicializar();
 
-                OleDbDataAdapter da = new OleDbDataAdapter(command);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                dgvPagos.DataSource = dt;
+            string query = "Socio.socioID, Socio.socioNombre, Socio.socioCategoria, Mensual.mesEnero, Mensual.mesFebrero, Mensual.mesMarzo, Mensual.mesAbril, Mensual.mesMayo, Mensual.mesJunio, Mensual.mesTotalPago, Mensual.mesTotal";
+            string tabla = "(Socio INNER JOIN Mensual ON Socio.socioID = Mensual.socioID)";
 
-                conPagos.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al conectarse" + ex);
-            }
+            cargapagos.Llenardgv(tabla, query, dgvPagos);
+            
+            //try
+            //{
+            //    conPagos.Open();
+            //    OleDbCommand command = new OleDbCommand();
+            //    command.Connection = conPagos;
+            //    string query = "SELECT * FROM Mensual";
+            //    command.CommandText = query;
+
+            //    OleDbDataAdapter da = new OleDbDataAdapter(command);
+            //    DataTable dt = new DataTable();
+            //    da.Fill(dt);
+            //    dgvPagos.DataSource = dt;
+
+            //    conPagos.Close();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Error al conectarse" + ex);
+            //}
 
             // TODO: esta línea de código carga datos en la tabla 'club_VistalbaDataSet.Mensual' Puede moverla o quitarla según sea necesario.
             //this.mensualTableAdapter.Fill(this.club_VistalbaDataSet.Mensual);

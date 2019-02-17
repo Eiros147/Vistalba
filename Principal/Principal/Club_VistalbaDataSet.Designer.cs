@@ -3006,37 +3006,9 @@ namespace Principal {
             
             private global::System.Data.DataColumn columnmesDiciembre;
             
-            private global::System.Data.DataColumn columnmesEneroPago;
-            
-            private global::System.Data.DataColumn columnmesFebreroPago;
-            
-            private global::System.Data.DataColumn columnmesMarzoPago;
-            
-            private global::System.Data.DataColumn columnmesAbrilPago;
-            
-            private global::System.Data.DataColumn columnmesMayoPago;
-            
-            private global::System.Data.DataColumn columnmesJunioPago;
-            
-            private global::System.Data.DataColumn columnmesJulioPago;
-            
-            private global::System.Data.DataColumn columnmesAgostoPago;
-            
-            private global::System.Data.DataColumn columnmesSeptiembrePago;
-            
-            private global::System.Data.DataColumn columnmesOctubrePago;
-            
-            private global::System.Data.DataColumn columnmesNoviembrePago;
-            
-            private global::System.Data.DataColumn columnmesDiciembrePago;
-            
-            private global::System.Data.DataColumn columnmesDerechoUno;
-            
-            private global::System.Data.DataColumn columnmesDerechoDos;
-            
-            private global::System.Data.DataColumn columnmesDeudaAnterior;
-            
             private global::System.Data.DataColumn columnmesTotal;
+            
+            private global::System.Data.DataColumn columnmesTotalPago;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -3177,129 +3149,17 @@ namespace Principal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn mesEneroPagoColumn {
-                get {
-                    return this.columnmesEneroPago;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn mesFebreroPagoColumn {
-                get {
-                    return this.columnmesFebreroPago;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn mesMarzoPagoColumn {
-                get {
-                    return this.columnmesMarzoPago;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn mesAbrilPagoColumn {
-                get {
-                    return this.columnmesAbrilPago;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn mesMayoPagoColumn {
-                get {
-                    return this.columnmesMayoPago;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn mesJunioPagoColumn {
-                get {
-                    return this.columnmesJunioPago;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn mesJulioPagoColumn {
-                get {
-                    return this.columnmesJulioPago;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn mesAgostoPagoColumn {
-                get {
-                    return this.columnmesAgostoPago;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn mesSeptiembrePagoColumn {
-                get {
-                    return this.columnmesSeptiembrePago;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn mesOctubrePagoColumn {
-                get {
-                    return this.columnmesOctubrePago;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn mesNoviembrePagoColumn {
-                get {
-                    return this.columnmesNoviembrePago;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn mesDiciembrePagoColumn {
-                get {
-                    return this.columnmesDiciembrePago;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn mesDerechoUnoColumn {
-                get {
-                    return this.columnmesDerechoUno;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn mesDerechoDosColumn {
-                get {
-                    return this.columnmesDerechoDos;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn mesDeudaAnteriorColumn {
-                get {
-                    return this.columnmesDeudaAnterior;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn mesTotalColumn {
                 get {
                     return this.columnmesTotal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn mesTotalPagoColumn {
+                get {
+                    return this.columnmesTotalPago;
                 }
             }
             
@@ -3340,35 +3200,7 @@ namespace Principal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public MensualRow AddMensualRow(
-                        string mesEnero, 
-                        string mesFebrero, 
-                        string mesMarzo, 
-                        string mesAbril, 
-                        string mesMayo, 
-                        string mesJunio, 
-                        string mesJulio, 
-                        string mesAgosto, 
-                        string mesSeptiembre, 
-                        string mesOctubre, 
-                        string mesNoviembre, 
-                        string mesDiciembre, 
-                        string mesEneroPago, 
-                        string mesFebreroPago, 
-                        string mesMarzoPago, 
-                        string mesAbrilPago, 
-                        string mesMayoPago, 
-                        string mesJunioPago, 
-                        string mesJulioPago, 
-                        string mesAgostoPago, 
-                        string mesSeptiembrePago, 
-                        string mesOctubrePago, 
-                        string mesNoviembrePago, 
-                        string mesDiciembrePago, 
-                        string mesDerechoUno, 
-                        string mesDerechoDos, 
-                        string mesDeudaAnterior, 
-                        string mesTotal) {
+            public MensualRow AddMensualRow(string mesEnero, string mesFebrero, string mesMarzo, string mesAbril, string mesMayo, string mesJunio, string mesJulio, string mesAgosto, string mesSeptiembre, string mesOctubre, string mesNoviembre, string mesDiciembre, string mesTotal, int mesTotalPago) {
                 MensualRow rowMensualRow = ((MensualRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -3384,22 +3216,8 @@ namespace Principal {
                         mesOctubre,
                         mesNoviembre,
                         mesDiciembre,
-                        mesEneroPago,
-                        mesFebreroPago,
-                        mesMarzoPago,
-                        mesAbrilPago,
-                        mesMayoPago,
-                        mesJunioPago,
-                        mesJulioPago,
-                        mesAgostoPago,
-                        mesSeptiembrePago,
-                        mesOctubrePago,
-                        mesNoviembrePago,
-                        mesDiciembrePago,
-                        mesDerechoUno,
-                        mesDerechoDos,
-                        mesDeudaAnterior,
-                        mesTotal};
+                        mesTotal,
+                        mesTotalPago};
                 rowMensualRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowMensualRow);
                 return rowMensualRow;
@@ -3442,22 +3260,8 @@ namespace Principal {
                 this.columnmesOctubre = base.Columns["mesOctubre"];
                 this.columnmesNoviembre = base.Columns["mesNoviembre"];
                 this.columnmesDiciembre = base.Columns["mesDiciembre"];
-                this.columnmesEneroPago = base.Columns["mesEneroPago"];
-                this.columnmesFebreroPago = base.Columns["mesFebreroPago"];
-                this.columnmesMarzoPago = base.Columns["mesMarzoPago"];
-                this.columnmesAbrilPago = base.Columns["mesAbrilPago"];
-                this.columnmesMayoPago = base.Columns["mesMayoPago"];
-                this.columnmesJunioPago = base.Columns["mesJunioPago"];
-                this.columnmesJulioPago = base.Columns["mesJulioPago"];
-                this.columnmesAgostoPago = base.Columns["mesAgostoPago"];
-                this.columnmesSeptiembrePago = base.Columns["mesSeptiembrePago"];
-                this.columnmesOctubrePago = base.Columns["mesOctubrePago"];
-                this.columnmesNoviembrePago = base.Columns["mesNoviembrePago"];
-                this.columnmesDiciembrePago = base.Columns["mesDiciembrePago"];
-                this.columnmesDerechoUno = base.Columns["mesDerechoUno"];
-                this.columnmesDerechoDos = base.Columns["mesDerechoDos"];
-                this.columnmesDeudaAnterior = base.Columns["mesDeudaAnterior"];
                 this.columnmesTotal = base.Columns["mesTotal"];
+                this.columnmesTotalPago = base.Columns["mesTotalPago"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3489,38 +3293,10 @@ namespace Principal {
                 base.Columns.Add(this.columnmesNoviembre);
                 this.columnmesDiciembre = new global::System.Data.DataColumn("mesDiciembre", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnmesDiciembre);
-                this.columnmesEneroPago = new global::System.Data.DataColumn("mesEneroPago", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnmesEneroPago);
-                this.columnmesFebreroPago = new global::System.Data.DataColumn("mesFebreroPago", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnmesFebreroPago);
-                this.columnmesMarzoPago = new global::System.Data.DataColumn("mesMarzoPago", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnmesMarzoPago);
-                this.columnmesAbrilPago = new global::System.Data.DataColumn("mesAbrilPago", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnmesAbrilPago);
-                this.columnmesMayoPago = new global::System.Data.DataColumn("mesMayoPago", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnmesMayoPago);
-                this.columnmesJunioPago = new global::System.Data.DataColumn("mesJunioPago", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnmesJunioPago);
-                this.columnmesJulioPago = new global::System.Data.DataColumn("mesJulioPago", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnmesJulioPago);
-                this.columnmesAgostoPago = new global::System.Data.DataColumn("mesAgostoPago", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnmesAgostoPago);
-                this.columnmesSeptiembrePago = new global::System.Data.DataColumn("mesSeptiembrePago", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnmesSeptiembrePago);
-                this.columnmesOctubrePago = new global::System.Data.DataColumn("mesOctubrePago", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnmesOctubrePago);
-                this.columnmesNoviembrePago = new global::System.Data.DataColumn("mesNoviembrePago", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnmesNoviembrePago);
-                this.columnmesDiciembrePago = new global::System.Data.DataColumn("mesDiciembrePago", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnmesDiciembrePago);
-                this.columnmesDerechoUno = new global::System.Data.DataColumn("mesDerechoUno", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnmesDerechoUno);
-                this.columnmesDerechoDos = new global::System.Data.DataColumn("mesDerechoDos", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnmesDerechoDos);
-                this.columnmesDeudaAnterior = new global::System.Data.DataColumn("mesDeudaAnterior", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnmesDeudaAnterior);
                 this.columnmesTotal = new global::System.Data.DataColumn("mesTotal", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnmesTotal);
+                this.columnmesTotalPago = new global::System.Data.DataColumn("mesTotalPago", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmesTotalPago);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnsocioID}, true));
                 this.columnsocioID.AutoIncrement = true;
@@ -3540,21 +3316,6 @@ namespace Principal {
                 this.columnmesOctubre.MaxLength = 255;
                 this.columnmesNoviembre.MaxLength = 255;
                 this.columnmesDiciembre.MaxLength = 255;
-                this.columnmesEneroPago.MaxLength = 255;
-                this.columnmesFebreroPago.MaxLength = 255;
-                this.columnmesMarzoPago.MaxLength = 255;
-                this.columnmesAbrilPago.MaxLength = 255;
-                this.columnmesMayoPago.MaxLength = 255;
-                this.columnmesJunioPago.MaxLength = 255;
-                this.columnmesJulioPago.MaxLength = 255;
-                this.columnmesAgostoPago.MaxLength = 255;
-                this.columnmesSeptiembrePago.MaxLength = 255;
-                this.columnmesOctubrePago.MaxLength = 255;
-                this.columnmesNoviembrePago.MaxLength = 255;
-                this.columnmesDiciembrePago.MaxLength = 255;
-                this.columnmesDerechoUno.MaxLength = 255;
-                this.columnmesDerechoDos.MaxLength = 255;
-                this.columnmesDeudaAnterior.MaxLength = 255;
                 this.columnmesTotal.MaxLength = 255;
             }
             
@@ -5268,246 +5029,6 @@ namespace Principal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string mesEneroPago {
-                get {
-                    try {
-                        return ((string)(this[this.tableMensual.mesEneroPagoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'mesEneroPago\' de la tabla \'Mensual\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableMensual.mesEneroPagoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string mesFebreroPago {
-                get {
-                    try {
-                        return ((string)(this[this.tableMensual.mesFebreroPagoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'mesFebreroPago\' de la tabla \'Mensual\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableMensual.mesFebreroPagoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string mesMarzoPago {
-                get {
-                    try {
-                        return ((string)(this[this.tableMensual.mesMarzoPagoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'mesMarzoPago\' de la tabla \'Mensual\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableMensual.mesMarzoPagoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string mesAbrilPago {
-                get {
-                    try {
-                        return ((string)(this[this.tableMensual.mesAbrilPagoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'mesAbrilPago\' de la tabla \'Mensual\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableMensual.mesAbrilPagoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string mesMayoPago {
-                get {
-                    try {
-                        return ((string)(this[this.tableMensual.mesMayoPagoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'mesMayoPago\' de la tabla \'Mensual\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableMensual.mesMayoPagoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string mesJunioPago {
-                get {
-                    try {
-                        return ((string)(this[this.tableMensual.mesJunioPagoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'mesJunioPago\' de la tabla \'Mensual\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableMensual.mesJunioPagoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string mesJulioPago {
-                get {
-                    try {
-                        return ((string)(this[this.tableMensual.mesJulioPagoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'mesJulioPago\' de la tabla \'Mensual\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableMensual.mesJulioPagoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string mesAgostoPago {
-                get {
-                    try {
-                        return ((string)(this[this.tableMensual.mesAgostoPagoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'mesAgostoPago\' de la tabla \'Mensual\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableMensual.mesAgostoPagoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string mesSeptiembrePago {
-                get {
-                    try {
-                        return ((string)(this[this.tableMensual.mesSeptiembrePagoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'mesSeptiembrePago\' de la tabla \'Mensual\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableMensual.mesSeptiembrePagoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string mesOctubrePago {
-                get {
-                    try {
-                        return ((string)(this[this.tableMensual.mesOctubrePagoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'mesOctubrePago\' de la tabla \'Mensual\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableMensual.mesOctubrePagoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string mesNoviembrePago {
-                get {
-                    try {
-                        return ((string)(this[this.tableMensual.mesNoviembrePagoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'mesNoviembrePago\' de la tabla \'Mensual\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableMensual.mesNoviembrePagoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string mesDiciembrePago {
-                get {
-                    try {
-                        return ((string)(this[this.tableMensual.mesDiciembrePagoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'mesDiciembrePago\' de la tabla \'Mensual\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableMensual.mesDiciembrePagoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string mesDerechoUno {
-                get {
-                    try {
-                        return ((string)(this[this.tableMensual.mesDerechoUnoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'mesDerechoUno\' de la tabla \'Mensual\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableMensual.mesDerechoUnoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string mesDerechoDos {
-                get {
-                    try {
-                        return ((string)(this[this.tableMensual.mesDerechoDosColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'mesDerechoDos\' de la tabla \'Mensual\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableMensual.mesDerechoDosColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string mesDeudaAnterior {
-                get {
-                    try {
-                        return ((string)(this[this.tableMensual.mesDeudaAnteriorColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'mesDeudaAnterior\' de la tabla \'Mensual\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableMensual.mesDeudaAnteriorColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string mesTotal {
                 get {
                     try {
@@ -5519,6 +5040,22 @@ namespace Principal {
                 }
                 set {
                     this[this.tableMensual.mesTotalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int mesTotalPago {
+                get {
+                    try {
+                        return ((int)(this[this.tableMensual.mesTotalPagoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'mesTotalPago\' de la tabla \'Mensual\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMensual.mesTotalPagoColumn] = value;
                 }
             }
             
@@ -5679,186 +5216,6 @@ namespace Principal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsmesEneroPagoNull() {
-                return this.IsNull(this.tableMensual.mesEneroPagoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetmesEneroPagoNull() {
-                this[this.tableMensual.mesEneroPagoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsmesFebreroPagoNull() {
-                return this.IsNull(this.tableMensual.mesFebreroPagoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetmesFebreroPagoNull() {
-                this[this.tableMensual.mesFebreroPagoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsmesMarzoPagoNull() {
-                return this.IsNull(this.tableMensual.mesMarzoPagoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetmesMarzoPagoNull() {
-                this[this.tableMensual.mesMarzoPagoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsmesAbrilPagoNull() {
-                return this.IsNull(this.tableMensual.mesAbrilPagoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetmesAbrilPagoNull() {
-                this[this.tableMensual.mesAbrilPagoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsmesMayoPagoNull() {
-                return this.IsNull(this.tableMensual.mesMayoPagoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetmesMayoPagoNull() {
-                this[this.tableMensual.mesMayoPagoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsmesJunioPagoNull() {
-                return this.IsNull(this.tableMensual.mesJunioPagoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetmesJunioPagoNull() {
-                this[this.tableMensual.mesJunioPagoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsmesJulioPagoNull() {
-                return this.IsNull(this.tableMensual.mesJulioPagoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetmesJulioPagoNull() {
-                this[this.tableMensual.mesJulioPagoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsmesAgostoPagoNull() {
-                return this.IsNull(this.tableMensual.mesAgostoPagoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetmesAgostoPagoNull() {
-                this[this.tableMensual.mesAgostoPagoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsmesSeptiembrePagoNull() {
-                return this.IsNull(this.tableMensual.mesSeptiembrePagoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetmesSeptiembrePagoNull() {
-                this[this.tableMensual.mesSeptiembrePagoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsmesOctubrePagoNull() {
-                return this.IsNull(this.tableMensual.mesOctubrePagoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetmesOctubrePagoNull() {
-                this[this.tableMensual.mesOctubrePagoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsmesNoviembrePagoNull() {
-                return this.IsNull(this.tableMensual.mesNoviembrePagoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetmesNoviembrePagoNull() {
-                this[this.tableMensual.mesNoviembrePagoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsmesDiciembrePagoNull() {
-                return this.IsNull(this.tableMensual.mesDiciembrePagoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetmesDiciembrePagoNull() {
-                this[this.tableMensual.mesDiciembrePagoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsmesDerechoUnoNull() {
-                return this.IsNull(this.tableMensual.mesDerechoUnoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetmesDerechoUnoNull() {
-                this[this.tableMensual.mesDerechoUnoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsmesDerechoDosNull() {
-                return this.IsNull(this.tableMensual.mesDerechoDosColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetmesDerechoDosNull() {
-                this[this.tableMensual.mesDerechoDosColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsmesDeudaAnteriorNull() {
-                return this.IsNull(this.tableMensual.mesDeudaAnteriorColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetmesDeudaAnteriorNull() {
-                this[this.tableMensual.mesDeudaAnteriorColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsmesTotalNull() {
                 return this.IsNull(this.tableMensual.mesTotalColumn);
             }
@@ -5867,6 +5224,18 @@ namespace Principal {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetmesTotalNull() {
                 this[this.tableMensual.mesTotalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsmesTotalPagoNull() {
+                return this.IsNull(this.tableMensual.mesTotalPagoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetmesTotalPagoNull() {
+                this[this.tableMensual.mesTotalPagoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -9530,257 +8899,107 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("mesOctubre", "mesOctubre");
             tableMapping.ColumnMappings.Add("mesNoviembre", "mesNoviembre");
             tableMapping.ColumnMappings.Add("mesDiciembre", "mesDiciembre");
-            tableMapping.ColumnMappings.Add("mesEneroPago", "mesEneroPago");
-            tableMapping.ColumnMappings.Add("mesFebreroPago", "mesFebreroPago");
-            tableMapping.ColumnMappings.Add("mesMarzoPago", "mesMarzoPago");
-            tableMapping.ColumnMappings.Add("mesAbrilPago", "mesAbrilPago");
-            tableMapping.ColumnMappings.Add("mesMayoPago", "mesMayoPago");
-            tableMapping.ColumnMappings.Add("mesJunioPago", "mesJunioPago");
-            tableMapping.ColumnMappings.Add("mesJulioPago", "mesJulioPago");
-            tableMapping.ColumnMappings.Add("mesAgostoPago", "mesAgostoPago");
-            tableMapping.ColumnMappings.Add("mesSeptiembrePago", "mesSeptiembrePago");
-            tableMapping.ColumnMappings.Add("mesOctubrePago", "mesOctubrePago");
-            tableMapping.ColumnMappings.Add("mesNoviembrePago", "mesNoviembrePago");
-            tableMapping.ColumnMappings.Add("mesDiciembrePago", "mesDiciembrePago");
-            tableMapping.ColumnMappings.Add("mesDerechoUno", "mesDerechoUno");
-            tableMapping.ColumnMappings.Add("mesDerechoDos", "mesDerechoDos");
-            tableMapping.ColumnMappings.Add("mesDeudaAnterior", "mesDeudaAnterior");
             tableMapping.ColumnMappings.Add("mesTotal", "mesTotal");
+            tableMapping.ColumnMappings.Add("mesTotalPago", "mesTotalPago");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `Mensual` WHERE ((`socioID` = ?) AND ((? = 1 AND `mesEnero` IS NULL) " +
-                "OR (`mesEnero` = ?)) AND ((? = 1 AND `mesFebrero` IS NULL) OR (`mesFebrero` = ?)" +
-                ") AND ((? = 1 AND `mesMarzo` IS NULL) OR (`mesMarzo` = ?)) AND ((? = 1 AND `mesA" +
-                "bril` IS NULL) OR (`mesAbril` = ?)) AND ((? = 1 AND `mesMayo` IS NULL) OR (`mesM" +
-                "ayo` = ?)) AND ((? = 1 AND `mesJunio` IS NULL) OR (`mesJunio` = ?)) AND ((? = 1 " +
-                "AND `mesJulio` IS NULL) OR (`mesJulio` = ?)) AND ((? = 1 AND `mesAgosto` IS NULL" +
-                ") OR (`mesAgosto` = ?)) AND ((? = 1 AND `mesSeptiembre` IS NULL) OR (`mesSeptiem" +
-                "bre` = ?)) AND ((? = 1 AND `mesOctubre` IS NULL) OR (`mesOctubre` = ?)) AND ((? " +
-                "= 1 AND `mesNoviembre` IS NULL) OR (`mesNoviembre` = ?)) AND ((? = 1 AND `mesDic" +
-                "iembre` IS NULL) OR (`mesDiciembre` = ?)) AND ((? = 1 AND `mesAbrilPago` IS NULL" +
-                ") OR (`mesAbrilPago` = ?)) AND ((? = 1 AND `mesAgostoPago` IS NULL) OR (`mesAgos" +
-                "toPago` = ?)) AND ((? = 1 AND `mesDerechoDos` IS NULL) OR (`mesDerechoDos` = ?))" +
-                " AND ((? = 1 AND `mesDerechoUno` IS NULL) OR (`mesDerechoUno` = ?)) AND ((? = 1 " +
-                "AND `mesDeudaAnterior` IS NULL) OR (`mesDeudaAnterior` = ?)) AND ((? = 1 AND `me" +
-                "sDiciembrePago` IS NULL) OR (`mesDiciembrePago` = ?)) AND ((? = 1 AND `mesEneroP" +
-                "ago` IS NULL) OR (`mesEneroPago` = ?)) AND ((? = 1 AND `mesFebreroPago` IS NULL)" +
-                " OR (`mesFebreroPago` = ?)) AND ((? = 1 AND `mesJulioPago` IS NULL) OR (`mesJuli" +
-                "oPago` = ?)) AND ((? = 1 AND `mesJunioPago` IS NULL) OR (`mesJunioPago` = ?)) AN" +
-                "D ((? = 1 AND `mesMarzoPago` IS NULL) OR (`mesMarzoPago` = ?)) AND ((? = 1 AND `" +
-                "mesMayoPago` IS NULL) OR (`mesMayoPago` = ?)) AND ((? = 1 AND `mesNoviembrePago`" +
-                " IS NULL) OR (`mesNoviembrePago` = ?)) AND ((? = 1 AND `mesOctubrePago` IS NULL)" +
-                " OR (`mesOctubrePago` = ?)) AND ((? = 1 AND `mesSeptiembrePago` IS NULL) OR (`me" +
-                "sSeptiembrePago` = ?)) AND ((? = 1 AND `mesTotal` IS NULL) OR (`mesTotal` = ?)))" +
-                "";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `Mensual` WHERE ((`socioID` = ?) AND ((? = 1 AND `mesEnero` IS NULL) OR (`mesEnero` = ?)) AND ((? = 1 AND `mesFebrero` IS NULL) OR (`mesFebrero` = ?)) AND ((? = 1 AND `mesMarzo` IS NULL) OR (`mesMarzo` = ?)) AND ((? = 1 AND `mesAbril` IS NULL) OR (`mesAbril` = ?)) AND ((? = 1 AND `mesMayo` IS NULL) OR (`mesMayo` = ?)) AND ((? = 1 AND `mesJunio` IS NULL) OR (`mesJunio` = ?)) AND ((? = 1 AND `mesJulio` IS NULL) OR (`mesJulio` = ?)) AND ((? = 1 AND `mesAgosto` IS NULL) OR (`mesAgosto` = ?)) AND ((? = 1 AND `mesSeptiembre` IS NULL) OR (`mesSeptiembre` = ?)) AND ((? = 1 AND `mesOctubre` IS NULL) OR (`mesOctubre` = ?)) AND ((? = 1 AND `mesNoviembre` IS NULL) OR (`mesNoviembre` = ?)) AND ((? = 1 AND `mesDiciembre` IS NULL) OR (`mesDiciembre` = ?)) AND ((? = 1 AND `mesTotal` IS NULL) OR (`mesTotal` = ?)) AND ((? = 1 AND `mesTotalPago` IS NULL) OR (`mesTotalPago` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_socioID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "socioID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesEnero", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesEnero", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesEnero", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesEnero", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesEnero", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesEnero", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesFebrero", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesFebrero", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesFebrero", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesFebrero", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesFebrero", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesFebrero", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesMarzo", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesMarzo", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesMarzo", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesMarzo", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesMarzo", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesMarzo", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesAbril", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesAbril", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesAbril", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesAbril", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesAbril", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesAbril", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesMayo", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesMayo", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesMayo", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesMayo", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesMayo", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesMayo", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesJunio", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesJunio", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesJunio", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesJunio", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesJunio", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesJunio", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesJulio", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesJulio", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesJulio", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesJulio", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesJulio", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesJulio", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesAgosto", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesAgosto", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesAgosto", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesAgosto", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesAgosto", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesAgosto", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesSeptiembre", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesSeptiembre", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesSeptiembre", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesSeptiembre", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesSeptiembre", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesSeptiembre", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesOctubre", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesOctubre", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesOctubre", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesOctubre", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesOctubre", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesOctubre", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesNoviembre", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesNoviembre", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesNoviembre", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesNoviembre", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesNoviembre", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesNoviembre", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesDiciembre", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesDiciembre", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesDiciembre", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesDiciembre", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesAbrilPago", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesAbrilPago", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesAbrilPago", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesAbrilPago", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesAgostoPago", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesAgostoPago", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesAgostoPago", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesAgostoPago", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesDerechoDos", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesDerechoDos", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesDerechoDos", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesDerechoDos", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesDerechoUno", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesDerechoUno", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesDerechoUno", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesDerechoUno", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesDeudaAnterior", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesDeudaAnterior", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesDeudaAnterior", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesDeudaAnterior", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesDiciembrePago", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesDiciembrePago", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesDiciembrePago", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesDiciembrePago", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesEneroPago", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesEneroPago", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesEneroPago", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesEneroPago", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesFebreroPago", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesFebreroPago", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesFebreroPago", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesFebreroPago", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesJulioPago", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesJulioPago", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesJulioPago", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesJulioPago", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesJunioPago", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesJunioPago", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesJunioPago", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesJunioPago", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesMarzoPago", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesMarzoPago", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesMarzoPago", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesMarzoPago", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesMayoPago", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesMayoPago", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesMayoPago", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesMayoPago", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesNoviembrePago", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesNoviembrePago", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesNoviembrePago", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesNoviembrePago", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesOctubrePago", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesOctubrePago", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesOctubrePago", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesOctubrePago", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesSeptiembrePago", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesSeptiembrePago", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesSeptiembrePago", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesSeptiembrePago", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesDiciembre", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesDiciembre", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesTotal", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesTotal", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesTotal", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesTotal", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesTotal", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesTotal", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesTotalPago", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesTotalPago", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesTotalPago", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesTotalPago", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO `Mensual` (`mesEnero`, `mesFebrero`, `mesMarzo`, `mesAbril`, `mesMayo`, `mesJunio`, `mesJulio`, `mesAgosto`, `mesSeptiembre`, `mesOctubre`, `mesNoviembre`, `mesDiciembre`, `mesAbrilPago`, `mesAgostoPago`, `mesDerechoDos`, `mesDerechoUno`, `mesDeudaAnterior`, `mesDiciembrePago`, `mesEneroPago`, `mesFebreroPago`, `mesJulioPago`, `mesJunioPago`, `mesMarzoPago`, `mesMayoPago`, `mesNoviembrePago`, `mesOctubrePago`, `mesSeptiembrePago`, `mesTotal`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO `Mensual` (`mesEnero`, `mesFebrero`, `mesMarzo`, `mesAbril`, `mesMayo`, `mesJunio`, `mesJulio`, `mesAgosto`, `mesSeptiembre`, `mesOctubre`, `mesNoviembre`, `mesDiciembre`, `mesTotal`, `mesTotalPago`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesEnero", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesEnero", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesFebrero", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesFebrero", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesMarzo", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesMarzo", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesAbril", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesAbril", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesMayo", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesMayo", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesJunio", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesJunio", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesJulio", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesJulio", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesAgosto", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesAgosto", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesSeptiembre", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesSeptiembre", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesOctubre", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesOctubre", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesNoviembre", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesNoviembre", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesDiciembre", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesDiciembre", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesAbrilPago", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesAbrilPago", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesAgostoPago", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesAgostoPago", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesDerechoDos", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesDerechoDos", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesDerechoUno", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesDerechoUno", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesDeudaAnterior", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesDeudaAnterior", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesDiciembrePago", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesDiciembrePago", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesEneroPago", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesEneroPago", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesFebreroPago", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesFebreroPago", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesJulioPago", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesJulioPago", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesJunioPago", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesJunioPago", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesMarzoPago", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesMarzoPago", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesMayoPago", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesMayoPago", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesNoviembrePago", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesNoviembrePago", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesOctubrePago", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesOctubrePago", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesSeptiembrePago", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesSeptiembrePago", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesTotal", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesTotal", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesEnero", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesEnero", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesFebrero", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesFebrero", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesMarzo", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesMarzo", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesAbril", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesAbril", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesMayo", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesMayo", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesJunio", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesJunio", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesJulio", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesJulio", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesAgosto", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesAgosto", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesSeptiembre", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesSeptiembre", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesOctubre", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesOctubre", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesNoviembre", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesNoviembre", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesDiciembre", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesDiciembre", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesTotal", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesTotal", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesTotalPago", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesTotalPago", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `Mensual` SET `mesEnero` = ?, `mesFebrero` = ?, `mesMarzo` = ?, `mesAbril`" +
-                " = ?, `mesMayo` = ?, `mesJunio` = ?, `mesJulio` = ?, `mesAgosto` = ?, `mesSeptie" +
-                "mbre` = ?, `mesOctubre` = ?, `mesNoviembre` = ?, `mesDiciembre` = ?, `mesAbrilPa" +
-                "go` = ?, `mesAgostoPago` = ?, `mesDerechoDos` = ?, `mesDerechoUno` = ?, `mesDeud" +
-                "aAnterior` = ?, `mesDiciembrePago` = ?, `mesEneroPago` = ?, `mesFebreroPago` = ?" +
-                ", `mesJulioPago` = ?, `mesJunioPago` = ?, `mesMarzoPago` = ?, `mesMayoPago` = ?," +
-                " `mesNoviembrePago` = ?, `mesOctubrePago` = ?, `mesSeptiembrePago` = ?, `mesTota" +
-                "l` = ? WHERE ((`socioID` = ?) AND ((? = 1 AND `mesEnero` IS NULL) OR (`mesEnero`" +
-                " = ?)) AND ((? = 1 AND `mesFebrero` IS NULL) OR (`mesFebrero` = ?)) AND ((? = 1 " +
-                "AND `mesMarzo` IS NULL) OR (`mesMarzo` = ?)) AND ((? = 1 AND `mesAbril` IS NULL)" +
-                " OR (`mesAbril` = ?)) AND ((? = 1 AND `mesMayo` IS NULL) OR (`mesMayo` = ?)) AND" +
-                " ((? = 1 AND `mesJunio` IS NULL) OR (`mesJunio` = ?)) AND ((? = 1 AND `mesJulio`" +
-                " IS NULL) OR (`mesJulio` = ?)) AND ((? = 1 AND `mesAgosto` IS NULL) OR (`mesAgos" +
-                "to` = ?)) AND ((? = 1 AND `mesSeptiembre` IS NULL) OR (`mesSeptiembre` = ?)) AND" +
-                " ((? = 1 AND `mesOctubre` IS NULL) OR (`mesOctubre` = ?)) AND ((? = 1 AND `mesNo" +
-                "viembre` IS NULL) OR (`mesNoviembre` = ?)) AND ((? = 1 AND `mesDiciembre` IS NUL" +
-                "L) OR (`mesDiciembre` = ?)) AND ((? = 1 AND `mesAbrilPago` IS NULL) OR (`mesAbri" +
-                "lPago` = ?)) AND ((? = 1 AND `mesAgostoPago` IS NULL) OR (`mesAgostoPago` = ?)) " +
-                "AND ((? = 1 AND `mesDerechoDos` IS NULL) OR (`mesDerechoDos` = ?)) AND ((? = 1 A" +
-                "ND `mesDerechoUno` IS NULL) OR (`mesDerechoUno` = ?)) AND ((? = 1 AND `mesDeudaA" +
-                "nterior` IS NULL) OR (`mesDeudaAnterior` = ?)) AND ((? = 1 AND `mesDiciembrePago" +
-                "` IS NULL) OR (`mesDiciembrePago` = ?)) AND ((? = 1 AND `mesEneroPago` IS NULL) " +
-                "OR (`mesEneroPago` = ?)) AND ((? = 1 AND `mesFebreroPago` IS NULL) OR (`mesFebre" +
-                "roPago` = ?)) AND ((? = 1 AND `mesJulioPago` IS NULL) OR (`mesJulioPago` = ?)) A" +
-                "ND ((? = 1 AND `mesJunioPago` IS NULL) OR (`mesJunioPago` = ?)) AND ((? = 1 AND " +
-                "`mesMarzoPago` IS NULL) OR (`mesMarzoPago` = ?)) AND ((? = 1 AND `mesMayoPago` I" +
-                "S NULL) OR (`mesMayoPago` = ?)) AND ((? = 1 AND `mesNoviembrePago` IS NULL) OR (" +
-                "`mesNoviembrePago` = ?)) AND ((? = 1 AND `mesOctubrePago` IS NULL) OR (`mesOctub" +
-                "rePago` = ?)) AND ((? = 1 AND `mesSeptiembrePago` IS NULL) OR (`mesSeptiembrePag" +
-                "o` = ?)) AND ((? = 1 AND `mesTotal` IS NULL) OR (`mesTotal` = ?)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `Mensual` SET `mesEnero` = ?, `mesFebrero` = ?, `mesMarzo` = ?, `mesAbril` = ?, `mesMayo` = ?, `mesJunio` = ?, `mesJulio` = ?, `mesAgosto` = ?, `mesSeptiembre` = ?, `mesOctubre` = ?, `mesNoviembre` = ?, `mesDiciembre` = ?, `mesTotal` = ?, `mesTotalPago` = ? WHERE ((`socioID` = ?) AND ((? = 1 AND `mesEnero` IS NULL) OR (`mesEnero` = ?)) AND ((? = 1 AND `mesFebrero` IS NULL) OR (`mesFebrero` = ?)) AND ((? = 1 AND `mesMarzo` IS NULL) OR (`mesMarzo` = ?)) AND ((? = 1 AND `mesAbril` IS NULL) OR (`mesAbril` = ?)) AND ((? = 1 AND `mesMayo` IS NULL) OR (`mesMayo` = ?)) AND ((? = 1 AND `mesJunio` IS NULL) OR (`mesJunio` = ?)) AND ((? = 1 AND `mesJulio` IS NULL) OR (`mesJulio` = ?)) AND ((? = 1 AND `mesAgosto` IS NULL) OR (`mesAgosto` = ?)) AND ((? = 1 AND `mesSeptiembre` IS NULL) OR (`mesSeptiembre` = ?)) AND ((? = 1 AND `mesOctubre` IS NULL) OR (`mesOctubre` = ?)) AND ((? = 1 AND `mesNoviembre` IS NULL) OR (`mesNoviembre` = ?)) AND ((? = 1 AND `mesDiciembre` IS NULL) OR (`mesDiciembre` = ?)) AND ((? = 1 AND `mesTotal` IS NULL) OR (`mesTotal` = ?)) AND ((? = 1 AND `mesTotalPago` IS NULL) OR (`mesTotalPago` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesEnero", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesEnero", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesFebrero", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesFebrero", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesMarzo", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesMarzo", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesAbril", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesAbril", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesMayo", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesMayo", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesJunio", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesJunio", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesJulio", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesJulio", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesAgosto", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesAgosto", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesSeptiembre", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesSeptiembre", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesOctubre", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesOctubre", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesNoviembre", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesNoviembre", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesDiciembre", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesDiciembre", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesAbrilPago", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesAbrilPago", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesAgostoPago", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesAgostoPago", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesDerechoDos", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesDerechoDos", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesDerechoUno", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesDerechoUno", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesDeudaAnterior", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesDeudaAnterior", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesDiciembrePago", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesDiciembrePago", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesEneroPago", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesEneroPago", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesFebreroPago", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesFebreroPago", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesJulioPago", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesJulioPago", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesJunioPago", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesJunioPago", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesMarzoPago", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesMarzoPago", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesMayoPago", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesMayoPago", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesNoviembrePago", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesNoviembrePago", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesOctubrePago", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesOctubrePago", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesSeptiembrePago", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesSeptiembrePago", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesTotal", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesTotal", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesEnero", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesEnero", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesFebrero", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesFebrero", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesMarzo", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesMarzo", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesAbril", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesAbril", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesMayo", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesMayo", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesJunio", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesJunio", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesJulio", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesJulio", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesAgosto", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesAgosto", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesSeptiembre", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesSeptiembre", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesOctubre", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesOctubre", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesNoviembre", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesNoviembre", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesDiciembre", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesDiciembre", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesTotal", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesTotal", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesTotalPago", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesTotalPago", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_socioID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "socioID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesEnero", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesEnero", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesEnero", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesEnero", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesEnero", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesEnero", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesFebrero", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesFebrero", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesFebrero", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesFebrero", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesFebrero", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesFebrero", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesMarzo", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesMarzo", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesMarzo", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesMarzo", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesMarzo", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesMarzo", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesAbril", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesAbril", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesAbril", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesAbril", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesAbril", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesAbril", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesMayo", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesMayo", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesMayo", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesMayo", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesMayo", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesMayo", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesJunio", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesJunio", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesJunio", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesJunio", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesJunio", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesJunio", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesJulio", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesJulio", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesJulio", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesJulio", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesJulio", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesJulio", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesAgosto", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesAgosto", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesAgosto", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesAgosto", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesAgosto", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesAgosto", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesSeptiembre", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesSeptiembre", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesSeptiembre", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesSeptiembre", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesSeptiembre", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesSeptiembre", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesOctubre", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesOctubre", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesOctubre", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesOctubre", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesOctubre", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesOctubre", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesNoviembre", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesNoviembre", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesNoviembre", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesNoviembre", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesNoviembre", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesNoviembre", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesDiciembre", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesDiciembre", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesDiciembre", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesDiciembre", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesAbrilPago", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesAbrilPago", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesAbrilPago", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesAbrilPago", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesAgostoPago", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesAgostoPago", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesAgostoPago", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesAgostoPago", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesDerechoDos", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesDerechoDos", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesDerechoDos", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesDerechoDos", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesDerechoUno", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesDerechoUno", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesDerechoUno", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesDerechoUno", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesDeudaAnterior", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesDeudaAnterior", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesDeudaAnterior", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesDeudaAnterior", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesDiciembrePago", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesDiciembrePago", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesDiciembrePago", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesDiciembrePago", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesEneroPago", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesEneroPago", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesEneroPago", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesEneroPago", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesFebreroPago", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesFebreroPago", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesFebreroPago", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesFebreroPago", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesJulioPago", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesJulioPago", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesJulioPago", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesJulioPago", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesJunioPago", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesJunioPago", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesJunioPago", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesJunioPago", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesMarzoPago", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesMarzoPago", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesMarzoPago", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesMarzoPago", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesMayoPago", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesMayoPago", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesMayoPago", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesMayoPago", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesNoviembrePago", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesNoviembrePago", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesNoviembrePago", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesNoviembrePago", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesOctubrePago", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesOctubrePago", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesOctubrePago", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesOctubrePago", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesSeptiembrePago", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesSeptiembrePago", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesSeptiembrePago", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesSeptiembrePago", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesDiciembre", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesDiciembre", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesTotal", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesTotal", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesTotal", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesTotal", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesTotal", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesTotal", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesTotalPago", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesTotalPago", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesTotalPago", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesTotalPago", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9796,7 +9015,9 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT socioID, mesEnero, mesFebrero, mesMarzo, mesAbril, mesMayo, mesJunio, mesJulio, mesAgosto, mesSeptiembre, mesOctubre, mesNoviembre, mesDiciembre, mesAbrilPago, mesAgostoPago, mesDerechoDos, mesDerechoUno, mesDeudaAnterior, mesDiciembrePago, mesEneroPago, mesFebreroPago, mesJulioPago, mesJunioPago, mesMarzoPago, mesMayoPago, mesNoviembrePago, mesOctubrePago, mesSeptiembrePago, mesTotal FROM Mensual";
+            this._commandCollection[0].CommandText = "SELECT socioID, mesEnero, mesFebrero, mesMarzo, mesAbril, mesMayo, mesJunio, mesJ" +
+                "ulio, mesAgosto, mesSeptiembre, mesOctubre, mesNoviembre, mesDiciembre, mesTotal" +
+                ", mesTotalPago FROM Mensual";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -9857,260 +9078,119 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(
-                    int Original_socioID, 
-                    string Original_mesEnero, 
-                    string Original_mesFebrero, 
-                    string Original_mesMarzo, 
-                    string Original_mesAbril, 
-                    string Original_mesMayo, 
-                    string Original_mesJunio, 
-                    string Original_mesJulio, 
-                    string Original_mesAgosto, 
-                    string Original_mesSeptiembre, 
-                    string Original_mesOctubre, 
-                    string Original_mesNoviembre, 
-                    string Original_mesDiciembre, 
-                    string Original_mesAbrilPago, 
-                    string Original_mesAgostoPago, 
-                    string Original_mesDerechoDos, 
-                    string Original_mesDerechoUno, 
-                    string Original_mesDeudaAnterior, 
-                    string Original_mesDiciembrePago, 
-                    string Original_mesEneroPago, 
-                    string Original_mesFebreroPago, 
-                    string Original_mesJulioPago, 
-                    string Original_mesJunioPago, 
-                    string Original_mesMarzoPago, 
-                    string Original_mesMayoPago, 
-                    string Original_mesNoviembrePago, 
-                    string Original_mesOctubrePago, 
-                    string Original_mesSeptiembrePago, 
-                    string Original_mesTotal) {
+        public virtual int Delete(int Original_socioID, global::System.Nullable<int> Original_mesEnero, global::System.Nullable<int> Original_mesFebrero, global::System.Nullable<int> Original_mesMarzo, global::System.Nullable<int> Original_mesAbril, global::System.Nullable<int> Original_mesMayo, global::System.Nullable<int> Original_mesJunio, global::System.Nullable<int> Original_mesJulio, global::System.Nullable<int> Original_mesAgosto, global::System.Nullable<int> Original_mesSeptiembre, global::System.Nullable<int> Original_mesOctubre, global::System.Nullable<int> Original_mesNoviembre, global::System.Nullable<int> Original_mesDiciembre, global::System.Nullable<int> Original_mesTotal, global::System.Nullable<int> Original_mesTotalPago) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_socioID));
-            if ((Original_mesEnero == null)) {
+            if ((Original_mesEnero.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_mesEnero.Value));
+            }
+            else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_mesEnero));
+            if ((Original_mesFebrero.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_mesFebrero.Value));
             }
-            if ((Original_mesFebrero == null)) {
+            else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_mesFebrero));
+            if ((Original_mesMarzo.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_mesMarzo.Value));
             }
-            if ((Original_mesMarzo == null)) {
+            else {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_mesMarzo));
+            if ((Original_mesAbril.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_mesAbril.Value));
             }
-            if ((Original_mesAbril == null)) {
+            else {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_mesAbril));
+            if ((Original_mesMayo.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((int)(Original_mesMayo.Value));
             }
-            if ((Original_mesMayo == null)) {
+            else {
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_mesMayo));
+            if ((Original_mesJunio.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((int)(Original_mesJunio.Value));
             }
-            if ((Original_mesJunio == null)) {
+            else {
                 this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_mesJunio));
+            if ((Original_mesJulio.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((int)(Original_mesJulio.Value));
             }
-            if ((Original_mesJulio == null)) {
+            else {
                 this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_mesJulio));
+            if ((Original_mesAgosto.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((int)(Original_mesAgosto.Value));
             }
-            if ((Original_mesAgosto == null)) {
+            else {
                 this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_mesAgosto));
+            if ((Original_mesSeptiembre.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((int)(Original_mesSeptiembre.Value));
             }
-            if ((Original_mesSeptiembre == null)) {
+            else {
                 this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_mesSeptiembre));
+            if ((Original_mesOctubre.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[20].Value = ((int)(Original_mesOctubre.Value));
             }
-            if ((Original_mesOctubre == null)) {
+            else {
                 this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[20].Value = ((string)(Original_mesOctubre));
+            if ((Original_mesNoviembre.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[22].Value = ((int)(Original_mesNoviembre.Value));
             }
-            if ((Original_mesNoviembre == null)) {
+            else {
                 this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[22].Value = ((string)(Original_mesNoviembre));
+            if ((Original_mesDiciembre.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[24].Value = ((int)(Original_mesDiciembre.Value));
             }
-            if ((Original_mesDiciembre == null)) {
+            else {
                 this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[24].Value = ((string)(Original_mesDiciembre));
+            if ((Original_mesTotal.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[26].Value = ((int)(Original_mesTotal.Value));
             }
-            if ((Original_mesAbrilPago == null)) {
+            else {
                 this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[26].Value = ((string)(Original_mesAbrilPago));
+            if ((Original_mesTotalPago.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[28].Value = ((int)(Original_mesTotalPago.Value));
             }
-            if ((Original_mesAgostoPago == null)) {
+            else {
                 this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[28].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[28].Value = ((string)(Original_mesAgostoPago));
-            }
-            if ((Original_mesDerechoDos == null)) {
-                this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[30].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[30].Value = ((string)(Original_mesDerechoDos));
-            }
-            if ((Original_mesDerechoUno == null)) {
-                this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[32].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[32].Value = ((string)(Original_mesDerechoUno));
-            }
-            if ((Original_mesDeudaAnterior == null)) {
-                this.Adapter.DeleteCommand.Parameters[33].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[34].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[33].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[34].Value = ((string)(Original_mesDeudaAnterior));
-            }
-            if ((Original_mesDiciembrePago == null)) {
-                this.Adapter.DeleteCommand.Parameters[35].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[36].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[35].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[36].Value = ((string)(Original_mesDiciembrePago));
-            }
-            if ((Original_mesEneroPago == null)) {
-                this.Adapter.DeleteCommand.Parameters[37].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[38].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[37].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[38].Value = ((string)(Original_mesEneroPago));
-            }
-            if ((Original_mesFebreroPago == null)) {
-                this.Adapter.DeleteCommand.Parameters[39].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[40].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[39].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[40].Value = ((string)(Original_mesFebreroPago));
-            }
-            if ((Original_mesJulioPago == null)) {
-                this.Adapter.DeleteCommand.Parameters[41].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[42].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[41].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[42].Value = ((string)(Original_mesJulioPago));
-            }
-            if ((Original_mesJunioPago == null)) {
-                this.Adapter.DeleteCommand.Parameters[43].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[44].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[43].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[44].Value = ((string)(Original_mesJunioPago));
-            }
-            if ((Original_mesMarzoPago == null)) {
-                this.Adapter.DeleteCommand.Parameters[45].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[46].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[45].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[46].Value = ((string)(Original_mesMarzoPago));
-            }
-            if ((Original_mesMayoPago == null)) {
-                this.Adapter.DeleteCommand.Parameters[47].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[48].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[47].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[48].Value = ((string)(Original_mesMayoPago));
-            }
-            if ((Original_mesNoviembrePago == null)) {
-                this.Adapter.DeleteCommand.Parameters[49].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[50].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[49].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[50].Value = ((string)(Original_mesNoviembrePago));
-            }
-            if ((Original_mesOctubrePago == null)) {
-                this.Adapter.DeleteCommand.Parameters[51].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[52].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[51].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[52].Value = ((string)(Original_mesOctubrePago));
-            }
-            if ((Original_mesSeptiembrePago == null)) {
-                this.Adapter.DeleteCommand.Parameters[53].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[54].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[53].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[54].Value = ((string)(Original_mesSeptiembrePago));
-            }
-            if ((Original_mesTotal == null)) {
-                this.Adapter.DeleteCommand.Parameters[55].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[56].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[55].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[56].Value = ((string)(Original_mesTotal));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -10132,202 +9212,90 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(
-                    string mesEnero, 
-                    string mesFebrero, 
-                    string mesMarzo, 
-                    string mesAbril, 
-                    string mesMayo, 
-                    string mesJunio, 
-                    string mesJulio, 
-                    string mesAgosto, 
-                    string mesSeptiembre, 
-                    string mesOctubre, 
-                    string mesNoviembre, 
-                    string mesDiciembre, 
-                    string mesAbrilPago, 
-                    string mesAgostoPago, 
-                    string mesDerechoDos, 
-                    string mesDerechoUno, 
-                    string mesDeudaAnterior, 
-                    string mesDiciembrePago, 
-                    string mesEneroPago, 
-                    string mesFebreroPago, 
-                    string mesJulioPago, 
-                    string mesJunioPago, 
-                    string mesMarzoPago, 
-                    string mesMayoPago, 
-                    string mesNoviembrePago, 
-                    string mesOctubrePago, 
-                    string mesSeptiembrePago, 
-                    string mesTotal) {
-            if ((mesEnero == null)) {
+        public virtual int Insert(global::System.Nullable<int> mesEnero, global::System.Nullable<int> mesFebrero, global::System.Nullable<int> mesMarzo, global::System.Nullable<int> mesAbril, global::System.Nullable<int> mesMayo, global::System.Nullable<int> mesJunio, global::System.Nullable<int> mesJulio, global::System.Nullable<int> mesAgosto, global::System.Nullable<int> mesSeptiembre, global::System.Nullable<int> mesOctubre, global::System.Nullable<int> mesNoviembre, global::System.Nullable<int> mesDiciembre, global::System.Nullable<int> mesTotal, global::System.Nullable<int> mesTotalPago) {
+            if ((mesEnero.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(mesEnero.Value));
+            }
+            else {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(mesEnero));
+            if ((mesFebrero.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(mesFebrero.Value));
             }
-            if ((mesFebrero == null)) {
+            else {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(mesFebrero));
+            if ((mesMarzo.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(mesMarzo.Value));
             }
-            if ((mesMarzo == null)) {
+            else {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(mesMarzo));
+            if ((mesAbril.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(mesAbril.Value));
             }
-            if ((mesAbril == null)) {
+            else {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(mesAbril));
+            if ((mesMayo.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((int)(mesMayo.Value));
             }
-            if ((mesMayo == null)) {
+            else {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(mesMayo));
+            if ((mesJunio.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(mesJunio.Value));
             }
-            if ((mesJunio == null)) {
+            else {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(mesJunio));
+            if ((mesJulio.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((int)(mesJulio.Value));
             }
-            if ((mesJulio == null)) {
+            else {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(mesJulio));
+            if ((mesAgosto.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((int)(mesAgosto.Value));
             }
-            if ((mesAgosto == null)) {
+            else {
                 this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(mesAgosto));
+            if ((mesSeptiembre.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((int)(mesSeptiembre.Value));
             }
-            if ((mesSeptiembre == null)) {
+            else {
                 this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(mesSeptiembre));
+            if ((mesOctubre.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((int)(mesOctubre.Value));
             }
-            if ((mesOctubre == null)) {
+            else {
                 this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(mesOctubre));
+            if ((mesNoviembre.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((int)(mesNoviembre.Value));
             }
-            if ((mesNoviembre == null)) {
+            else {
                 this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(mesNoviembre));
+            if ((mesDiciembre.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((int)(mesDiciembre.Value));
             }
-            if ((mesDiciembre == null)) {
+            else {
                 this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(mesDiciembre));
+            if ((mesTotal.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[12].Value = ((int)(mesTotal.Value));
             }
-            if ((mesAbrilPago == null)) {
+            else {
                 this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(mesAbrilPago));
+            if ((mesTotalPago.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[13].Value = ((int)(mesTotalPago.Value));
             }
-            if ((mesAgostoPago == null)) {
+            else {
                 this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(mesAgostoPago));
-            }
-            if ((mesDerechoDos == null)) {
-                this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[14].Value = ((string)(mesDerechoDos));
-            }
-            if ((mesDerechoUno == null)) {
-                this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[15].Value = ((string)(mesDerechoUno));
-            }
-            if ((mesDeudaAnterior == null)) {
-                this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[16].Value = ((string)(mesDeudaAnterior));
-            }
-            if ((mesDiciembrePago == null)) {
-                this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[17].Value = ((string)(mesDiciembrePago));
-            }
-            if ((mesEneroPago == null)) {
-                this.Adapter.InsertCommand.Parameters[18].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[18].Value = ((string)(mesEneroPago));
-            }
-            if ((mesFebreroPago == null)) {
-                this.Adapter.InsertCommand.Parameters[19].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[19].Value = ((string)(mesFebreroPago));
-            }
-            if ((mesJulioPago == null)) {
-                this.Adapter.InsertCommand.Parameters[20].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[20].Value = ((string)(mesJulioPago));
-            }
-            if ((mesJunioPago == null)) {
-                this.Adapter.InsertCommand.Parameters[21].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[21].Value = ((string)(mesJunioPago));
-            }
-            if ((mesMarzoPago == null)) {
-                this.Adapter.InsertCommand.Parameters[22].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[22].Value = ((string)(mesMarzoPago));
-            }
-            if ((mesMayoPago == null)) {
-                this.Adapter.InsertCommand.Parameters[23].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[23].Value = ((string)(mesMayoPago));
-            }
-            if ((mesNoviembrePago == null)) {
-                this.Adapter.InsertCommand.Parameters[24].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[24].Value = ((string)(mesNoviembrePago));
-            }
-            if ((mesOctubrePago == null)) {
-                this.Adapter.InsertCommand.Parameters[25].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[25].Value = ((string)(mesOctubrePago));
-            }
-            if ((mesSeptiembrePago == null)) {
-                this.Adapter.InsertCommand.Parameters[26].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[26].Value = ((string)(mesSeptiembrePago));
-            }
-            if ((mesTotal == null)) {
-                this.Adapter.InsertCommand.Parameters[27].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[27].Value = ((string)(mesTotal));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -10350,455 +9318,231 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
-                    string mesEnero, 
-                    string mesFebrero, 
-                    string mesMarzo, 
-                    string mesAbril, 
-                    string mesMayo, 
-                    string mesJunio, 
-                    string mesJulio, 
-                    string mesAgosto, 
-                    string mesSeptiembre, 
-                    string mesOctubre, 
-                    string mesNoviembre, 
-                    string mesDiciembre, 
-                    string mesAbrilPago, 
-                    string mesAgostoPago, 
-                    string mesDerechoDos, 
-                    string mesDerechoUno, 
-                    string mesDeudaAnterior, 
-                    string mesDiciembrePago, 
-                    string mesEneroPago, 
-                    string mesFebreroPago, 
-                    string mesJulioPago, 
-                    string mesJunioPago, 
-                    string mesMarzoPago, 
-                    string mesMayoPago, 
-                    string mesNoviembrePago, 
-                    string mesOctubrePago, 
-                    string mesSeptiembrePago, 
-                    string mesTotal, 
+                    global::System.Nullable<int> mesEnero, 
+                    global::System.Nullable<int> mesFebrero, 
+                    global::System.Nullable<int> mesMarzo, 
+                    global::System.Nullable<int> mesAbril, 
+                    global::System.Nullable<int> mesMayo, 
+                    global::System.Nullable<int> mesJunio, 
+                    global::System.Nullable<int> mesJulio, 
+                    global::System.Nullable<int> mesAgosto, 
+                    global::System.Nullable<int> mesSeptiembre, 
+                    global::System.Nullable<int> mesOctubre, 
+                    global::System.Nullable<int> mesNoviembre, 
+                    global::System.Nullable<int> mesDiciembre, 
+                    global::System.Nullable<int> mesTotal, 
+                    global::System.Nullable<int> mesTotalPago, 
                     int Original_socioID, 
-                    string Original_mesEnero, 
-                    string Original_mesFebrero, 
-                    string Original_mesMarzo, 
-                    string Original_mesAbril, 
-                    string Original_mesMayo, 
-                    string Original_mesJunio, 
-                    string Original_mesJulio, 
-                    string Original_mesAgosto, 
-                    string Original_mesSeptiembre, 
-                    string Original_mesOctubre, 
-                    string Original_mesNoviembre, 
-                    string Original_mesDiciembre, 
-                    string Original_mesAbrilPago, 
-                    string Original_mesAgostoPago, 
-                    string Original_mesDerechoDos, 
-                    string Original_mesDerechoUno, 
-                    string Original_mesDeudaAnterior, 
-                    string Original_mesDiciembrePago, 
-                    string Original_mesEneroPago, 
-                    string Original_mesFebreroPago, 
-                    string Original_mesJulioPago, 
-                    string Original_mesJunioPago, 
-                    string Original_mesMarzoPago, 
-                    string Original_mesMayoPago, 
-                    string Original_mesNoviembrePago, 
-                    string Original_mesOctubrePago, 
-                    string Original_mesSeptiembrePago, 
-                    string Original_mesTotal) {
-            if ((mesEnero == null)) {
+                    global::System.Nullable<int> Original_mesEnero, 
+                    global::System.Nullable<int> Original_mesFebrero, 
+                    global::System.Nullable<int> Original_mesMarzo, 
+                    global::System.Nullable<int> Original_mesAbril, 
+                    global::System.Nullable<int> Original_mesMayo, 
+                    global::System.Nullable<int> Original_mesJunio, 
+                    global::System.Nullable<int> Original_mesJulio, 
+                    global::System.Nullable<int> Original_mesAgosto, 
+                    global::System.Nullable<int> Original_mesSeptiembre, 
+                    global::System.Nullable<int> Original_mesOctubre, 
+                    global::System.Nullable<int> Original_mesNoviembre, 
+                    global::System.Nullable<int> Original_mesDiciembre, 
+                    global::System.Nullable<int> Original_mesTotal, 
+                    global::System.Nullable<int> Original_mesTotalPago) {
+            if ((mesEnero.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(mesEnero.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(mesEnero));
+            if ((mesFebrero.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(mesFebrero.Value));
             }
-            if ((mesFebrero == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(mesFebrero));
+            if ((mesMarzo.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(mesMarzo.Value));
             }
-            if ((mesMarzo == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(mesMarzo));
+            if ((mesAbril.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(mesAbril.Value));
             }
-            if ((mesAbril == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(mesAbril));
+            if ((mesMayo.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(mesMayo.Value));
             }
-            if ((mesMayo == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(mesMayo));
+            if ((mesJunio.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(mesJunio.Value));
             }
-            if ((mesJunio == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(mesJunio));
+            if ((mesJulio.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(mesJulio.Value));
             }
-            if ((mesJulio == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(mesJulio));
+            if ((mesAgosto.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(mesAgosto.Value));
             }
-            if ((mesAgosto == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(mesAgosto));
+            if ((mesSeptiembre.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(mesSeptiembre.Value));
             }
-            if ((mesSeptiembre == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(mesSeptiembre));
+            if ((mesOctubre.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(mesOctubre.Value));
             }
-            if ((mesOctubre == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(mesOctubre));
+            if ((mesNoviembre.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(mesNoviembre.Value));
             }
-            if ((mesNoviembre == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(mesNoviembre));
+            if ((mesDiciembre.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(mesDiciembre.Value));
             }
-            if ((mesDiciembre == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(mesDiciembre));
+            if ((mesTotal.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(mesTotal.Value));
             }
-            if ((mesAbrilPago == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(mesAbrilPago));
+            if ((mesTotalPago.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(mesTotalPago.Value));
             }
-            if ((mesAgostoPago == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(mesAgostoPago));
-            }
-            if ((mesDerechoDos == null)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(mesDerechoDos));
-            }
-            if ((mesDerechoUno == null)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_socioID));
+            if ((Original_mesEnero.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_mesEnero.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(mesDerechoUno));
-            }
-            if ((mesDeudaAnterior == null)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(mesDeudaAnterior));
-            }
-            if ((mesDiciembrePago == null)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+            if ((Original_mesFebrero.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_mesFebrero.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(mesDiciembrePago));
-            }
-            if ((mesEneroPago == null)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(mesEneroPago));
-            }
-            if ((mesFebreroPago == null)) {
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+            if ((Original_mesMarzo.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((int)(Original_mesMarzo.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(mesFebreroPago));
-            }
-            if ((mesJulioPago == null)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(mesJulioPago));
-            }
-            if ((mesJunioPago == null)) {
-                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+            if ((Original_mesAbril.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(Original_mesAbril.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(mesJunioPago));
-            }
-            if ((mesMarzoPago == null)) {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(mesMarzoPago));
-            }
-            if ((mesMayoPago == null)) {
-                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
+            if ((Original_mesMayo.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((int)(Original_mesMayo.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(mesMayoPago));
-            }
-            if ((mesNoviembrePago == null)) {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(mesNoviembrePago));
-            }
-            if ((mesOctubrePago == null)) {
-                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
+            if ((Original_mesJunio.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((int)(Original_mesJunio.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(mesOctubrePago));
-            }
-            if ((mesSeptiembrePago == null)) {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(mesSeptiembrePago));
-            }
-            if ((mesTotal == null)) {
-                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
+            if ((Original_mesJulio.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((int)(Original_mesJulio.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(mesTotal));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[28].Value = ((int)(Original_socioID));
-            if ((Original_mesEnero == null)) {
+            if ((Original_mesAgosto.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((int)(Original_mesAgosto.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_mesEnero));
+            if ((Original_mesSeptiembre.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((int)(Original_mesSeptiembre.Value));
             }
-            if ((Original_mesFebrero == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((string)(Original_mesFebrero));
+            if ((Original_mesOctubre.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((int)(Original_mesOctubre.Value));
             }
-            if ((Original_mesMarzo == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(Original_mesMarzo));
+            if ((Original_mesNoviembre.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((int)(Original_mesNoviembre.Value));
             }
-            if ((Original_mesAbril == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((string)(Original_mesAbril));
+            if ((Original_mesDiciembre.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((int)(Original_mesDiciembre.Value));
             }
-            if ((Original_mesMayo == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[38].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((string)(Original_mesMayo));
+            if ((Original_mesTotal.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((int)(Original_mesTotal.Value));
             }
-            if ((Original_mesJunio == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[40].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((string)(Original_mesJunio));
+            if ((Original_mesTotalPago.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((int)(Original_mesTotalPago.Value));
             }
-            if ((Original_mesJulio == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[42].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((string)(Original_mesJulio));
-            }
-            if ((Original_mesAgosto == null)) {
-                this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[44].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[44].Value = ((string)(Original_mesAgosto));
-            }
-            if ((Original_mesSeptiembre == null)) {
-                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[46].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[46].Value = ((string)(Original_mesSeptiembre));
-            }
-            if ((Original_mesOctubre == null)) {
-                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[48].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[48].Value = ((string)(Original_mesOctubre));
-            }
-            if ((Original_mesNoviembre == null)) {
-                this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[50].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[50].Value = ((string)(Original_mesNoviembre));
-            }
-            if ((Original_mesDiciembre == null)) {
-                this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[52].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[52].Value = ((string)(Original_mesDiciembre));
-            }
-            if ((Original_mesAbrilPago == null)) {
-                this.Adapter.UpdateCommand.Parameters[53].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[54].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[53].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[54].Value = ((string)(Original_mesAbrilPago));
-            }
-            if ((Original_mesAgostoPago == null)) {
-                this.Adapter.UpdateCommand.Parameters[55].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[56].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[55].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[56].Value = ((string)(Original_mesAgostoPago));
-            }
-            if ((Original_mesDerechoDos == null)) {
-                this.Adapter.UpdateCommand.Parameters[57].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[58].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[57].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[58].Value = ((string)(Original_mesDerechoDos));
-            }
-            if ((Original_mesDerechoUno == null)) {
-                this.Adapter.UpdateCommand.Parameters[59].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[60].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[59].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[60].Value = ((string)(Original_mesDerechoUno));
-            }
-            if ((Original_mesDeudaAnterior == null)) {
-                this.Adapter.UpdateCommand.Parameters[61].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[62].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[61].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[62].Value = ((string)(Original_mesDeudaAnterior));
-            }
-            if ((Original_mesDiciembrePago == null)) {
-                this.Adapter.UpdateCommand.Parameters[63].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[64].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[63].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[64].Value = ((string)(Original_mesDiciembrePago));
-            }
-            if ((Original_mesEneroPago == null)) {
-                this.Adapter.UpdateCommand.Parameters[65].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[66].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[65].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[66].Value = ((string)(Original_mesEneroPago));
-            }
-            if ((Original_mesFebreroPago == null)) {
-                this.Adapter.UpdateCommand.Parameters[67].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[68].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[67].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[68].Value = ((string)(Original_mesFebreroPago));
-            }
-            if ((Original_mesJulioPago == null)) {
-                this.Adapter.UpdateCommand.Parameters[69].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[70].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[69].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[70].Value = ((string)(Original_mesJulioPago));
-            }
-            if ((Original_mesJunioPago == null)) {
-                this.Adapter.UpdateCommand.Parameters[71].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[72].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[71].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[72].Value = ((string)(Original_mesJunioPago));
-            }
-            if ((Original_mesMarzoPago == null)) {
-                this.Adapter.UpdateCommand.Parameters[73].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[74].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[73].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[74].Value = ((string)(Original_mesMarzoPago));
-            }
-            if ((Original_mesMayoPago == null)) {
-                this.Adapter.UpdateCommand.Parameters[75].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[76].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[75].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[76].Value = ((string)(Original_mesMayoPago));
-            }
-            if ((Original_mesNoviembrePago == null)) {
-                this.Adapter.UpdateCommand.Parameters[77].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[78].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[77].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[78].Value = ((string)(Original_mesNoviembrePago));
-            }
-            if ((Original_mesOctubrePago == null)) {
-                this.Adapter.UpdateCommand.Parameters[79].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[80].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[79].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[80].Value = ((string)(Original_mesOctubrePago));
-            }
-            if ((Original_mesSeptiembrePago == null)) {
-                this.Adapter.UpdateCommand.Parameters[81].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[82].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[81].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[82].Value = ((string)(Original_mesSeptiembrePago));
-            }
-            if ((Original_mesTotal == null)) {
-                this.Adapter.UpdateCommand.Parameters[83].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[84].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[83].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[84].Value = ((string)(Original_mesTotal));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 

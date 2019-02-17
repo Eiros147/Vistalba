@@ -86,5 +86,10 @@ Persist Security Info=False;";
             ModificarActividad neu = new ModificarActividad();
             neu.ShowDialog();
         }
+
+        private void Actividades_Activated(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

@@ -171,6 +171,7 @@
             this.Controls.Add(this.dgvActividades);
             this.Name = "Actividades";
             this.Text = "Actividades";
+            this.Activated += new System.EventHandler(this.Actividades_Activated);
             this.Load += new System.EventHandler(this.Actividades_Load);
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.actividadesBindingSource)).EndInit();
