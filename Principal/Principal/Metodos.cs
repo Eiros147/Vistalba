@@ -85,6 +85,8 @@ namespace Principal
 
                 OleDbCommand comando = new OleDbCommand(query, conexion);
 
+                MessageBox.Show(query);
+
                 comando.ExecuteNonQuery();
                 this.CerrarCon();
                 MessageBox.Show(tabla + " actualizado");
@@ -100,7 +102,7 @@ namespace Principal
         {
             try
             {
-                string query = "SELECT " +valores+ " FROM"+tabla;
+                string query = "SELECT " +valores+ " FROM "+tabla;
                 AbrirCon();
 
                 OleDbCommand comando = new OleDbCommand(query, conexion);
@@ -121,16 +123,17 @@ namespace Principal
             }
         }
 
+
         //Llenar tabla con condiciones
-        public void Llenardgvcondicion(string tabla, string valores, DataGridView dgv, string condicion)
+        public void Llenardgvcondiciones(string tabla, string valores, DataGridView dgv,string condicion)
         {
             try
             {
-                string query = "SELECT " + valores + " FROM" + tabla + " WHERE " + condicion + "";
+                string query = "SELECT " + valores + " FROM " + tabla + " WHERE " + condicion + "";
                 AbrirCon();
 
                 OleDbCommand comando = new OleDbCommand(query, conexion);
-                MessageBox.Show(query);
+
                 OleDbDataAdapter da = new OleDbDataAdapter(comando);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -163,7 +166,7 @@ namespace Principal
 
                 while (lector.Read())
                 {
-                    
+
                 }
             }
             catch(Exception ex)
@@ -171,40 +174,6 @@ namespace Principal
                 MessageBox.Show("Error " + ex);
             }
         }
-
-        //Eliminar
-        public void Eliminar(string tabla, string valor, string key, int id)
-        {
-            string query = "UPDATE " +tabla+" SET " +valor+ " WHERE " + key + " = " + id + "";
-            AbrirCon();
-
-            OleDbCommand comando = new OleDbCommand(query, conexion);
-
-            comando.ExecuteNonQuery();
-            this.CerrarCon();
-            MessageBox.Show(tabla + " dado de bajo");
-        }
-
-        //Busqueda
-        public void Buscar(string valores, string tabla, string key, string nombre, DataGridView dgv)
-        {
-            string query = "SELECT " + valores + " FROM" + tabla + " WHERE " +key+ " LIKE " +nombre+"";
-            AbrirCon();
-
-            MessageBox.Show(query);
-            OleDbCommand comando = new OleDbCommand(query, conexion);
-
-            OleDbDataAdapter da = new OleDbDataAdapter(comando);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            dgv.DataSource = dt;
-
-            comando.ExecuteNonQuery();
-
-            this.CerrarCon();
-        }
-
-
     }
 
 

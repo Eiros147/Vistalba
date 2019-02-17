@@ -36,17 +36,5 @@ namespace Principal
         {
             this.Close();
         }
-
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            Metodos nuevometodo = new Metodos();
-            nuevometodo.Inicializar();
-
-            string tabla = "Actividades";
-            string seters = "socioNombre, socioDNI, socioDireccion, socioMail, socioTelefono, socioCelular";
-            //string valores = "'" + txtNombre.Text + "','" + txtDNI.Text + "','" + txtDireccion.Text + "','" + txtMail.Text + "','" + txtTelefono.Text + "','" + txtCelular.Text + "'";
-
-            //nuevometodo.Insertar(tabla, seters, valores);
-        }
     }
 }

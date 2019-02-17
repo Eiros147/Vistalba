@@ -34,14 +34,25 @@ Persist Security Info=False;";
 
         private void Actividades_Load(object sender, EventArgs e)
         {
-            Metodos cargarmetodo = new Metodos();
-            string tabla = "(Actividades INNER JOIN Profesional ON Actividades.profId = Profesional.profId)";
-            string valores = "Actividades.actNombre, Actividades.actDesc, Actividades.actMeses, Profesional.profNombre";
+            try
+            {
+                conActv.Open();
+                OleDbCommand command = new OleDbCommand();
+                command.Connection = conActv;
+                string query = "SELECT Actividades.actNombre, Actividades.actDesc, Actividades.actMeses, Profesional.profNombre FROM(Actividades INNER JOIN Profesional ON Actividades.profId = Profesional.profId)";
+                command.CommandText = query;
 
-            cargarmetodo.Inicializar();
-            cargarmetodo.Llenardgv(tabla, valores, dgvActividades);
+                OleDbDataAdapter da = new OleDbDataAdapter(command);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dgvActividades.DataSource = dt;
 
-            
+                conActv.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al conectarse" + ex);
+            }
         }
 
         void busqueda()
