@@ -36,9 +36,10 @@ Persist Security Info=False;");
             Metodos cargametodo = new Metodos();
             string tabla = "Socio";
             string valores = "socioNombre, socioDNI, socioDireccion, socioMail, socioTelefono, socioCelular, socioFechaIng, socioFechaUltPago, socioFechaNac, socioGenero";
+            string condicion = "socioEstado LIKE true";
 
             cargametodo.Inicializar();
-            cargametodo.Llenardgv(tabla, valores, dgvSocio);
+            cargametodo.Llenardgvcondiciones(tabla, valores, dgvSocio, condicion);
 
 
         }
@@ -53,11 +54,20 @@ Persist Security Info=False;");
 
         void busqueda()
         {
-            DataTable dtDatos = new DataTable();
-            string cadena = ("SELECT socioNombre, socioDNI, socioDireccion, socioMail, socioTelefono, socioCelular, socioFechaNac, socioFechaIng, socioFechaUltPago, socioGenero FROM Socio WHERE socioNombre LIKE '" + txtBusqueda.Text + "%'");
-            OleDbDataAdapter data = new OleDbDataAdapter(cadena, conexion);
-            data.Fill(dtDatos);
-            dgvSocio.DataSource = dtDatos;
+            Metodos buscar = new Metodos();
+            buscar.Inicializar();
+
+            string valores = "socioNombre, socioDNI, socioDireccion, socioMail, socioTelefono, socioCelular, socioFechaNac, socioFechaIng, socioFechaUltPago, socioGenero";
+            string tabla = "Socio";
+            string condicion = "socioNombre LIKE '" + txtBusqueda.Text + "%'";
+
+            buscar.Llenardgvcondiciones(tabla, valores, dgvSocio, condicion);
+
+            //DataTable dtDatos = new DataTable();
+            //string cadena = ("SELECT socioNombre, socioDNI, socioDireccion, socioMail, socioTelefono, socioCelular, socioFechaNac, socioFechaIng, socioFechaUltPago, socioGenero FROM Socio WHERE socioNombre LIKE '" + txtBusqueda.Text + "%'");
+            //OleDbDataAdapter data = new OleDbDataAdapter(cadena, conexion);
+            //data.Fill(dtDatos);
+            //dgvSocio.DataSource = dtDatos;
         }
 
         void modificar()
@@ -118,6 +128,7 @@ Persist Security Info=False;");
         {
             busqueda();
             this.dgvSocio.EndEdit();
+
         }
 
         private void btnAbrir_Click(object sender, EventArgs e)
@@ -178,6 +189,12 @@ Persist Security Info=False;");
         {
             SociosInactivos neuinactivos = new SociosInactivos();
             neuinactivos.ShowDialog();
+        }
+
+        private void smiCategorias_Click(object sender, EventArgs e)
+        {
+            Categorias nuevocats = new Categorias();
+            nuevocats.ShowDialog();
         }
     }
 }

@@ -108,6 +108,7 @@
             this.dgvPagos.Name = "dgvPagos";
             this.dgvPagos.Size = new System.Drawing.Size(923, 311);
             this.dgvPagos.TabIndex = 5;
+            this.dgvPagos.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvPagos_CellFormatting);
             // 
             // PagosMensuales
             // 

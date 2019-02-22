@@ -56,7 +56,7 @@ namespace Principal
         public void Insertar(string tabla, string seters, string valores)
         {
             try
-                {
+            {
                     string query = "INSERT INTO " + tabla + " (" + seters + ") VALUES (" + valores + ")";
                     AbrirCon();
 
@@ -65,14 +65,16 @@ namespace Principal
                     //Ejecutar query
 
                     comando.ExecuteNonQuery();
-                    this.CerrarCon();
                     MessageBox.Show("Nuevo "+tabla+" guardado");
-                }
-                catch (Exception ex)
-                {
+            }
+            catch (Exception ex)
+            {
                     MessageBox.Show("Error " + ex);
-
-             }
+            }
+            finally
+            {
+                this.CerrarCon();
+            }
         }
 
         //Actualizar
@@ -88,12 +90,15 @@ namespace Principal
                 MessageBox.Show(query);
 
                 comando.ExecuteNonQuery();
-                this.CerrarCon();
                 MessageBox.Show(tabla + " actualizado");
             }
             catch(Exception ex)
             {
                 MessageBox.Show("Error " + ex);
+            }
+            finally
+            {
+                this.CerrarCon();
             }
         }
 
@@ -113,13 +118,14 @@ namespace Principal
                 dgv.DataSource = dt;
 
                 comando.ExecuteNonQuery();
-
-                this.CerrarCon();
-
             }
             catch(Exception ex)
             {
                 MessageBox.Show("Error " + ex);
+            }
+            finally
+            {
+                this.CerrarCon();
             }
         }
 
@@ -141,12 +147,15 @@ namespace Principal
 
                 comando.ExecuteNonQuery();
 
-                this.CerrarCon();
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error " + ex);
+            }
+            finally
+            {
+                this.CerrarCon();
             }
         }
 
@@ -172,6 +181,28 @@ namespace Principal
             catch(Exception ex)
             {
                 MessageBox.Show("Error " + ex);
+            }
+            finally
+            {
+                CerrarCon();
+            }
+        }
+
+        //Busqueda
+        public void Buscar(string tabla, string valores, DataGridView dgv, string condicion)
+        {
+            try
+            {
+                AbrirCon();
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error " + ex);
+            }
+            finally
+            {
+                CerrarCon();
             }
         }
     }

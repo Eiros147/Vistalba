@@ -40,29 +40,14 @@ Persist Security Info=False;");
 
             cargapagos.Llenardgv(tabla, query, dgvPagos);
             
-            //try
-            //{
-            //    conPagos.Open();
-            //    OleDbCommand command = new OleDbCommand();
-            //    command.Connection = conPagos;
-            //    string query = "SELECT * FROM Mensual";
-            //    command.CommandText = query;
+            
+        }
 
-            //    OleDbDataAdapter da = new OleDbDataAdapter(command);
-            //    DataTable dt = new DataTable();
-            //    da.Fill(dt);
-            //    dgvPagos.DataSource = dt;
+        private void dgvPagos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
 
-            //    conPagos.Close();
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("Error al conectarse" + ex);
-            //}
-
-            // TODO: esta línea de código carga datos en la tabla 'club_VistalbaDataSet.Mensual' Puede moverla o quitarla según sea necesario.
-            //this.mensualTableAdapter.Fill(this.club_VistalbaDataSet.Mensual);
-
+            dgvPagos.Columns[0].HeaderText = "probando";
+            //dgvPagos.Columns.Add();
         }
     }
 }

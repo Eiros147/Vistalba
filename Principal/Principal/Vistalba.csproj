@@ -51,6 +51,12 @@
     <Compile Include="Actividades.Designer.cs">
       <DependentUpon>Actividades.cs</DependentUpon>
     </Compile>
+    <Compile Include="Categorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Categorias.Designer.cs">
+      <DependentUpon>Categorias.cs</DependentUpon>
+    </Compile>
     <Compile Include="Club_VistalbaDataSet.cs">
       <DependentUpon>Club_VistalbaDataSet.xsd</DependentUpon>
     </Compile>
@@ -149,6 +155,9 @@
     </Compile>
     <EmbeddedResource Include="Actividades.resx">
       <DependentUpon>Actividades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Categorias.resx">
+      <DependentUpon>Categorias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
