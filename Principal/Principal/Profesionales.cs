@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,10 @@ namespace Principal
         {
             InitializeComponent();
         }
+
+        OleDbConnection conexion = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Club Vistalba.accdb;
+Persist Security Info=False;");
+        OleDbCommand comando = new OleDbCommand();
 
         private void profesionalBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
@@ -42,6 +47,33 @@ namespace Principal
         {
             ModificarProfesional moprof = new ModificarProfesional();
             moprof.ShowDialog();
+        }
+
+        void modificar()
+        {
+            conexion.Open();
+            string query = "SELECT profId FROM Profesional WHERE profNombre ='" + dgvProfesional.CurrentRow.Cells[1].Value.ToString() + "'";
+
+            comando.Connection = conexion;
+            comando.CommandText = query;
+
+            string temporal = comando.ExecuteScalar().ToString();
+
+            ModificarProfesional nuevoprof = new ModificarProfesional();
+
+            nuevoprof.lblID.Text = temporal;
+            nuevoprof.txtNombre.Text = dgvProfesional.CurrentRow.Cells[1].Value.ToString();
+            nuevoprof.txtDomicilio.Text = dgvProfesional.CurrentRow.Cells[2].Value.ToString();
+            nuevoprof.txtTelefono.Text = dgvProfesional.CurrentRow.Cells[3].Value.ToString();
+            nuevoprof.txtMail.Text = dgvProfesional.CurrentRow.Cells[4].Value.ToString();
+
+            nuevoprof.ShowDialog();
+            conexion.Close();
+        }
+
+        private void dgvProfesional_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            modificar();
         }
     }
 }

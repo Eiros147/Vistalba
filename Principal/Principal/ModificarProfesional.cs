@@ -36,5 +36,25 @@ namespace Principal
         {
             this.Close();
         }
+
+        private void btnHabilitar_Click(object sender, EventArgs e)
+        {
+            txtNombre.Enabled = true;
+            txtDomicilio.Enabled = true;
+            txtMail.Enabled = true;
+            txtTelefono.Enabled = true;
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            string valores = "profNombre = '" + txtNombre + "', profTelefono = '" + txtTelefono + "', profDomicilio = '" + txtDomicilio + "', profMail = '" + txtMail;
+            string tabla = "Profesional";
+            string key = "profId";
+            int id = Convert.ToInt32(lblID);
+
+            Metodos guardarprof = new Metodos();
+            guardarprof.Inicializar();
+            guardarprof.Update(tabla, id, valores, key);
+        }
     }
 }

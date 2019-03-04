@@ -33,7 +33,7 @@
             this.profesionalBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.profesionalTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.ProfesionalTableAdapter();
             this.tableAdapterManager = new Principal.Club_VistalbaDataSetTableAdapters.TableAdapterManager();
-            this.profesionalDataGridView = new System.Windows.Forms.DataGridView();
+            this.dgvProfesional = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,7 +44,7 @@
             this.btnModificar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profesionalBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.profesionalDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProfesional)).BeginInit();
             this.SuspendLayout();
             // 
             // club_VistalbaDataSet
@@ -74,21 +74,22 @@
             this.tableAdapterManager.SocioTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Principal.Club_VistalbaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // profesionalDataGridView
+            // dgvProfesional
             // 
-            this.profesionalDataGridView.AutoGenerateColumns = false;
-            this.profesionalDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.profesionalDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvProfesional.AutoGenerateColumns = false;
+            this.dgvProfesional.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProfesional.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
-            this.profesionalDataGridView.DataSource = this.profesionalBindingSource;
-            this.profesionalDataGridView.Location = new System.Drawing.Point(12, 12);
-            this.profesionalDataGridView.Name = "profesionalDataGridView";
-            this.profesionalDataGridView.Size = new System.Drawing.Size(921, 331);
-            this.profesionalDataGridView.TabIndex = 1;
+            this.dgvProfesional.DataSource = this.profesionalBindingSource;
+            this.dgvProfesional.Location = new System.Drawing.Point(12, 12);
+            this.dgvProfesional.Name = "dgvProfesional";
+            this.dgvProfesional.Size = new System.Drawing.Size(921, 331);
+            this.dgvProfesional.TabIndex = 1;
+            this.dgvProfesional.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProfesional_CellContentClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -155,13 +156,13 @@
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.profesionalDataGridView);
+            this.Controls.Add(this.dgvProfesional);
             this.Name = "Profesionales";
             this.Text = "Profesionales";
             this.Load += new System.EventHandler(this.Profesionales_Load);
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profesionalBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.profesionalDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProfesional)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -173,7 +174,7 @@
         private System.Windows.Forms.BindingSource profesionalBindingSource;
         private Club_VistalbaDataSetTableAdapters.ProfesionalTableAdapter profesionalTableAdapter;
         private Club_VistalbaDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.DataGridView profesionalDataGridView;
+        private System.Windows.Forms.DataGridView dgvProfesional;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;

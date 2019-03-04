@@ -55,6 +55,51 @@
             ((System.ComponentModel.ISupportInitialize)(this.actividadesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
+            // actIdLabel
+            // 
+            actIdLabel.AutoSize = true;
+            actIdLabel.Location = new System.Drawing.Point(14, 15);
+            actIdLabel.Name = "actIdLabel";
+            actIdLabel.Size = new System.Drawing.Size(21, 13);
+            actIdLabel.TabIndex = 1;
+            actIdLabel.Text = "ID:";
+            // 
+            // actDescLabel
+            // 
+            actDescLabel.AutoSize = true;
+            actDescLabel.Location = new System.Drawing.Point(14, 67);
+            actDescLabel.Name = "actDescLabel";
+            actDescLabel.Size = new System.Drawing.Size(66, 13);
+            actDescLabel.TabIndex = 3;
+            actDescLabel.Text = "Descripcion:";
+            // 
+            // profIdLabel
+            // 
+            profIdLabel.AutoSize = true;
+            profIdLabel.Location = new System.Drawing.Point(14, 93);
+            profIdLabel.Name = "profIdLabel";
+            profIdLabel.Size = new System.Drawing.Size(49, 13);
+            profIdLabel.TabIndex = 5;
+            profIdLabel.Text = "Profesor:";
+            // 
+            // actMesesLabel
+            // 
+            actMesesLabel.AutoSize = true;
+            actMesesLabel.Location = new System.Drawing.Point(14, 119);
+            actMesesLabel.Name = "actMesesLabel";
+            actMesesLabel.Size = new System.Drawing.Size(41, 13);
+            actMesesLabel.TabIndex = 7;
+            actMesesLabel.Text = "Meses:";
+            // 
+            // actNombreLabel
+            // 
+            actNombreLabel.AutoSize = true;
+            actNombreLabel.Location = new System.Drawing.Point(14, 41);
+            actNombreLabel.Name = "actNombreLabel";
+            actNombreLabel.Size = new System.Drawing.Size(47, 13);
+            actNombreLabel.TabIndex = 9;
+            actNombreLabel.Text = "Nombre:";
+            // 
             // club_VistalbaDataSet
             // 
             this.club_VistalbaDataSet.DataSetName = "Club_VistalbaDataSet";
@@ -76,28 +121,11 @@
             this.tableAdapterManager.CategoriaTableAdapter = null;
             this.tableAdapterManager.CuotaTableAdapter = null;
             this.tableAdapterManager.GrupoTableAdapter = null;
+            this.tableAdapterManager.MensualTableAdapter = null;
             this.tableAdapterManager.ProfesionalTableAdapter = null;
             this.tableAdapterManager.SaludTableAdapter = null;
             this.tableAdapterManager.SocioTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Principal.Club_VistalbaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // actIdLabel
-            // 
-            actIdLabel.AutoSize = true;
-            actIdLabel.Location = new System.Drawing.Point(14, 15);
-            actIdLabel.Name = "actIdLabel";
-            actIdLabel.Size = new System.Drawing.Size(21, 13);
-            actIdLabel.TabIndex = 1;
-            actIdLabel.Text = "ID:";
-            // 
-            // actDescLabel
-            // 
-            actDescLabel.AutoSize = true;
-            actDescLabel.Location = new System.Drawing.Point(14, 67);
-            actDescLabel.Name = "actDescLabel";
-            actDescLabel.Size = new System.Drawing.Size(66, 13);
-            actDescLabel.TabIndex = 3;
-            actDescLabel.Text = "Descripcion:";
             // 
             // txtDesc
             // 
@@ -108,15 +136,6 @@
             this.txtDesc.Size = new System.Drawing.Size(146, 20);
             this.txtDesc.TabIndex = 4;
             // 
-            // profIdLabel
-            // 
-            profIdLabel.AutoSize = true;
-            profIdLabel.Location = new System.Drawing.Point(14, 93);
-            profIdLabel.Name = "profIdLabel";
-            profIdLabel.Size = new System.Drawing.Size(49, 13);
-            profIdLabel.TabIndex = 5;
-            profIdLabel.Text = "Profesor:";
-            // 
             // txtProfesor
             // 
             this.txtProfesor.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.actividadesBindingSource, "profId", true));
@@ -126,15 +145,6 @@
             this.txtProfesor.Size = new System.Drawing.Size(146, 20);
             this.txtProfesor.TabIndex = 6;
             // 
-            // actMesesLabel
-            // 
-            actMesesLabel.AutoSize = true;
-            actMesesLabel.Location = new System.Drawing.Point(14, 119);
-            actMesesLabel.Name = "actMesesLabel";
-            actMesesLabel.Size = new System.Drawing.Size(41, 13);
-            actMesesLabel.TabIndex = 7;
-            actMesesLabel.Text = "Meses:";
-            // 
             // txtMeses
             // 
             this.txtMeses.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.actividadesBindingSource, "actMeses", true));
@@ -143,15 +153,6 @@
             this.txtMeses.Name = "txtMeses";
             this.txtMeses.Size = new System.Drawing.Size(146, 20);
             this.txtMeses.TabIndex = 8;
-            // 
-            // actNombreLabel
-            // 
-            actNombreLabel.AutoSize = true;
-            actNombreLabel.Location = new System.Drawing.Point(14, 41);
-            actNombreLabel.Name = "actNombreLabel";
-            actNombreLabel.Size = new System.Drawing.Size(47, 13);
-            actNombreLabel.TabIndex = 9;
-            actNombreLabel.Text = "Nombre:";
             // 
             // txtNombre
             // 
@@ -190,6 +191,7 @@
             this.btnGuardar.TabIndex = 13;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // lblID
             // 

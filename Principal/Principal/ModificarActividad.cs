@@ -44,5 +44,18 @@ namespace Principal
         {
             this.Close();
         }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            Metodos modMetodo = new Metodos();
+            modMetodo.Inicializar();
+
+            string valores = "actNombre = '" + txtNombre + "', actDesc = '" + txtDesc;
+            string tabla = "";
+            string key = "";
+            int id = 3;
+
+            modMetodo.Update(tabla, id, key, valores);
+        }
     }
 }

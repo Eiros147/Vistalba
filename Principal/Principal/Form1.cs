@@ -33,15 +33,7 @@ Persist Security Info=False;");
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Metodos cargametodo = new Metodos();
-            string tabla = "Socio";
-            string valores = "socioNombre, socioDNI, socioDireccion, socioMail, socioTelefono, socioCelular, socioFechaIng, socioFechaUltPago, socioFechaNac, socioGenero";
-            string condicion = "socioEstado LIKE true";
-
-            cargametodo.Inicializar();
-            cargametodo.Llenardgvcondiciones(tabla, valores, dgvSocio, condicion);
-
-
+            cargar();
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -52,7 +44,7 @@ Persist Security Info=False;");
             this.dgvSocio.Refresh();
         }
 
-        void busqueda()
+        public void busqueda()
         {
             Metodos buscar = new Metodos();
             buscar.Inicializar();
@@ -70,7 +62,18 @@ Persist Security Info=False;");
             //dgvSocio.DataSource = dtDatos;
         }
 
-        void modificar()
+        public void cargar()
+        {
+            Metodos cargametodo = new Metodos();
+            string tabla = "Socio";
+            string valores = "socioNombre, socioDNI, socioDireccion, socioMail, socioTelefono, socioCelular, socioFechaIng, socioFechaUltPago, socioFechaNac, socioGenero";
+            string condicion = "socioEstado LIKE true";
+
+            cargametodo.Inicializar();
+            cargametodo.Llenardgvcondiciones(tabla, valores, dgvSocio, condicion);
+        }
+
+        public void modificar()
         {
             conexion.Open();
             string query = "Select socioID FROM socio WHERE socioNombre='" + dgvSocio.CurrentRow.Cells[0].Value.ToString() + "'";
@@ -97,8 +100,6 @@ Persist Security Info=False;");
             {
                 modificar.rbMujer.Checked = true;
             }
-            
-            
 
             modificar.ShowDialog();
 
@@ -126,9 +127,15 @@ Persist Security Info=False;");
 
         private void txtBusqueda_TextChanged(object sender, EventArgs e)
         {
-            busqueda();
-            this.dgvSocio.EndEdit();
-
+            if (txtBusqueda.Text == "")
+            {
+                cargar();
+            }
+            else
+            {
+                busqueda();
+                this.dgvSocio.EndEdit();
+            }
         }
 
         private void btnAbrir_Click(object sender, EventArgs e)
@@ -175,14 +182,7 @@ Persist Security Info=False;");
 
         private void Form1_Activated(object sender, EventArgs e)
         {
-            Metodos cargametodo = new Metodos();
-            string tabla = "Socio";
-            string valores = "socioNombre, socioDNI, socioDireccion, socioMail, socioTelefono, socioCelular, socioFechaIng, socioFechaUltPago, socioFechaNac, socioGenero, socioCategoria, socioNivel";
-            string condicion = "socioEstado LIKE true";
-
-            cargametodo.Inicializar();
-            cargametodo.Llenardgvcondiciones(tabla, valores, dgvSocio, condicion);
-            
+            cargar();          
         }
 
         private void smiInactivos_Click(object sender, EventArgs e)

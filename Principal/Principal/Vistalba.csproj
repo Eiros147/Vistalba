@@ -139,6 +139,12 @@
     <Compile Include="PagosMensuales.Designer.cs">
       <DependentUpon>PagosMensuales.cs</DependentUpon>
     </Compile>
+    <Compile Include="PagosMensualesDos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PagosMensualesDos.Designer.cs">
+      <DependentUpon>PagosMensualesDos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Profesionales.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PagosMensuales.resx">
       <DependentUpon>PagosMensuales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PagosMensualesDos.resx">
+      <DependentUpon>PagosMensualesDos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Profesionales.resx">
       <DependentUpon>Profesionales.cs</DependentUpon>

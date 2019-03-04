@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,13 @@ namespace Principal
 {
     public partial class NuevoProfesional : Form
     {
+        OleDbConnection conNuevo = new OleDbConnection();
+
         public NuevoProfesional()
         {
             InitializeComponent();
+            conNuevo.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Club Vistalba.accdb;
+Persist Security Info=False;";
         }
 
         private void profesionalBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -25,20 +30,29 @@ namespace Principal
 
         }
 
-        private void profesionalBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.profesionalBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.club_VistalbaDataSet);
-
-        }
 
         private void NuevoProfesional_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'club_VistalbaDataSet.Actividades' Puede moverla o quitarla según sea necesario.
-            this.actividadesTableAdapter.Fill(this.club_VistalbaDataSet.Actividades);
-            // TODO: esta línea de código carga datos en la tabla 'club_VistalbaDataSet.Profesional' Puede moverla o quitarla según sea necesario.
-            this.profesionalTableAdapter.Fill(this.club_VistalbaDataSet.Profesional);
+            try
+            {
+                conNuevo.Open();
+                string query = "SELECT TOP 1 profId FROM Profesional ORDER BY profId DESC ";
+                OleDbCommand comando = new OleDbCommand(query, conNuevo);
+
+                string temporal = comando.ExecuteScalar().ToString();
+                int numero = Int32.Parse(temporal);
+                numero = numero + 1;
+                lblID.Text = numero.ToString();
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error al conectarse /b " + ex);
+            }
+            finally
+            {
+                conNuevo.Close();
+            }
 
         }
 

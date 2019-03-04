@@ -46,8 +46,25 @@ Persist Security Info=False;");
         private void dgvPagos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
 
-            dgvPagos.Columns[0].HeaderText = "probando";
-            //dgvPagos.Columns.Add();
+            dgvPagos.Columns[0].HeaderText = "ID";
+            dgvPagos.Columns[1].HeaderText = "Nombre";
+            dgvPagos.Columns[2].HeaderText = "Categoria";
+            dgvPagos.Columns[3].HeaderText = "1";
+            dgvPagos.Columns[4].HeaderText = "2";
+            dgvPagos.Columns[5].HeaderText = "3";
+            dgvPagos.Columns[6].HeaderText = "4";
+            dgvPagos.Columns[7].HeaderText = "5";
+            dgvPagos.Columns[8].HeaderText = "6";
+            dgvPagos.Columns[9].HeaderText = "Pagado";
+            dgvPagos.Columns[10].HeaderText = "Total";
+
+        }
+
+        private void btnSemestre_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            PagosMensualesDos otrosemestre = new PagosMensualesDos();
+            otrosemestre.Show();
         }
     }
 }

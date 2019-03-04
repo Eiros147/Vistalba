@@ -35,9 +35,9 @@
             this.tableAdapterManager = new Principal.Club_VistalbaDataSetTableAdapters.TableAdapterManager();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.clubVistalbaDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dgvPagos = new System.Windows.Forms.DataGridView();
+            this.btnSemestre = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mensualBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clubVistalbaDataSetBindingSource)).BeginInit();
@@ -80,21 +80,12 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 369);
+            this.button1.Location = new System.Drawing.Point(12, 357);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 32);
+            this.button1.Size = new System.Drawing.Size(79, 44);
             this.button1.TabIndex = 3;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(93, 369);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 32);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // clubVistalbaDataSetBindingSource
             // 
@@ -110,13 +101,23 @@
             this.dgvPagos.TabIndex = 5;
             this.dgvPagos.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvPagos_CellFormatting);
             // 
+            // btnSemestre
+            // 
+            this.btnSemestre.Location = new System.Drawing.Point(97, 357);
+            this.btnSemestre.Name = "btnSemestre";
+            this.btnSemestre.Size = new System.Drawing.Size(79, 44);
+            this.btnSemestre.TabIndex = 6;
+            this.btnSemestre.Text = "Segundo Semestre";
+            this.btnSemestre.UseVisualStyleBackColor = true;
+            this.btnSemestre.Click += new System.EventHandler(this.btnSemestre_Click);
+            // 
             // PagosMensuales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(947, 421);
+            this.Controls.Add(this.btnSemestre);
             this.Controls.Add(this.dgvPagos);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Name = "PagosMensuales";
@@ -139,8 +140,8 @@
         private Club_VistalbaDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.BindingSource clubVistalbaDataSetBindingSource;
         private System.Windows.Forms.DataGridView dgvPagos;
+        private System.Windows.Forms.Button btnSemestre;
     }
 }
