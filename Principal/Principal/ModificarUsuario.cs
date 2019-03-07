@@ -99,5 +99,11 @@ Persist Security Info=False;";
         {
 
         }
+
+        private void btnSalud_Click(object sender, EventArgs e)
+        {
+            ModificarSalud salud = new ModificarSalud();
+            salud.ShowDialog();
+        }
     }
 }

@@ -32,5 +32,29 @@ Persist Security Info=False;");
 
             cargarcat.Llenardgv(tabla, query, dgvCategorias);       
         }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            NuevaCategoria nuevo = new NuevaCategoria();
+            nuevo.ShowDialog();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            conPagos.Open();
+            string query = "SELECT catID FROM Categoria WHERE catNombre = '" + dgvCategorias.CurrentRow.Cells[1].Value.ToString() + "'";
+
+            comando.Connection = conPagos;
+            comando.CommandText = query;
+
+            string temporal = comando.ExecuteScalar().ToString();
+
+            ModificarCategoria nuovo = new ModificarCategoria();
+
+            nuovo.lblID.Text = temporal;
+            nuovo.txtDescripcion.Text = dgvCategorias.CurrentRow.Cells[2].Value.ToString();
+            nuovo.txtNombre.Text = dgvCategorias.CurrentRow.Cells[1].Value.ToString();
+            nuovo.ShowDialog();
+        }
     }
 }

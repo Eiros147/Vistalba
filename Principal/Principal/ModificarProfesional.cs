@@ -47,7 +47,7 @@ namespace Principal
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            string valores = "profNombre = '" + txtNombre + "', profTelefono = '" + txtTelefono + "', profDomicilio = '" + txtDomicilio + "', profMail = '" + txtMail;
+            string valores = "profNombre = '" + txtNombre.Text + "', profTelefono = '" + txtTelefono.Text + "', profDomicilio = '" + txtDomicilio.Text + "', profMail = '" + txtMail.Text;
             string tabla = "Profesional";
             string key = "profId";
             int id = Convert.ToInt32(lblID);

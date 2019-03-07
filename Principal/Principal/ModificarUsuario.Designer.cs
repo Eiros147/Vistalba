@@ -383,6 +383,7 @@
             this.btnSalud.TabIndex = 30;
             this.btnSalud.Text = "Salud";
             this.btnSalud.UseVisualStyleBackColor = true;
+            this.btnSalud.Click += new System.EventHandler(this.btnSalud_Click);
             // 
             // btnGrupo
             // 

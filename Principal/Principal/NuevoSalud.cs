@@ -41,5 +41,10 @@ namespace Principal
             //this.saludTableAdapter.Fill(this.club_VistalbaDataSet.Salud);
 
         }
+
+        private void saludAlergiaCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            txtDescripcion.Enabled = true;
+        }
     }
 }

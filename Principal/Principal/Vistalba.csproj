@@ -85,6 +85,12 @@
     <Compile Include="ModificarActividades.Designer.cs">
       <DependentUpon>ModificarActividades.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModificarCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificarCategoria.Designer.cs">
+      <DependentUpon>ModificarCategoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModificarProfesional.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +114,12 @@
     </Compile>
     <Compile Include="NuevaActividad.Designer.cs">
       <DependentUpon>NuevaActividad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NuevaCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NuevaCategoria.Designer.cs">
+      <DependentUpon>NuevaCategoria.cs</DependentUpon>
     </Compile>
     <Compile Include="NuevoProfesional.cs">
       <SubType>Form</SubType>
@@ -173,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ModificarActividades.resx">
       <DependentUpon>ModificarActividades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarCategoria.resx">
+      <DependentUpon>ModificarCategoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModificarProfesional.resx">
       <DependentUpon>ModificarProfesional.cs</DependentUpon>
