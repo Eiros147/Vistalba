@@ -27,8 +27,6 @@ namespace Principal
 
         private void ModificarProfesional_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'club_VistalbaDataSet.Profesional' Puede moverla o quitarla según sea necesario.
-            this.profesionalTableAdapter.Fill(this.club_VistalbaDataSet.Profesional);
 
         }
 
@@ -47,7 +45,7 @@ namespace Principal
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            string valores = "profNombre = '" + txtNombre.Text + "', profTelefono = '" + txtTelefono.Text + "', profDomicilio = '" + txtDomicilio.Text + "', profMail = '" + txtMail.Text;
+            string valores = "profNombre = '" + txtNombre.Text + "', profTelefono = '" + txtTelefono.Text + "', profDomicilio = '" + txtDomicilio.Text + "', profMail = '" + txtMail.Text + "'";
             string tabla = "Profesional";
             string key = "profId";
             int id = Convert.ToInt32(lblID);

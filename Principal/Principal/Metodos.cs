@@ -62,7 +62,8 @@ namespace Principal
 
                     OleDbCommand comando = new OleDbCommand(query, conexion);
 
-                    //Ejecutar query
+                    //Control de query para testeo de errores
+                    //MessageBox.Show(query);
 
                     comando.ExecuteNonQuery();
                     MessageBox.Show("Nuevo "+tabla+" guardado");
@@ -87,7 +88,8 @@ namespace Principal
 
                 OleDbCommand comando = new OleDbCommand(query, conexion);
 
-                MessageBox.Show(query);
+                //Control de query para testeo de errores
+                //MessageBox.Show(query);
 
                 comando.ExecuteNonQuery();
                 MessageBox.Show(tabla + " actualizado");
@@ -111,7 +113,10 @@ namespace Principal
                 AbrirCon();
 
                 OleDbCommand comando = new OleDbCommand(query, conexion);
-                MessageBox.Show(query);
+
+                //Control de query para testeo de errores
+                //MessageBox.Show(query);
+
                 OleDbDataAdapter da = new OleDbDataAdapter(comando);
                 DataTable dt = new DataTable();
                 da.Fill(dt);

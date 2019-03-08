@@ -59,6 +59,7 @@
             this.smiPagos = new System.Windows.Forms.ToolStripMenuItem();
             this.smiInactivos = new System.Windows.Forms.ToolStripMenuItem();
             this.socioSaludBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.socioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSocio)).BeginInit();
@@ -304,11 +305,21 @@
             this.socioSaludBindingSource.DataMember = "SocioSalud";
             this.socioSaludBindingSource.DataSource = this.socioBindingSource;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(512, 392);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(58, 13);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Busqueda:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(925, 430);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtBusqueda);
             this.Controls.Add(this.btnAbrir);
@@ -363,6 +374,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn socioCategoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn socioNivel;
         private System.Windows.Forms.ToolStripMenuItem smiInactivos;
+        private System.Windows.Forms.Label label1;
     }
 }
 

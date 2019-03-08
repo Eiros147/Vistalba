@@ -50,10 +50,12 @@ namespace Principal
             Metodos modMetodo = new Metodos();
             modMetodo.Inicializar();
 
-            string valores = "actNombre = '" + txtNombre + "', actDesc = '" + txtDesc;
-            string tabla = "";
-            string key = "";
-            int id = 3;
+            string valores = "actNombre = '" + txtNombre.Text + "', actDesc = '" + txtDesc.Text + "'";
+            string tabla = "Actividades";
+            string key = "actId";
+            int id = Convert.ToInt32(lblID.Text);
+
+            MessageBox.Show(valores);
 
             modMetodo.Update(tabla, id, key, valores);
         }

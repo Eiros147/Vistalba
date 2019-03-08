@@ -137,6 +137,7 @@
             // txtNombreProfesor
             // 
             this.txtNombreProfesor.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.actividadesBindingSource, "profId", true));
+            this.txtNombreProfesor.Enabled = false;
             this.txtNombreProfesor.Location = new System.Drawing.Point(112, 90);
             this.txtNombreProfesor.Name = "txtNombreProfesor";
             this.txtNombreProfesor.Size = new System.Drawing.Size(100, 20);
@@ -166,6 +167,7 @@
             this.btnGuardar.TabIndex = 11;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnCancelar
             // 

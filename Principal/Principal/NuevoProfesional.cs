@@ -45,7 +45,7 @@ Persist Security Info=False;";
                 lblID.Text = numero.ToString();
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error al conectarse /b " + ex);
             }
@@ -59,6 +59,23 @@ Persist Security Info=False;";
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            guardar();
+            this.Refresh();
+        }
+
+        private void guardar()
+        {
+            string tabla = "Profesional";
+            string valores = "'" + txtNombre.Text + "','" + txtDomicilio.Text + "'," + txtTelefono.Text + ",'" + txtMail.Text + "'";
+            string seters = "profNombre, profDomicilio, profTelefono, profMail";
+
+            Metodos nuevoprof = new Metodos();
+            nuevoprof.Inicializar();
+            nuevoprof.Insertar(tabla, seters,valores);  
         }
     }
 }

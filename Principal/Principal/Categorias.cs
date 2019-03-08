@@ -55,6 +55,8 @@ Persist Security Info=False;");
             nuovo.txtDescripcion.Text = dgvCategorias.CurrentRow.Cells[2].Value.ToString();
             nuovo.txtNombre.Text = dgvCategorias.CurrentRow.Cells[1].Value.ToString();
             nuovo.ShowDialog();
+
+            conPagos.Close();
         }
     }
 }

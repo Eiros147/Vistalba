@@ -45,8 +45,7 @@ Persist Security Info=False;");
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            ModificarProfesional moprof = new ModificarProfesional();
-            moprof.ShowDialog();
+            modificar();
         }
 
         void modificar()

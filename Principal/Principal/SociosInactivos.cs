@@ -23,13 +23,7 @@ Persist Security Info=False;");
 
         private void SociosInactivos_Activated(object sender, EventArgs e)
         {
-            Metodos cargametodo = new Metodos();
-            string tabla = "Socio";
-            string valores = "socioNombre, socioDNI, socioDireccion, socioMail, socioTelefono, socioCelular, socioFechaIng, socioFechaUltPago, socioFechaNac, socioGenero, socioCategoria, socioNivel";
-            string condicion = "socioEstado LIKE false";
-
-            cargametodo.Inicializar();
-            cargametodo.Llenardgvcondiciones(tabla, valores, dgvInactivos, condicion);
+            cargar();
         }
 
         private void dgvInactivos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -47,11 +41,40 @@ Persist Security Info=False;");
 
         private void txtBusqueda_TextChanged(object sender, EventArgs e)
         {
+            if (txtBusqueda.Text == "")
+            {
+                cargar();
+            }
+            else
+            {
+                buscar();
+                this.dgvInactivos.EndEdit();
+            }
+        }
+
+        private void cargar()
+        {
+            Metodos cargametodo = new Metodos();
+            string tabla = "Socio";
+            string valores = "socioNombre, socioDNI, socioDireccion, socioMail, socioTelefono, socioCelular, socioFechaIng, socioFechaUltPago, socioFechaNac, socioGenero, socioCategoria, socioNivel";
+            string condicion = "socioEstado LIKE false";
+
+            cargametodo.Inicializar();
+            cargametodo.Llenardgvcondiciones(tabla, valores, dgvInactivos, condicion);
+        }
+
+        private void buscar()
+        {
             DataTable dtDatos = new DataTable();
             string cadena = ("SELECT * FROM Socio WHERE socioNombre LIKE '" + txtBusqueda.Text + "%'");
             OleDbDataAdapter data = new OleDbDataAdapter(cadena, conexion);
             data.Fill(dtDatos);
             dgvInactivos.DataSource = dtDatos;
+        }
+
+        private void SociosInactivos_Load(object sender, EventArgs e)
+        {
+            cargar();
         }
     }
 }
