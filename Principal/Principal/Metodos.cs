@@ -134,7 +134,6 @@ namespace Principal
             }
         }
 
-
         //Llenar tabla con condiciones
         public void Llenardgvcondiciones(string tabla, string valores, DataGridView dgv,string condicion)
         {
@@ -144,6 +143,9 @@ namespace Principal
                 AbrirCon();
 
                 OleDbCommand comando = new OleDbCommand(query, conexion);
+
+                //Control de query para testeo de errores
+                //MessageBox.Show(query);
 
                 OleDbDataAdapter da = new OleDbDataAdapter(comando);
                 DataTable dt = new DataTable();
@@ -173,6 +175,9 @@ namespace Principal
                 AbrirCon();
 
                 OleDbCommand comando = new OleDbCommand(query, conexion);
+
+                //Control de query para testeo de errores
+                //MessageBox.Show(query);
 
                 DataTable dt = new DataTable();
                 OleDbDataReader lector = null;
