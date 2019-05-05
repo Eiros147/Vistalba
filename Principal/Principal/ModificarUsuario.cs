@@ -52,6 +52,7 @@ Persist Security Info=False;";
             txtGrupo.Enabled = true;
             dtpIngreso.Enabled = true;
             dtpNacimiento.Enabled = true;
+            txtNotas.Enabled = true;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -77,7 +78,7 @@ Persist Security Info=False;";
                 flag = 0;
             }
 
-            string seters = "socioNombre = '" + txtNombre.Text + "', socioDNI = " + txtDNI.Text + ", socioDireccion = '" + txtDireccion.Text + "', socioMail = '" + txtMail.Text + "', socioTelefono = " + txtTelefono.Text + ", socioCelular = " + txtCelular.Text + ", socioGenero = " + flag;
+            string seters = "socioNombre = '" + txtNombre.Text + "', socioDNI = " + txtDNI.Text + ", socioDireccion = '" + txtDireccion.Text + "', socioMail = '" + txtMail.Text + "', socioNotas = '" + txtNotas.Text + "', socioTelefono = " + txtTelefono.Text + ", socioCelular = " + txtCelular.Text + ", socioGenero = " + flag;
             string tabla = "Socio";
             string key = "socioID";
             int id = Convert.ToInt32(lblID.Text);

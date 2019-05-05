@@ -48,7 +48,7 @@ namespace Principal
             string valores = "profNombre = '" + txtNombre.Text + "', profTelefono = '" + txtTelefono.Text + "', profDomicilio = '" + txtDomicilio.Text + "', profMail = '" + txtMail.Text + "'";
             string tabla = "Profesional";
             string key = "profId";
-            int id = Convert.ToInt32(lblID);
+            int id = Convert.ToInt32(lblID.Text);
 
             Metodos guardarprof = new Metodos();
             guardarprof.Inicializar();
