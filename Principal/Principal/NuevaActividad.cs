@@ -32,6 +32,8 @@ Persist Security Info=False;";
 
         private void NuevaActividad_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'club_VistalbaDataSet.Profesional' Puede moverla o quitarla según sea necesario.
+            this.profesionalTableAdapter.Fill(this.club_VistalbaDataSet.Profesional);
             try
             {
                 conNueva.Open();
@@ -52,6 +54,8 @@ Persist Security Info=False;";
             {
                 conNueva.Close();
             }
+
+            Seleccionar(cbProfesional);
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -74,6 +78,22 @@ Persist Security Info=False;";
             Metodos nuevaact = new Metodos();
             nuevaact.Inicializar();
             nuevaact.Insertar(tabla, seters, valores);
+        }
+
+        public void Seleccionar(ComboBox cb)
+        {
+            string valor = "profNombre";
+            string tabla = "Profesional";
+            string id = "profId";
+
+            Metodos elegirprof = new Metodos();
+            elegirprof.Inicializar();
+            elegirprof.LlenarCombo(valor, tabla, cb, id);
+        }
+
+        private void cbProfesional_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -245,6 +245,36 @@ namespace Principal
                 CerrarCon();
             }
         }
+
+        //Llenar combobox
+        public void LlenarCombo(string valor, string tabla,ComboBox cb,string id)
+        {
+            try
+            {
+                string query = "SELECT " + valor + " FROM " +tabla;
+                AbrirCon();
+
+                OleDbCommand comando = new OleDbCommand(query, conexion);
+                OleDbDataReader lector = comando.ExecuteReader();
+                DataTable dt = new DataTable();
+
+                dt.Columns.Add(valor, typeof(string));
+                dt.Columns.Add(id, typeof(string));
+                dt.Load(lector);
+
+                cb.ValueMember = id;
+                cb.DisplayMember = valor;
+                cb.DataSource = dt;
+                                
+            }catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+            }
+            finally
+            {
+                CerrarCon();
+            }
+        }
     }
 
 

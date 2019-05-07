@@ -39,12 +39,14 @@
             this.actividadesTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.ActividadesTableAdapter();
             this.tableAdapterManager = new Principal.Club_VistalbaDataSetTableAdapters.TableAdapterManager();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
-            this.txtNombreProfesor = new System.Windows.Forms.TextBox();
             this.txtMeses = new System.Windows.Forms.TextBox();
             this.txtNombreActividad = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.lblID = new System.Windows.Forms.Label();
+            this.cbProfesional = new System.Windows.Forms.ComboBox();
+            this.profesionalBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.profesionalTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.ProfesionalTableAdapter();
             actIdLabel = new System.Windows.Forms.Label();
             actDescLabel = new System.Windows.Forms.Label();
             profIdLabel = new System.Windows.Forms.Label();
@@ -52,6 +54,7 @@
             actNombreLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.actividadesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profesionalBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // actIdLabel
@@ -134,15 +137,6 @@
             this.txtDescripcion.Size = new System.Drawing.Size(100, 20);
             this.txtDescripcion.TabIndex = 4;
             // 
-            // txtNombreProfesor
-            // 
-            this.txtNombreProfesor.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.actividadesBindingSource, "profId", true));
-            this.txtNombreProfesor.Enabled = false;
-            this.txtNombreProfesor.Location = new System.Drawing.Point(112, 90);
-            this.txtNombreProfesor.Name = "txtNombreProfesor";
-            this.txtNombreProfesor.Size = new System.Drawing.Size(100, 20);
-            this.txtNombreProfesor.TabIndex = 6;
-            // 
             // txtMeses
             // 
             this.txtMeses.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.actividadesBindingSource, "actMeses", true));
@@ -188,11 +182,31 @@
             this.lblID.TabIndex = 13;
             this.lblID.Text = "ID Actividad";
             // 
+            // cbProfesional
+            // 
+            this.cbProfesional.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.profesionalBindingSource, "profNombre", true));
+            this.cbProfesional.FormattingEnabled = true;
+            this.cbProfesional.Location = new System.Drawing.Point(112, 90);
+            this.cbProfesional.Name = "cbProfesional";
+            this.cbProfesional.Size = new System.Drawing.Size(224, 21);
+            this.cbProfesional.TabIndex = 14;
+            this.cbProfesional.SelectedIndexChanged += new System.EventHandler(this.cbProfesional_SelectedIndexChanged);
+            // 
+            // profesionalBindingSource
+            // 
+            this.profesionalBindingSource.DataMember = "Profesional";
+            this.profesionalBindingSource.DataSource = this.club_VistalbaDataSet;
+            // 
+            // profesionalTableAdapter
+            // 
+            this.profesionalTableAdapter.ClearBeforeFill = true;
+            // 
             // NuevaActividad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(236, 208);
+            this.ClientSize = new System.Drawing.Size(348, 250);
+            this.Controls.Add(this.cbProfesional);
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
@@ -200,7 +214,6 @@
             this.Controls.Add(actDescLabel);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(profIdLabel);
-            this.Controls.Add(this.txtNombreProfesor);
             this.Controls.Add(actMesesLabel);
             this.Controls.Add(this.txtMeses);
             this.Controls.Add(actNombreLabel);
@@ -210,6 +223,7 @@
             this.Load += new System.EventHandler(this.NuevaActividad_Load);
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.actividadesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profesionalBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,11 +236,13 @@
         private Club_VistalbaDataSetTableAdapters.ActividadesTableAdapter actividadesTableAdapter;
         private Club_VistalbaDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.TextBox txtDescripcion;
-        private System.Windows.Forms.TextBox txtNombreProfesor;
         private System.Windows.Forms.TextBox txtMeses;
         private System.Windows.Forms.TextBox txtNombreActividad;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.ComboBox cbProfesional;
+        private System.Windows.Forms.BindingSource profesionalBindingSource;
+        private Club_VistalbaDataSetTableAdapters.ProfesionalTableAdapter profesionalTableAdapter;
     }
 }

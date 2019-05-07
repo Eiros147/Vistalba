@@ -52,12 +52,14 @@ Persist Security Info=False;";
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al conectarse" + ex);
+                MessageBox.Show("Error al conectarse " + ex);
             }
             finally
             {
                 conNuevo.Close();
             }
+
+            Seleccionar(cbGrupo);
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -94,6 +96,25 @@ Persist Security Info=False;";
             string valores = "'" + txtNombre.Text + "','" + txtDNI.Text + "','" + txtDireccion.Text + "','" + txtMail.Text + "','" + txtTelefono.Text + "','" + txtCelular.Text + "'";
 
             nuevometodo.Insertar(tabla,seters,valores);
+        }
+
+        private void Seleccionar(ComboBox cb)
+        {
+            string valor = "grupoApellido";
+            string tabla = "Grupo";
+            string id = "grupoID";
+
+            Metodos elegirgrupo = new Metodos();
+            elegirgrupo.Inicializar();
+            elegirgrupo.LlenarCombo(valor, tabla, cb, id);
+        }
+
+        private void btnPrueba_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            NuevoSalud nuevo = new NuevoSalud();
+            nuevo.Show();
+            nuevo.TopMost = true;
         }
     }
 }

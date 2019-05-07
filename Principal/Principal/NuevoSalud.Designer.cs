@@ -47,12 +47,12 @@
             this.txtMedicamentos = new System.Windows.Forms.TextBox();
             this.txtObra = new System.Windows.Forms.TextBox();
             this.txtTelefonoEmerg = new System.Windows.Forms.TextBox();
-            this.txtExtra = new System.Windows.Forms.TextBox();
             this.socioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.socioTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.SocioTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.txtExtra = new System.Windows.Forms.TextBox();
             saludAlergiaLabel = new System.Windows.Forms.Label();
             saludAlergiaDescLabel = new System.Windows.Forms.Label();
             saludSangreLabel = new System.Windows.Forms.Label();
@@ -217,14 +217,6 @@
             this.txtTelefonoEmerg.Size = new System.Drawing.Size(104, 20);
             this.txtTelefonoEmerg.TabIndex = 16;
             // 
-            // txtExtra
-            // 
-            this.txtExtra.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.saludBindingSource, "saludExtra", true));
-            this.txtExtra.Location = new System.Drawing.Point(116, 205);
-            this.txtExtra.Name = "txtExtra";
-            this.txtExtra.Size = new System.Drawing.Size(104, 20);
-            this.txtExtra.TabIndex = 18;
-            // 
             // socioBindingSource
             // 
             this.socioBindingSource.DataMember = "Socio";
@@ -245,7 +237,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(12, 244);
+            this.btnGuardar.Location = new System.Drawing.Point(12, 282);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 33);
             this.btnGuardar.TabIndex = 20;
@@ -254,7 +246,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(158, 244);
+            this.button2.Location = new System.Drawing.Point(158, 282);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 33);
             this.button2.TabIndex = 21;
@@ -262,11 +254,20 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // txtExtra
+            // 
+            this.txtExtra.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.saludBindingSource, "saludExtra", true));
+            this.txtExtra.Location = new System.Drawing.Point(116, 205);
+            this.txtExtra.Multiline = true;
+            this.txtExtra.Name = "txtExtra";
+            this.txtExtra.Size = new System.Drawing.Size(104, 71);
+            this.txtExtra.TabIndex = 18;
+            // 
             // NuevoSalud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(245, 289);
+            this.ClientSize = new System.Drawing.Size(247, 327);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.label1);
@@ -308,11 +309,11 @@
         private System.Windows.Forms.TextBox txtMedicamentos;
         private System.Windows.Forms.TextBox txtObra;
         private System.Windows.Forms.TextBox txtTelefonoEmerg;
-        private System.Windows.Forms.TextBox txtExtra;
         private System.Windows.Forms.BindingSource socioBindingSource;
         private Club_VistalbaDataSetTableAdapters.SocioTableAdapter socioTableAdapter;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txtExtra;
     }
 }

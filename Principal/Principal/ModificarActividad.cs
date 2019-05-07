@@ -29,13 +29,13 @@ namespace Principal
         {
             // TODO: esta línea de código carga datos en la tabla 'club_VistalbaDataSet.Actividades' Puede moverla o quitarla según sea necesario.
             this.actividadesTableAdapter.Fill(this.club_VistalbaDataSet.Actividades);
-
+            Selecccionar(cbProfesor);
         }
 
         private void btnHabilitar_Click(object sender, EventArgs e)
         {
             txtNombre.Enabled = true;
-            txtProfesor.Enabled = true;
+            cbProfesor.Enabled = true;
             txtMeses.Enabled = true;
             txtDesc.Enabled = true;
         }
@@ -58,6 +58,11 @@ namespace Principal
             MessageBox.Show(valores);
 
             modMetodo.Update(tabla, id, key, valores);
+        }
+
+        private void Selecccionar(ComboBox cb)
+        {
+
         }
     }
 }

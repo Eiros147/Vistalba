@@ -42,22 +42,22 @@ Persist Security Info=False;");
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            conPagos.Open();
-            string query = "SELECT catID FROM Categoria WHERE catNombre = '" + dgvCategorias.CurrentRow.Cells[1].Value.ToString() + "'";
+            //conPagos.Open();
+            //string query = "SELECT catID FROM Categoria WHERE catNombre = '" + dgvCategorias.CurrentRow.Cells[1].Value.ToString() + "'";
 
-            comando.Connection = conPagos;
-            comando.CommandText = query;
+            //comando.Connection = conPagos;
+            //comando.CommandText = query;
 
-            string temporal = comando.ExecuteScalar().ToString();
+            //string temporal = comando.ExecuteScalar().ToString();
 
-            ModificarCategoria nuovo = new ModificarCategoria();
+            //ModificarCategoria nuovo = new ModificarCategoria();
 
-            nuovo.lblID.Text = temporal;
-            nuovo.txtDescripcion.Text = dgvCategorias.CurrentRow.Cells[2].Value.ToString();
-            nuovo.txtNombre.Text = dgvCategorias.CurrentRow.Cells[1].Value.ToString();
-            nuovo.ShowDialog();
+            //nuovo.lblID.Text = temporal;
+            //nuovo.txtDescripcion.Text = dgvCategorias.CurrentRow.Cells[2].Value.ToString();
+            //nuovo.txtNombre.Text = dgvCategorias.CurrentRow.Cells[1].Value.ToString();
+            //nuovo.ShowDialog();
 
-            conPagos.Close();
+            //conPagos.Close();
         }
     }
 }

@@ -37,10 +37,10 @@
             this.club_VistalbaDataSet = new Principal.Club_VistalbaDataSet();
             this.grupoTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.GrupoTableAdapter();
             this.tableAdapterManager = new Principal.Club_VistalbaDataSetTableAdapters.TableAdapterManager();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.lblGrupoId = new System.Windows.Forms.Label();
             grupoIDLabel = new System.Windows.Forms.Label();
             grupoCategoriaLabel = new System.Windows.Forms.Label();
             grupoSocioPpalLabel = new System.Windows.Forms.Label();
@@ -48,6 +48,42 @@
             ((System.ComponentModel.ISupportInitialize)(this.grupoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).BeginInit();
             this.SuspendLayout();
+            // 
+            // grupoIDLabel
+            // 
+            grupoIDLabel.AutoSize = true;
+            grupoIDLabel.Location = new System.Drawing.Point(12, 23);
+            grupoIDLabel.Name = "grupoIDLabel";
+            grupoIDLabel.Size = new System.Drawing.Size(21, 13);
+            grupoIDLabel.TabIndex = 0;
+            grupoIDLabel.Text = "ID:";
+            // 
+            // grupoCategoriaLabel
+            // 
+            grupoCategoriaLabel.AutoSize = true;
+            grupoCategoriaLabel.Location = new System.Drawing.Point(12, 49);
+            grupoCategoriaLabel.Name = "grupoCategoriaLabel";
+            grupoCategoriaLabel.Size = new System.Drawing.Size(55, 13);
+            grupoCategoriaLabel.TabIndex = 2;
+            grupoCategoriaLabel.Text = "Categoria:";
+            // 
+            // grupoSocioPpalLabel
+            // 
+            grupoSocioPpalLabel.AutoSize = true;
+            grupoSocioPpalLabel.Location = new System.Drawing.Point(12, 75);
+            grupoSocioPpalLabel.Name = "grupoSocioPpalLabel";
+            grupoSocioPpalLabel.Size = new System.Drawing.Size(80, 13);
+            grupoSocioPpalLabel.TabIndex = 4;
+            grupoSocioPpalLabel.Text = "Socio Principal:";
+            // 
+            // grupoApellidoLabel
+            // 
+            grupoApellidoLabel.AutoSize = true;
+            grupoApellidoLabel.Location = new System.Drawing.Point(12, 101);
+            grupoApellidoLabel.Name = "grupoApellidoLabel";
+            grupoApellidoLabel.Size = new System.Drawing.Size(47, 13);
+            grupoApellidoLabel.TabIndex = 6;
+            grupoApellidoLabel.Text = "Apellido:";
             // 
             // grupoBindingSource
             // 
@@ -76,49 +112,6 @@
             this.tableAdapterManager.SocioTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Principal.Club_VistalbaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // grupoIDLabel
-            // 
-            grupoIDLabel.AutoSize = true;
-            grupoIDLabel.Location = new System.Drawing.Point(12, 23);
-            grupoIDLabel.Name = "grupoIDLabel";
-            grupoIDLabel.Size = new System.Drawing.Size(51, 13);
-            grupoIDLabel.TabIndex = 0;
-            grupoIDLabel.Text = "grupo ID:";
-            // 
-            // grupoCategoriaLabel
-            // 
-            grupoCategoriaLabel.AutoSize = true;
-            grupoCategoriaLabel.Location = new System.Drawing.Point(12, 49);
-            grupoCategoriaLabel.Name = "grupoCategoriaLabel";
-            grupoCategoriaLabel.Size = new System.Drawing.Size(85, 13);
-            grupoCategoriaLabel.TabIndex = 2;
-            grupoCategoriaLabel.Text = "grupo Categoria:";
-            // 
-            // grupoSocioPpalLabel
-            // 
-            grupoSocioPpalLabel.AutoSize = true;
-            grupoSocioPpalLabel.Location = new System.Drawing.Point(12, 75);
-            grupoSocioPpalLabel.Name = "grupoSocioPpalLabel";
-            grupoSocioPpalLabel.Size = new System.Drawing.Size(91, 13);
-            grupoSocioPpalLabel.TabIndex = 4;
-            grupoSocioPpalLabel.Text = "grupo Socio Ppal:";
-            // 
-            // grupoApellidoLabel
-            // 
-            grupoApellidoLabel.AutoSize = true;
-            grupoApellidoLabel.Location = new System.Drawing.Point(12, 101);
-            grupoApellidoLabel.Name = "grupoApellidoLabel";
-            grupoApellidoLabel.Size = new System.Drawing.Size(77, 13);
-            grupoApellidoLabel.TabIndex = 6;
-            grupoApellidoLabel.Text = "grupo Apellido:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(108, 22);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 8;
-            // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(108, 48);
@@ -140,15 +133,24 @@
             this.textBox4.Size = new System.Drawing.Size(100, 20);
             this.textBox4.TabIndex = 11;
             // 
+            // lblGrupoId
+            // 
+            this.lblGrupoId.AutoSize = true;
+            this.lblGrupoId.Location = new System.Drawing.Point(105, 23);
+            this.lblGrupoId.Name = "lblGrupoId";
+            this.lblGrupoId.Size = new System.Drawing.Size(35, 13);
+            this.lblGrupoId.TabIndex = 12;
+            this.lblGrupoId.Text = "label1";
+            // 
             // Grupos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(259, 179);
+            this.Controls.Add(this.lblGrupoId);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(grupoIDLabel);
             this.Controls.Add(grupoCategoriaLabel);
             this.Controls.Add(grupoSocioPpalLabel);
@@ -169,9 +171,9 @@
         private System.Windows.Forms.BindingSource grupoBindingSource;
         private Club_VistalbaDataSetTableAdapters.GrupoTableAdapter grupoTableAdapter;
         private Club_VistalbaDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label lblGrupoId;
     }
 }

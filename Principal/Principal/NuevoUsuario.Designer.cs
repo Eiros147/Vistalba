@@ -57,6 +57,7 @@
             this.gboxGrupo = new System.Windows.Forms.GroupBox();
             this.cbGrupo = new System.Windows.Forms.ComboBox();
             this.grupoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnPrueba = new System.Windows.Forms.Button();
             socioIDLabel = new System.Windows.Forms.Label();
             socioNombreLabel = new System.Windows.Forms.Label();
             socioDNILabel = new System.Windows.Forms.Label();
@@ -164,6 +165,7 @@
             this.tableAdapterManager.CategoriaTableAdapter = null;
             this.tableAdapterManager.CuotaTableAdapter = null;
             this.tableAdapterManager.GrupoTableAdapter = this.grupoTableAdapter1;
+            this.tableAdapterManager.MensualTableAdapter = null;
             this.tableAdapterManager.ProfesionalTableAdapter = null;
             this.tableAdapterManager.SaludTableAdapter = null;
             this.tableAdapterManager.SocioTableAdapter = this.socioTableAdapter;
@@ -310,11 +312,22 @@
             this.grupoBindingSource.DataMember = "Grupo";
             this.grupoBindingSource.DataSource = this.club_VistalbaDataSet;
             // 
+            // btnPrueba
+            // 
+            this.btnPrueba.Location = new System.Drawing.Point(116, 375);
+            this.btnPrueba.Name = "btnPrueba";
+            this.btnPrueba.Size = new System.Drawing.Size(75, 23);
+            this.btnPrueba.TabIndex = 32;
+            this.btnPrueba.Text = "Prueba";
+            this.btnPrueba.UseVisualStyleBackColor = true;
+            this.btnPrueba.Click += new System.EventHandler(this.btnPrueba_Click);
+            // 
             // NuevoUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(356, 418);
+            this.Controls.Add(this.btnPrueba);
             this.Controls.Add(this.gboxGrupo);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
@@ -369,5 +382,6 @@
         private System.Windows.Forms.GroupBox gboxGrupo;
         private System.Windows.Forms.BindingSource grupoBindingSource;
         internal System.Windows.Forms.ComboBox cbGrupo;
+        private System.Windows.Forms.Button btnPrueba;
     }
 }
