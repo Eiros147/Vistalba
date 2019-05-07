@@ -196,5 +196,11 @@ Persist Security Info=False;");
             Categorias nuevocats = new Categorias();
             nuevocats.ShowDialog();
         }
+
+        private void smiGrupos_Click(object sender, EventArgs e)
+        {
+            Grupos nuevogrupo = new Grupos();
+            nuevogrupo.ShowDialog();
+        }
     }
 }

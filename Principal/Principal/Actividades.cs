@@ -91,5 +91,10 @@ Persist Security Info=False;";
         {
             
         }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

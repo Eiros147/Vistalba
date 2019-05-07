@@ -45,6 +45,7 @@
             this.profesionalActividadesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.profesionalActividadesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.btnModificar = new System.Windows.Forms.Button();
+            this.btnCerrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.actividadesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profesionalBindingSource)).BeginInit();
@@ -160,11 +161,22 @@
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Location = new System.Drawing.Point(204, 376);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(90, 32);
+            this.btnCerrar.TabIndex = 4;
+            this.btnCerrar.Text = "Cerrar";
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
             // Actividades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(788, 415);
+            this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.txtBusqueda);
@@ -206,5 +218,6 @@
         private System.Windows.Forms.TextBox txtBusqueda;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button btnCerrar;
     }
 }

@@ -31,6 +31,8 @@
             this.dgvInactivos = new System.Windows.Forms.DataGridView();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInactivos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,11 +62,33 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Busqueda:";
             // 
+            // btnModificar
+            // 
+            this.btnModificar.Location = new System.Drawing.Point(12, 358);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(75, 41);
+            this.btnModificar.TabIndex = 3;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(93, 358);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 41);
+            this.btnCancelar.TabIndex = 4;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // SociosInactivos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(887, 406);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtBusqueda);
             this.Controls.Add(this.dgvInactivos);
@@ -83,5 +107,7 @@
         private System.Windows.Forms.DataGridView dgvInactivos;
         private System.Windows.Forms.TextBox txtBusqueda;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

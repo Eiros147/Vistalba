@@ -76,5 +76,16 @@ Persist Security Info=False;");
         {
             cargar();
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            ModificarInactivos nuevo = new ModificarInactivos();
+            nuevo.ShowDialog();
+        }
     }
 }

@@ -166,6 +166,36 @@ namespace Principal
             }
         }
 
+        //Llenar tabla ordenada
+        public void Llenardgvordenado(string tabla, string valores, DataGridView dgv, string orden)
+        {
+            try
+            {
+                string query = "SELECT " + valores + " FROM " + tabla + " ORDER BY " + orden;
+                AbrirCon();
+
+                OleDbCommand comando = new OleDbCommand(query, conexion);
+
+                //Control de query para testeo de errores
+                //MessageBox.Show(query);
+
+                OleDbDataAdapter da = new OleDbDataAdapter(comando);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dgv.DataSource = dt;
+
+                comando.ExecuteNonQuery();
+            }
+            catch  (Exception ex)
+            {
+                MessageBox.Show("Error " + ex);
+            }
+            finally
+            {
+                this.CerrarCon();
+            }
+        }
+
         //Llenar textboxs
         public void Llenartextbox(string valores, string tabla, string key, int id)
         {

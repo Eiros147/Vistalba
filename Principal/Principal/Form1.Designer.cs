@@ -278,6 +278,7 @@
             this.smiGrupos.Name = "smiGrupos";
             this.smiGrupos.Size = new System.Drawing.Size(57, 20);
             this.smiGrupos.Text = "Grupos";
+            this.smiGrupos.Click += new System.EventHandler(this.smiGrupos_Click);
             // 
             // smiCategorias
             // 

@@ -27,10 +27,11 @@ Persist Security Info=False;");
             Metodos cargarcat = new Metodos();
             cargarcat.Inicializar();
 
-            string query = "*";
+            string query = "catNombre, catDesc";
+            string orden = "catNombre";
             string tabla = "Categoria";
 
-            cargarcat.Llenardgv(tabla, query, dgvCategorias);       
+            cargarcat.Llenardgvordenado(tabla, query, dgvCategorias, orden);       
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)

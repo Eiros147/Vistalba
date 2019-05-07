@@ -97,6 +97,12 @@
     <Compile Include="ModificarCategoria.Designer.cs">
       <DependentUpon>ModificarCategoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModificarInactivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificarInactivos.Designer.cs">
+      <DependentUpon>ModificarInactivos.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModificarProfesional.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +203,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ModificarCategoria.resx">
       <DependentUpon>ModificarCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarInactivos.resx">
+      <DependentUpon>ModificarInactivos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModificarProfesional.resx">
       <DependentUpon>ModificarProfesional.cs</DependentUpon>
