@@ -171,7 +171,7 @@ namespace Principal
         {
             try
             {
-                string query = "SELECT " + valores + " FROM " + tabla + " ORDER BY " + orden;
+                string query = "SELECT " + valores + " FROM " + tabla + " ORDER BY " + orden + ";";
                 AbrirCon();
 
                 OleDbCommand comando = new OleDbCommand(query, conexion);

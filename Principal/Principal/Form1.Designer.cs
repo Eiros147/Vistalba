@@ -29,28 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.club_VistalbaDataSet = new Principal.Club_VistalbaDataSet();
-            this.socioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.socioTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.SocioTableAdapter();
-            this.tableAdapterManager = new Principal.Club_VistalbaDataSetTableAdapters.TableAdapterManager();
             this.dgvSocio = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.socioGenero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.socioCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.socioNivel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnAbrir = new System.Windows.Forms.Button();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.saludTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.SaludTableAdapter();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.smiActividades = new System.Windows.Forms.ToolStripMenuItem();
             this.smiProfesionales = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,41 +44,30 @@
             this.smiCategorias = new System.Windows.Forms.ToolStripMenuItem();
             this.smiPagos = new System.Windows.Forms.ToolStripMenuItem();
             this.smiInactivos = new System.Windows.Forms.ToolStripMenuItem();
+            this.divisionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.primeraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.socioSaludBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.socioBindingSource)).BeginInit();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.socioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.club_VistalbaDataSet = new Principal.Club_VistalbaDataSet();
+            this.socioTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.SocioTableAdapter();
+            this.tableAdapterManager = new Principal.Club_VistalbaDataSetTableAdapters.TableAdapterManager();
+            this.saludTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.SaludTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSocio)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.socioSaludBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.socioBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).BeginInit();
             this.SuspendLayout();
-            // 
-            // club_VistalbaDataSet
-            // 
-            this.club_VistalbaDataSet.DataSetName = "Club_VistalbaDataSet";
-            this.club_VistalbaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // socioBindingSource
-            // 
-            this.socioBindingSource.DataMember = "Socio";
-            this.socioBindingSource.DataSource = this.club_VistalbaDataSet;
-            // 
-            // socioTableAdapter
-            // 
-            this.socioTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.ActividadesTableAdapter = null;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.CategoriaTableAdapter = null;
-            this.tableAdapterManager.CuotaTableAdapter = null;
-            this.tableAdapterManager.GrupoTableAdapter = null;
-            this.tableAdapterManager.MensualTableAdapter = null;
-            this.tableAdapterManager.ProfesionalTableAdapter = null;
-            this.tableAdapterManager.SaludTableAdapter = null;
-            this.tableAdapterManager.SocioTableAdapter = this.socioTableAdapter;
-            this.tableAdapterManager.UpdateOrder = Principal.Club_VistalbaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // dgvSocio
             // 
@@ -124,42 +99,6 @@
             this.dgvSocio.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSocio_CellContentDoubleClick);
             this.dgvSocio.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvSocio_CellFormatting);
             // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "socioNombre";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "socioDNI";
-            this.dataGridViewTextBoxColumn3.HeaderText = "DNI";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "socioDireccion";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Direccion";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "socioMail";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Mail";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "socioTelefono";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Telefono";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "socioCelular";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Celular";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            // 
             // socioGenero
             // 
             this.socioGenero.DataPropertyName = "socioGenero";
@@ -167,24 +106,6 @@
             this.socioGenero.Name = "socioGenero";
             this.socioGenero.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.socioGenero.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "socioFechaNac";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Fecha Nacimiento";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "socioFechaIng";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Fecha Ingreso";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "socioFechaUltPago";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Fecha Ult Pago";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             // 
             // socioCategoria
             // 
@@ -231,6 +152,7 @@
             // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button1.Location = new System.Drawing.Point(213, 382);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(69, 32);
@@ -240,10 +162,6 @@
             this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // saludTableAdapter
-            // 
-            this.saludTableAdapter.ClearBeforeFill = true;
-            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -252,7 +170,8 @@
             this.smiGrupos,
             this.smiCategorias,
             this.smiPagos,
-            this.smiInactivos});
+            this.smiInactivos,
+            this.divisionesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(925, 24);
@@ -301,6 +220,20 @@
             this.smiInactivos.Text = "Inactivos";
             this.smiInactivos.Click += new System.EventHandler(this.smiInactivos_Click);
             // 
+            // divisionesToolStripMenuItem
+            // 
+            this.divisionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.primeraToolStripMenuItem});
+            this.divisionesToolStripMenuItem.Name = "divisionesToolStripMenuItem";
+            this.divisionesToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
+            this.divisionesToolStripMenuItem.Text = "Divisiones";
+            // 
+            // primeraToolStripMenuItem
+            // 
+            this.primeraToolStripMenuItem.Name = "primeraToolStripMenuItem";
+            this.primeraToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.primeraToolStripMenuItem.Text = "Primera";
+            // 
             // socioSaludBindingSource
             // 
             this.socioSaludBindingSource.DataMember = "SocioSalud";
@@ -308,12 +241,98 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(512, 392);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 7;
             this.label1.Text = "Busqueda:";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "socioNombre";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "socioDNI";
+            this.dataGridViewTextBoxColumn3.HeaderText = "DNI";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "socioDireccion";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Direccion";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "socioMail";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Mail";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "socioTelefono";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Telefono";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "socioCelular";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Celular";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "socioFechaNac";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Fecha Nacimiento";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "socioFechaIng";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Fecha Ingreso";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "socioFechaUltPago";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Fecha Ult Pago";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            // 
+            // socioBindingSource
+            // 
+            this.socioBindingSource.DataMember = "Socio";
+            this.socioBindingSource.DataSource = this.club_VistalbaDataSet;
+            // 
+            // club_VistalbaDataSet
+            // 
+            this.club_VistalbaDataSet.DataSetName = "Club_VistalbaDataSet";
+            this.club_VistalbaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // socioTableAdapter
+            // 
+            this.socioTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.ActividadesTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CategoriaTableAdapter = null;
+            this.tableAdapterManager.CuotaTableAdapter = null;
+            this.tableAdapterManager.GrupoTableAdapter = null;
+            this.tableAdapterManager.MensualTableAdapter = null;
+            this.tableAdapterManager.ProfesionalTableAdapter = null;
+            this.tableAdapterManager.SaludTableAdapter = null;
+            this.tableAdapterManager.SocioTableAdapter = this.socioTableAdapter;
+            this.tableAdapterManager.UpdateOrder = Principal.Club_VistalbaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // saludTableAdapter
+            // 
+            this.saludTableAdapter.ClearBeforeFill = true;
             // 
             // Form1
             // 
@@ -332,12 +351,12 @@
             this.Text = "Club Vistalba";
             this.Activated += new System.EventHandler(this.Form1_Activated);
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.socioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSocio)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.socioSaludBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.socioBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -376,6 +395,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn socioNivel;
         private System.Windows.Forms.ToolStripMenuItem smiInactivos;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem divisionesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem primeraToolStripMenuItem;
     }
 }
 

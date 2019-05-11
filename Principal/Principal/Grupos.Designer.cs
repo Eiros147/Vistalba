@@ -29,61 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label grupoIDLabel;
-            System.Windows.Forms.Label grupoCategoriaLabel;
-            System.Windows.Forms.Label grupoSocioPpalLabel;
-            System.Windows.Forms.Label grupoApellidoLabel;
             this.grupoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.club_VistalbaDataSet = new Principal.Club_VistalbaDataSet();
             this.grupoTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.GrupoTableAdapter();
             this.tableAdapterManager = new Principal.Club_VistalbaDataSetTableAdapters.TableAdapterManager();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.lblGrupoId = new System.Windows.Forms.Label();
-            grupoIDLabel = new System.Windows.Forms.Label();
-            grupoCategoriaLabel = new System.Windows.Forms.Label();
-            grupoSocioPpalLabel = new System.Windows.Forms.Label();
-            grupoApellidoLabel = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grupoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // grupoIDLabel
-            // 
-            grupoIDLabel.AutoSize = true;
-            grupoIDLabel.Location = new System.Drawing.Point(12, 23);
-            grupoIDLabel.Name = "grupoIDLabel";
-            grupoIDLabel.Size = new System.Drawing.Size(21, 13);
-            grupoIDLabel.TabIndex = 0;
-            grupoIDLabel.Text = "ID:";
-            // 
-            // grupoCategoriaLabel
-            // 
-            grupoCategoriaLabel.AutoSize = true;
-            grupoCategoriaLabel.Location = new System.Drawing.Point(12, 49);
-            grupoCategoriaLabel.Name = "grupoCategoriaLabel";
-            grupoCategoriaLabel.Size = new System.Drawing.Size(55, 13);
-            grupoCategoriaLabel.TabIndex = 2;
-            grupoCategoriaLabel.Text = "Categoria:";
-            // 
-            // grupoSocioPpalLabel
-            // 
-            grupoSocioPpalLabel.AutoSize = true;
-            grupoSocioPpalLabel.Location = new System.Drawing.Point(12, 75);
-            grupoSocioPpalLabel.Name = "grupoSocioPpalLabel";
-            grupoSocioPpalLabel.Size = new System.Drawing.Size(80, 13);
-            grupoSocioPpalLabel.TabIndex = 4;
-            grupoSocioPpalLabel.Text = "Socio Principal:";
-            // 
-            // grupoApellidoLabel
-            // 
-            grupoApellidoLabel.AutoSize = true;
-            grupoApellidoLabel.Location = new System.Drawing.Point(12, 101);
-            grupoApellidoLabel.Name = "grupoApellidoLabel";
-            grupoApellidoLabel.Size = new System.Drawing.Size(47, 13);
-            grupoApellidoLabel.TabIndex = 6;
-            grupoApellidoLabel.Text = "Apellido:";
             // 
             // grupoBindingSource
             // 
@@ -112,56 +67,37 @@
             this.tableAdapterManager.SocioTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Principal.Club_VistalbaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // textBox2
+            // dataGridView1
             // 
-            this.textBox2.Location = new System.Drawing.Point(108, 48);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 9;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(684, 260);
+            this.dataGridView1.TabIndex = 0;
             // 
-            // textBox3
+            // button1
             // 
-            this.textBox3.Location = new System.Drawing.Point(108, 74);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 10;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(108, 100);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 11;
-            // 
-            // lblGrupoId
-            // 
-            this.lblGrupoId.AutoSize = true;
-            this.lblGrupoId.Location = new System.Drawing.Point(105, 23);
-            this.lblGrupoId.Name = "lblGrupoId";
-            this.lblGrupoId.Size = new System.Drawing.Size(35, 13);
-            this.lblGrupoId.TabIndex = 12;
-            this.lblGrupoId.Text = "label1";
+            this.button1.Location = new System.Drawing.Point(12, 287);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 32);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // Grupos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(259, 179);
-            this.Controls.Add(this.lblGrupoId);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(grupoIDLabel);
-            this.Controls.Add(grupoCategoriaLabel);
-            this.Controls.Add(grupoSocioPpalLabel);
-            this.Controls.Add(grupoApellidoLabel);
+            this.ClientSize = new System.Drawing.Size(717, 331);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.dataGridView1);
             this.Name = "Grupos";
             this.Text = "Grupos";
             this.Load += new System.EventHandler(this.Grupos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grupoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -171,9 +107,7 @@
         private System.Windows.Forms.BindingSource grupoBindingSource;
         private Club_VistalbaDataSetTableAdapters.GrupoTableAdapter grupoTableAdapter;
         private Club_VistalbaDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label lblGrupoId;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button1;
     }
 }

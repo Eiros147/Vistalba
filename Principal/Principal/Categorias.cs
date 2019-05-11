@@ -24,14 +24,31 @@ Persist Security Info=False;");
 
         private void Categorias_Load(object sender, EventArgs e)
         {
+            cargar();
+
+            formatear();
+        }
+
+        private void cargar()
+        {
             Metodos cargarcat = new Metodos();
             cargarcat.Inicializar();
 
-            string query = "catNombre, catDesc";
+            string query = "catNombre, catDesc, catClubCard, catMesAct, catMesInact";
             string orden = "catNombre";
             string tabla = "Categoria";
 
-            cargarcat.Llenardgvordenado(tabla, query, dgvCategorias, orden);       
+            cargarcat.Llenardgvordenado(tabla, query, dgvCategorias, orden);
+        }
+
+        private void formatear()
+        {
+            this.dgvCategorias.Columns[0].HeaderText = "Nombre";
+            this.dgvCategorias.Columns[1].HeaderText = "Descripción";
+            this.dgvCategorias.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.dgvCategorias.Columns[2].HeaderText = "Club Card";
+            this.dgvCategorias.Columns[3].HeaderText = "Costo Meses Activos";
+            this.dgvCategorias.Columns[4].HeaderText = "Costo Meses Inactivos";
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -42,22 +59,33 @@ Persist Security Info=False;");
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            //conPagos.Open();
-            //string query = "SELECT catID FROM Categoria WHERE catNombre = '" + dgvCategorias.CurrentRow.Cells[1].Value.ToString() + "'";
+            modificar();
+        }
 
-            //comando.Connection = conPagos;
-            //comando.CommandText = query;
+        public void modificar()
+        {
+            conPagos.Open();
+            string query = "SELECT catID FROM Categoria WHERE catNombre = '" + dgvCategorias.CurrentRow.Cells[1].Value.ToString() + "'";
 
-            //string temporal = comando.ExecuteScalar().ToString();
+            comando.Connection = conPagos;
+            comando.CommandText = query;
 
-            //ModificarCategoria nuovo = new ModificarCategoria();
+            string temporal = comando.ExecuteScalar().ToString();
 
-            //nuovo.lblID.Text = temporal;
-            //nuovo.txtDescripcion.Text = dgvCategorias.CurrentRow.Cells[2].Value.ToString();
-            //nuovo.txtNombre.Text = dgvCategorias.CurrentRow.Cells[1].Value.ToString();
-            //nuovo.ShowDialog();
+            ModificarCategoria nuovo = new ModificarCategoria();
 
-            //conPagos.Close();
+            nuovo.lblID.Text = temporal;
+            nuovo.txtDescripcion.Text = dgvCategorias.CurrentRow.Cells[2].Value.ToString();
+            nuovo.txtNombre.Text = dgvCategorias.CurrentRow.Cells[1].Value.ToString();
+
+            nuovo.ShowDialog();
+
+            conPagos.Close();
+        }
+
+        private void dgvCategorias_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+
         }
     }
 }
