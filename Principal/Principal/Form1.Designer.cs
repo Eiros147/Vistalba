@@ -30,9 +30,20 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvSocio = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.socioGenero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.socioCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.socioNivel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.socioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.club_VistalbaDataSet = new Principal.Club_VistalbaDataSet();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnAbrir = new System.Windows.Forms.Button();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
@@ -45,28 +56,36 @@
             this.smiPagos = new System.Windows.Forms.ToolStripMenuItem();
             this.smiInactivos = new System.Windows.Forms.ToolStripMenuItem();
             this.divisionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hombresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.primeraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.segundaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.quintaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sextaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.septimaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.octavaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.novenaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.decimaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mujeresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.socioSaludBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.socioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.club_VistalbaDataSet = new Principal.Club_VistalbaDataSet();
             this.socioTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.SocioTableAdapter();
             this.tableAdapterManager = new Principal.Club_VistalbaDataSetTableAdapters.TableAdapterManager();
             this.saludTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.SaludTableAdapter();
+            this.preDecimaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.primeraToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.segundaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.quintaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.sextaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.septimaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.octavaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.novenaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.decimaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.preDecimaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSocio)).BeginInit();
-            this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.socioSaludBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.socioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).BeginInit();
+            this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.socioSaludBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvSocio
@@ -99,6 +118,42 @@
             this.dgvSocio.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSocio_CellContentDoubleClick);
             this.dgvSocio.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvSocio_CellFormatting);
             // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "socioNombre";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "socioDNI";
+            this.dataGridViewTextBoxColumn3.HeaderText = "DNI";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "socioDireccion";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Direccion";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "socioMail";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Mail";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "socioTelefono";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Telefono";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "socioCelular";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Celular";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
             // socioGenero
             // 
             this.socioGenero.DataPropertyName = "socioGenero";
@@ -106,6 +161,24 @@
             this.socioGenero.Name = "socioGenero";
             this.socioGenero.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.socioGenero.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "socioFechaNac";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Fecha Nacimiento";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "socioFechaIng";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Fecha Ingreso";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "socioFechaUltPago";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Fecha Ult Pago";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             // 
             // socioCategoria
             // 
@@ -118,6 +191,16 @@
             this.socioNivel.DataPropertyName = "socioNivel";
             this.socioNivel.HeaderText = "socioNivel";
             this.socioNivel.Name = "socioNivel";
+            // 
+            // socioBindingSource
+            // 
+            this.socioBindingSource.DataMember = "Socio";
+            this.socioBindingSource.DataSource = this.club_VistalbaDataSet;
+            // 
+            // club_VistalbaDataSet
+            // 
+            this.club_VistalbaDataSet.DataSetName = "Club_VistalbaDataSet";
+            this.club_VistalbaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnNuevo
             // 
@@ -223,16 +306,91 @@
             // divisionesToolStripMenuItem
             // 
             this.divisionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.primeraToolStripMenuItem});
+            this.hombresToolStripMenuItem,
+            this.mujeresToolStripMenuItem});
             this.divisionesToolStripMenuItem.Name = "divisionesToolStripMenuItem";
             this.divisionesToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
             this.divisionesToolStripMenuItem.Text = "Divisiones";
             // 
+            // hombresToolStripMenuItem
+            // 
+            this.hombresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.primeraToolStripMenuItem,
+            this.segundaToolStripMenuItem,
+            this.quintaToolStripMenuItem,
+            this.sextaToolStripMenuItem,
+            this.septimaToolStripMenuItem,
+            this.octavaToolStripMenuItem,
+            this.novenaToolStripMenuItem,
+            this.decimaToolStripMenuItem,
+            this.preDecimaToolStripMenuItem});
+            this.hombresToolStripMenuItem.Name = "hombresToolStripMenuItem";
+            this.hombresToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.hombresToolStripMenuItem.Text = "Hombres";
+            // 
             // primeraToolStripMenuItem
             // 
             this.primeraToolStripMenuItem.Name = "primeraToolStripMenuItem";
-            this.primeraToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.primeraToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.primeraToolStripMenuItem.Text = "Primera";
+            // 
+            // segundaToolStripMenuItem
+            // 
+            this.segundaToolStripMenuItem.Name = "segundaToolStripMenuItem";
+            this.segundaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.segundaToolStripMenuItem.Text = "Segunda";
+            // 
+            // quintaToolStripMenuItem
+            // 
+            this.quintaToolStripMenuItem.Name = "quintaToolStripMenuItem";
+            this.quintaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.quintaToolStripMenuItem.Text = "Quinta";
+            // 
+            // sextaToolStripMenuItem
+            // 
+            this.sextaToolStripMenuItem.Name = "sextaToolStripMenuItem";
+            this.sextaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.sextaToolStripMenuItem.Text = "Sexta";
+            // 
+            // septimaToolStripMenuItem
+            // 
+            this.septimaToolStripMenuItem.Name = "septimaToolStripMenuItem";
+            this.septimaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.septimaToolStripMenuItem.Text = "Septima";
+            // 
+            // octavaToolStripMenuItem
+            // 
+            this.octavaToolStripMenuItem.Name = "octavaToolStripMenuItem";
+            this.octavaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.octavaToolStripMenuItem.Text = "Octava";
+            // 
+            // novenaToolStripMenuItem
+            // 
+            this.novenaToolStripMenuItem.Name = "novenaToolStripMenuItem";
+            this.novenaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.novenaToolStripMenuItem.Text = "Novena";
+            // 
+            // decimaToolStripMenuItem
+            // 
+            this.decimaToolStripMenuItem.Name = "decimaToolStripMenuItem";
+            this.decimaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.decimaToolStripMenuItem.Text = "Decima";
+            // 
+            // mujeresToolStripMenuItem
+            // 
+            this.mujeresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.primeraToolStripMenuItem1,
+            this.segundaToolStripMenuItem1,
+            this.quintaToolStripMenuItem1,
+            this.sextaToolStripMenuItem1,
+            this.septimaToolStripMenuItem1,
+            this.octavaToolStripMenuItem1,
+            this.novenaToolStripMenuItem1,
+            this.decimaToolStripMenuItem1,
+            this.preDecimaToolStripMenuItem1});
+            this.mujeresToolStripMenuItem.Name = "mujeresToolStripMenuItem";
+            this.mujeresToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.mujeresToolStripMenuItem.Text = "Mujeres";
             // 
             // socioSaludBindingSource
             // 
@@ -248,70 +406,6 @@
             this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 7;
             this.label1.Text = "Busqueda:";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "socioNombre";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "socioDNI";
-            this.dataGridViewTextBoxColumn3.HeaderText = "DNI";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "socioDireccion";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Direccion";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "socioMail";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Mail";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "socioTelefono";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Telefono";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "socioCelular";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Celular";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "socioFechaNac";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Fecha Nacimiento";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "socioFechaIng";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Fecha Ingreso";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "socioFechaUltPago";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Fecha Ult Pago";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            // 
-            // socioBindingSource
-            // 
-            this.socioBindingSource.DataMember = "Socio";
-            this.socioBindingSource.DataSource = this.club_VistalbaDataSet;
-            // 
-            // club_VistalbaDataSet
-            // 
-            this.club_VistalbaDataSet.DataSetName = "Club_VistalbaDataSet";
-            this.club_VistalbaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // socioTableAdapter
             // 
@@ -334,6 +428,66 @@
             // 
             this.saludTableAdapter.ClearBeforeFill = true;
             // 
+            // preDecimaToolStripMenuItem
+            // 
+            this.preDecimaToolStripMenuItem.Name = "preDecimaToolStripMenuItem";
+            this.preDecimaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.preDecimaToolStripMenuItem.Text = "Pre-Decima";
+            // 
+            // primeraToolStripMenuItem1
+            // 
+            this.primeraToolStripMenuItem1.Name = "primeraToolStripMenuItem1";
+            this.primeraToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.primeraToolStripMenuItem1.Text = "Primera";
+            // 
+            // segundaToolStripMenuItem1
+            // 
+            this.segundaToolStripMenuItem1.Name = "segundaToolStripMenuItem1";
+            this.segundaToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.segundaToolStripMenuItem1.Text = "Segunda";
+            // 
+            // quintaToolStripMenuItem1
+            // 
+            this.quintaToolStripMenuItem1.Name = "quintaToolStripMenuItem1";
+            this.quintaToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.quintaToolStripMenuItem1.Text = "Quinta";
+            // 
+            // sextaToolStripMenuItem1
+            // 
+            this.sextaToolStripMenuItem1.Name = "sextaToolStripMenuItem1";
+            this.sextaToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.sextaToolStripMenuItem1.Text = "Sexta";
+            // 
+            // septimaToolStripMenuItem1
+            // 
+            this.septimaToolStripMenuItem1.Name = "septimaToolStripMenuItem1";
+            this.septimaToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.septimaToolStripMenuItem1.Text = "Septima";
+            // 
+            // octavaToolStripMenuItem1
+            // 
+            this.octavaToolStripMenuItem1.Name = "octavaToolStripMenuItem1";
+            this.octavaToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.octavaToolStripMenuItem1.Text = "Octava";
+            // 
+            // novenaToolStripMenuItem1
+            // 
+            this.novenaToolStripMenuItem1.Name = "novenaToolStripMenuItem1";
+            this.novenaToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.novenaToolStripMenuItem1.Text = "Novena";
+            // 
+            // decimaToolStripMenuItem1
+            // 
+            this.decimaToolStripMenuItem1.Name = "decimaToolStripMenuItem1";
+            this.decimaToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.decimaToolStripMenuItem1.Text = "Decima";
+            // 
+            // preDecimaToolStripMenuItem1
+            // 
+            this.preDecimaToolStripMenuItem1.Name = "preDecimaToolStripMenuItem1";
+            this.preDecimaToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.preDecimaToolStripMenuItem1.Text = "Pre-Decima";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -352,11 +506,11 @@
             this.Activated += new System.EventHandler(this.Form1_Activated);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSocio)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.socioBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.socioSaludBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.socioBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -396,7 +550,26 @@
         private System.Windows.Forms.ToolStripMenuItem smiInactivos;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem divisionesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem hombresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem primeraToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem segundaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem quintaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sextaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem septimaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem octavaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem novenaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem decimaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mujeresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem preDecimaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem primeraToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem segundaToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem quintaToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem sextaToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem septimaToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem octavaToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem novenaToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem decimaToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem preDecimaToolStripMenuItem1;
     }
 }
 

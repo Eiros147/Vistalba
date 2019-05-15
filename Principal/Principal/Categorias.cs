@@ -65,7 +65,7 @@ Persist Security Info=False;");
         public void modificar()
         {
             conPagos.Open();
-            string query = "SELECT catID FROM Categoria WHERE catNombre = '" + dgvCategorias.CurrentRow.Cells[1].Value.ToString() + "'";
+            string query = "SELECT catID FROM Categoria WHERE catNombre = '" + dgvCategorias.CurrentRow.Cells[0].Value.ToString() + "'";
 
             comando.Connection = conPagos;
             comando.CommandText = query;
@@ -75,8 +75,19 @@ Persist Security Info=False;");
             ModificarCategoria nuovo = new ModificarCategoria();
 
             nuovo.lblID.Text = temporal;
-            nuovo.txtDescripcion.Text = dgvCategorias.CurrentRow.Cells[2].Value.ToString();
-            nuovo.txtNombre.Text = dgvCategorias.CurrentRow.Cells[1].Value.ToString();
+            nuovo.txtDescripcion.Text = dgvCategorias.CurrentRow.Cells[1].Value.ToString();
+            nuovo.txtNombre.Text = dgvCategorias.CurrentRow.Cells[0].Value.ToString();
+            nuovo.txtMesAct.Text = dgvCategorias.CurrentRow.Cells[3].Value.ToString();
+            nuovo.txtMesInact.Text = dgvCategorias.CurrentRow.Cells[4].Value.ToString();
+
+            if (dgvCategorias.CurrentRow.Cells[2].Value.Equals(true))
+            {
+                nuovo.cbCard.Checked = true;
+            }
+            else
+            {
+                nuovo.cbCard.Checked = false;
+            }
 
             nuovo.ShowDialog();
 

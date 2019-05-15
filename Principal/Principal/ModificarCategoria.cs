@@ -46,5 +46,17 @@ namespace Principal
             guardar.Inicializar();
             guardar.Update(tabla, id, values, key);
         }
+
+        private void cbCard_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbCard.Checked == true)
+            {
+                cbCard.Text = "Con beneficios";
+            }else if(cbCard.Checked == false)
+            {
+                cbCard.Text = "Sin beneficios";
+            }
+          
+        }
     }
 }

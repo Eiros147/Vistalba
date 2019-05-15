@@ -219,6 +219,9 @@
     <EmbeddedResource Include="NuevaActividad.resx">
       <DependentUpon>NuevaActividad.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NuevaCategoria.resx">
+      <DependentUpon>NuevaCategoria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NuevoProfesional.resx">
       <DependentUpon>NuevoProfesional.cs</DependentUpon>
     </EmbeddedResource>

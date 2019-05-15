@@ -46,7 +46,7 @@
             this.txtMesAct = new System.Windows.Forms.TextBox();
             this.txtMesInact = new System.Windows.Forms.TextBox();
             this.lblID = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.cbCard = new System.Windows.Forms.CheckBox();
             catIDLabel = new System.Windows.Forms.Label();
             catDescLabel = new System.Windows.Forms.Label();
             catNombreLabel = new System.Windows.Forms.Label();
@@ -56,6 +56,60 @@
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // catIDLabel
+            // 
+            catIDLabel.AutoSize = true;
+            catIDLabel.Location = new System.Drawing.Point(12, 18);
+            catIDLabel.Name = "catIDLabel";
+            catIDLabel.Size = new System.Drawing.Size(21, 13);
+            catIDLabel.TabIndex = 5;
+            catIDLabel.Text = "ID:";
+            // 
+            // catDescLabel
+            // 
+            catDescLabel.AutoSize = true;
+            catDescLabel.Location = new System.Drawing.Point(12, 44);
+            catDescLabel.Name = "catDescLabel";
+            catDescLabel.Size = new System.Drawing.Size(66, 13);
+            catDescLabel.TabIndex = 7;
+            catDescLabel.Text = "Descripción:";
+            // 
+            // catNombreLabel
+            // 
+            catNombreLabel.AutoSize = true;
+            catNombreLabel.Location = new System.Drawing.Point(12, 70);
+            catNombreLabel.Name = "catNombreLabel";
+            catNombreLabel.Size = new System.Drawing.Size(47, 13);
+            catNombreLabel.TabIndex = 9;
+            catNombreLabel.Text = "Nombre:";
+            // 
+            // catMesActLabel
+            // 
+            catMesActLabel.AutoSize = true;
+            catMesActLabel.Location = new System.Drawing.Point(12, 96);
+            catMesActLabel.Name = "catMesActLabel";
+            catMesActLabel.Size = new System.Drawing.Size(79, 13);
+            catMesActLabel.TabIndex = 11;
+            catMesActLabel.Text = "Meses Activos:";
+            // 
+            // catMesInactLabel
+            // 
+            catMesInactLabel.AutoSize = true;
+            catMesInactLabel.Location = new System.Drawing.Point(12, 122);
+            catMesInactLabel.Name = "catMesInactLabel";
+            catMesInactLabel.Size = new System.Drawing.Size(87, 13);
+            catMesInactLabel.TabIndex = 13;
+            catMesInactLabel.Text = "Meses Inactivos:";
+            // 
+            // catClubCardLabel
+            // 
+            catClubCardLabel.AutoSize = true;
+            catClubCardLabel.Location = new System.Drawing.Point(12, 148);
+            catClubCardLabel.Name = "catClubCardLabel";
+            catClubCardLabel.Size = new System.Drawing.Size(56, 13);
+            catClubCardLabel.TabIndex = 15;
+            catClubCardLabel.Text = "Club Card:";
             // 
             // club_VistalbaDataSet
             // 
@@ -104,24 +158,6 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // catIDLabel
-            // 
-            catIDLabel.AutoSize = true;
-            catIDLabel.Location = new System.Drawing.Point(12, 18);
-            catIDLabel.Name = "catIDLabel";
-            catIDLabel.Size = new System.Drawing.Size(21, 13);
-            catIDLabel.TabIndex = 5;
-            catIDLabel.Text = "ID:";
-            // 
-            // catDescLabel
-            // 
-            catDescLabel.AutoSize = true;
-            catDescLabel.Location = new System.Drawing.Point(12, 44);
-            catDescLabel.Name = "catDescLabel";
-            catDescLabel.Size = new System.Drawing.Size(66, 13);
-            catDescLabel.TabIndex = 7;
-            catDescLabel.Text = "Descripción:";
-            // 
             // txtDescripcion
             // 
             this.txtDescripcion.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.categoriaBindingSource, "catDesc", true));
@@ -129,15 +165,6 @@
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(100, 20);
             this.txtDescripcion.TabIndex = 8;
-            // 
-            // catNombreLabel
-            // 
-            catNombreLabel.AutoSize = true;
-            catNombreLabel.Location = new System.Drawing.Point(12, 70);
-            catNombreLabel.Name = "catNombreLabel";
-            catNombreLabel.Size = new System.Drawing.Size(47, 13);
-            catNombreLabel.TabIndex = 9;
-            catNombreLabel.Text = "Nombre:";
             // 
             // txtNombre
             // 
@@ -147,15 +174,6 @@
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
             this.txtNombre.TabIndex = 10;
             // 
-            // catMesActLabel
-            // 
-            catMesActLabel.AutoSize = true;
-            catMesActLabel.Location = new System.Drawing.Point(12, 96);
-            catMesActLabel.Name = "catMesActLabel";
-            catMesActLabel.Size = new System.Drawing.Size(79, 13);
-            catMesActLabel.TabIndex = 11;
-            catMesActLabel.Text = "Meses Activos:";
-            // 
             // txtMesAct
             // 
             this.txtMesAct.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.categoriaBindingSource, "catMesAct", true));
@@ -164,15 +182,6 @@
             this.txtMesAct.Size = new System.Drawing.Size(100, 20);
             this.txtMesAct.TabIndex = 12;
             // 
-            // catMesInactLabel
-            // 
-            catMesInactLabel.AutoSize = true;
-            catMesInactLabel.Location = new System.Drawing.Point(12, 122);
-            catMesInactLabel.Name = "catMesInactLabel";
-            catMesInactLabel.Size = new System.Drawing.Size(87, 13);
-            catMesInactLabel.TabIndex = 13;
-            catMesInactLabel.Text = "Meses Inactivos:";
-            // 
             // txtMesInact
             // 
             this.txtMesInact.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.categoriaBindingSource, "catMesInact", true));
@@ -180,15 +189,6 @@
             this.txtMesInact.Name = "txtMesInact";
             this.txtMesInact.Size = new System.Drawing.Size(100, 20);
             this.txtMesInact.TabIndex = 14;
-            // 
-            // catClubCardLabel
-            // 
-            catClubCardLabel.AutoSize = true;
-            catClubCardLabel.Location = new System.Drawing.Point(12, 148);
-            catClubCardLabel.Name = "catClubCardLabel";
-            catClubCardLabel.Size = new System.Drawing.Size(56, 13);
-            catClubCardLabel.TabIndex = 15;
-            catClubCardLabel.Text = "Club Card:";
             // 
             // lblID
             // 
@@ -199,22 +199,23 @@
             this.lblID.TabIndex = 16;
             this.lblID.Text = "ID Categoria";
             // 
-            // checkBox1
+            // cbCard
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(105, 147);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(92, 17);
-            this.checkBox1.TabIndex = 17;
-            this.checkBox1.Text = "Con Beneficio";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.cbCard.AutoSize = true;
+            this.cbCard.Location = new System.Drawing.Point(105, 147);
+            this.cbCard.Name = "cbCard";
+            this.cbCard.Size = new System.Drawing.Size(92, 17);
+            this.cbCard.TabIndex = 17;
+            this.cbCard.Text = "Con Beneficio";
+            this.cbCard.UseVisualStyleBackColor = true;
+            this.cbCard.CheckedChanged += new System.EventHandler(this.cbCard_CheckedChanged);
             // 
             // ModificarCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(226, 239);
-            this.Controls.Add(this.checkBox1);
+            this.ClientSize = new System.Drawing.Size(226, 225);
+            this.Controls.Add(this.cbCard);
             this.Controls.Add(this.lblID);
             this.Controls.Add(catIDLabel);
             this.Controls.Add(catDescLabel);
@@ -246,11 +247,11 @@
         private Club_VistalbaDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.Button v;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.CheckBox checkBox1;
         public System.Windows.Forms.TextBox txtDescripcion;
         public System.Windows.Forms.Label lblID;
         public System.Windows.Forms.TextBox txtNombre;
         public System.Windows.Forms.TextBox txtMesAct;
         public System.Windows.Forms.TextBox txtMesInact;
+        public System.Windows.Forms.CheckBox cbCard;
     }
 }
