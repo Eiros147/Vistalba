@@ -66,6 +66,12 @@
       <DependentUpon>Club_VistalbaDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="DBConnect.cs" />
+    <Compile Include="DetalleGrupos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetalleGrupos.Designer.cs">
+      <DependentUpon>DetalleGrupos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,12 @@
     </Compile>
     <Compile Include="Grupos.Designer.cs">
       <DependentUpon>Grupos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaMiembros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaMiembros.Designer.cs">
+      <DependentUpon>ListaMiembros.cs</DependentUpon>
     </Compile>
     <Compile Include="Metodos.cs" />
     <Compile Include="ModificarActividad.cs">
@@ -96,6 +108,12 @@
     </Compile>
     <Compile Include="ModificarCategoria.Designer.cs">
       <DependentUpon>ModificarCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarGrupo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificarGrupo.Designer.cs">
+      <DependentUpon>ModificarGrupo.cs</DependentUpon>
     </Compile>
     <Compile Include="ModificarInactivos.cs">
       <SubType>Form</SubType>
@@ -132,6 +150,12 @@
     </Compile>
     <Compile Include="NuevaCategoria.Designer.cs">
       <DependentUpon>NuevaCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NuevoGrupo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NuevoGrupo.Designer.cs">
+      <DependentUpon>NuevoGrupo.cs</DependentUpon>
     </Compile>
     <Compile Include="NuevoProfesional.cs">
       <SubType>Form</SubType>
@@ -189,11 +213,17 @@
     <EmbeddedResource Include="Categorias.resx">
       <DependentUpon>Categorias.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DetalleGrupos.resx">
+      <DependentUpon>DetalleGrupos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grupos.resx">
       <DependentUpon>Grupos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaMiembros.resx">
+      <DependentUpon>ListaMiembros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModificarActividad.resx">
       <DependentUpon>ModificarActividad.cs</DependentUpon>
@@ -203,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ModificarCategoria.resx">
       <DependentUpon>ModificarCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarGrupo.resx">
+      <DependentUpon>ModificarGrupo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModificarInactivos.resx">
       <DependentUpon>ModificarInactivos.cs</DependentUpon>
@@ -221,6 +254,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NuevaCategoria.resx">
       <DependentUpon>NuevaCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NuevoGrupo.resx">
+      <DependentUpon>NuevoGrupo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NuevoProfesional.resx">
       <DependentUpon>NuevoProfesional.cs</DependentUpon>

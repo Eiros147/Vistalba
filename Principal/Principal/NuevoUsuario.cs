@@ -83,17 +83,32 @@ Persist Security Info=False;";
         {
             guardar();
 
-            this.Refresh();
+            this.Close();
+
+            NuevoSalud nuevo = new NuevoSalud();
+            nuevo.Show();
+            nuevo.TopMost = true;
+            
         }
 
         private void guardar()
         {
+            int flag;
+            if (rbHombre.Checked)
+            {
+                flag = 1;
+            }
+            else
+            {
+                flag = 0;
+            }
+
             Metodos nuevometodo = new Metodos();
             nuevometodo.Inicializar();
 
             string tabla = "Socio";
-            string seters = "socioNombre, socioDNI, socioDireccion, socioMail, socioTelefono, socioCelular";
-            string valores = "'" + txtNombre.Text + "','" + txtDNI.Text + "','" + txtDireccion.Text + "','" + txtMail.Text + "','" + txtTelefono.Text + "','" + txtCelular.Text + "'";
+            string seters = "socioNombre, socioDNI, socioDireccion, socioMail, socioTelefono, socioCelular, socioGenero, socioNotas";
+            string valores = "'" + txtNombre.Text + "','" + txtDNI.Text + "','" + txtDireccion.Text + "','" + txtMail.Text + "','" + txtTelefono.Text + "','" + txtCelular.Text + "','" + flag + "','" + txtNotas.Text + "'";
 
             nuevometodo.Insertar(tabla,seters,valores);
         }

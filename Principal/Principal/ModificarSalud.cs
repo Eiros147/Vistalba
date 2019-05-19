@@ -33,5 +33,29 @@ namespace Principal
             this.saludTableAdapter.Fill(this.club_VistalbaDataSet.Salud);
 
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int flag;
+            if (cbAlergia.Checked)
+            {
+                flag = 1;
+            }
+            else
+            {
+                flag = 0;
+            }
+
+            string seters = "saludAlergia = '" + flag + "', saludAlergiaDesc = '" + txtDescripcion.Text + "', saludSangre = '" + txtSangre.Text + "', saludMed = '" + txtMedicamentos.Text + "', saludObraSoc = '" + txtObrasocial + "', saludTelEm = " + txtEmergencia.Text + ", saludExtra = '" + txtExtra.Text;
+            string tabla = "Salud";
+            string key = "saludID";
+            
+        }
     }
 }

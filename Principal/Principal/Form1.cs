@@ -92,6 +92,7 @@ Persist Security Info=False;");
             modificar.txtCelular.Text = dgvSocio.CurrentRow.Cells[5].Value.ToString();
             modificar.txtMail.Text = dgvSocio.CurrentRow.Cells[3].Value.ToString();
             modificar.txtTelefono.Text = dgvSocio.CurrentRow.Cells[4].Value.ToString();
+            //modificar.cbCategoria.Text = dgvSocio.CurrentRow.Cells[10].Value.ToString();
             
             if(dgvSocio.CurrentRow.Cells[6].Value.Equals(true))
             {

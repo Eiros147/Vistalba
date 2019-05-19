@@ -53,6 +53,8 @@ Persist Security Info=False;";
             dtpIngreso.Enabled = true;
             dtpNacimiento.Enabled = true;
             txtNotas.Enabled = true;
+            txtGrupo.Enabled = true;
+            cbCategoria.Enabled = true;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -78,7 +80,17 @@ Persist Security Info=False;";
                 flag = 0;
             }
 
-            string seters = "socioNombre = '" + txtNombre.Text + "', socioDNI = " + txtDNI.Text + ", socioDireccion = '" + txtDireccion.Text + "', socioMail = '" + txtMail.Text + "', socioNotas = '" + txtNotas.Text + "', socioTelefono = " + txtTelefono.Text + ", socioCelular = " + txtCelular.Text + ", socioGenero = " + flag;
+            int estado;
+            if (cbEstado.Checked)
+            {
+                estado = 1;
+            }
+            else
+            {
+                estado = 0;
+            }
+
+            string seters = "socioNombre = '" + txtNombre.Text + "', socioDNI = " + txtDNI.Text + ", socioDireccion = '" + txtDireccion.Text + "', socioMail = '" + txtMail.Text + "', socioNotas = '" + txtNotas.Text + "', socioCategoria = '" + cbCategoria.Text + "', socioTelefono = " + txtTelefono.Text + ", socioCelular = " + txtCelular.Text + ", socioGenero = " + flag + ", socioEstado = " + estado;
             string tabla = "Socio";
             string key = "socioID";
             int id = Convert.ToInt32(lblID.Text);
@@ -105,6 +117,29 @@ Persist Security Info=False;";
         {
             ModificarSalud salud = new ModificarSalud();
             salud.ShowDialog();
+        }
+
+        private void Seleccionar(ComboBox cb)
+        {
+            string valor = "catNombre";
+            string tabla = "Categoria";
+            string id = "catID";
+
+            Metodos llenar = new Metodos();
+            llenar.Inicializar();
+            llenar.LlenarCombo(valor, tabla, cbCategoria, id);
+        }
+
+        private void cbEstado_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbEstado.Checked == true)
+            {
+                cbEstado.Text = "Activo";
+            }
+            else if(cbEstado.Checked == false)
+            {
+                cbEstado.Text = "Inactivo";
+            }
         }
     }
 }
