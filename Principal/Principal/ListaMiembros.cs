@@ -13,9 +13,10 @@ namespace Principal
 {
     public partial class ListaMiembros : Form
     {
+        public string textoSeleccionado { get; set; }
+
         OleDbConnection listado = new OleDbConnection();
-
-
+        
         public ListaMiembros()
         {
             InitializeComponent();
@@ -56,6 +57,18 @@ Persist Security Info=False;";
             
             //this.Close();
             
+        }
+
+        private void dgvSocios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //txtSocio.Text(dgvSocios.CurrentRow.Cells[0].Value.ToString());
+            string value = dgvSocios.CurrentRow.Cells[0].Value.ToString();
+            txtSocio.Text = value;
+        }
+
+        private void txtSocio_TextChanged(object sender, EventArgs e)
+        {
+            textoSeleccionado = txtSocio.Text;
         }
     }
 }

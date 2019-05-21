@@ -63,5 +63,16 @@ Persist Security Info=False;";
             Metodos llenar = new Metodos();
             llenar.LlenarCombo(valor, tabla, cb, id);
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            using(ListaMiembros lista = new ListaMiembros())
+            {
+                if(lista.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    txtSocio.Text = lista.textoSeleccionado;
+                }
+            }
+        }
     }
 }

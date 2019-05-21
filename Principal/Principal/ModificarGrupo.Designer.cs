@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label grupoIDLabel;
-            System.Windows.Forms.Label grupoCategoriaLabel;
-            System.Windows.Forms.Label grupoSocioPpalLabel;
             System.Windows.Forms.Label grupoApellidoLabel;
+            System.Windows.Forms.Label grupoSocioPpalLabel;
+            System.Windows.Forms.Label grupoCategoriaLabel;
+            System.Windows.Forms.Label grupoIDLabel;
             System.Windows.Forms.Label label2;
             this.club_VistalbaDataSet = new Principal.Club_VistalbaDataSet();
             this.grupoBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -40,15 +40,16 @@
             this.tableAdapterManager = new Principal.Club_VistalbaDataSetTableAdapters.TableAdapterManager();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.lblID = new System.Windows.Forms.Label();
-            this.cbCategoria = new System.Windows.Forms.ComboBox();
-            this.cbSocio = new System.Windows.Forms.ComboBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtSocio = new System.Windows.Forms.TextBox();
             this.txtCategoria = new System.Windows.Forms.TextBox();
-            grupoIDLabel = new System.Windows.Forms.Label();
-            grupoCategoriaLabel = new System.Windows.Forms.Label();
-            grupoSocioPpalLabel = new System.Windows.Forms.Label();
+            this.txtSocio = new System.Windows.Forms.TextBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             grupoApellidoLabel = new System.Windows.Forms.Label();
+            grupoSocioPpalLabel = new System.Windows.Forms.Label();
+            grupoCategoriaLabel = new System.Windows.Forms.Label();
+            grupoIDLabel = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grupoBindingSource)).BeginInit();
@@ -81,23 +82,22 @@
             this.tableAdapterManager.SocioTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Principal.Club_VistalbaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // grupoIDLabel
+            // txtApellido
             // 
-            grupoIDLabel.AutoSize = true;
-            grupoIDLabel.Location = new System.Drawing.Point(16, 25);
-            grupoIDLabel.Name = "grupoIDLabel";
-            grupoIDLabel.Size = new System.Drawing.Size(21, 13);
-            grupoIDLabel.TabIndex = 1;
-            grupoIDLabel.Text = "ID:";
+            this.txtApellido.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.grupoBindingSource, "grupoApellido", true));
+            this.txtApellido.Location = new System.Drawing.Point(113, 152);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(121, 20);
+            this.txtApellido.TabIndex = 8;
             // 
-            // grupoCategoriaLabel
+            // grupoApellidoLabel
             // 
-            grupoCategoriaLabel.AutoSize = true;
-            grupoCategoriaLabel.Location = new System.Drawing.Point(16, 51);
-            grupoCategoriaLabel.Name = "grupoCategoriaLabel";
-            grupoCategoriaLabel.Size = new System.Drawing.Size(55, 13);
-            grupoCategoriaLabel.TabIndex = 3;
-            grupoCategoriaLabel.Text = "Categoria:";
+            grupoApellidoLabel.AutoSize = true;
+            grupoApellidoLabel.Location = new System.Drawing.Point(16, 155);
+            grupoApellidoLabel.Name = "grupoApellidoLabel";
+            grupoApellidoLabel.Size = new System.Drawing.Size(47, 13);
+            grupoApellidoLabel.TabIndex = 7;
+            grupoApellidoLabel.Text = "Apellido:";
             // 
             // grupoSocioPpalLabel
             // 
@@ -108,22 +108,23 @@
             grupoSocioPpalLabel.TabIndex = 5;
             grupoSocioPpalLabel.Text = "Socio Principal:";
             // 
-            // grupoApellidoLabel
+            // grupoCategoriaLabel
             // 
-            grupoApellidoLabel.AutoSize = true;
-            grupoApellidoLabel.Location = new System.Drawing.Point(16, 103);
-            grupoApellidoLabel.Name = "grupoApellidoLabel";
-            grupoApellidoLabel.Size = new System.Drawing.Size(47, 13);
-            grupoApellidoLabel.TabIndex = 7;
-            grupoApellidoLabel.Text = "Apellido:";
+            grupoCategoriaLabel.AutoSize = true;
+            grupoCategoriaLabel.Location = new System.Drawing.Point(16, 51);
+            grupoCategoriaLabel.Name = "grupoCategoriaLabel";
+            grupoCategoriaLabel.Size = new System.Drawing.Size(55, 13);
+            grupoCategoriaLabel.TabIndex = 3;
+            grupoCategoriaLabel.Text = "Categoria:";
             // 
-            // txtApellido
+            // grupoIDLabel
             // 
-            this.txtApellido.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.grupoBindingSource, "grupoApellido", true));
-            this.txtApellido.Location = new System.Drawing.Point(113, 100);
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(121, 20);
-            this.txtApellido.TabIndex = 8;
+            grupoIDLabel.AutoSize = true;
+            grupoIDLabel.Location = new System.Drawing.Point(16, 25);
+            grupoIDLabel.Name = "grupoIDLabel";
+            grupoIDLabel.Size = new System.Drawing.Size(21, 13);
+            grupoIDLabel.TabIndex = 1;
+            grupoIDLabel.Text = "ID:";
             // 
             // lblID
             // 
@@ -134,46 +135,22 @@
             this.lblID.TabIndex = 9;
             this.lblID.Text = "label1";
             // 
-            // cbCategoria
-            // 
-            this.cbCategoria.FormattingEnabled = true;
-            this.cbCategoria.Location = new System.Drawing.Point(247, 48);
-            this.cbCategoria.Name = "cbCategoria";
-            this.cbCategoria.Size = new System.Drawing.Size(121, 21);
-            this.cbCategoria.TabIndex = 10;
-            // 
-            // cbSocio
-            // 
-            this.cbSocio.FormattingEnabled = true;
-            this.cbSocio.Location = new System.Drawing.Point(247, 74);
-            this.cbSocio.Name = "cbSocio";
-            this.cbSocio.Size = new System.Drawing.Size(121, 21);
-            this.cbSocio.TabIndex = 11;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(16, 129);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(79, 13);
-            label2.TabIndex = 12;
-            label2.Text = "Nombre Grupo:";
-            // 
             // txtNombre
             // 
             this.txtNombre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.grupoBindingSource, "grupoApellido", true));
-            this.txtNombre.Location = new System.Drawing.Point(113, 126);
+            this.txtNombre.Location = new System.Drawing.Point(113, 178);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(121, 20);
             this.txtNombre.TabIndex = 13;
             // 
-            // txtSocio
+            // label2
             // 
-            this.txtSocio.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.grupoBindingSource, "grupoApellido", true));
-            this.txtSocio.Location = new System.Drawing.Point(113, 74);
-            this.txtSocio.Name = "txtSocio";
-            this.txtSocio.Size = new System.Drawing.Size(121, 20);
-            this.txtSocio.TabIndex = 15;
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(16, 181);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(79, 13);
+            label2.TabIndex = 12;
+            label2.Text = "Nombre Grupo:";
             // 
             // txtCategoria
             // 
@@ -183,17 +160,55 @@
             this.txtCategoria.Size = new System.Drawing.Size(121, 20);
             this.txtCategoria.TabIndex = 14;
             // 
+            // txtSocio
+            // 
+            this.txtSocio.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.grupoBindingSource, "grupoApellido", true));
+            this.txtSocio.Location = new System.Drawing.Point(113, 74);
+            this.txtSocio.Name = "txtSocio";
+            this.txtSocio.Size = new System.Drawing.Size(121, 20);
+            this.txtSocio.TabIndex = 15;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(159, 100);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 41);
+            this.btnBuscar.TabIndex = 16;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(19, 210);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 41);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "Buscar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancelar.Location = new System.Drawing.Point(159, 210);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 41);
+            this.btnCancelar.TabIndex = 18;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            // 
             // ModificarGrupo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(482, 311);
+            this.ClientSize = new System.Drawing.Size(248, 263);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtSocio);
             this.Controls.Add(this.txtCategoria);
             this.Controls.Add(label2);
             this.Controls.Add(this.txtNombre);
-            this.Controls.Add(this.cbSocio);
-            this.Controls.Add(this.cbCategoria);
             this.Controls.Add(this.lblID);
             this.Controls.Add(grupoIDLabel);
             this.Controls.Add(grupoCategoriaLabel);
@@ -218,10 +233,11 @@
         private Club_VistalbaDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.Label lblID;
-        private System.Windows.Forms.ComboBox cbCategoria;
-        private System.Windows.Forms.ComboBox cbSocio;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtSocio;
         private System.Windows.Forms.TextBox txtCategoria;
+        private System.Windows.Forms.TextBox txtSocio;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

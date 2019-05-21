@@ -76,9 +76,16 @@ Persist Security Info=False;";
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            ListaMiembros listar = new ListaMiembros();
-            listar.ShowDialog();
+            using(ListaMiembros lista = new ListaMiembros())
+            {
+                if(lista.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    txtSocioPpal.Text = lista.textoSeleccionado;
+                }
+            }
         }
+
+        
 
         private void Notifyme(string s)
         {
