@@ -59,7 +59,7 @@ Persist Security Info=False;";
                 conNuevo.Close();
             }
 
-            Seleccionar(cbGrupo);
+            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -70,12 +70,12 @@ Persist Security Info=False;";
 
         private void rbSi_CheckedChanged(object sender, EventArgs e)
         {
-            cbGrupo.Visible = true;
+            //cbGrupo.Visible = true;
         }
 
         private void rbNo_CheckedChanged(object sender, EventArgs e)
         {
-            cbGrupo.Visible = false;
+            //cbGrupo.Visible = false;
         }
 
 
@@ -87,6 +87,7 @@ Persist Security Info=False;";
 
             NuevoSalud nuevo = new NuevoSalud();
             nuevo.Show();
+            nuevo.lblNombre.Text = txtNombre.Text;
             nuevo.TopMost = true;
             
         }
@@ -107,8 +108,8 @@ Persist Security Info=False;";
             nuevometodo.Inicializar();
 
             string tabla = "Socio";
-            string seters = "socioNombre, socioDNI, socioDireccion, socioMail, socioTelefono, socioCelular, socioGenero, socioNotas";
-            string valores = "'" + txtNombre.Text + "','" + txtDNI.Text + "','" + txtDireccion.Text + "','" + txtMail.Text + "','" + txtTelefono.Text + "','" + txtCelular.Text + "','" + flag + "','" + txtNotas.Text + "'";
+            string seters = "socioNombre, socioDNI, socioDireccion, socioMail, socioTelefono, socioCelular, socioGenero, socioNotas, socioFechaIng";
+            string valores = "'" + txtNombre.Text + "','" + txtDNI.Text + "','" + txtDireccion.Text + "','" + txtMail.Text + "','" + txtTelefono.Text + "','" + txtCelular.Text + "','" + flag + "','" + txtNotas.Text + "','" + DateTime.Now + "'";
 
             nuevometodo.Insertar(tabla,seters,valores);
         }
@@ -130,6 +131,18 @@ Persist Security Info=False;";
             NuevoSalud nuevo = new NuevoSalud();
             nuevo.Show();
             nuevo.TopMost = true;
+        }
+
+        private void cbEstado_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbEstado.Checked == true)
+            {
+                cbEstado.Text = "Activo";
+            }
+            else if (cbEstado.Checked == false)
+            {
+                cbEstado.Text = "Inactivo";
+            }
         }
     }
 }

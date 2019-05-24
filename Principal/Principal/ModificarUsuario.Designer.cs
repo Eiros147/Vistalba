@@ -40,7 +40,6 @@
             System.Windows.Forms.Label socioFechaIngLabel;
             System.Windows.Forms.Label socioFechaUltPagoLabel;
             System.Windows.Forms.Label catIdLabel;
-            System.Windows.Forms.Label grupoApellidoLabel;
             System.Windows.Forms.Label label1;
             System.Windows.Forms.Label label2;
             this.club_VistalbaDataSet = new Principal.Club_VistalbaDataSet();
@@ -59,7 +58,6 @@
             this.dtpPago = new System.Windows.Forms.DateTimePicker();
             this.lblID = new System.Windows.Forms.Label();
             this.grupoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.txtGrupo = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.btnHabilitar = new System.Windows.Forms.Button();
             this.btnSalud = new System.Windows.Forms.Button();
@@ -83,7 +81,6 @@
             socioFechaIngLabel = new System.Windows.Forms.Label();
             socioFechaUltPagoLabel = new System.Windows.Forms.Label();
             catIdLabel = new System.Windows.Forms.Label();
-            grupoApellidoLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).BeginInit();
@@ -185,20 +182,11 @@
             // catIdLabel
             // 
             catIdLabel.AutoSize = true;
-            catIdLabel.Location = new System.Drawing.Point(12, 432);
+            catIdLabel.Location = new System.Drawing.Point(12, 406);
             catIdLabel.Name = "catIdLabel";
             catIdLabel.Size = new System.Drawing.Size(55, 13);
             catIdLabel.TabIndex = 23;
             catIdLabel.Text = "Categoria:";
-            // 
-            // grupoApellidoLabel
-            // 
-            grupoApellidoLabel.AutoSize = true;
-            grupoApellidoLabel.Location = new System.Drawing.Point(12, 406);
-            grupoApellidoLabel.Name = "grupoApellidoLabel";
-            grupoApellidoLabel.Size = new System.Drawing.Size(39, 13);
-            grupoApellidoLabel.TabIndex = 25;
-            grupoApellidoLabel.Text = "Grupo:";
             // 
             // label1
             // 
@@ -208,6 +196,15 @@
             label1.Size = new System.Drawing.Size(45, 13);
             label1.TabIndex = 34;
             label1.Text = "Genero:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(11, 431);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(43, 13);
+            label2.TabIndex = 41;
+            label2.Text = "Estado:";
             // 
             // club_VistalbaDataSet
             // 
@@ -346,18 +343,9 @@
             this.grupoBindingSource.DataMember = "Grupo";
             this.grupoBindingSource.DataSource = this.club_VistalbaDataSet;
             // 
-            // txtGrupo
-            // 
-            this.txtGrupo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.grupoBindingSource, "grupoApellido", true));
-            this.txtGrupo.Enabled = false;
-            this.txtGrupo.Location = new System.Drawing.Point(130, 403);
-            this.txtGrupo.Name = "txtGrupo";
-            this.txtGrupo.Size = new System.Drawing.Size(281, 20);
-            this.txtGrupo.TabIndex = 26;
-            // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(336, 492);
+            this.button2.Location = new System.Drawing.Point(336, 458);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 34);
             this.button2.TabIndex = 28;
@@ -367,7 +355,7 @@
             // 
             // btnHabilitar
             // 
-            this.btnHabilitar.Location = new System.Drawing.Point(12, 492);
+            this.btnHabilitar.Location = new System.Drawing.Point(12, 458);
             this.btnHabilitar.Name = "btnHabilitar";
             this.btnHabilitar.Size = new System.Drawing.Size(75, 34);
             this.btnHabilitar.TabIndex = 29;
@@ -377,7 +365,7 @@
             // 
             // btnSalud
             // 
-            this.btnSalud.Location = new System.Drawing.Point(93, 492);
+            this.btnSalud.Location = new System.Drawing.Point(93, 458);
             this.btnSalud.Name = "btnSalud";
             this.btnSalud.Size = new System.Drawing.Size(75, 34);
             this.btnSalud.TabIndex = 30;
@@ -387,16 +375,17 @@
             // 
             // btnGrupo
             // 
-            this.btnGrupo.Location = new System.Drawing.Point(174, 492);
+            this.btnGrupo.Location = new System.Drawing.Point(174, 458);
             this.btnGrupo.Name = "btnGrupo";
             this.btnGrupo.Size = new System.Drawing.Size(75, 34);
             this.btnGrupo.TabIndex = 31;
             this.btnGrupo.Text = "Grupo";
             this.btnGrupo.UseVisualStyleBackColor = true;
+            this.btnGrupo.Click += new System.EventHandler(this.btnGrupo_Click);
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(255, 492);
+            this.btnGuardar.Location = new System.Drawing.Point(255, 458);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 34);
             this.btnGuardar.TabIndex = 32;
@@ -408,7 +397,7 @@
             // 
             this.cbCategoria.Enabled = false;
             this.cbCategoria.FormattingEnabled = true;
-            this.cbCategoria.Location = new System.Drawing.Point(130, 429);
+            this.cbCategoria.Location = new System.Drawing.Point(130, 403);
             this.cbCategoria.Name = "cbCategoria";
             this.cbCategoria.Size = new System.Drawing.Size(281, 21);
             this.cbCategoria.TabIndex = 33;
@@ -464,21 +453,12 @@
             this.pbFoto.TabIndex = 40;
             this.pbFoto.TabStop = false;
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(11, 457);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(43, 13);
-            label2.TabIndex = 41;
-            label2.Text = "Estado:";
-            // 
             // cbEstado
             // 
             this.cbEstado.AutoSize = true;
             this.cbEstado.Checked = true;
             this.cbEstado.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbEstado.Location = new System.Drawing.Point(130, 456);
+            this.cbEstado.Location = new System.Drawing.Point(130, 430);
             this.cbEstado.Name = "cbEstado";
             this.cbEstado.Size = new System.Drawing.Size(56, 17);
             this.cbEstado.TabIndex = 42;
@@ -505,8 +485,6 @@
             this.Controls.Add(this.btnSalud);
             this.Controls.Add(this.btnHabilitar);
             this.Controls.Add(this.button2);
-            this.Controls.Add(grupoApellidoLabel);
-            this.Controls.Add(this.txtGrupo);
             this.Controls.Add(this.lblID);
             this.Controls.Add(socioIDLabel);
             this.Controls.Add(socioNombreLabel);
@@ -568,7 +546,6 @@
         public System.Windows.Forms.PictureBox pbFoto;
         public System.Windows.Forms.RadioButton rbHombre;
         public System.Windows.Forms.RadioButton rbMujer;
-        public System.Windows.Forms.TextBox txtGrupo;
         public System.Windows.Forms.ComboBox cbCategoria;
         private System.Windows.Forms.CheckBox cbEstado;
     }

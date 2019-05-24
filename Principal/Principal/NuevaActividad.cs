@@ -95,5 +95,19 @@ Persist Security Info=False;";
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string valor = "socioID";
+            string tabla = "Socio";
+            string key = "socioNombre";
+            string id = cbProfesional.Text;
+
+            Metodos llenar = new Metodos();
+            llenar.Inicializar();
+            llenar.Llenartextbox(valor, tabla, key, id, txtID);
+
+
+        }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,13 @@ namespace Principal
 {
     public partial class ModificarActividad : Form
     {
+        OleDbConnection conNueva = new OleDbConnection();
+
         public ModificarActividad()
         {
             InitializeComponent();
+            conNueva.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Club Vistalba.accdb;
+Persist Security Info=False;";
         }
 
         private void actividadesBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -29,6 +34,9 @@ namespace Principal
         {
             // TODO: esta línea de código carga datos en la tabla 'club_VistalbaDataSet.Actividades' Puede moverla o quitarla según sea necesario.
             this.actividadesTableAdapter.Fill(this.club_VistalbaDataSet.Actividades);
+
+            
+
             Selecccionar(cbProfesor);
         }
 
@@ -55,14 +63,20 @@ namespace Principal
             string key = "actId";
             int id = Convert.ToInt32(lblID.Text);
 
-            MessageBox.Show(valores);
+            //MessageBox.Show(valores);
 
-            modMetodo.Update(tabla, id, key, valores);
+            modMetodo.Update(tabla, id, valores, key);
         }
 
         private void Selecccionar(ComboBox cb)
         {
+            string valor = "profNombre";
+            string tabla = "Profesional";
+            string id = "profId";
 
+            Metodos elegirprof = new Metodos();
+            elegirprof.Inicializar();
+            elegirprof.LlenarCombo(valor, tabla, cb, id);
         }
     }
 }

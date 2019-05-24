@@ -13,16 +13,17 @@ namespace Principal
 {
     public partial class Actividades : Form
     {
-        OleDbConnection conActv = new OleDbConnection();
+        
         
 
         public Actividades()
         {
             InitializeComponent();
-            conActv.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Mi PC\Documents\Proyecto Club\Vistalba\Vistalba\Principal\Principal\Club Vistalba.accdb;
-Persist Security Info=False;";
-
+            
         }
+            OleDbConnection conexion = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Club Vistalba.accdb;
+Persist Security Info=False;");
+            OleDbCommand comando = new OleDbCommand();
 
         private void actividadesBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
@@ -36,9 +37,9 @@ Persist Security Info=False;";
         {
             try
             {
-                conActv.Open();
+                conexion.Open();
                 OleDbCommand command = new OleDbCommand();
-                command.Connection = conActv;
+                command.Connection = conexion;
                 string query = "SELECT Actividades.actNombre, Actividades.actDesc, Actividades.actMeses, Profesional.profNombre FROM(Actividades INNER JOIN Profesional ON Actividades.profId = Profesional.profId)";
                 command.CommandText = query;
 
@@ -47,11 +48,15 @@ Persist Security Info=False;";
                 da.Fill(dt);
                 dgvActividades.DataSource = dt;
 
-                conActv.Close();
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al conectarse" + ex);
+            }
+            finally
+            {
+                conexion.Close();
             }
         }
 
@@ -59,7 +64,7 @@ Persist Security Info=False;";
         {
             DataTable dtDatos = new DataTable();
             string cadena = ("SELECT Actividades.actNombre, Actividades.actDesc, Actividades.actMeses, Profesional.profNombre FROM(Actividades INNER JOIN Profesional ON Actividades.profId = Profesional.profId) WHERE actNombre LIKE '" + txtBusqueda.Text + "%'");
-            OleDbDataAdapter data = new OleDbDataAdapter(cadena, conActv);
+            OleDbDataAdapter data = new OleDbDataAdapter(cadena, conexion);
             data.Fill(dtDatos);
             dgvActividades.DataSource = dtDatos;
         }
@@ -77,14 +82,40 @@ Persist Security Info=False;";
 
         private void dgvActividades_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            ModificarActividad neu = new ModificarActividad();
-            neu.ShowDialog();
+            Modificar();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            ModificarActividad neu = new ModificarActividad();
-            neu.ShowDialog();
+            Modificar();
+                        
+        }
+
+        private void Modificar()
+        {
+            try
+            {
+                conexion.Open();
+                string query = "SELECT actID FROM Actividades WHERE actNombre = '" + dgvActividades.CurrentRow.Cells[0].Value.ToString() + "'";
+
+                comando.Connection = conexion;
+                comando.CommandText = query;
+
+                string temporal = comando.ExecuteScalar().ToString();
+
+                ModificarActividad neu = new ModificarActividad();
+                neu.lblID.Text = temporal;
+                neu.ShowDialog();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex);
+            }
+            finally
+            {
+                conexion.Close();
+            }
         }
 
         private void Actividades_Activated(object sender, EventArgs e)

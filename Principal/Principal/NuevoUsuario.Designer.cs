@@ -38,6 +38,8 @@
             System.Windows.Forms.Label socioCelularLabel;
             System.Windows.Forms.Label socioFechaNacLabel;
             System.Windows.Forms.Label label1;
+            System.Windows.Forms.Label label2;
+            System.Windows.Forms.Label label3;
             this.club_VistalbaDataSet = new Principal.Club_VistalbaDataSet();
             this.socioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.socioTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.SocioTableAdapter();
@@ -53,15 +55,13 @@
             this.lblSocioID = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.rbSi = new System.Windows.Forms.RadioButton();
-            this.rbNo = new System.Windows.Forms.RadioButton();
-            this.gboxGrupo = new System.Windows.Forms.GroupBox();
-            this.cbGrupo = new System.Windows.Forms.ComboBox();
             this.grupoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rbHombre = new System.Windows.Forms.RadioButton();
             this.rbMujer = new System.Windows.Forms.RadioButton();
             this.txtNotas = new System.Windows.Forms.TextBox();
             this.lblNotas = new System.Windows.Forms.Label();
+            this.cbEstado = new System.Windows.Forms.CheckBox();
+            this.cbCategoria = new System.Windows.Forms.ComboBox();
             socioIDLabel = new System.Windows.Forms.Label();
             socioNombreLabel = new System.Windows.Forms.Label();
             socioDNILabel = new System.Windows.Forms.Label();
@@ -71,9 +71,10 @@
             socioCelularLabel = new System.Windows.Forms.Label();
             socioFechaNacLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
+            label2 = new System.Windows.Forms.Label();
+            label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.socioBindingSource)).BeginInit();
-            this.gboxGrupo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grupoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -148,6 +149,15 @@
             socioFechaNacLabel.Size = new System.Drawing.Size(96, 13);
             socioFechaNacLabel.TabIndex = 15;
             socioFechaNacLabel.Text = "Fecha Nacimiento:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(12, 207);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(45, 13);
+            label1.TabIndex = 37;
+            label1.Text = "Genero:";
             // 
             // club_VistalbaDataSet
             // 
@@ -247,7 +257,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(15, 444);
+            this.btnGuardar.Location = new System.Drawing.Point(15, 408);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 38);
             this.btnGuardar.TabIndex = 26;
@@ -257,60 +267,13 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(336, 444);
+            this.btnCancelar.Location = new System.Drawing.Point(336, 408);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 38);
             this.btnCancelar.TabIndex = 27;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // rbSi
-            // 
-            this.rbSi.AutoSize = true;
-            this.rbSi.Location = new System.Drawing.Point(121, 19);
-            this.rbSi.Name = "rbSi";
-            this.rbSi.Size = new System.Drawing.Size(34, 17);
-            this.rbSi.TabIndex = 29;
-            this.rbSi.Text = "Si";
-            this.rbSi.UseVisualStyleBackColor = true;
-            this.rbSi.CheckedChanged += new System.EventHandler(this.rbSi_CheckedChanged);
-            // 
-            // rbNo
-            // 
-            this.rbNo.AutoSize = true;
-            this.rbNo.Checked = true;
-            this.rbNo.Location = new System.Drawing.Point(161, 19);
-            this.rbNo.Name = "rbNo";
-            this.rbNo.Size = new System.Drawing.Size(39, 17);
-            this.rbNo.TabIndex = 30;
-            this.rbNo.TabStop = true;
-            this.rbNo.Text = "No";
-            this.rbNo.UseVisualStyleBackColor = true;
-            this.rbNo.CheckedChanged += new System.EventHandler(this.rbNo_CheckedChanged);
-            // 
-            // gboxGrupo
-            // 
-            this.gboxGrupo.Controls.Add(this.cbGrupo);
-            this.gboxGrupo.Controls.Add(this.rbNo);
-            this.gboxGrupo.Controls.Add(this.rbSi);
-            this.gboxGrupo.Location = new System.Drawing.Point(12, 346);
-            this.gboxGrupo.Name = "gboxGrupo";
-            this.gboxGrupo.Size = new System.Drawing.Size(321, 82);
-            this.gboxGrupo.TabIndex = 31;
-            this.gboxGrupo.TabStop = false;
-            this.gboxGrupo.Text = "Grupo Familiar";
-            // 
-            // cbGrupo
-            // 
-            this.cbGrupo.DataSource = this.grupoBindingSource;
-            this.cbGrupo.DisplayMember = "grupoApellido";
-            this.cbGrupo.FormattingEnabled = true;
-            this.cbGrupo.Location = new System.Drawing.Point(121, 42);
-            this.cbGrupo.Name = "cbGrupo";
-            this.cbGrupo.Size = new System.Drawing.Size(121, 21);
-            this.cbGrupo.TabIndex = 31;
-            this.cbGrupo.Visible = false;
             // 
             // grupoBindingSource
             // 
@@ -341,15 +304,6 @@
             this.rbMujer.Text = "Mujer";
             this.rbMujer.UseVisualStyleBackColor = true;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(12, 207);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(45, 13);
-            label1.TabIndex = 37;
-            label1.Text = "Genero:";
-            // 
             // txtNotas
             // 
             this.txtNotas.Enabled = false;
@@ -368,17 +322,57 @@
             this.lblNotas.TabIndex = 40;
             this.lblNotas.Text = "Notas";
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(12, 349);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(55, 13);
+            label2.TabIndex = 42;
+            label2.Text = "Categoria:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(12, 375);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(43, 13);
+            label3.TabIndex = 44;
+            label3.Text = "Estado:";
+            // 
+            // cbEstado
+            // 
+            this.cbEstado.AutoSize = true;
+            this.cbEstado.Location = new System.Drawing.Point(130, 372);
+            this.cbEstado.Name = "cbEstado";
+            this.cbEstado.Size = new System.Drawing.Size(56, 17);
+            this.cbEstado.TabIndex = 46;
+            this.cbEstado.Text = "Activo";
+            this.cbEstado.UseVisualStyleBackColor = true;
+            this.cbEstado.CheckedChanged += new System.EventHandler(this.cbEstado_CheckedChanged);
+            // 
+            // cbCategoria
+            // 
+            this.cbCategoria.FormattingEnabled = true;
+            this.cbCategoria.Location = new System.Drawing.Point(130, 345);
+            this.cbCategoria.Name = "cbCategoria";
+            this.cbCategoria.Size = new System.Drawing.Size(281, 21);
+            this.cbCategoria.TabIndex = 47;
+            // 
             // NuevoUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(432, 494);
+            this.ClientSize = new System.Drawing.Size(426, 457);
+            this.Controls.Add(this.cbCategoria);
+            this.Controls.Add(this.cbEstado);
+            this.Controls.Add(label2);
+            this.Controls.Add(label3);
             this.Controls.Add(this.txtNotas);
             this.Controls.Add(this.lblNotas);
             this.Controls.Add(this.rbHombre);
             this.Controls.Add(this.rbMujer);
             this.Controls.Add(label1);
-            this.Controls.Add(this.gboxGrupo);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.lblSocioID);
@@ -402,8 +396,6 @@
             this.Load += new System.EventHandler(this.NuevoUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.socioBindingSource)).EndInit();
-            this.gboxGrupo.ResumeLayout(false);
-            this.gboxGrupo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grupoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -427,14 +419,12 @@
         private System.Windows.Forms.Label lblSocioID;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.RadioButton rbSi;
-        private System.Windows.Forms.RadioButton rbNo;
-        private System.Windows.Forms.GroupBox gboxGrupo;
         private System.Windows.Forms.BindingSource grupoBindingSource;
-        internal System.Windows.Forms.ComboBox cbGrupo;
         public System.Windows.Forms.RadioButton rbHombre;
         public System.Windows.Forms.RadioButton rbMujer;
         public System.Windows.Forms.TextBox txtNotas;
         private System.Windows.Forms.Label lblNotas;
+        private System.Windows.Forms.CheckBox cbEstado;
+        private System.Windows.Forms.ComboBox cbCategoria;
     }
 }

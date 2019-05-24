@@ -51,5 +51,34 @@ namespace Principal
         {
             this.Close();
         }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guardar()
+        {
+            int flag;
+            if (cbAlergia.Checked)
+            {
+                flag = 1;
+            }
+            else
+            {
+                flag = 0;
+            }
+
+            Metodos guardarsalud = new Metodos();
+            guardarsalud.Inicializar();
+
+            string tabla = "Salud";
+            string setters = "saludAlergia, saludAlergiaDesc, saludSangre, saludMed, saludObraSoc, saludTelEm, saludExtra";
+            string valores = "'" + flag + "','" + txtDescripcion.Text + "','" + txtSangre.Text + "','" + txtMedicamentos.Text + "','" + txtObra.Text + "','" + txtTelefonoEmerg.Text + "','" + txtExtra.Text + "'";
+
+            guardarsalud.Insertar(tabla,setters,valores);
+
+
+        }
     }
 }

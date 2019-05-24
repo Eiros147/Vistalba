@@ -313,6 +313,6 @@
         private System.Windows.Forms.Button button1;
         private Club_VistalbaDataSetTableAdapters.SocioTableAdapter socioTableAdapter;
         private System.Windows.Forms.BindingSource socioBindingSource;
-        private System.Windows.Forms.Label lblNombre;
+        public System.Windows.Forms.Label lblNombre;
     }
 }

@@ -20,7 +20,10 @@ namespace Principal
             InitializeComponent();
             conModificar.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Club Vistalba.accdb;
 Persist Security Info=False;";
+           
         }
+
+        OleDbCommand comando = new OleDbCommand();
 
         void FillCombo()
         {
@@ -49,11 +52,9 @@ Persist Security Info=False;";
             txtMail.Enabled = true;
             txtTelefono.Enabled = true;
             cbCategoria.Enabled = true;
-            txtGrupo.Enabled = true;
-            dtpIngreso.Enabled = true;
-            dtpNacimiento.Enabled = true;
+            //dtpIngreso.Enabled = true;
+            //dtpNacimiento.Enabled = true;
             txtNotas.Enabled = true;
-            txtGrupo.Enabled = true;
             cbCategoria.Enabled = true;
         }
 
@@ -115,7 +116,16 @@ Persist Security Info=False;";
 
         private void btnSalud_Click(object sender, EventArgs e)
         {
+            conModificar.Open();
+            string query = "SELECT socioNombre FROM Socio WHERE socioID = " + lblID.Text + "";
+
+            comando.CommandText = query;
+            comando.Connection = conModificar;
+
+            string temporal = comando.ExecuteScalar().ToString();
+
             ModificarSalud salud = new ModificarSalud();
+            salud.lblNombre.Text = temporal;
             salud.ShowDialog();
         }
 
@@ -140,6 +150,12 @@ Persist Security Info=False;";
             {
                 cbEstado.Text = "Inactivo";
             }
+        }
+
+        private void btnGrupo_Click(object sender, EventArgs e)
+        {
+            ModificarGrupo modif = new ModificarGrupo();
+            modif.ShowDialog();
         }
     }
 }

@@ -89,7 +89,7 @@ namespace Principal
                 OleDbCommand comando = new OleDbCommand(query, conexion);
 
                 //Control de query para testeo de errores
-                //MessageBox.Show(query);
+                MessageBox.Show(query);
 
                 comando.ExecuteNonQuery();
                 MessageBox.Show(tabla + " actualizado");
@@ -103,7 +103,7 @@ namespace Principal
                 this.CerrarCon();
             }
         }
-
+               
         //Llenar tabla
         public void Llenardgv (string tabla, string valores, DataGridView dgv)
         {
@@ -197,25 +197,24 @@ namespace Principal
         }
 
         //Llenar textboxs
-        public void Llenartextbox(string valores, string tabla, string key, int id)
+        public void Llenartextbox(string valores, string tabla, string key, string id, TextBox tb)
         {
             try
             {
-                string query = "SELECT " + valores + " FROM " + tabla + " WHERE " + key + " = " + id + "";
+                string query = "SELECT " + valores + " FROM " + tabla + " WHERE " + key + " = '" + id + "'";
                 AbrirCon();
 
                 OleDbCommand comando = new OleDbCommand(query, conexion);
 
                 //Control de query para testeo de errores
-                //MessageBox.Show(query);
+                MessageBox.Show(query);
 
-                DataTable dt = new DataTable();
                 OleDbDataReader lector = null;
                 lector = comando.ExecuteReader();
 
-                while (lector.Read())
+                if (lector.Read())
                 {
-
+                    tb.Text = (lector[valores].ToString());
                 }
             }
             catch(Exception ex)

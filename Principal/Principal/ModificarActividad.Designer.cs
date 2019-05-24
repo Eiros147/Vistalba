@@ -241,7 +241,7 @@
         private System.Windows.Forms.Button btnHabilitar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.ComboBox cbProfesor;
+        public System.Windows.Forms.Label lblID;
     }
 }

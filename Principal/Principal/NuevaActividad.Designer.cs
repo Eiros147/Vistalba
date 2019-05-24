@@ -47,6 +47,8 @@
             this.cbProfesional = new System.Windows.Forms.ComboBox();
             this.profesionalBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.profesionalTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.ProfesionalTableAdapter();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txtID = new System.Windows.Forms.TextBox();
             actIdLabel = new System.Windows.Forms.Label();
             actDescLabel = new System.Windows.Forms.Label();
             profIdLabel = new System.Windows.Forms.Label();
@@ -201,11 +203,31 @@
             // 
             this.profesionalTableAdapter.ClearBeforeFill = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(237, 203);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 35);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Cancelar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // txtID
+            // 
+            this.txtID.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.actividadesBindingSource, "actMeses", true));
+            this.txtID.Location = new System.Drawing.Point(236, 169);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(100, 20);
+            this.txtID.TabIndex = 16;
+            // 
             // NuevaActividad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(348, 250);
+            this.Controls.Add(this.txtID);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.cbProfesional);
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.btnCancelar);
@@ -244,5 +266,7 @@
         private System.Windows.Forms.ComboBox cbProfesional;
         private System.Windows.Forms.BindingSource profesionalBindingSource;
         private Club_VistalbaDataSetTableAdapters.ProfesionalTableAdapter profesionalTableAdapter;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtID;
     }
 }
