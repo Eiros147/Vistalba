@@ -126,6 +126,8 @@ Persist Security Info=False;";
 
             ModificarSalud salud = new ModificarSalud();
             salud.lblNombre.Text = temporal;
+            salud.idsocio = Convert.ToInt32(lblID.Text);
+
             salud.ShowDialog();
         }
 

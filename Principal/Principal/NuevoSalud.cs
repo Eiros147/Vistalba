@@ -54,7 +54,8 @@ namespace Principal
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-
+            guardar();
+            this.Close();
         }
 
         private void guardar()

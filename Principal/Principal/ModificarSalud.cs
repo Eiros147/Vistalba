@@ -23,6 +23,8 @@ Persist Security Info=False;";
         }
         OleDbCommand comando = new OleDbCommand();
 
+        public int idsocio;
+
         private void saludBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
@@ -33,7 +35,45 @@ Persist Security Info=False;";
 
         private void ModificarSalud_Load(object sender, EventArgs e)
         {
-            
+            try
+            {
+                conModificar.Open();
+                OleDbCommand comando = new OleDbCommand();
+                comando.Connection = conModificar;
+                string query = "SELECT Socio.socioNombre, Salud.saludAlergia, Salud.saludAlergiaDesc, Salud.saludTelEm, Salud.saludExtra, Salud.saludObraSoc, Salud.saludSangre FROM (Socio INNER JOIN Salud ON Socio.socioID = Salud.socioID) WHERE Socio.socioID = " + idsocio + "";
+                comando.CommandText = query;
+
+                //Control
+                //MessageBox.Show(query);
+
+                OleDbDataReader lector = comando.ExecuteReader();
+
+                if (lector.Read())
+                {
+                    txtDescripcion.Text = (lector["saludAlergiaDesc"].ToString());
+                    txtEmergencia.Text = (lector["saludTelEm"].ToString());
+                    txtExtra.Text = (lector["saludExtra"].ToString());
+                    txtMedicamentos.Text = (lector["saludExtra"].ToString());
+                    txtObrasocial.Text = (lector["saludObraSoc"].ToString());
+                    txtSangre.Text = (lector["saludSangre"].ToString());
+
+                    if (lector["saludAlergia"].Equals(true))
+                    {
+                        cbAlergia.Checked = true;
+                    }else if (lector["saludAlergia"].Equals(false))
+                    {
+                        cbAlergia.Checked = false;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex);
+            }
+            finally
+            {
+                conModificar.Close();
+            }
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -71,6 +111,23 @@ Persist Security Info=False;";
             guardar.Update(tabla, id, seters, key);
 
             conModificar.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string algo = idsocio.ToString();
+            MessageBox.Show(algo);
+        }
+
+        private void cbAlergia_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbAlergia.Checked == true)
+            {
+                cbAlergia.Text = "Si";
+            }else if(cbAlergia.Checked == false)
+            {
+                cbAlergia.Text = "No";
+            }
         }
     }
 }

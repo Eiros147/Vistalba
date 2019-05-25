@@ -53,6 +53,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.socioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblNombre = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             saludAlergiaLabel = new System.Windows.Forms.Label();
             saludAlergiaDescLabel = new System.Windows.Forms.Label();
             saludSangreLabel = new System.Windows.Forms.Label();
@@ -178,6 +179,7 @@
             this.cbAlergia.TabIndex = 6;
             this.cbAlergia.Text = "Si";
             this.cbAlergia.UseVisualStyleBackColor = true;
+            this.cbAlergia.CheckedChanged += new System.EventHandler(this.cbAlergia_CheckedChanged);
             // 
             // txtDescripcion
             // 
@@ -262,11 +264,23 @@
             this.lblNombre.TabIndex = 22;
             this.lblNombre.Text = "Nombre Socio";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(142, 283);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 44);
+            this.button2.TabIndex = 23;
+            this.button2.Text = "Volver";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Visible = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // ModificarSalud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(359, 339);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(socioNombreLabel);
             this.Controls.Add(this.button1);
@@ -303,16 +317,17 @@
         private Club_VistalbaDataSetTableAdapters.SaludTableAdapter saludTableAdapter;
         private Club_VistalbaDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.CheckBox cbAlergia;
-        private System.Windows.Forms.TextBox txtDescripcion;
-        private System.Windows.Forms.TextBox txtSangre;
-        private System.Windows.Forms.TextBox txtMedicamentos;
-        private System.Windows.Forms.TextBox txtObrasocial;
-        private System.Windows.Forms.TextBox txtEmergencia;
-        private System.Windows.Forms.TextBox txtExtra;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Button button1;
         private Club_VistalbaDataSetTableAdapters.SocioTableAdapter socioTableAdapter;
         private System.Windows.Forms.BindingSource socioBindingSource;
         public System.Windows.Forms.Label lblNombre;
+        public System.Windows.Forms.TextBox txtDescripcion;
+        public System.Windows.Forms.TextBox txtSangre;
+        public System.Windows.Forms.TextBox txtMedicamentos;
+        public System.Windows.Forms.TextBox txtObrasocial;
+        public System.Windows.Forms.TextBox txtEmergencia;
+        public System.Windows.Forms.TextBox txtExtra;
+        private System.Windows.Forms.Button button2;
     }
 }
