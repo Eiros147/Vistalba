@@ -203,5 +203,77 @@ Persist Security Info=False;");
             Grupos nuevogrupo = new Grupos();
             nuevogrupo.ShowDialog();
         }
+
+        private void miPrimeraH_Click(object sender, EventArgs e)
+        {
+            string division = "Primera";
+            int genero = 1;
+            Divisiones primerah = new Divisiones(division, genero);
+            primerah.ShowDialog();
+        }
+
+        private void segundaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string division = "Segunda";
+            int genero = 1;
+            Divisiones segundah = new Divisiones(division, genero);
+            segundah.ShowDialog();
+        }
+
+        private void quintaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string division = "Quinta";
+            int genero = 1;
+            Divisiones quintah = new Divisiones(division, genero);
+            quintah.ShowDialog();
+        }
+
+        private void sextaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string division = "Sexta";
+            int genero = 1;
+            Divisiones sextah = new Divisiones(division, genero);
+            sextah.ShowDialog();
+        }
+
+        private void septimaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string division = "Septima";
+            int genero = 1;
+            Divisiones septimah = new Divisiones(division, genero);
+            septimah.ShowDialog();
+        }
+
+        private void miOctavaH_Click(object sender, EventArgs e)
+        {
+            string division = "Octava";
+            int genero = 1;
+            Divisiones octavah = new Divisiones(division, genero);
+            octavah.ShowDialog();
+        }
+
+        private void miNovenaH_Click(object sender, EventArgs e)
+        {
+            string division = "Novena";
+            int genero = 1;
+            Divisiones novenah = new Divisiones(division, genero);
+            novenah.ShowDialog();
+        }
+
+        private void miDecimaH_Click(object sender, EventArgs e)
+        {
+            string division = "Decima";
+            int genero = 1;
+            Divisiones decimah = new Divisiones(division, genero);
+            decimah.ShowDialog();
+        }
+
+        private void miPreDecimaH_Click(object sender, EventArgs e)
+        {
+            string division = "PreDecima";
+            int genero = 1;
+            Divisiones preh = new Divisiones(division, genero);
+            preh.ShowDialog();
+        }
     }
 }

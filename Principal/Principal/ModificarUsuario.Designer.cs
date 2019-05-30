@@ -61,7 +61,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.btnHabilitar = new System.Windows.Forms.Button();
             this.btnSalud = new System.Windows.Forms.Button();
-            this.btnGrupo = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.cbCategoria = new System.Windows.Forms.ComboBox();
             this.rbHombre = new System.Windows.Forms.RadioButton();
@@ -365,7 +364,7 @@
             // 
             // btnSalud
             // 
-            this.btnSalud.Location = new System.Drawing.Point(93, 458);
+            this.btnSalud.Location = new System.Drawing.Point(130, 458);
             this.btnSalud.Name = "btnSalud";
             this.btnSalud.Size = new System.Drawing.Size(75, 34);
             this.btnSalud.TabIndex = 30;
@@ -373,19 +372,9 @@
             this.btnSalud.UseVisualStyleBackColor = true;
             this.btnSalud.Click += new System.EventHandler(this.btnSalud_Click);
             // 
-            // btnGrupo
-            // 
-            this.btnGrupo.Location = new System.Drawing.Point(174, 458);
-            this.btnGrupo.Name = "btnGrupo";
-            this.btnGrupo.Size = new System.Drawing.Size(75, 34);
-            this.btnGrupo.TabIndex = 31;
-            this.btnGrupo.Text = "Grupo";
-            this.btnGrupo.UseVisualStyleBackColor = true;
-            this.btnGrupo.Click += new System.EventHandler(this.btnGrupo_Click);
-            // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(255, 458);
+            this.btnGuardar.Location = new System.Drawing.Point(235, 458);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 34);
             this.btnGuardar.TabIndex = 32;
@@ -470,7 +459,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(679, 538);
+            this.ClientSize = new System.Drawing.Size(679, 501);
             this.Controls.Add(this.cbEstado);
             this.Controls.Add(label2);
             this.Controls.Add(this.rbHombre);
@@ -481,7 +470,6 @@
             this.Controls.Add(label1);
             this.Controls.Add(this.cbCategoria);
             this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.btnGrupo);
             this.Controls.Add(this.btnSalud);
             this.Controls.Add(this.btnHabilitar);
             this.Controls.Add(this.button2);
@@ -538,7 +526,6 @@
         public System.Windows.Forms.TextBox txtCelular;
         private System.Windows.Forms.Button btnHabilitar;
         private System.Windows.Forms.Button btnSalud;
-        private System.Windows.Forms.Button btnGrupo;
         private System.Windows.Forms.Button btnGuardar;
         public System.Windows.Forms.Label lblID;
         private System.Windows.Forms.Label lblNotas;

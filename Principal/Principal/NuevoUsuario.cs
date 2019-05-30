@@ -144,5 +144,11 @@ Persist Security Info=False;";
                 cbEstado.Text = "Inactivo";
             }
         }
+
+        private void btnSalud_Click(object sender, EventArgs e)
+        {
+            NuevoSalud salud = new NuevoSalud();
+            salud.Show();
+        }
     }
 }

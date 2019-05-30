@@ -32,7 +32,7 @@ Persist Security Info=False;";
                 listado.Open();
                 OleDbCommand comando = new OleDbCommand();
                 comando.Connection = listado;
-                string query = "SELECT socioNombre, socioDNI, socioMail, socioTelefono FROM Socio";
+                string query = "SELECT socioNombre, socioDNI, socioMail, socioTelefono FROM Socio WHERE socioEstado = true ORDER BY socioNombre";
                 comando.CommandText = query;
 
                 OleDbDataAdapter da = new OleDbDataAdapter(comando);

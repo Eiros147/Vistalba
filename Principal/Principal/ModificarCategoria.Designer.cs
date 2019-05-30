@@ -35,6 +35,7 @@
             System.Windows.Forms.Label catMesActLabel;
             System.Windows.Forms.Label catMesInactLabel;
             System.Windows.Forms.Label catClubCardLabel;
+            System.Windows.Forms.Label label1;
             this.club_VistalbaDataSet = new Principal.Club_VistalbaDataSet();
             this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.categoriaTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.CategoriaTableAdapter();
@@ -44,15 +45,17 @@
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtMesAct = new System.Windows.Forms.TextBox();
-            this.txtMesInact = new System.Windows.Forms.TextBox();
             this.lblID = new System.Windows.Forms.Label();
             this.cbCard = new System.Windows.Forms.CheckBox();
+            this.txtMesInact = new System.Windows.Forms.TextBox();
+            this.cbCant = new System.Windows.Forms.ComboBox();
             catIDLabel = new System.Windows.Forms.Label();
             catDescLabel = new System.Windows.Forms.Label();
             catNombreLabel = new System.Windows.Forms.Label();
             catMesActLabel = new System.Windows.Forms.Label();
             catMesInactLabel = new System.Windows.Forms.Label();
             catClubCardLabel = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -96,16 +99,16 @@
             // catMesInactLabel
             // 
             catMesInactLabel.AutoSize = true;
-            catMesInactLabel.Location = new System.Drawing.Point(12, 122);
+            catMesInactLabel.Location = new System.Drawing.Point(12, 148);
             catMesInactLabel.Name = "catMesInactLabel";
-            catMesInactLabel.Size = new System.Drawing.Size(87, 13);
+            catMesInactLabel.Size = new System.Drawing.Size(98, 13);
             catMesInactLabel.TabIndex = 13;
-            catMesInactLabel.Text = "Meses Inactivos:";
+            catMesInactLabel.Text = "Cantidad personas:";
             // 
             // catClubCardLabel
             // 
             catClubCardLabel.AutoSize = true;
-            catClubCardLabel.Location = new System.Drawing.Point(12, 148);
+            catClubCardLabel.Location = new System.Drawing.Point(12, 174);
             catClubCardLabel.Name = "catClubCardLabel";
             catClubCardLabel.Size = new System.Drawing.Size(56, 13);
             catClubCardLabel.TabIndex = 15;
@@ -140,7 +143,7 @@
             // 
             // v
             // 
-            this.v.Location = new System.Drawing.Point(12, 180);
+            this.v.Location = new System.Drawing.Point(12, 197);
             this.v.Name = "v";
             this.v.Size = new System.Drawing.Size(75, 31);
             this.v.TabIndex = 4;
@@ -150,7 +153,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(130, 180);
+            this.btnCancelar.Location = new System.Drawing.Point(193, 197);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 31);
             this.btnCancelar.TabIndex = 5;
@@ -161,39 +164,31 @@
             // txtDescripcion
             // 
             this.txtDescripcion.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.categoriaBindingSource, "catDesc", true));
-            this.txtDescripcion.Location = new System.Drawing.Point(105, 37);
+            this.txtDescripcion.Location = new System.Drawing.Point(130, 37);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(100, 20);
+            this.txtDescripcion.Size = new System.Drawing.Size(138, 20);
             this.txtDescripcion.TabIndex = 8;
             // 
             // txtNombre
             // 
             this.txtNombre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.categoriaBindingSource, "catNombre", true));
-            this.txtNombre.Location = new System.Drawing.Point(105, 63);
+            this.txtNombre.Location = new System.Drawing.Point(130, 63);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(100, 20);
+            this.txtNombre.Size = new System.Drawing.Size(138, 20);
             this.txtNombre.TabIndex = 10;
             // 
             // txtMesAct
             // 
             this.txtMesAct.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.categoriaBindingSource, "catMesAct", true));
-            this.txtMesAct.Location = new System.Drawing.Point(105, 89);
+            this.txtMesAct.Location = new System.Drawing.Point(130, 89);
             this.txtMesAct.Name = "txtMesAct";
-            this.txtMesAct.Size = new System.Drawing.Size(100, 20);
+            this.txtMesAct.Size = new System.Drawing.Size(138, 20);
             this.txtMesAct.TabIndex = 12;
-            // 
-            // txtMesInact
-            // 
-            this.txtMesInact.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.categoriaBindingSource, "catMesInact", true));
-            this.txtMesInact.Location = new System.Drawing.Point(105, 115);
-            this.txtMesInact.Name = "txtMesInact";
-            this.txtMesInact.Size = new System.Drawing.Size(100, 20);
-            this.txtMesInact.TabIndex = 14;
             // 
             // lblID
             // 
             this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(102, 18);
+            this.lblID.Location = new System.Drawing.Point(127, 18);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(66, 13);
             this.lblID.TabIndex = 16;
@@ -202,7 +197,7 @@
             // cbCard
             // 
             this.cbCard.AutoSize = true;
-            this.cbCard.Location = new System.Drawing.Point(105, 147);
+            this.cbCard.Location = new System.Drawing.Point(130, 174);
             this.cbCard.Name = "cbCard";
             this.cbCard.Size = new System.Drawing.Size(92, 17);
             this.cbCard.TabIndex = 17;
@@ -210,11 +205,39 @@
             this.cbCard.UseVisualStyleBackColor = true;
             this.cbCard.CheckedChanged += new System.EventHandler(this.cbCard_CheckedChanged);
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(12, 122);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(87, 13);
+            label1.TabIndex = 18;
+            label1.Text = "Meses Inactivos:";
+            // 
+            // txtMesInact
+            // 
+            this.txtMesInact.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.categoriaBindingSource, "catMesAct", true));
+            this.txtMesInact.Location = new System.Drawing.Point(130, 115);
+            this.txtMesInact.Name = "txtMesInact";
+            this.txtMesInact.Size = new System.Drawing.Size(138, 20);
+            this.txtMesInact.TabIndex = 19;
+            // 
+            // cbCant
+            // 
+            this.cbCant.FormattingEnabled = true;
+            this.cbCant.Location = new System.Drawing.Point(130, 145);
+            this.cbCant.Name = "cbCant";
+            this.cbCant.Size = new System.Drawing.Size(138, 21);
+            this.cbCant.TabIndex = 20;
+            // 
             // ModificarCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(226, 225);
+            this.ClientSize = new System.Drawing.Size(280, 241);
+            this.Controls.Add(this.cbCant);
+            this.Controls.Add(label1);
+            this.Controls.Add(this.txtMesInact);
             this.Controls.Add(this.cbCard);
             this.Controls.Add(this.lblID);
             this.Controls.Add(catIDLabel);
@@ -225,7 +248,6 @@
             this.Controls.Add(catMesActLabel);
             this.Controls.Add(this.txtMesAct);
             this.Controls.Add(catMesInactLabel);
-            this.Controls.Add(this.txtMesInact);
             this.Controls.Add(catClubCardLabel);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.v);
@@ -251,7 +273,8 @@
         public System.Windows.Forms.Label lblID;
         public System.Windows.Forms.TextBox txtNombre;
         public System.Windows.Forms.TextBox txtMesAct;
-        public System.Windows.Forms.TextBox txtMesInact;
         public System.Windows.Forms.CheckBox cbCard;
+        public System.Windows.Forms.TextBox txtMesInact;
+        public System.Windows.Forms.ComboBox cbCant;
     }
 }

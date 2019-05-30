@@ -99,5 +99,17 @@ Persist Security Info=False;";
                 txtNombre.Text = cbCategoria.Text + lblID.Text;
             }
         }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            Metodos guardar = new Metodos();
+            guardar.Inicializar();
+
+            string tabla = "Grupo";
+            string seters = "grupoCategoria, grupoSocioPpal, grupoApellido, grupoNombre";
+            string valores = "'" + cbCategoria.Text + "','" + txtSocioPpal.Text + "','" + txtApellido.Text + "','" + txtNombre.Text + "'";
+
+            guardar.Insertar(tabla, seters, valores);
+        }
     }
 }

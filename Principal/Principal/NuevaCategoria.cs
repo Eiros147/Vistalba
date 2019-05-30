@@ -85,8 +85,8 @@ Persist Security Info=False;";
             }
 
             string tabla = "Categoria";
-            string sets = "catDesc, catNombre, catMesAct, catMesInact, catClubCard";
-            string valores = "'" + txtDescripcion + "','" + txtNombre + "'," + txtMesAct + "," + txtMesInact + "," + tarjeta;
+            string sets = "catDesc, catNombre, catMesAct, catMesInact, catClubCard, catCant";
+            string valores = "'" + txtDescripcion.Text + "','" + txtNombre.Text + "'," + txtMesAct.Text + "," + txtMesInact.Text + "," + tarjeta + "," + cbCant.Text;
 
             guardar.Inicializar();
             guardar.Insertar(tabla, sets, valores);

@@ -57,30 +57,30 @@
             this.smiInactivos = new System.Windows.Forms.ToolStripMenuItem();
             this.divisionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hombresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.primeraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.miPrimeraH = new System.Windows.Forms.ToolStripMenuItem();
             this.segundaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quintaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sextaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.septimaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.octavaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.novenaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.decimaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.miOctavaH = new System.Windows.Forms.ToolStripMenuItem();
+            this.miNovenaH = new System.Windows.Forms.ToolStripMenuItem();
+            this.miDecimaH = new System.Windows.Forms.ToolStripMenuItem();
+            this.miPreDecimaH = new System.Windows.Forms.ToolStripMenuItem();
             this.mujeresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.socioSaludBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.miPrimeraF = new System.Windows.Forms.ToolStripMenuItem();
+            this.miSegundaF = new System.Windows.Forms.ToolStripMenuItem();
+            this.miQuintaF = new System.Windows.Forms.ToolStripMenuItem();
+            this.miSextaF = new System.Windows.Forms.ToolStripMenuItem();
+            this.miSeptimaF = new System.Windows.Forms.ToolStripMenuItem();
+            this.miOctavaF = new System.Windows.Forms.ToolStripMenuItem();
+            this.miNovenaF = new System.Windows.Forms.ToolStripMenuItem();
+            this.miDecimaF = new System.Windows.Forms.ToolStripMenuItem();
+            this.miPreDecimaF = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.socioTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.SocioTableAdapter();
             this.tableAdapterManager = new Principal.Club_VistalbaDataSetTableAdapters.TableAdapterManager();
             this.saludTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.SaludTableAdapter();
-            this.preDecimaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.primeraToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.segundaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.quintaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.sextaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.septimaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.octavaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.novenaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.decimaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.preDecimaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.socioSaludBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSocio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.socioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).BeginInit();
@@ -315,87 +315,151 @@
             // hombresToolStripMenuItem
             // 
             this.hombresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.primeraToolStripMenuItem,
+            this.miPrimeraH,
             this.segundaToolStripMenuItem,
             this.quintaToolStripMenuItem,
             this.sextaToolStripMenuItem,
             this.septimaToolStripMenuItem,
-            this.octavaToolStripMenuItem,
-            this.novenaToolStripMenuItem,
-            this.decimaToolStripMenuItem,
-            this.preDecimaToolStripMenuItem});
+            this.miOctavaH,
+            this.miNovenaH,
+            this.miDecimaH,
+            this.miPreDecimaH});
             this.hombresToolStripMenuItem.Name = "hombresToolStripMenuItem";
             this.hombresToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.hombresToolStripMenuItem.Text = "Hombres";
             // 
-            // primeraToolStripMenuItem
+            // miPrimeraH
             // 
-            this.primeraToolStripMenuItem.Name = "primeraToolStripMenuItem";
-            this.primeraToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.primeraToolStripMenuItem.Text = "Primera";
+            this.miPrimeraH.Name = "miPrimeraH";
+            this.miPrimeraH.Size = new System.Drawing.Size(152, 22);
+            this.miPrimeraH.Text = "Primera";
+            this.miPrimeraH.Click += new System.EventHandler(this.miPrimeraH_Click);
             // 
             // segundaToolStripMenuItem
             // 
             this.segundaToolStripMenuItem.Name = "segundaToolStripMenuItem";
             this.segundaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.segundaToolStripMenuItem.Text = "Segunda";
+            this.segundaToolStripMenuItem.Click += new System.EventHandler(this.segundaToolStripMenuItem_Click);
             // 
             // quintaToolStripMenuItem
             // 
             this.quintaToolStripMenuItem.Name = "quintaToolStripMenuItem";
             this.quintaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.quintaToolStripMenuItem.Text = "Quinta";
+            this.quintaToolStripMenuItem.Click += new System.EventHandler(this.quintaToolStripMenuItem_Click);
             // 
             // sextaToolStripMenuItem
             // 
             this.sextaToolStripMenuItem.Name = "sextaToolStripMenuItem";
             this.sextaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.sextaToolStripMenuItem.Text = "Sexta";
+            this.sextaToolStripMenuItem.Click += new System.EventHandler(this.sextaToolStripMenuItem_Click);
             // 
             // septimaToolStripMenuItem
             // 
             this.septimaToolStripMenuItem.Name = "septimaToolStripMenuItem";
             this.septimaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.septimaToolStripMenuItem.Text = "Septima";
+            this.septimaToolStripMenuItem.Click += new System.EventHandler(this.septimaToolStripMenuItem_Click);
             // 
-            // octavaToolStripMenuItem
+            // miOctavaH
             // 
-            this.octavaToolStripMenuItem.Name = "octavaToolStripMenuItem";
-            this.octavaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.octavaToolStripMenuItem.Text = "Octava";
+            this.miOctavaH.Name = "miOctavaH";
+            this.miOctavaH.Size = new System.Drawing.Size(152, 22);
+            this.miOctavaH.Text = "Octava";
+            this.miOctavaH.Click += new System.EventHandler(this.miOctavaH_Click);
             // 
-            // novenaToolStripMenuItem
+            // miNovenaH
             // 
-            this.novenaToolStripMenuItem.Name = "novenaToolStripMenuItem";
-            this.novenaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.novenaToolStripMenuItem.Text = "Novena";
+            this.miNovenaH.Name = "miNovenaH";
+            this.miNovenaH.Size = new System.Drawing.Size(152, 22);
+            this.miNovenaH.Text = "Novena";
+            this.miNovenaH.Click += new System.EventHandler(this.miNovenaH_Click);
             // 
-            // decimaToolStripMenuItem
+            // miDecimaH
             // 
-            this.decimaToolStripMenuItem.Name = "decimaToolStripMenuItem";
-            this.decimaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.decimaToolStripMenuItem.Text = "Decima";
+            this.miDecimaH.Name = "miDecimaH";
+            this.miDecimaH.Size = new System.Drawing.Size(152, 22);
+            this.miDecimaH.Text = "Decima";
+            this.miDecimaH.Click += new System.EventHandler(this.miDecimaH_Click);
+            // 
+            // miPreDecimaH
+            // 
+            this.miPreDecimaH.Name = "miPreDecimaH";
+            this.miPreDecimaH.Size = new System.Drawing.Size(152, 22);
+            this.miPreDecimaH.Text = "Pre-Decima";
+            this.miPreDecimaH.Click += new System.EventHandler(this.miPreDecimaH_Click);
             // 
             // mujeresToolStripMenuItem
             // 
             this.mujeresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.primeraToolStripMenuItem1,
-            this.segundaToolStripMenuItem1,
-            this.quintaToolStripMenuItem1,
-            this.sextaToolStripMenuItem1,
-            this.septimaToolStripMenuItem1,
-            this.octavaToolStripMenuItem1,
-            this.novenaToolStripMenuItem1,
-            this.decimaToolStripMenuItem1,
-            this.preDecimaToolStripMenuItem1});
+            this.miPrimeraF,
+            this.miSegundaF,
+            this.miQuintaF,
+            this.miSextaF,
+            this.miSeptimaF,
+            this.miOctavaF,
+            this.miNovenaF,
+            this.miDecimaF,
+            this.miPreDecimaF});
             this.mujeresToolStripMenuItem.Name = "mujeresToolStripMenuItem";
             this.mujeresToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.mujeresToolStripMenuItem.Text = "Mujeres";
             // 
-            // socioSaludBindingSource
+            // miPrimeraF
             // 
-            this.socioSaludBindingSource.DataMember = "SocioSalud";
-            this.socioSaludBindingSource.DataSource = this.socioBindingSource;
+            this.miPrimeraF.Name = "miPrimeraF";
+            this.miPrimeraF.Size = new System.Drawing.Size(152, 22);
+            this.miPrimeraF.Text = "Primera";
+            // 
+            // miSegundaF
+            // 
+            this.miSegundaF.Name = "miSegundaF";
+            this.miSegundaF.Size = new System.Drawing.Size(152, 22);
+            this.miSegundaF.Text = "Segunda";
+            // 
+            // miQuintaF
+            // 
+            this.miQuintaF.Name = "miQuintaF";
+            this.miQuintaF.Size = new System.Drawing.Size(152, 22);
+            this.miQuintaF.Text = "Quinta";
+            // 
+            // miSextaF
+            // 
+            this.miSextaF.Name = "miSextaF";
+            this.miSextaF.Size = new System.Drawing.Size(152, 22);
+            this.miSextaF.Text = "Sexta";
+            // 
+            // miSeptimaF
+            // 
+            this.miSeptimaF.Name = "miSeptimaF";
+            this.miSeptimaF.Size = new System.Drawing.Size(152, 22);
+            this.miSeptimaF.Text = "Septima";
+            // 
+            // miOctavaF
+            // 
+            this.miOctavaF.Name = "miOctavaF";
+            this.miOctavaF.Size = new System.Drawing.Size(152, 22);
+            this.miOctavaF.Text = "Octava";
+            // 
+            // miNovenaF
+            // 
+            this.miNovenaF.Name = "miNovenaF";
+            this.miNovenaF.Size = new System.Drawing.Size(152, 22);
+            this.miNovenaF.Text = "Novena";
+            // 
+            // miDecimaF
+            // 
+            this.miDecimaF.Name = "miDecimaF";
+            this.miDecimaF.Size = new System.Drawing.Size(152, 22);
+            this.miDecimaF.Text = "Decima";
+            // 
+            // miPreDecimaF
+            // 
+            this.miPreDecimaF.Name = "miPreDecimaF";
+            this.miPreDecimaF.Size = new System.Drawing.Size(152, 22);
+            this.miPreDecimaF.Text = "Pre-Decima";
             // 
             // label1
             // 
@@ -428,65 +492,10 @@
             // 
             this.saludTableAdapter.ClearBeforeFill = true;
             // 
-            // preDecimaToolStripMenuItem
+            // socioSaludBindingSource
             // 
-            this.preDecimaToolStripMenuItem.Name = "preDecimaToolStripMenuItem";
-            this.preDecimaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.preDecimaToolStripMenuItem.Text = "Pre-Decima";
-            // 
-            // primeraToolStripMenuItem1
-            // 
-            this.primeraToolStripMenuItem1.Name = "primeraToolStripMenuItem1";
-            this.primeraToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.primeraToolStripMenuItem1.Text = "Primera";
-            // 
-            // segundaToolStripMenuItem1
-            // 
-            this.segundaToolStripMenuItem1.Name = "segundaToolStripMenuItem1";
-            this.segundaToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.segundaToolStripMenuItem1.Text = "Segunda";
-            // 
-            // quintaToolStripMenuItem1
-            // 
-            this.quintaToolStripMenuItem1.Name = "quintaToolStripMenuItem1";
-            this.quintaToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.quintaToolStripMenuItem1.Text = "Quinta";
-            // 
-            // sextaToolStripMenuItem1
-            // 
-            this.sextaToolStripMenuItem1.Name = "sextaToolStripMenuItem1";
-            this.sextaToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.sextaToolStripMenuItem1.Text = "Sexta";
-            // 
-            // septimaToolStripMenuItem1
-            // 
-            this.septimaToolStripMenuItem1.Name = "septimaToolStripMenuItem1";
-            this.septimaToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.septimaToolStripMenuItem1.Text = "Septima";
-            // 
-            // octavaToolStripMenuItem1
-            // 
-            this.octavaToolStripMenuItem1.Name = "octavaToolStripMenuItem1";
-            this.octavaToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.octavaToolStripMenuItem1.Text = "Octava";
-            // 
-            // novenaToolStripMenuItem1
-            // 
-            this.novenaToolStripMenuItem1.Name = "novenaToolStripMenuItem1";
-            this.novenaToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.novenaToolStripMenuItem1.Text = "Novena";
-            // 
-            // decimaToolStripMenuItem1
-            // 
-            this.decimaToolStripMenuItem1.Name = "decimaToolStripMenuItem1";
-            this.decimaToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.decimaToolStripMenuItem1.Text = "Decima";
-            // 
-            // preDecimaToolStripMenuItem1
-            // 
-            this.preDecimaToolStripMenuItem1.Name = "preDecimaToolStripMenuItem1";
-            this.preDecimaToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.preDecimaToolStripMenuItem1.Text = "Pre-Decima";
+            this.socioSaludBindingSource.DataMember = "SocioSalud";
+            this.socioSaludBindingSource.DataSource = this.socioBindingSource;
             // 
             // Form1
             // 
@@ -551,25 +560,25 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem divisionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hombresToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem primeraToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem miPrimeraH;
         private System.Windows.Forms.ToolStripMenuItem segundaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quintaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sextaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem septimaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem octavaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem novenaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem decimaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem miOctavaH;
+        private System.Windows.Forms.ToolStripMenuItem miNovenaH;
+        private System.Windows.Forms.ToolStripMenuItem miDecimaH;
         private System.Windows.Forms.ToolStripMenuItem mujeresToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem preDecimaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem primeraToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem segundaToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem quintaToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem sextaToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem septimaToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem octavaToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem novenaToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem decimaToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem preDecimaToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem miPreDecimaH;
+        private System.Windows.Forms.ToolStripMenuItem miPrimeraF;
+        private System.Windows.Forms.ToolStripMenuItem miSegundaF;
+        private System.Windows.Forms.ToolStripMenuItem miQuintaF;
+        private System.Windows.Forms.ToolStripMenuItem miSextaF;
+        private System.Windows.Forms.ToolStripMenuItem miSeptimaF;
+        private System.Windows.Forms.ToolStripMenuItem miOctavaF;
+        private System.Windows.Forms.ToolStripMenuItem miNovenaF;
+        private System.Windows.Forms.ToolStripMenuItem miDecimaF;
+        private System.Windows.Forms.ToolStripMenuItem miPreDecimaF;
     }
 }
 

@@ -38,7 +38,7 @@ namespace Principal
         private void v_Click(object sender, EventArgs e)
         {
             string tabla = "Categoria";
-            string values = "catNombre ='" + txtNombre.Text + "', catDesc = '" + txtDescripcion.Text + "'";
+            string values = "catNombre ='" + txtNombre.Text + "', catDesc = '" + txtDescripcion.Text + "', catCant = " + cbCant.Text + "";
             int id = Convert.ToInt32(lblID.Text);
             string key = "catID";
 

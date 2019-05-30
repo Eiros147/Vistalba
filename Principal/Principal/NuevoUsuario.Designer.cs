@@ -62,6 +62,7 @@
             this.lblNotas = new System.Windows.Forms.Label();
             this.cbEstado = new System.Windows.Forms.CheckBox();
             this.cbCategoria = new System.Windows.Forms.ComboBox();
+            this.btnSalud = new System.Windows.Forms.Button();
             socioIDLabel = new System.Windows.Forms.Label();
             socioNombreLabel = new System.Windows.Forms.Label();
             socioDNILabel = new System.Windows.Forms.Label();
@@ -158,6 +159,24 @@
             label1.Size = new System.Drawing.Size(45, 13);
             label1.TabIndex = 37;
             label1.Text = "Genero:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(12, 349);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(55, 13);
+            label2.TabIndex = 42;
+            label2.Text = "Categoria:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(12, 375);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(43, 13);
+            label3.TabIndex = 44;
+            label3.Text = "Estado:";
             // 
             // club_VistalbaDataSet
             // 
@@ -322,24 +341,6 @@
             this.lblNotas.TabIndex = 40;
             this.lblNotas.Text = "Notas";
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(12, 349);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(55, 13);
-            label2.TabIndex = 42;
-            label2.Text = "Categoria:";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(12, 375);
-            label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(43, 13);
-            label3.TabIndex = 44;
-            label3.Text = "Estado:";
-            // 
             // cbEstado
             // 
             this.cbEstado.AutoSize = true;
@@ -359,11 +360,22 @@
             this.cbCategoria.Size = new System.Drawing.Size(281, 21);
             this.cbCategoria.TabIndex = 47;
             // 
+            // btnSalud
+            // 
+            this.btnSalud.Location = new System.Drawing.Point(177, 408);
+            this.btnSalud.Name = "btnSalud";
+            this.btnSalud.Size = new System.Drawing.Size(75, 38);
+            this.btnSalud.TabIndex = 48;
+            this.btnSalud.Text = "Salud";
+            this.btnSalud.UseVisualStyleBackColor = true;
+            this.btnSalud.Click += new System.EventHandler(this.btnSalud_Click);
+            // 
             // NuevoUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(426, 457);
+            this.Controls.Add(this.btnSalud);
             this.Controls.Add(this.cbCategoria);
             this.Controls.Add(this.cbEstado);
             this.Controls.Add(label2);
@@ -426,5 +438,6 @@
         private System.Windows.Forms.Label lblNotas;
         private System.Windows.Forms.CheckBox cbEstado;
         private System.Windows.Forms.ComboBox cbCategoria;
+        private System.Windows.Forms.Button btnSalud;
     }
 }
