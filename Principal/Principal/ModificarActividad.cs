@@ -73,10 +73,11 @@ Persist Security Info=False;";
             string valor = "profNombre";
             string tabla = "Profesional";
             string id = "profId";
+            string ordenador = "profNombre";
 
             Metodos elegirprof = new Metodos();
             elegirprof.Inicializar();
-            elegirprof.LlenarCombo(valor, tabla, cb, id);
+            elegirprof.LlenarCombo(valor, tabla, cb, id, ordenador);
         }
     }
 }

@@ -39,10 +39,11 @@ namespace Principal
             string valor = "catNombre";
             string tabla = "Categoria";
             string id = "catID";
+            string ordenador = "catNombre";
 
             Metodos cargar = new Metodos();
             cargar.Inicializar();
-            cargar.LlenarCombo(valor, tabla, cb, id);
+            cargar.LlenarCombo(valor, tabla, cb, id, ordenador);
         }
     }
 }

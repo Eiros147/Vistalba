@@ -275,5 +275,77 @@ Persist Security Info=False;");
             Divisiones preh = new Divisiones(division, genero);
             preh.ShowDialog();
         }
+
+        private void miPrimeraF_Click(object sender, EventArgs e)
+        {
+            string division = "Primera";
+            int genero = 0;
+            Divisiones primf = new Divisiones(division, genero);
+            primf.ShowDialog();
+        }
+
+        private void miSegundaF_Click(object sender, EventArgs e)
+        {
+            string division = "Segunda";
+            int genero = 0;
+            Divisiones segf = new Divisiones(division, genero);
+            segf.ShowDialog();
+        }
+
+        private void miQuintaF_Click(object sender, EventArgs e)
+        {
+            string division = "Quinta";
+            int genero = 0;
+            Divisiones quintaf = new Divisiones(division, genero);
+            quintaf.ShowDialog();
+        }
+
+        private void miSextaF_Click(object sender, EventArgs e)
+        {
+            string division = "Sexta";
+            int genero = 0;
+            Divisiones sextaf = new Divisiones(division, genero);
+            sextaf.ShowDialog();
+        }
+
+        private void miSeptimaF_Click(object sender, EventArgs e)
+        {
+            string division = "Septima";
+            int genero = 0;
+            Divisiones septimaf = new Divisiones(division, genero);
+            septimaf.ShowDialog();
+        }
+
+        private void miOctavaF_Click(object sender, EventArgs e)
+        {
+            string division = "Octava";
+            int genero = 0;
+            Divisiones octavaf = new Divisiones(division, genero);
+            octavaf.ShowDialog();
+        }
+
+        private void miNovenaF_Click(object sender, EventArgs e)
+        {
+            string division = "Novena";
+            int genero = 0;
+            Divisiones novenaf = new Divisiones(division, genero);
+            novenaf.ShowDialog();
+        }
+
+        private void miDecimaF_Click(object sender, EventArgs e)
+        {
+            string division = "Decima";
+            int genero = 0;
+            Divisiones decimaf = new Divisiones(division, genero);
+            decimaf.ShowDialog();
+        }
+
+        private void miPreDecimaF_Click(object sender, EventArgs e)
+        {
+            string division = "PreDecima";
+            int genero = 0;
+            Divisiones predecimaf = new Divisiones(division, genero);
+            predecimaf.ShowDialog();
+        }
     }
 }

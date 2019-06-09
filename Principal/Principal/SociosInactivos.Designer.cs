@@ -93,7 +93,6 @@
             this.Controls.Add(this.txtBusqueda);
             this.Controls.Add(this.dgvInactivos);
             this.Name = "SociosInactivos";
-            this.Text = "SociosInactivos";
             this.Activated += new System.EventHandler(this.SociosInactivos_Activated);
             this.Load += new System.EventHandler(this.SociosInactivos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvInactivos)).EndInit();

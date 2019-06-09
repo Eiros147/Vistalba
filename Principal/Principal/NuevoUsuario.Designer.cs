@@ -325,7 +325,6 @@
             // 
             // txtNotas
             // 
-            this.txtNotas.Enabled = false;
             this.txtNotas.Location = new System.Drawing.Point(130, 254);
             this.txtNotas.Multiline = true;
             this.txtNotas.Name = "txtNotas";

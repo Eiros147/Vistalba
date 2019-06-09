@@ -27,6 +27,8 @@ Persist Security Info=False;");
             cargar();
 
             formatear();
+
+            this.AutoSize = true;
         }
 
         private void cargar()

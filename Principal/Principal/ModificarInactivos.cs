@@ -31,5 +31,17 @@ namespace Principal
             this.socioTableAdapter.Fill(this.club_VistalbaDataSet.Socio);
 
         }
+
+        private void cbEstado_CheckedChanged(object sender, EventArgs e)
+        {
+            if(cbEstado.Checked == true)
+            {
+                cbEstado.Text = "Activo";
+            }
+            else if(cbEstado.Checked == false)
+            {
+                cbEstado.Text = "Inactivo";
+            }
+        }
     }
 }

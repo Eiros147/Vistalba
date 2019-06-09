@@ -246,11 +246,11 @@ namespace Principal
         }
 
         //Llenar combobox
-        public void LlenarCombo(string valor, string tabla,ComboBox cb,string id)
+        public void LlenarCombo(string valor, string tabla,ComboBox cb,string id, string orden)
         {
             try
             {
-                string query = "SELECT " + valor + " FROM " +tabla;
+                string query = "SELECT " + valor + " FROM " +tabla+ " ORDER BY " + orden;
                 AbrirCon();
 
                 OleDbCommand comando = new OleDbCommand(query, conexion);

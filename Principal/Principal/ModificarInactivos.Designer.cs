@@ -62,8 +62,10 @@
             this.socioCategoriaTextBox = new System.Windows.Forms.TextBox();
             this.socioNivelTextBox = new System.Windows.Forms.TextBox();
             this.cbEstado = new System.Windows.Forms.CheckBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.rbHombre = new System.Windows.Forms.RadioButton();
+            this.rbMujer = new System.Windows.Forms.RadioButton();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             socioIDLabel = new System.Windows.Forms.Label();
             socioNombreLabel = new System.Windows.Forms.Label();
             socioDNILabel = new System.Windows.Forms.Label();
@@ -97,81 +99,81 @@
             socioNombreLabel.AutoSize = true;
             socioNombreLabel.Location = new System.Drawing.Point(13, 56);
             socioNombreLabel.Name = "socioNombreLabel";
-            socioNombreLabel.Size = new System.Drawing.Size(75, 13);
+            socioNombreLabel.Size = new System.Drawing.Size(47, 13);
             socioNombreLabel.TabIndex = 3;
-            socioNombreLabel.Text = "socio Nombre:";
+            socioNombreLabel.Text = "Nombre:";
             // 
             // socioDNILabel
             // 
             socioDNILabel.AutoSize = true;
             socioDNILabel.Location = new System.Drawing.Point(13, 82);
             socioDNILabel.Name = "socioDNILabel";
-            socioDNILabel.Size = new System.Drawing.Size(57, 13);
+            socioDNILabel.Size = new System.Drawing.Size(29, 13);
             socioDNILabel.TabIndex = 5;
-            socioDNILabel.Text = "socio DNI:";
+            socioDNILabel.Text = "DNI:";
             // 
             // socioDireccionLabel
             // 
             socioDireccionLabel.AutoSize = true;
             socioDireccionLabel.Location = new System.Drawing.Point(13, 108);
             socioDireccionLabel.Name = "socioDireccionLabel";
-            socioDireccionLabel.Size = new System.Drawing.Size(83, 13);
+            socioDireccionLabel.Size = new System.Drawing.Size(55, 13);
             socioDireccionLabel.TabIndex = 7;
-            socioDireccionLabel.Text = "socio Direccion:";
+            socioDireccionLabel.Text = "Direccion:";
             // 
             // socioMailLabel
             // 
             socioMailLabel.AutoSize = true;
             socioMailLabel.Location = new System.Drawing.Point(13, 134);
             socioMailLabel.Name = "socioMailLabel";
-            socioMailLabel.Size = new System.Drawing.Size(57, 13);
+            socioMailLabel.Size = new System.Drawing.Size(39, 13);
             socioMailLabel.TabIndex = 9;
-            socioMailLabel.Text = "socio Mail:";
+            socioMailLabel.Text = "E-Mail:";
             // 
             // socioTelefonoLabel
             // 
             socioTelefonoLabel.AutoSize = true;
             socioTelefonoLabel.Location = new System.Drawing.Point(13, 160);
             socioTelefonoLabel.Name = "socioTelefonoLabel";
-            socioTelefonoLabel.Size = new System.Drawing.Size(80, 13);
+            socioTelefonoLabel.Size = new System.Drawing.Size(52, 13);
             socioTelefonoLabel.TabIndex = 11;
-            socioTelefonoLabel.Text = "socio Telefono:";
+            socioTelefonoLabel.Text = "Teléfono:";
             // 
             // socioCelularLabel
             // 
             socioCelularLabel.AutoSize = true;
             socioCelularLabel.Location = new System.Drawing.Point(13, 186);
             socioCelularLabel.Name = "socioCelularLabel";
-            socioCelularLabel.Size = new System.Drawing.Size(70, 13);
+            socioCelularLabel.Size = new System.Drawing.Size(42, 13);
             socioCelularLabel.TabIndex = 13;
-            socioCelularLabel.Text = "socio Celular:";
+            socioCelularLabel.Text = "Celular:";
             // 
             // socioFechaNacLabel
             // 
             socioFechaNacLabel.AutoSize = true;
             socioFechaNacLabel.Location = new System.Drawing.Point(10, 239);
             socioFechaNacLabel.Name = "socioFechaNacLabel";
-            socioFechaNacLabel.Size = new System.Drawing.Size(91, 13);
+            socioFechaNacLabel.Size = new System.Drawing.Size(96, 13);
             socioFechaNacLabel.TabIndex = 15;
-            socioFechaNacLabel.Text = "socio Fecha Nac:";
+            socioFechaNacLabel.Text = "Fecha Nacimiento:";
             // 
             // socioFechaIngLabel
             // 
             socioFechaIngLabel.AutoSize = true;
             socioFechaIngLabel.Location = new System.Drawing.Point(10, 265);
             socioFechaIngLabel.Name = "socioFechaIngLabel";
-            socioFechaIngLabel.Size = new System.Drawing.Size(86, 13);
+            socioFechaIngLabel.Size = new System.Drawing.Size(78, 13);
             socioFechaIngLabel.TabIndex = 17;
-            socioFechaIngLabel.Text = "socio Fecha Ing:";
+            socioFechaIngLabel.Text = "Fecha Ingreso:";
             // 
             // socioFechaUltPagoLabel
             // 
             socioFechaUltPagoLabel.AutoSize = true;
             socioFechaUltPagoLabel.Location = new System.Drawing.Point(10, 291);
             socioFechaUltPagoLabel.Name = "socioFechaUltPagoLabel";
-            socioFechaUltPagoLabel.Size = new System.Drawing.Size(112, 13);
+            socioFechaUltPagoLabel.Size = new System.Drawing.Size(100, 13);
             socioFechaUltPagoLabel.TabIndex = 19;
-            socioFechaUltPagoLabel.Text = "socio Fecha Ult Pago:";
+            socioFechaUltPagoLabel.Text = "Fecha Último Pago:";
             // 
             // catIdLabel
             // 
@@ -187,9 +189,9 @@
             socioGeneroLabel.AutoSize = true;
             socioGeneroLabel.Location = new System.Drawing.Point(13, 214);
             socioGeneroLabel.Name = "socioGeneroLabel";
-            socioGeneroLabel.Size = new System.Drawing.Size(73, 13);
+            socioGeneroLabel.Size = new System.Drawing.Size(45, 13);
             socioGeneroLabel.TabIndex = 25;
-            socioGeneroLabel.Text = "socio Genero:";
+            socioGeneroLabel.Text = "Genero:";
             // 
             // socioCategoriaLabel
             // 
@@ -259,7 +261,7 @@
             this.txtNombre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.socioBindingSource, "socioNombre", true));
             this.txtNombre.Location = new System.Drawing.Point(131, 53);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(200, 20);
+            this.txtNombre.Size = new System.Drawing.Size(280, 20);
             this.txtNombre.TabIndex = 4;
             // 
             // txtDNI
@@ -267,7 +269,7 @@
             this.txtDNI.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.socioBindingSource, "socioDNI", true));
             this.txtDNI.Location = new System.Drawing.Point(131, 79);
             this.txtDNI.Name = "txtDNI";
-            this.txtDNI.Size = new System.Drawing.Size(200, 20);
+            this.txtDNI.Size = new System.Drawing.Size(280, 20);
             this.txtDNI.TabIndex = 6;
             // 
             // txtDireccion
@@ -275,7 +277,7 @@
             this.txtDireccion.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.socioBindingSource, "socioDireccion", true));
             this.txtDireccion.Location = new System.Drawing.Point(131, 105);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(200, 20);
+            this.txtDireccion.Size = new System.Drawing.Size(280, 20);
             this.txtDireccion.TabIndex = 8;
             // 
             // txtMail
@@ -283,7 +285,7 @@
             this.txtMail.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.socioBindingSource, "socioMail", true));
             this.txtMail.Location = new System.Drawing.Point(131, 131);
             this.txtMail.Name = "txtMail";
-            this.txtMail.Size = new System.Drawing.Size(200, 20);
+            this.txtMail.Size = new System.Drawing.Size(280, 20);
             this.txtMail.TabIndex = 10;
             // 
             // txtTelefono
@@ -291,7 +293,7 @@
             this.txtTelefono.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.socioBindingSource, "socioTelefono", true));
             this.txtTelefono.Location = new System.Drawing.Point(131, 157);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(200, 20);
+            this.txtTelefono.Size = new System.Drawing.Size(280, 20);
             this.txtTelefono.TabIndex = 12;
             // 
             // txtCelular
@@ -299,7 +301,7 @@
             this.txtCelular.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.socioBindingSource, "socioCelular", true));
             this.txtCelular.Location = new System.Drawing.Point(131, 183);
             this.txtCelular.Name = "txtCelular";
-            this.txtCelular.Size = new System.Drawing.Size(200, 20);
+            this.txtCelular.Size = new System.Drawing.Size(280, 20);
             this.txtCelular.TabIndex = 14;
             // 
             // socioFechaNacDateTimePicker
@@ -313,6 +315,7 @@
             // socioFechaIngDateTimePicker
             // 
             this.socioFechaIngDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.socioBindingSource, "socioFechaIng", true));
+            this.socioFechaIngDateTimePicker.Enabled = false;
             this.socioFechaIngDateTimePicker.Location = new System.Drawing.Point(128, 261);
             this.socioFechaIngDateTimePicker.Name = "socioFechaIngDateTimePicker";
             this.socioFechaIngDateTimePicker.Size = new System.Drawing.Size(200, 20);
@@ -359,36 +362,57 @@
             this.cbEstado.TabIndex = 36;
             this.cbEstado.Text = "Inactivo";
             this.cbEstado.UseVisualStyleBackColor = true;
+            this.cbEstado.CheckedChanged += new System.EventHandler(this.cbEstado_CheckedChanged);
             // 
-            // radioButton1
+            // rbHombre
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(131, 212);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(85, 17);
-            this.radioButton1.TabIndex = 37;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "radioButton1";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbHombre.AutoSize = true;
+            this.rbHombre.Location = new System.Drawing.Point(131, 212);
+            this.rbHombre.Name = "rbHombre";
+            this.rbHombre.Size = new System.Drawing.Size(62, 17);
+            this.rbHombre.TabIndex = 37;
+            this.rbHombre.TabStop = true;
+            this.rbHombre.Text = "Hombre";
+            this.rbHombre.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rbMujer
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(211, 212);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(85, 17);
-            this.radioButton2.TabIndex = 38;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "radioButton2";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbMujer.AutoSize = true;
+            this.rbMujer.Location = new System.Drawing.Point(211, 212);
+            this.rbMujer.Name = "rbMujer";
+            this.rbMujer.Size = new System.Drawing.Size(51, 17);
+            this.rbMujer.TabIndex = 38;
+            this.rbMujer.TabStop = true;
+            this.rbMujer.Text = "Mujer";
+            this.rbMujer.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(11, 445);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 38);
+            this.button1.TabIndex = 39;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(253, 445);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 38);
+            this.button2.TabIndex = 40;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // ModificarInactivos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(431, 441);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.ClientSize = new System.Drawing.Size(449, 499);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.rbMujer);
+            this.Controls.Add(this.rbHombre);
             this.Controls.Add(socioIDLabel);
             this.Controls.Add(this.lblID);
             this.Controls.Add(socioNombreLabel);
@@ -448,7 +472,9 @@
         private System.Windows.Forms.TextBox socioCategoriaTextBox;
         private System.Windows.Forms.TextBox socioNivelTextBox;
         private System.Windows.Forms.CheckBox cbEstado;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton rbHombre;
+        private System.Windows.Forms.RadioButton rbMujer;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

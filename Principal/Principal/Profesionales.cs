@@ -51,7 +51,7 @@ Persist Security Info=False;");
         void modificar()
         {
             conexion.Open();
-            string query = "SELECT profId FROM Profesional WHERE profNombre ='" + dgvProfesional.CurrentRow.Cells[1].Value.ToString() + "'";
+            string query = "SELECT profId FROM Profesional WHERE profNombre ='" + dgvProfesional.CurrentRow.Cells[0].Value.ToString() + "'";
 
             comando.Connection = conexion;
             comando.CommandText = query;
@@ -61,10 +61,10 @@ Persist Security Info=False;");
             ModificarProfesional nuevoprof = new ModificarProfesional();
 
             nuevoprof.lblID.Text = temporal;
-            nuevoprof.txtNombre.Text = dgvProfesional.CurrentRow.Cells[1].Value.ToString();
-            nuevoprof.txtDomicilio.Text = dgvProfesional.CurrentRow.Cells[2].Value.ToString();
-            nuevoprof.txtTelefono.Text = dgvProfesional.CurrentRow.Cells[3].Value.ToString();
-            nuevoprof.txtMail.Text = dgvProfesional.CurrentRow.Cells[4].Value.ToString();
+            nuevoprof.txtNombre.Text = dgvProfesional.CurrentRow.Cells[0].Value.ToString();
+            nuevoprof.txtDomicilio.Text = dgvProfesional.CurrentRow.Cells[1].Value.ToString();
+            nuevoprof.txtTelefono.Text = dgvProfesional.CurrentRow.Cells[2].Value.ToString();
+            nuevoprof.txtMail.Text = dgvProfesional.CurrentRow.Cells[3].Value.ToString();
 
             nuevoprof.ShowDialog();
             conexion.Close();

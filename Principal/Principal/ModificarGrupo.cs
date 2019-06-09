@@ -54,14 +54,14 @@ Persist Security Info=False;";
                 conModificar.Close();
             }
 
-            //Seleccionar("catNombre", "Categoria", cbCategoria, "catID");
-            //Seleccionar("socioNombre", "Socio", cbSocio, "socioID");
+            //Seleccionar("catNombre", "Categoria", cbCategoria, "catID", "catNombre");
+            //Seleccionar("socioNombre", "Socio", cbSocio, "socioID", "socioNombre");
         }
 
-        private void Seleccionar(string valor, string tabla, ComboBox cb, string id)
+        private void Seleccionar(string valor, string tabla, ComboBox cb, string id, string orden)
         {
             Metodos llenar = new Metodos();
-            llenar.LlenarCombo(valor, tabla, cb, id);
+            llenar.LlenarCombo(valor, tabla, cb, id, orden);
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

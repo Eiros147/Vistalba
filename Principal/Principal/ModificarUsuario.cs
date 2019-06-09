@@ -40,7 +40,9 @@ Persist Security Info=False;";
 
         private void ModificarUsuario_Load(object sender, EventArgs e)
         {
-            
+            Seleccionar(cbNivel, "nivelNombre", "Niveles", "nivelID", "nivelNumero");
+            Seleccionar(cbCategoria, "catNombre", "Categoria", "catID", "catNombre");
+
         }
 
         private void btnHabilitar_Click(object sender, EventArgs e)
@@ -53,9 +55,10 @@ Persist Security Info=False;";
             txtTelefono.Enabled = true;
             cbCategoria.Enabled = true;
             //dtpIngreso.Enabled = true;
-            //dtpNacimiento.Enabled = true;
+            dtpNacimiento.Enabled = true;
             txtNotas.Enabled = true;
             cbCategoria.Enabled = true;
+            cbNivel.Enabled = true;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -91,7 +94,7 @@ Persist Security Info=False;";
                 estado = 0;
             }
 
-            string seters = "socioNombre = '" + txtNombre.Text + "', socioDNI = " + txtDNI.Text + ", socioDireccion = '" + txtDireccion.Text + "', socioMail = '" + txtMail.Text + "', socioNotas = '" + txtNotas.Text + "', socioCategoria = '" + cbCategoria.Text + "', socioTelefono = " + txtTelefono.Text + ", socioCelular = " + txtCelular.Text + ", socioGenero = " + flag + ", socioEstado = " + estado;
+            string seters = "socioNombre = '" + txtNombre.Text + "', socioDNI = " + txtDNI.Text + ", socioDireccion = '" + txtDireccion.Text + "', socioMail = '" + txtMail.Text + "', socioNotas = '" + txtNotas.Text + "', socioCategoria = '" + cbCategoria.Text + "', socioTelefono = " + txtTelefono.Text + ", socioCelular = " + txtCelular.Text + ", socioGenero = " + flag + ", socioEstado = " + estado + ", socioNivel = '" + cbNivel.Text + "'";
             string tabla = "Socio";
             string key = "socioID";
             int id = Convert.ToInt32(lblID.Text);
@@ -102,8 +105,19 @@ Persist Security Info=False;";
             modMetodo.Update(tabla, id, seters, key);
 
         }
+        
+        private void Seleccionar(ComboBox cb, string value, string table, string identificador, string orden)
+        {
+            string tabla = table;
+            string valor = value;
+            string id = identificador;
+            string ordenador = orden;
 
-
+            Metodos llenado = new Metodos();
+            llenado.Inicializar();
+            llenado.LlenarCombo(valor, tabla, cb, id, ordenador);
+        }
+         
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             guardar();
@@ -130,18 +144,7 @@ Persist Security Info=False;";
 
             salud.ShowDialog();
         }
-
-        private void Seleccionar(ComboBox cb)
-        {
-            string valor = "catNombre";
-            string tabla = "Categoria";
-            string id = "catID";
-
-            Metodos llenar = new Metodos();
-            llenar.Inicializar();
-            llenar.LlenarCombo(valor, tabla, cbCategoria, id);
-        }
-
+              
         private void cbEstado_CheckedChanged(object sender, EventArgs e)
         {
             if (cbEstado.Checked == true)

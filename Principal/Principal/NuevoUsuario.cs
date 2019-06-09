@@ -119,10 +119,11 @@ Persist Security Info=False;";
             string valor = "grupoApellido";
             string tabla = "Grupo";
             string id = "grupoID";
+            string ordenador = "grupoApellido";
 
             Metodos elegirgrupo = new Metodos();
             elegirgrupo.Inicializar();
-            elegirgrupo.LlenarCombo(valor, tabla, cb, id);
+            elegirgrupo.LlenarCombo(valor, tabla, cb, id, ordenador);
         }
 
         private void btnPrueba_Click(object sender, EventArgs e)

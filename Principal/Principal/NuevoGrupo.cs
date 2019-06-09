@@ -63,10 +63,11 @@ Persist Security Info=False;";
             string valor = "catNombre";
             string tabla = "Categoria";
             string id = "catID";
+            string orden = "catNombre";
 
             Metodos cargar = new Metodos();
             cargar.Inicializar();
-            cargar.LlenarCombo(valor, tabla, cb, id);
+            cargar.LlenarCombo(valor, tabla, cb, id, orden);
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)

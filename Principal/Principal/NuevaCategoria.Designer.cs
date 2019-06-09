@@ -114,6 +114,15 @@
             catClubCardLabel.TabIndex = 11;
             catClubCardLabel.Text = "Club Card:";
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(12, 149);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(99, 13);
+            label1.TabIndex = 17;
+            label1.Text = "Cantidad Personas:";
+            // 
             // club_VistalbaDataSet
             // 
             this.club_VistalbaDataSet.DataSetName = "Club_VistalbaDataSet";
@@ -136,6 +145,7 @@
             this.tableAdapterManager.CuotaTableAdapter = null;
             this.tableAdapterManager.GrupoTableAdapter = null;
             this.tableAdapterManager.MensualTableAdapter = null;
+            this.tableAdapterManager.NivelesTableAdapter = null;
             this.tableAdapterManager.ProfesionalTableAdapter = null;
             this.tableAdapterManager.SaludTableAdapter = null;
             this.tableAdapterManager.SocioTableAdapter = null;
@@ -213,18 +223,14 @@
             this.cbCard.UseVisualStyleBackColor = true;
             this.cbCard.CheckedChanged += new System.EventHandler(this.cbCard_CheckedChanged);
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(12, 149);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(99, 13);
-            label1.TabIndex = 17;
-            label1.Text = "Cantidad Personas:";
-            // 
             // cbCant
             // 
             this.cbCant.FormattingEnabled = true;
+            this.cbCant.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4"});
             this.cbCant.Location = new System.Drawing.Point(117, 145);
             this.cbCant.Name = "cbCant";
             this.cbCant.Size = new System.Drawing.Size(183, 21);

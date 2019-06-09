@@ -58,9 +58,19 @@ Persist Security Info=False;");
             {
                 conexion.Close();
             }
+
+            formatear();
         }
 
-        void busqueda()
+        private void formatear()
+        {
+            this.dgvActividades.Columns[0].HeaderText = "Nombre";
+            this.dgvActividades.Columns[1].HeaderText = "Descripción";
+            this.dgvActividades.Columns[2].HeaderText = "Meses";
+            this.dgvActividades.Columns[3].HeaderText = "Profesional";
+        }
+
+        private void busqueda()
         {
             DataTable dtDatos = new DataTable();
             string cadena = ("SELECT Actividades.actNombre, Actividades.actDesc, Actividades.actMeses, Profesional.profNombre FROM(Actividades INNER JOIN Profesional ON Actividades.profId = Profesional.profId) WHERE actNombre LIKE '" + txtBusqueda.Text + "%'");

@@ -55,7 +55,7 @@ Persist Security Info=False;";
                 conNueva.Close();
             }
 
-            Seleccionar(cbProfesional);
+            //Seleccionar(cbProfesional);
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -85,10 +85,11 @@ Persist Security Info=False;";
             string valor = "profNombre";
             string tabla = "Profesional";
             string id = "profId";
+            string orden = "profNombre";
 
             Metodos elegirprof = new Metodos();
             elegirprof.Inicializar();
-            elegirprof.LlenarCombo(valor, tabla, cb, id);
+            elegirprof.LlenarCombo(valor, tabla, cb, id, orden);
         }
 
         private void cbProfesional_SelectedIndexChanged(object sender, EventArgs e)

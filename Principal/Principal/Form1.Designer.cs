@@ -220,7 +220,7 @@
             this.btnAbrir.Name = "btnAbrir";
             this.btnAbrir.Size = new System.Drawing.Size(75, 39);
             this.btnAbrir.TabIndex = 3;
-            this.btnAbrir.Text = "Abrir";
+            this.btnAbrir.Text = "Modificar";
             this.btnAbrir.UseVisualStyleBackColor = true;
             this.btnAbrir.Click += new System.EventHandler(this.btnAbrir_Click);
             // 
@@ -325,69 +325,69 @@
             this.miDecimaH,
             this.miPreDecimaH});
             this.hombresToolStripMenuItem.Name = "hombresToolStripMenuItem";
-            this.hombresToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.hombresToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.hombresToolStripMenuItem.Text = "Hombres";
             // 
             // miPrimeraH
             // 
             this.miPrimeraH.Name = "miPrimeraH";
-            this.miPrimeraH.Size = new System.Drawing.Size(152, 22);
+            this.miPrimeraH.Size = new System.Drawing.Size(136, 22);
             this.miPrimeraH.Text = "Primera";
             this.miPrimeraH.Click += new System.EventHandler(this.miPrimeraH_Click);
             // 
             // segundaToolStripMenuItem
             // 
             this.segundaToolStripMenuItem.Name = "segundaToolStripMenuItem";
-            this.segundaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.segundaToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.segundaToolStripMenuItem.Text = "Segunda";
             this.segundaToolStripMenuItem.Click += new System.EventHandler(this.segundaToolStripMenuItem_Click);
             // 
             // quintaToolStripMenuItem
             // 
             this.quintaToolStripMenuItem.Name = "quintaToolStripMenuItem";
-            this.quintaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.quintaToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.quintaToolStripMenuItem.Text = "Quinta";
             this.quintaToolStripMenuItem.Click += new System.EventHandler(this.quintaToolStripMenuItem_Click);
             // 
             // sextaToolStripMenuItem
             // 
             this.sextaToolStripMenuItem.Name = "sextaToolStripMenuItem";
-            this.sextaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.sextaToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.sextaToolStripMenuItem.Text = "Sexta";
             this.sextaToolStripMenuItem.Click += new System.EventHandler(this.sextaToolStripMenuItem_Click);
             // 
             // septimaToolStripMenuItem
             // 
             this.septimaToolStripMenuItem.Name = "septimaToolStripMenuItem";
-            this.septimaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.septimaToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.septimaToolStripMenuItem.Text = "Septima";
             this.septimaToolStripMenuItem.Click += new System.EventHandler(this.septimaToolStripMenuItem_Click);
             // 
             // miOctavaH
             // 
             this.miOctavaH.Name = "miOctavaH";
-            this.miOctavaH.Size = new System.Drawing.Size(152, 22);
+            this.miOctavaH.Size = new System.Drawing.Size(136, 22);
             this.miOctavaH.Text = "Octava";
             this.miOctavaH.Click += new System.EventHandler(this.miOctavaH_Click);
             // 
             // miNovenaH
             // 
             this.miNovenaH.Name = "miNovenaH";
-            this.miNovenaH.Size = new System.Drawing.Size(152, 22);
+            this.miNovenaH.Size = new System.Drawing.Size(136, 22);
             this.miNovenaH.Text = "Novena";
             this.miNovenaH.Click += new System.EventHandler(this.miNovenaH_Click);
             // 
             // miDecimaH
             // 
             this.miDecimaH.Name = "miDecimaH";
-            this.miDecimaH.Size = new System.Drawing.Size(152, 22);
+            this.miDecimaH.Size = new System.Drawing.Size(136, 22);
             this.miDecimaH.Text = "Decima";
             this.miDecimaH.Click += new System.EventHandler(this.miDecimaH_Click);
             // 
             // miPreDecimaH
             // 
             this.miPreDecimaH.Name = "miPreDecimaH";
-            this.miPreDecimaH.Size = new System.Drawing.Size(152, 22);
+            this.miPreDecimaH.Size = new System.Drawing.Size(136, 22);
             this.miPreDecimaH.Text = "Pre-Decima";
             this.miPreDecimaH.Click += new System.EventHandler(this.miPreDecimaH_Click);
             // 
@@ -404,62 +404,71 @@
             this.miDecimaF,
             this.miPreDecimaF});
             this.mujeresToolStripMenuItem.Name = "mujeresToolStripMenuItem";
-            this.mujeresToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.mujeresToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.mujeresToolStripMenuItem.Text = "Mujeres";
             // 
             // miPrimeraF
             // 
             this.miPrimeraF.Name = "miPrimeraF";
-            this.miPrimeraF.Size = new System.Drawing.Size(152, 22);
+            this.miPrimeraF.Size = new System.Drawing.Size(136, 22);
             this.miPrimeraF.Text = "Primera";
+            this.miPrimeraF.Click += new System.EventHandler(this.miPrimeraF_Click);
             // 
             // miSegundaF
             // 
             this.miSegundaF.Name = "miSegundaF";
-            this.miSegundaF.Size = new System.Drawing.Size(152, 22);
+            this.miSegundaF.Size = new System.Drawing.Size(136, 22);
             this.miSegundaF.Text = "Segunda";
+            this.miSegundaF.Click += new System.EventHandler(this.miSegundaF_Click);
             // 
             // miQuintaF
             // 
             this.miQuintaF.Name = "miQuintaF";
-            this.miQuintaF.Size = new System.Drawing.Size(152, 22);
+            this.miQuintaF.Size = new System.Drawing.Size(136, 22);
             this.miQuintaF.Text = "Quinta";
+            this.miQuintaF.Click += new System.EventHandler(this.miQuintaF_Click);
             // 
             // miSextaF
             // 
             this.miSextaF.Name = "miSextaF";
-            this.miSextaF.Size = new System.Drawing.Size(152, 22);
+            this.miSextaF.Size = new System.Drawing.Size(136, 22);
             this.miSextaF.Text = "Sexta";
+            this.miSextaF.Click += new System.EventHandler(this.miSextaF_Click);
             // 
             // miSeptimaF
             // 
             this.miSeptimaF.Name = "miSeptimaF";
-            this.miSeptimaF.Size = new System.Drawing.Size(152, 22);
+            this.miSeptimaF.Size = new System.Drawing.Size(136, 22);
             this.miSeptimaF.Text = "Septima";
+            this.miSeptimaF.Click += new System.EventHandler(this.miSeptimaF_Click);
             // 
             // miOctavaF
             // 
             this.miOctavaF.Name = "miOctavaF";
-            this.miOctavaF.Size = new System.Drawing.Size(152, 22);
+            this.miOctavaF.Size = new System.Drawing.Size(136, 22);
             this.miOctavaF.Text = "Octava";
+            this.miOctavaF.Click += new System.EventHandler(this.miOctavaF_Click);
             // 
             // miNovenaF
             // 
             this.miNovenaF.Name = "miNovenaF";
-            this.miNovenaF.Size = new System.Drawing.Size(152, 22);
+            this.miNovenaF.Size = new System.Drawing.Size(136, 22);
             this.miNovenaF.Text = "Novena";
+            this.miNovenaF.Click += new System.EventHandler(this.miNovenaF_Click);
             // 
             // miDecimaF
             // 
             this.miDecimaF.Name = "miDecimaF";
-            this.miDecimaF.Size = new System.Drawing.Size(152, 22);
+            this.miDecimaF.Size = new System.Drawing.Size(136, 22);
             this.miDecimaF.Text = "Decima";
+            this.miDecimaF.Click += new System.EventHandler(this.miDecimaF_Click);
             // 
             // miPreDecimaF
             // 
             this.miPreDecimaF.Name = "miPreDecimaF";
-            this.miPreDecimaF.Size = new System.Drawing.Size(152, 22);
+            this.miPreDecimaF.Size = new System.Drawing.Size(136, 22);
             this.miPreDecimaF.Text = "Pre-Decima";
+            this.miPreDecimaF.Click += new System.EventHandler(this.miPreDecimaF_Click);
             // 
             // label1
             // 

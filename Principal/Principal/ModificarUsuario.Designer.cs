@@ -42,6 +42,7 @@
             System.Windows.Forms.Label catIdLabel;
             System.Windows.Forms.Label label1;
             System.Windows.Forms.Label label2;
+            System.Windows.Forms.Label label3;
             this.club_VistalbaDataSet = new Principal.Club_VistalbaDataSet();
             this.socioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.socioTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.SocioTableAdapter();
@@ -69,6 +70,7 @@
             this.txtNotas = new System.Windows.Forms.TextBox();
             this.pbFoto = new System.Windows.Forms.PictureBox();
             this.cbEstado = new System.Windows.Forms.CheckBox();
+            this.cbNivel = new System.Windows.Forms.ComboBox();
             socioIDLabel = new System.Windows.Forms.Label();
             socioNombreLabel = new System.Windows.Forms.Label();
             socioDNILabel = new System.Windows.Forms.Label();
@@ -82,6 +84,7 @@
             catIdLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
+            label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.socioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grupoBindingSource)).BeginInit();
@@ -181,7 +184,7 @@
             // catIdLabel
             // 
             catIdLabel.AutoSize = true;
-            catIdLabel.Location = new System.Drawing.Point(12, 406);
+            catIdLabel.Location = new System.Drawing.Point(12, 433);
             catIdLabel.Name = "catIdLabel";
             catIdLabel.Size = new System.Drawing.Size(55, 13);
             catIdLabel.TabIndex = 23;
@@ -199,7 +202,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(11, 431);
+            label2.Location = new System.Drawing.Point(11, 458);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(43, 13);
             label2.TabIndex = 41;
@@ -344,7 +347,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(336, 458);
+            this.button2.Location = new System.Drawing.Point(336, 505);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 34);
             this.button2.TabIndex = 28;
@@ -354,7 +357,7 @@
             // 
             // btnHabilitar
             // 
-            this.btnHabilitar.Location = new System.Drawing.Point(12, 458);
+            this.btnHabilitar.Location = new System.Drawing.Point(12, 505);
             this.btnHabilitar.Name = "btnHabilitar";
             this.btnHabilitar.Size = new System.Drawing.Size(75, 34);
             this.btnHabilitar.TabIndex = 29;
@@ -364,7 +367,7 @@
             // 
             // btnSalud
             // 
-            this.btnSalud.Location = new System.Drawing.Point(130, 458);
+            this.btnSalud.Location = new System.Drawing.Point(130, 505);
             this.btnSalud.Name = "btnSalud";
             this.btnSalud.Size = new System.Drawing.Size(75, 34);
             this.btnSalud.TabIndex = 30;
@@ -374,7 +377,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(235, 458);
+            this.btnGuardar.Location = new System.Drawing.Point(235, 505);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 34);
             this.btnGuardar.TabIndex = 32;
@@ -386,7 +389,7 @@
             // 
             this.cbCategoria.Enabled = false;
             this.cbCategoria.FormattingEnabled = true;
-            this.cbCategoria.Location = new System.Drawing.Point(130, 403);
+            this.cbCategoria.Location = new System.Drawing.Point(130, 430);
             this.cbCategoria.Name = "cbCategoria";
             this.cbCategoria.Size = new System.Drawing.Size(281, 21);
             this.cbCategoria.TabIndex = 33;
@@ -447,7 +450,7 @@
             this.cbEstado.AutoSize = true;
             this.cbEstado.Checked = true;
             this.cbEstado.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbEstado.Location = new System.Drawing.Point(130, 430);
+            this.cbEstado.Location = new System.Drawing.Point(130, 457);
             this.cbEstado.Name = "cbEstado";
             this.cbEstado.Size = new System.Drawing.Size(56, 17);
             this.cbEstado.TabIndex = 42;
@@ -455,11 +458,41 @@
             this.cbEstado.UseVisualStyleBackColor = true;
             this.cbEstado.CheckedChanged += new System.EventHandler(this.cbEstado_CheckedChanged);
             // 
+            // cbNivel
+            // 
+            this.cbNivel.Enabled = false;
+            this.cbNivel.FormattingEnabled = true;
+            this.cbNivel.Items.AddRange(new object[] {
+            "Primera",
+            "Segunda",
+            "Quinta",
+            "Sexta",
+            "Septima",
+            "Octava",
+            "Novena",
+            "Decima",
+            "PreDecima"});
+            this.cbNivel.Location = new System.Drawing.Point(130, 403);
+            this.cbNivel.Name = "cbNivel";
+            this.cbNivel.Size = new System.Drawing.Size(281, 21);
+            this.cbNivel.TabIndex = 44;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(12, 406);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(34, 13);
+            label3.TabIndex = 43;
+            label3.Text = "Nivel:";
+            // 
             // ModificarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(679, 501);
+            this.ClientSize = new System.Drawing.Size(679, 551);
+            this.Controls.Add(this.cbNivel);
+            this.Controls.Add(label3);
             this.Controls.Add(this.cbEstado);
             this.Controls.Add(label2);
             this.Controls.Add(this.rbHombre);
@@ -535,5 +568,6 @@
         public System.Windows.Forms.RadioButton rbMujer;
         public System.Windows.Forms.ComboBox cbCategoria;
         private System.Windows.Forms.CheckBox cbEstado;
+        public System.Windows.Forms.ComboBox cbNivel;
     }
 }
