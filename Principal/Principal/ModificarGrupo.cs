@@ -61,7 +61,7 @@ Persist Security Info=False;";
         private void Seleccionar(string valor, string tabla, ComboBox cb, string id, string orden)
         {
             Metodos llenar = new Metodos();
-            llenar.LlenarCombo(valor, tabla, cb, id, orden);
+            //llenar.LlenarCombo(valor, tabla, cb, id, orden);
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

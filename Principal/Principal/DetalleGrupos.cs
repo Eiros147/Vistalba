@@ -43,7 +43,7 @@ namespace Principal
 
             Metodos cargar = new Metodos();
             cargar.Inicializar();
-            cargar.LlenarCombo(valor, tabla, cb, id, ordenador);
+            //cargar.LlenarCombo(valor, tabla, cb, id, ordenador);
         }
     }
 }

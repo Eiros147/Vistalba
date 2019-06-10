@@ -89,7 +89,7 @@ Persist Security Info=False;";
 
             Metodos elegirprof = new Metodos();
             elegirprof.Inicializar();
-            elegirprof.LlenarCombo(valor, tabla, cb, id, orden);
+            //elegirprof.LlenarCombo(valor, tabla, cb, id, orden);
         }
 
         private void cbProfesional_SelectedIndexChanged(object sender, EventArgs e)

@@ -40,8 +40,12 @@ Persist Security Info=False;";
 
         private void ModificarUsuario_Load(object sender, EventArgs e)
         {
-            Seleccionar(cbNivel, "nivelNombre", "Niveles", "nivelID", "nivelNumero");
-            Seleccionar(cbCategoria, "catNombre", "Categoria", "catID", "catNombre");
+            // TODO: esta línea de código carga datos en la tabla 'club_VistalbaDataSet.Categoria' Puede moverla o quitarla según sea necesario.
+            this.categoriaTableAdapter.Fill(this.club_VistalbaDataSet.Categoria);
+            string key = lblID.Text.ToString();
+
+            //Seleccionar(cbNivel, "nivelNombre", "Niveles", "nivelID", "nivelNumero", key, 1);
+            //Seleccionar(cbCategoria, "catNombre", "Categoria", "catID", "catNombre", key, 1);
 
         }
 
@@ -106,16 +110,12 @@ Persist Security Info=False;";
 
         }
         
-        private void Seleccionar(ComboBox cb, string value, string table, string identificador, string orden)
+        private void Seleccionar(ComboBox cb, string value, string table, string identificador, string orden, string key, int mod)
         {
-            string tabla = table;
-            string valor = value;
-            string id = identificador;
-            string ordenador = orden;
-
             Metodos llenado = new Metodos();
             llenado.Inicializar();
-            llenado.LlenarCombo(valor, tabla, cb, id, ordenador);
+            llenado.LlenarCombo(value, table, cb, identificador, orden);
+
         }
          
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -161,6 +161,45 @@ Persist Security Info=False;";
         {
             ModificarGrupo modif = new ModificarGrupo();
             modif.ShowDialog();
+        }
+
+        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.categoriaTableAdapter.FillBy(this.club_VistalbaDataSet.Categoria);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void fillOrdenadoToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.categoriaTableAdapter.FillOrdenado(this.club_VistalbaDataSet.Categoria);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void fillOrdenadoToolStripButton1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.categoriaTableAdapter.FillOrdenado(this.club_VistalbaDataSet.Categoria);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

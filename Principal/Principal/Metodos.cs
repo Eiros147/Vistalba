@@ -89,7 +89,7 @@ namespace Principal
                 OleDbCommand comando = new OleDbCommand(query, conexion);
 
                 //Control de query para testeo de errores
-                MessageBox.Show(query);
+                //MessageBox.Show(query);
 
                 comando.ExecuteNonQuery();
                 MessageBox.Show(tabla + " actualizado");
@@ -264,10 +264,34 @@ namespace Principal
                 cb.ValueMember = id;
                 cb.DisplayMember = valor;
                 cb.DataSource = dt;
-                                
-            }catch (Exception ex)
+
+                MessageBox.Show(query);
+
+            } catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex);
+            }
+            finally
+            {
+                CerrarCon();
+            }
+        }
+
+        //Seleccionar
+        public void Seleccionar(string valor, string tabla, ComboBox cb, string key, string id)
+        {
+            try
+            {
+                AbrirCon();
+                string query = "SELECT " + valor + " FROM " + tabla + " WHERE " + key + " = " + id + "";
+
+                OleDbCommand comando = new OleDbCommand(query, conexion);
+
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error :" + ex);
             }
             finally
             {

@@ -33,6 +33,11 @@ Persist Security Info=False;");
         private void Profesionales_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'club_VistalbaDataSet.Profesional' Puede moverla o quitarla según sea necesario.
+            cargar();
+        }
+
+        private void cargar()
+        {
             this.profesionalTableAdapter.Fill(this.club_VistalbaDataSet.Profesional);
 
         }
@@ -70,6 +75,15 @@ Persist Security Info=False;");
             conexion.Close();
         }
 
+        private void buscar()
+        {
+            DataTable dtDatos = new DataTable();
+            string cadena = ("SELECT * FROM Profesional WHERE profNombre LIKE '" + txtBuscar.Text + "%'");
+            OleDbDataAdapter data = new OleDbDataAdapter(cadena, conexion);
+            data.Fill(dtDatos);
+            dgvProfesional.DataSource = dtDatos;
+        }
+
         private void dgvProfesional_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             modificar();
@@ -78,6 +92,19 @@ Persist Security Info=False;");
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            if(txtBuscar.Text == "")
+            {
+                cargar();
+            }
+            else
+            {
+                buscar();
+                this.dgvProfesional.EndEdit();
+            }
         }
     }
 }

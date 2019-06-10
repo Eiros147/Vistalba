@@ -67,7 +67,7 @@ Persist Security Info=False;";
 
             Metodos cargar = new Metodos();
             cargar.Inicializar();
-            cargar.LlenarCombo(valor, tabla, cb, id, orden);
+            //cargar.LlenarCombo(valor, tabla, cb, id, orden);
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)

@@ -122,6 +122,7 @@
             this.tableAdapterManager.CuotaTableAdapter = null;
             this.tableAdapterManager.GrupoTableAdapter = null;
             this.tableAdapterManager.MensualTableAdapter = null;
+            this.tableAdapterManager.NivelesTableAdapter = null;
             this.tableAdapterManager.ProfesionalTableAdapter = null;
             this.tableAdapterManager.SaludTableAdapter = null;
             this.tableAdapterManager.SocioTableAdapter = null;
@@ -241,7 +242,7 @@
         private System.Windows.Forms.Button btnHabilitar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.ComboBox cbProfesor;
         public System.Windows.Forms.Label lblID;
+        public System.Windows.Forms.ComboBox cbProfesor;
     }
 }

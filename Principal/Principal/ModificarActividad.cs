@@ -33,11 +33,10 @@ Persist Security Info=False;";
         private void ModificarActividad_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'club_VistalbaDataSet.Actividades' Puede moverla o quitarla según sea necesario.
-            this.actividadesTableAdapter.Fill(this.club_VistalbaDataSet.Actividades);
+            //this.actividadesTableAdapter.Fill(this.club_VistalbaDataSet.Actividades);
 
             
 
-            Selecccionar(cbProfesor);
         }
 
         private void btnHabilitar_Click(object sender, EventArgs e)
@@ -77,7 +76,7 @@ Persist Security Info=False;";
 
             Metodos elegirprof = new Metodos();
             elegirprof.Inicializar();
-            elegirprof.LlenarCombo(valor, tabla, cb, id, ordenador);
+            //elegirprof.LlenarCombo(valor, tabla, cb, id, ordenador);
         }
     }
 }

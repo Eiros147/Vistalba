@@ -79,6 +79,13 @@ Persist Security Info=False;");
             dgvActividades.DataSource = dtDatos;
         }
 
+        private void Seleccionar(ComboBox cb, string value, string table, string identificador, string orden)
+        {
+            Metodos llenado = new Metodos();
+            llenado.Inicializar();
+            llenado.LlenarCombo(value, table, cb, identificador, orden);
+        }
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             busqueda();
@@ -103,6 +110,7 @@ Persist Security Info=False;");
 
         private void Modificar()
         {
+            ModificarActividad neu = new ModificarActividad();
             try
             {
                 conexion.Open();
@@ -113,9 +121,10 @@ Persist Security Info=False;");
 
                 string temporal = comando.ExecuteScalar().ToString();
 
-                ModificarActividad neu = new ModificarActividad();
+                
                 neu.lblID.Text = temporal;
                 neu.ShowDialog();
+
 
             }
             catch (Exception ex)
@@ -124,8 +133,12 @@ Persist Security Info=False;");
             }
             finally
             {
+                Seleccionar(neu.cbProfesor, "profNombre", "Profesional", "profId", "profNombre");
                 conexion.Close();
             }
+
+            
+
         }
 
         private void Actividades_Activated(object sender, EventArgs e)

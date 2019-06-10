@@ -34,6 +34,8 @@ Persist Security Info=False;";
 
         private void NuevoUsuario_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'club_VistalbaDataSet.Categoria' Puede moverla o quitarla según sea necesario.
+            this.categoriaTableAdapter.Fill(this.club_VistalbaDataSet.Categoria);
             // TODO: esta línea de código carga datos en la tabla 'club_VistalbaDataSet.Socio' Puede moverla o quitarla según sea necesario.
             //this.socioTableAdapter.Fill(this.club_VistalbaDataSet.Socio);
 
@@ -59,7 +61,14 @@ Persist Security Info=False;";
                 conNuevo.Close();
             }
 
-            
+            Seleccionar(cbCategoria, "catNombre", "Categoria", "catID", "catNombre");
+        }
+
+        private void Seleccionar(ComboBox cb, string valor, string tabla, string identificador, string orden)
+        {
+            Metodos llenado = new Metodos();
+            llenado.Inicializar();
+            llenado.LlenarCombo(valor, tabla, cb, identificador, orden);
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -123,7 +132,7 @@ Persist Security Info=False;";
 
             Metodos elegirgrupo = new Metodos();
             elegirgrupo.Inicializar();
-            elegirgrupo.LlenarCombo(valor, tabla, cb, id, ordenador);
+            //elegirgrupo.LlenarCombo(valor, tabla, cb, id, ordenador);
         }
 
         private void btnPrueba_Click(object sender, EventArgs e)

@@ -25,7 +25,23 @@ namespace Principal
 
         private void Divisiones_Load(object sender, EventArgs e)
         {
+            titulo();
+            
             cargar();
+        }
+
+        public void titulo()
+        {
+            string sexo;
+            if (gen == 1)
+            {
+                sexo = "Hombre";
+            }
+            else
+            {
+                sexo = "Mujer";
+            }
+            this.Text = div + " " + sexo;
         }
 
         public void cargar()

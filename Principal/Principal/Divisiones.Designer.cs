@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.dgvDivision = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.txtBuscador = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDivision)).BeginInit();
             this.SuspendLayout();
             // 
@@ -41,34 +42,44 @@
             this.dgvDivision.Size = new System.Drawing.Size(692, 335);
             this.dgvDivision.TabIndex = 0;
             // 
-            // button1
+            // btnModificar
             // 
-            this.button1.Location = new System.Drawing.Point(42, 365);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnModificar.Location = new System.Drawing.Point(12, 354);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(75, 35);
+            this.btnModificar.TabIndex = 1;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // txtBuscador
+            // 
+            this.txtBuscador.Location = new System.Drawing.Point(288, 362);
+            this.txtBuscador.Name = "txtBuscador";
+            this.txtBuscador.Size = new System.Drawing.Size(416, 20);
+            this.txtBuscador.TabIndex = 2;
             // 
             // Divisiones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(716, 401);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.txtBuscador);
+            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.dgvDivision);
             this.Name = "Divisiones";
             this.Text = "Divisiones";
             this.Load += new System.EventHandler(this.Divisiones_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDivision)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.DataGridView dgvDivision;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.TextBox txtBuscador;
     }
 }

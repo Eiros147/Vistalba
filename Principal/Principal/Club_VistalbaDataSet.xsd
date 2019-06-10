@@ -153,7 +153,26 @@
               <Mapping SourceColumn="catClubCard" DataSetColumn="catClubCard" />
               <Mapping SourceColumn="catCant" DataSetColumn="catCant" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="Club_VistalbaConnectionString (Settings)" DbObjectName="Categoria" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT catID, catDesc, catNombre, catClubCard, catMesAct, catMesInact, catCant FROM Categoria ORDER BY catNombre</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="Club_VistalbaConnectionString (Settings)" DbObjectName="Categoria" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillOrdenado" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillOrdenado" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillOrdenado">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        catID, catDesc, catNombre, catClubCard, catMesAct, catMesInact, catCant
+FROM            Categoria
+ORDER BY catNombre</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CuotaTableAdapter" GeneratorDataComponentClassName="CuotaTableAdapter" Name="Cuota" UserDataComponentName="CuotaTableAdapter">
             <MainSource>

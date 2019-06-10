@@ -53,6 +53,8 @@ Persist Security Info=False;";
             {
                 MessageBox.Show("Error al conectarse a la base de datos \n" + ex);
             }
+
+            
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)

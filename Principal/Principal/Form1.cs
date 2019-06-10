@@ -49,7 +49,7 @@ Persist Security Info=False;");
             Metodos buscar = new Metodos();
             buscar.Inicializar();
 
-            string valores = "socioNombre, socioDNI, socioDireccion, socioMail, socioTelefono, socioCelular, socioFechaNac, socioFechaIng, socioFechaUltPago, socioGenero";
+            string valores = "socioNombre, socioDNI, socioDireccion, socioMail, socioTelefono, socioCelular, socioFechaNac, socioFechaIng, socioFechaUltPago, socioGenero, socioCategoria, socioNivel";
             string tabla = "Socio";
             string condicion = "socioNombre LIKE '" + txtBusqueda.Text + "%'";
 
@@ -66,7 +66,7 @@ Persist Security Info=False;");
         {
             Metodos cargametodo = new Metodos();
             string tabla = "Socio";
-            string valores = "socioNombre, socioDNI, socioDireccion, socioMail, socioTelefono, socioCelular, socioFechaIng, socioFechaUltPago, socioFechaNac, socioGenero";
+            string valores = "socioNombre, socioDNI, socioDireccion, socioMail, socioTelefono, socioCelular, socioFechaIng, socioFechaUltPago, socioFechaNac, socioGenero, socioCategoria, socioNivel";
             string condicion = "socioEstado LIKE true";
 
             cargametodo.Inicializar();
@@ -85,6 +85,9 @@ Persist Security Info=False;");
 
             ModificarUsuario modificar = new ModificarUsuario();
 
+            Seleccionar(modificar.cbNivel, "nivelNombre", "Niveles", "nivelID", "nivelNumero");
+            Seleccionar(modificar.cbCategoria, "catNombre", "Categoria", "catID", "catNombre");
+
             modificar.lblID.Text = temporal;
             modificar.txtNombre.Text = dgvSocio.CurrentRow.Cells[0].Value.ToString();
             modificar.txtDireccion.Text = dgvSocio.CurrentRow.Cells[2].Value.ToString();
@@ -92,8 +95,11 @@ Persist Security Info=False;");
             modificar.txtCelular.Text = dgvSocio.CurrentRow.Cells[5].Value.ToString();
             modificar.txtMail.Text = dgvSocio.CurrentRow.Cells[3].Value.ToString();
             modificar.txtTelefono.Text = dgvSocio.CurrentRow.Cells[4].Value.ToString();
-            //modificar.cbCategoria.Text = dgvSocio.CurrentRow.Cells[10].Value.ToString();
-            
+            modificar.cbCategoria.Text = dgvSocio.CurrentRow.Cells[10].Value.ToString();
+            modificar.cbNivel.Text = dgvSocio.CurrentRow.Cells[11].Value.ToString();
+
+            MessageBox.Show(dgvSocio.CurrentRow.Cells[10].Value.ToString());
+
             if(dgvSocio.CurrentRow.Cells[6].Value.Equals(true))
             {
                 modificar.rbHombre.Checked = true;
@@ -105,6 +111,13 @@ Persist Security Info=False;");
             modificar.ShowDialog();
 
             conexion.Close();
+        }
+
+        private void Seleccionar(ComboBox cb, string value, string table, string identificador, string orden)
+        {
+            Metodos llenado = new Metodos();
+            llenado.Inicializar();
+            llenado.LlenarCombo(value, table, cb, identificador, orden);
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -204,6 +217,8 @@ Persist Security Info=False;");
             nuevogrupo.ShowDialog();
         }
 
+
+        //Divisiones
         private void miPrimeraH_Click(object sender, EventArgs e)
         {
             string division = "Primera";

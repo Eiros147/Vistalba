@@ -63,6 +63,8 @@
             this.cbEstado = new System.Windows.Forms.CheckBox();
             this.cbCategoria = new System.Windows.Forms.ComboBox();
             this.btnSalud = new System.Windows.Forms.Button();
+            this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.categoriaTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.CategoriaTableAdapter();
             socioIDLabel = new System.Windows.Forms.Label();
             socioNombreLabel = new System.Windows.Forms.Label();
             socioDNILabel = new System.Windows.Forms.Label();
@@ -77,6 +79,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.socioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grupoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // socioIDLabel
@@ -200,6 +203,7 @@
             this.tableAdapterManager.CuotaTableAdapter = null;
             this.tableAdapterManager.GrupoTableAdapter = this.grupoTableAdapter1;
             this.tableAdapterManager.MensualTableAdapter = null;
+            this.tableAdapterManager.NivelesTableAdapter = null;
             this.tableAdapterManager.ProfesionalTableAdapter = null;
             this.tableAdapterManager.SaludTableAdapter = null;
             this.tableAdapterManager.SocioTableAdapter = this.socioTableAdapter;
@@ -353,6 +357,7 @@
             // 
             // cbCategoria
             // 
+            this.cbCategoria.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.categoriaBindingSource, "catNombre", true));
             this.cbCategoria.FormattingEnabled = true;
             this.cbCategoria.Location = new System.Drawing.Point(130, 345);
             this.cbCategoria.Name = "cbCategoria";
@@ -368,6 +373,15 @@
             this.btnSalud.Text = "Salud";
             this.btnSalud.UseVisualStyleBackColor = true;
             this.btnSalud.Click += new System.EventHandler(this.btnSalud_Click);
+            // 
+            // categoriaBindingSource
+            // 
+            this.categoriaBindingSource.DataMember = "Categoria";
+            this.categoriaBindingSource.DataSource = this.club_VistalbaDataSet;
+            // 
+            // categoriaTableAdapter
+            // 
+            this.categoriaTableAdapter.ClearBeforeFill = true;
             // 
             // NuevoUsuario
             // 
@@ -408,6 +422,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.socioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grupoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -438,5 +453,7 @@
         private System.Windows.Forms.CheckBox cbEstado;
         private System.Windows.Forms.ComboBox cbCategoria;
         private System.Windows.Forms.Button btnSalud;
+        private System.Windows.Forms.BindingSource categoriaBindingSource;
+        private Club_VistalbaDataSetTableAdapters.CategoriaTableAdapter categoriaTableAdapter;
     }
 }
