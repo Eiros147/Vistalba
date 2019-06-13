@@ -33,29 +33,9 @@ Persist Security Info=False;";
 
         private void ModificarGrupo_Load(object sender, EventArgs e)
         {
-            try
-            {
-                conModificar.Open();
-                string query = "SELECT TOP 1 grupoID FROM Grupo ORDER BY grupoID DESC ";
-                OleDbCommand command = new OleDbCommand(query, conModificar);
-
-
-                string temporal = command.ExecuteScalar().ToString();
-                int numero = Int32.Parse(temporal);
-                numero = numero + 1;
-                lblID.Text = numero.ToString();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al conectarse " + ex);
-            }
-            finally
-            {
-                conModificar.Close();
-            }
-
-            //Seleccionar("catNombre", "Categoria", cbCategoria, "catID", "catNombre");
-            //Seleccionar("socioNombre", "Socio", cbSocio, "socioID", "socioNombre");
+            Metodos labelelear = new Metodos();
+            labelelear.Inicializar();
+            labelelear.Llenarlabel(lblCantidad, "Categoria", "catCant", "catID", lblID.Text);
         }
 
         private void Seleccionar(string valor, string tabla, ComboBox cb, string id, string orden)
@@ -73,6 +53,13 @@ Persist Security Info=False;";
                     txtSocio.Text = lista.textoSeleccionado;
                 }
             }
+        }
+
+        private void comboBox1_TextChanged(object sender, EventArgs e)
+        {
+            Metodos labelelear = new Metodos();
+            labelelear.Inicializar();
+            labelelear.Llenarlabel(lblCantidad, "Categoria", "catCant", "catID", lblID.Text);
         }
     }
 }

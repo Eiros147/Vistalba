@@ -115,7 +115,7 @@ namespace Principal
                 OleDbCommand comando = new OleDbCommand(query, conexion);
 
                 //Control de query para testeo de errores
-                //MessageBox.Show(query);
+                MessageBox.Show(query);
 
                 OleDbDataAdapter da = new OleDbDataAdapter(comando);
                 DataTable dt = new DataTable();
@@ -153,8 +153,6 @@ namespace Principal
                 dgv.DataSource = dt;
 
                 comando.ExecuteNonQuery();
-
-
             }
             catch (Exception ex)
             {
@@ -163,6 +161,36 @@ namespace Principal
             finally
             {
                 this.CerrarCon();
+            }
+        }
+
+        //Llenar label
+        public void Llenarlabel(Label lbl, string tabla, string valor, string condicion, string igual)
+        {
+            try
+            {
+                string query = "SELECT " + valor + " FROM " + tabla + " WHERE (" + condicion + " = '" + igual + "')";
+                AbrirCon();
+
+                OleDbCommand comando = new OleDbCommand(query, conexion);
+                
+                //Control de query
+                MessageBox.Show(query);
+
+                OleDbDataReader lector = comando.ExecuteReader();
+
+                if (lector.Read())
+                {
+                    lbl.Text = (lector[valor].ToString());
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error " + ex);
+            }
+            finally
+            {
+                CerrarCon();
             }
         }
 

@@ -98,7 +98,7 @@ Persist Security Info=False;");
             modificar.cbCategoria.Text = dgvSocio.CurrentRow.Cells[10].Value.ToString();
             modificar.cbNivel.Text = dgvSocio.CurrentRow.Cells[11].Value.ToString();
 
-            MessageBox.Show(dgvSocio.CurrentRow.Cells[10].Value.ToString());
+            //MessageBox.Show(dgvSocio.CurrentRow.Cells[10].Value.ToString());
 
             if(dgvSocio.CurrentRow.Cells[6].Value.Equals(true))
             {

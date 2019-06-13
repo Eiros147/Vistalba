@@ -33,28 +33,10 @@ Persist Security Info=False;";
 
         private void Grupos_Load(object sender, EventArgs e)
         {
-            try
-            {
-                conActv.Open();
-                OleDbCommand comando = new OleDbCommand();
-                comando.Connection = conActv;
-                string query = "SELECT grupoCategoria, grupoSocioPpal, grupoApellido, grupoSocio1, grupoSocio2, grupoSocio3 FROM Grupo";
-                comando.CommandText = query;
+            // TODO: esta línea de código carga datos en la tabla 'club_VistalbaDataSet.Categoria' Puede moverla o quitarla según sea necesario.
+            //this.categoriaTableAdapter.Fill(this.club_VistalbaDataSet.Categoria);
 
-                OleDbDataAdapter da = new OleDbDataAdapter(comando);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-
-                dgvGrupos.DataSource = dt;
-
-                conActv.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al conectarse a la base de datos \n" + ex);
-            }
-
-            
+            cargar();
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -76,8 +58,43 @@ Persist Security Info=False;";
 
         private void modificar()
         {
+            conActv.Open();
             ModificarGrupo mod = new ModificarGrupo();
+
+            string busqueda = "SELECT catID FROM Categoria WHERE (catNombre LIKE '" + dgvGrupos.CurrentRow.Cells[0].Value.ToString() + "')";
+            OleDbCommand comando = new OleDbCommand(busqueda, conActv);
+
+            MessageBox.Show(busqueda);
+
+            string temporal = Convert.ToString(comando.ExecuteScalar());
+
+            MessageBox.Show(temporal);
+
+            mod.txtApellido.Text = dgvGrupos.CurrentRow.Cells[1].Value.ToString();
+            mod.txtSocio.Text = dgvGrupos.CurrentRow.Cells[2].Value.ToString();
+            mod.txtPersona2.Text = dgvGrupos.CurrentRow.Cells[3].Value.ToString();
+            mod.txtPersona3.Text = dgvGrupos.CurrentRow.Cells[4].Value.ToString();
+            mod.txtPersona4.Text = dgvGrupos.CurrentRow.Cells[5].Value.ToString();
+            mod.lblID.Text = temporal;
+
+            
             mod.ShowDialog();
+
+
+            conActv.Close();
+        }
+
+        private void cargar()
+        {
+            Metodos cargado = new Metodos();
+
+            string valores = "Categoria.catNombre, Grupo.grupoApellido, Grupo.grupoSocioPpal, Grupo.grupoSocio1, Grupo.grupoSocio2, Grupo.grupoSocio3";
+            string tabla = "(Categoria INNER JOIN Grupo ON Categoria.catID = Grupo.catID)";
+            cargado.Inicializar();
+
+            cargado.Llenardgv(tabla, valores, dgvGrupos);
+
+          
         }
     }
 }

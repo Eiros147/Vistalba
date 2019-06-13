@@ -112,6 +112,7 @@
             this.tableAdapterManager.CuotaTableAdapter = null;
             this.tableAdapterManager.GrupoTableAdapter = this.grupoTableAdapter;
             this.tableAdapterManager.MensualTableAdapter = null;
+            this.tableAdapterManager.NivelesTableAdapter = null;
             this.tableAdapterManager.ProfesionalTableAdapter = null;
             this.tableAdapterManager.SaludTableAdapter = null;
             this.tableAdapterManager.SocioTableAdapter = null;
@@ -202,7 +203,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(258, 261);
+            this.ClientSize = new System.Drawing.Size(408, 315);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.txtNombre);

@@ -73,12 +73,6 @@
             this.cbEstado = new System.Windows.Forms.CheckBox();
             this.cbNivel = new System.Windows.Forms.ComboBox();
             this.categoriaTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.CategoriaTableAdapter();
-            this.fillByToolStrip = new System.Windows.Forms.ToolStrip();
-            this.fillByToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.fillOrdenadoToolStrip = new System.Windows.Forms.ToolStrip();
-            this.fillOrdenadoToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.fillOrdenadoToolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.fillOrdenadoToolStripButton1 = new System.Windows.Forms.ToolStripButton();
             socioIDLabel = new System.Windows.Forms.Label();
             socioNombreLabel = new System.Windows.Forms.Label();
             socioDNILabel = new System.Windows.Forms.Label();
@@ -98,9 +92,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.grupoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbFoto)).BeginInit();
-            this.fillByToolStrip.SuspendLayout();
-            this.fillOrdenadoToolStrip.SuspendLayout();
-            this.fillOrdenadoToolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // socioIDLabel
@@ -508,68 +499,11 @@
             // 
             this.categoriaTableAdapter.ClearBeforeFill = true;
             // 
-            // fillByToolStrip
-            // 
-            this.fillByToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fillByToolStripButton});
-            this.fillByToolStrip.Location = new System.Drawing.Point(0, 0);
-            this.fillByToolStrip.Name = "fillByToolStrip";
-            this.fillByToolStrip.Size = new System.Drawing.Size(687, 25);
-            this.fillByToolStrip.TabIndex = 45;
-            this.fillByToolStrip.Text = "fillByToolStrip";
-            // 
-            // fillByToolStripButton
-            // 
-            this.fillByToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.fillByToolStripButton.Name = "fillByToolStripButton";
-            this.fillByToolStripButton.Size = new System.Drawing.Size(39, 22);
-            this.fillByToolStripButton.Text = "FillBy";
-            this.fillByToolStripButton.Click += new System.EventHandler(this.fillByToolStripButton_Click);
-            // 
-            // fillOrdenadoToolStrip
-            // 
-            this.fillOrdenadoToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fillOrdenadoToolStripButton});
-            this.fillOrdenadoToolStrip.Location = new System.Drawing.Point(0, 25);
-            this.fillOrdenadoToolStrip.Name = "fillOrdenadoToolStrip";
-            this.fillOrdenadoToolStrip.Size = new System.Drawing.Size(687, 25);
-            this.fillOrdenadoToolStrip.TabIndex = 46;
-            this.fillOrdenadoToolStrip.Text = "fillOrdenadoToolStrip";
-            // 
-            // fillOrdenadoToolStripButton
-            // 
-            this.fillOrdenadoToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.fillOrdenadoToolStripButton.Name = "fillOrdenadoToolStripButton";
-            this.fillOrdenadoToolStripButton.Size = new System.Drawing.Size(79, 22);
-            this.fillOrdenadoToolStripButton.Text = "FillOrdenado";
-            this.fillOrdenadoToolStripButton.Click += new System.EventHandler(this.fillOrdenadoToolStripButton_Click);
-            // 
-            // fillOrdenadoToolStrip1
-            // 
-            this.fillOrdenadoToolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fillOrdenadoToolStripButton1});
-            this.fillOrdenadoToolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.fillOrdenadoToolStrip1.Name = "fillOrdenadoToolStrip1";
-            this.fillOrdenadoToolStrip1.Size = new System.Drawing.Size(111, 25);
-            this.fillOrdenadoToolStrip1.TabIndex = 47;
-            this.fillOrdenadoToolStrip1.Text = "fillOrdenadoToolStrip1";
-            // 
-            // fillOrdenadoToolStripButton1
-            // 
-            this.fillOrdenadoToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.fillOrdenadoToolStripButton1.Name = "fillOrdenadoToolStripButton1";
-            this.fillOrdenadoToolStripButton1.Size = new System.Drawing.Size(79, 22);
-            this.fillOrdenadoToolStripButton1.Text = "FillOrdenado";
-            this.fillOrdenadoToolStripButton1.Click += new System.EventHandler(this.fillOrdenadoToolStripButton1_Click);
-            // 
             // ModificarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(687, 559);
-            this.Controls.Add(this.fillOrdenadoToolStrip1);
-            this.Controls.Add(this.fillOrdenadoToolStrip);
-            this.Controls.Add(this.fillByToolStrip);
             this.Controls.Add(this.cbNivel);
             this.Controls.Add(label3);
             this.Controls.Add(this.cbEstado);
@@ -614,12 +548,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.grupoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbFoto)).EndInit();
-            this.fillByToolStrip.ResumeLayout(false);
-            this.fillByToolStrip.PerformLayout();
-            this.fillOrdenadoToolStrip.ResumeLayout(false);
-            this.fillOrdenadoToolStrip.PerformLayout();
-            this.fillOrdenadoToolStrip1.ResumeLayout(false);
-            this.fillOrdenadoToolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -657,11 +585,5 @@
         public System.Windows.Forms.ComboBox cbNivel;
         private System.Windows.Forms.BindingSource categoriaBindingSource;
         private Club_VistalbaDataSetTableAdapters.CategoriaTableAdapter categoriaTableAdapter;
-        private System.Windows.Forms.ToolStrip fillByToolStrip;
-        private System.Windows.Forms.ToolStripButton fillByToolStripButton;
-        private System.Windows.Forms.ToolStrip fillOrdenadoToolStrip;
-        private System.Windows.Forms.ToolStripButton fillOrdenadoToolStripButton;
-        private System.Windows.Forms.ToolStrip fillOrdenadoToolStrip1;
-        private System.Windows.Forms.ToolStripButton fillOrdenadoToolStripButton1;
     }
 }
