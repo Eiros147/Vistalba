@@ -179,10 +179,7 @@ namespace Principal
 
                 OleDbDataReader lector = comando.ExecuteReader();
 
-                if (lector.Read())
-                {
-                    lbl.Text = (lector[valor].ToString());
-                }
+                
             }
             catch(Exception ex)
             {

@@ -64,11 +64,11 @@ Persist Security Info=False;";
             string busqueda = "SELECT catID FROM Categoria WHERE (catNombre LIKE '" + dgvGrupos.CurrentRow.Cells[0].Value.ToString() + "')";
             OleDbCommand comando = new OleDbCommand(busqueda, conActv);
 
-            MessageBox.Show(busqueda);
+            //MessageBox.Show(busqueda);
 
             string temporal = Convert.ToString(comando.ExecuteScalar());
 
-            MessageBox.Show(temporal);
+            //MessageBox.Show(temporal);
 
             mod.txtApellido.Text = dgvGrupos.CurrentRow.Cells[1].Value.ToString();
             mod.txtSocio.Text = dgvGrupos.CurrentRow.Cells[2].Value.ToString();

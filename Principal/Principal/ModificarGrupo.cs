@@ -22,6 +22,7 @@ namespace Principal
 Persist Security Info=False;";
 
         }
+        OleDbCommand comando = new OleDbCommand();
 
         private void grupoBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
@@ -33,16 +34,42 @@ Persist Security Info=False;";
 
         private void ModificarGrupo_Load(object sender, EventArgs e)
         {
-            Metodos labelelear = new Metodos();
-            labelelear.Inicializar();
-            labelelear.Llenarlabel(lblCantidad, "Categoria", "catCant", "catID", lblID.Text);
+            // TODO: esta línea de código carga datos en la tabla 'club_VistalbaDataSet.Categoria' Puede moverla o quitarla según sea necesario.
+            this.categoriaTableAdapter.Fill(this.club_VistalbaDataSet.Categoria);
+
+            cargarcantidad();
+            //Seleccionar()
+        }
+
+        private void cargarcantidad()
+        {
+            conModificar.Open();
+            string query = "Select catCant FROM Categoria WHERE catNombre = '" + cbCategoria.Text + "'";
+
+            comando.Connection = conModificar;
+            comando.CommandText = query;
+
+            using (OleDbDataReader dr = comando.ExecuteReader())
+            {
+                bool exito = dr.Read();
+                if (exito)
+                {
+                    lblCantidad.Text = dr["catCant"].ToString();
+                }
+            }
+
+            conModificar.Close();
+
         }
 
         private void Seleccionar(string valor, string tabla, ComboBox cb, string id, string orden)
         {
             Metodos llenar = new Metodos();
-            //llenar.LlenarCombo(valor, tabla, cb, id, orden);
+            llenar.Inicializar();
+            llenar.LlenarCombo(valor, tabla, cb, id, orden);
         }
+
+
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
@@ -57,9 +84,35 @@ Persist Security Info=False;";
 
         private void comboBox1_TextChanged(object sender, EventArgs e)
         {
-            Metodos labelelear = new Metodos();
-            labelelear.Inicializar();
-            labelelear.Llenarlabel(lblCantidad, "Categoria", "catCant", "catID", lblID.Text);
+            cargarcantidad();
+            //Metodos labelelear = new Metodos();
+            //labelelear.Inicializar();
+            //labelelear.Llenarlabel(lblCantidad, "Categoria", "catCant", "catID", lblID.Text);
+        }
+
+        private void lblCantidad_TextChanged(object sender, EventArgs e)
+        {
+            if(lblCantidad.Text == "1")
+            {
+                txtPersona2.Visible = false;
+                txtPersona3.Visible = false;
+                txtPersona4.Visible = false;
+            }else if(lblCantidad.Text == "2")
+            {
+                txtPersona2.Visible = true;
+                txtPersona3.Visible = false;
+                txtPersona4.Visible = false;
+            }else if(lblCantidad.Text == "3")
+            {
+                txtPersona2.Visible = true;
+                txtPersona3.Visible = true;
+                txtPersona4.Visible = true;
+            }else if(lblCantidad.Text == "4")
+            {
+                txtPersona2.Visible = true;
+                txtPersona3.Visible = true;
+                txtPersona4.Visible = true;
+            }
         }
     }
 }

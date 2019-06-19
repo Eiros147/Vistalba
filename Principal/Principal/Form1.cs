@@ -85,8 +85,8 @@ Persist Security Info=False;");
 
             ModificarUsuario modificar = new ModificarUsuario();
 
-            Seleccionar(modificar.cbNivel, "nivelNombre", "Niveles", "nivelID", "nivelNumero");
-            Seleccionar(modificar.cbCategoria, "catNombre", "Categoria", "catID", "catNombre");
+            //Seleccionar(modificar.cbCategoria, "catNombre", "Categoria", "catID", "catNombre");
+            //Seleccionar(modificar.cbNivel, "nivelNombre", "Niveles", "nivelID", "nivelNumero");
 
             modificar.lblID.Text = temporal;
             modificar.txtNombre.Text = dgvSocio.CurrentRow.Cells[0].Value.ToString();
@@ -196,7 +196,7 @@ Persist Security Info=False;");
 
         private void Form1_Activated(object sender, EventArgs e)
         {
-            cargar();          
+            //cargar();          
         }
 
         private void smiInactivos_Click(object sender, EventArgs e)

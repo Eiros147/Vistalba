@@ -49,11 +49,24 @@ namespace Principal
             Metodos cargar = new Metodos();
             cargar.Inicializar();
 
-            string tabla = "Socio";
-            string valores = "socioNombre, socioDNI, socioDireccion, socioMail, socioTelefono, socioCelular, socioFechaIng, socioFechaUltPago, socioFechaNac";
-            string condicion = "(socioGenero = " + gen + ") AND(socioNivel = '" + div + "')";
+            if (gen == 1)
+            {
+                string genero = "True";
+                string tabla = "Socio";
+                string valores = "socioNombre, socioDNI, socioDireccion, socioMail, socioTelefono, socioCelular, socioFechaIng, socioFechaUltPago, socioFechaNac";
+                string condicion = "(socioGenero = " + genero + ") AND (socioNivel = '" + div + "')";
 
-            cargar.Llenardgvcondiciones(tabla, valores, dgvDivision, condicion);
+                cargar.Llenardgvcondiciones(tabla, valores, dgvDivision, condicion);
+            }
+            else
+            {
+                string genero = "False";
+                string tabla = "Socio";
+                string valores = "socioNombre, socioDNI, socioDireccion, socioMail, socioTelefono, socioCelular, socioFechaIng, socioFechaUltPago, socioFechaNac";
+                string condicion = "(socioGenero = " + genero + ") AND (socioNivel = '" + div + "')";
+
+                cargar.Llenardgvcondiciones(tabla, valores, dgvDivision, condicion);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
