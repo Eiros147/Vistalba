@@ -145,6 +145,12 @@
     <Compile Include="ModificarUsuario.Designer.cs">
       <DependentUpon>ModificarUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Niveles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Niveles.Designer.cs">
+      <DependentUpon>Niveles.cs</DependentUpon>
+    </Compile>
     <Compile Include="NuevaActividad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,6 +204,12 @@
     </Compile>
     <Compile Include="PagosMensualesDos.Designer.cs">
       <DependentUpon>PagosMensualesDos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PagosPorCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PagosPorCategoria.Designer.cs">
+      <DependentUpon>PagosPorCategoria.cs</DependentUpon>
     </Compile>
     <Compile Include="Profesionales.cs">
       <SubType>Form</SubType>
@@ -258,6 +270,9 @@
     <EmbeddedResource Include="ModificarUsuario.resx">
       <DependentUpon>ModificarUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Niveles.resx">
+      <DependentUpon>Niveles.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NuevaActividad.resx">
       <DependentUpon>NuevaActividad.cs</DependentUpon>
     </EmbeddedResource>
@@ -284,6 +299,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PagosMensualesDos.resx">
       <DependentUpon>PagosMensualesDos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PagosPorCategoria.resx">
+      <DependentUpon>PagosPorCategoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Profesionales.resx">
       <DependentUpon>Profesionales.cs</DependentUpon>

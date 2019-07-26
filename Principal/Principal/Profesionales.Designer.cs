@@ -165,6 +165,7 @@
             this.Controls.Add(this.dgvProfesional);
             this.Name = "Profesionales";
             this.Text = "Profesionales";
+            this.Activated += new System.EventHandler(this.Profesionales_Activated);
             this.Load += new System.EventHandler(this.Profesionales_Load);
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profesionalBindingSource)).EndInit();

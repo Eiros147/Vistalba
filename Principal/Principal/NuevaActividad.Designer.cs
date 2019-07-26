@@ -128,6 +128,7 @@
             this.tableAdapterManager.CuotaTableAdapter = null;
             this.tableAdapterManager.GrupoTableAdapter = null;
             this.tableAdapterManager.MensualTableAdapter = null;
+            this.tableAdapterManager.NivelesTableAdapter = null;
             this.tableAdapterManager.ProfesionalTableAdapter = null;
             this.tableAdapterManager.SaludTableAdapter = null;
             this.tableAdapterManager.SocioTableAdapter = null;
@@ -210,21 +211,23 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(237, 203);
+            this.button1.Location = new System.Drawing.Point(261, 161);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 35);
             this.button1.TabIndex = 15;
             this.button1.Text = "Cancelar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtID
             // 
             this.txtID.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.actividadesBindingSource, "actMeses", true));
-            this.txtID.Location = new System.Drawing.Point(236, 169);
+            this.txtID.Location = new System.Drawing.Point(236, 116);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(100, 20);
             this.txtID.TabIndex = 16;
+            this.txtID.Visible = false;
             // 
             // profesionalActividadesBindingSource
             // 
@@ -235,7 +238,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(348, 250);
+            this.ClientSize = new System.Drawing.Size(348, 210);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.cbProfesional);

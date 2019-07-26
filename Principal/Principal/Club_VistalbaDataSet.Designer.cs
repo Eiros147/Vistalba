@@ -42,6 +42,8 @@ namespace Principal {
         
         private NivelesDataTable tableNiveles;
         
+        private ValorFijoDataTable tableValorFijo;
+        
         private global::System.Data.DataRelation relationProfesionalActividades;
         
         private global::System.Data.DataRelation relationCategoriaCuota;
@@ -52,7 +54,11 @@ namespace Principal {
         
         private global::System.Data.DataRelation relationGrupoSocio;
         
-        private global::System.Data.DataRelation relationSocioMensual;
+        private global::System.Data.DataRelation relationCategoriaGrupo;
+        
+        private global::System.Data.DataRelation relationCategoriaMensual;
+        
+        private global::System.Data.DataRelation relationMensualSocio;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -108,6 +114,9 @@ namespace Principal {
                 }
                 if ((ds.Tables["Niveles"] != null)) {
                     base.Tables.Add(new NivelesDataTable(ds.Tables["Niveles"]));
+                }
+                if ((ds.Tables["ValorFijo"] != null)) {
+                    base.Tables.Add(new ValorFijoDataTable(ds.Tables["ValorFijo"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -219,6 +228,16 @@ namespace Principal {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public ValorFijoDataTable ValorFijo {
+            get {
+                return this.tableValorFijo;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -311,6 +330,9 @@ namespace Principal {
                 if ((ds.Tables["Niveles"] != null)) {
                     base.Tables.Add(new NivelesDataTable(ds.Tables["Niveles"]));
                 }
+                if ((ds.Tables["ValorFijo"] != null)) {
+                    base.Tables.Add(new ValorFijoDataTable(ds.Tables["ValorFijo"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -398,12 +420,20 @@ namespace Principal {
                     this.tableNiveles.InitVars();
                 }
             }
+            this.tableValorFijo = ((ValorFijoDataTable)(base.Tables["ValorFijo"]));
+            if ((initTable == true)) {
+                if ((this.tableValorFijo != null)) {
+                    this.tableValorFijo.InitVars();
+                }
+            }
             this.relationProfesionalActividades = this.Relations["ProfesionalActividades"];
             this.relationCategoriaCuota = this.Relations["CategoriaCuota"];
             this.relationGrupoCuota = this.Relations["GrupoCuota"];
             this.relationSocioSalud = this.Relations["SocioSalud"];
             this.relationGrupoSocio = this.Relations["GrupoSocio"];
-            this.relationSocioMensual = this.Relations["SocioMensual"];
+            this.relationCategoriaGrupo = this.Relations["CategoriaGrupo"];
+            this.relationCategoriaMensual = this.Relations["CategoriaMensual"];
+            this.relationMensualSocio = this.Relations["MensualSocio"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -432,6 +462,8 @@ namespace Principal {
             base.Tables.Add(this.tableMensual);
             this.tableNiveles = new NivelesDataTable();
             base.Tables.Add(this.tableNiveles);
+            this.tableValorFijo = new ValorFijoDataTable();
+            base.Tables.Add(this.tableValorFijo);
             this.relationProfesionalActividades = new global::System.Data.DataRelation("ProfesionalActividades", new global::System.Data.DataColumn[] {
                         this.tableProfesional.profIdColumn}, new global::System.Data.DataColumn[] {
                         this.tableActividades.profIdColumn}, false);
@@ -452,10 +484,18 @@ namespace Principal {
                         this.tableGrupo.grupoIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableSocio.grupoIdColumn}, false);
             this.Relations.Add(this.relationGrupoSocio);
-            this.relationSocioMensual = new global::System.Data.DataRelation("SocioMensual", new global::System.Data.DataColumn[] {
-                        this.tableSocio.socioIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableMensual.socioIDColumn}, false);
-            this.Relations.Add(this.relationSocioMensual);
+            this.relationCategoriaGrupo = new global::System.Data.DataRelation("CategoriaGrupo", new global::System.Data.DataColumn[] {
+                        this.tableCategoria.catIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableGrupo.catIDColumn}, false);
+            this.Relations.Add(this.relationCategoriaGrupo);
+            this.relationCategoriaMensual = new global::System.Data.DataRelation("CategoriaMensual", new global::System.Data.DataColumn[] {
+                        this.tableCategoria.catIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableMensual.catIDColumn}, false);
+            this.Relations.Add(this.relationCategoriaMensual);
+            this.relationMensualSocio = new global::System.Data.DataRelation("MensualSocio", new global::System.Data.DataColumn[] {
+                        this.tableMensual.mesIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableSocio.mesIDColumn}, false);
+            this.Relations.Add(this.relationMensualSocio);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -509,6 +549,12 @@ namespace Principal {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private bool ShouldSerializeNiveles() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private bool ShouldSerializeValorFijo() {
             return false;
         }
         
@@ -593,6 +639,9 @@ namespace Principal {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public delegate void NivelesRowChangeEventHandler(object sender, NivelesRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public delegate void ValorFijoRowChangeEventHandler(object sender, ValorFijoRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1579,8 +1628,6 @@ namespace Principal {
             
             private global::System.Data.DataColumn columngrupoSocio2;
             
-            private global::System.Data.DataColumn columngrupoSocio3;
-            
             private global::System.Data.DataColumn columngrupoNombre;
             
             private global::System.Data.DataColumn columncatID;
@@ -1660,14 +1707,6 @@ namespace Principal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn grupoSocio3Column {
-                get {
-                    return this.columngrupoSocio3;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn grupoNombreColumn {
                 get {
                     return this.columngrupoNombre;
@@ -1719,7 +1758,7 @@ namespace Principal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public GrupoRow AddGrupoRow(string grupoSocioPpal, string grupoApellido, string grupoSocio1, string grupoSocio2, string grupoSocio3, string grupoNombre, int catID) {
+            public GrupoRow AddGrupoRow(string grupoSocioPpal, string grupoApellido, string grupoSocio1, string grupoSocio2, string grupoNombre, CategoriaRow parentCategoriaRowByCategoriaGrupo) {
                 GrupoRow rowGrupoRow = ((GrupoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1727,9 +1766,11 @@ namespace Principal {
                         grupoApellido,
                         grupoSocio1,
                         grupoSocio2,
-                        grupoSocio3,
                         grupoNombre,
-                        catID};
+                        null};
+                if ((parentCategoriaRowByCategoriaGrupo != null)) {
+                    columnValuesArray[6] = parentCategoriaRowByCategoriaGrupo[0];
+                }
                 rowGrupoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowGrupoRow);
                 return rowGrupoRow;
@@ -1764,7 +1805,6 @@ namespace Principal {
                 this.columngrupoApellido = base.Columns["grupoApellido"];
                 this.columngrupoSocio1 = base.Columns["grupoSocio1"];
                 this.columngrupoSocio2 = base.Columns["grupoSocio2"];
-                this.columngrupoSocio3 = base.Columns["grupoSocio3"];
                 this.columngrupoNombre = base.Columns["grupoNombre"];
                 this.columncatID = base.Columns["catID"];
             }
@@ -1782,8 +1822,6 @@ namespace Principal {
                 base.Columns.Add(this.columngrupoSocio1);
                 this.columngrupoSocio2 = new global::System.Data.DataColumn("grupoSocio2", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columngrupoSocio2);
-                this.columngrupoSocio3 = new global::System.Data.DataColumn("grupoSocio3", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columngrupoSocio3);
                 this.columngrupoNombre = new global::System.Data.DataColumn("grupoNombre", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columngrupoNombre);
                 this.columncatID = new global::System.Data.DataColumn("catID", typeof(int), null, global::System.Data.MappingType.Element);
@@ -1799,7 +1837,6 @@ namespace Principal {
                 this.columngrupoApellido.MaxLength = 255;
                 this.columngrupoSocio1.MaxLength = 255;
                 this.columngrupoSocio2.MaxLength = 255;
-                this.columngrupoSocio3.MaxLength = 255;
                 this.columngrupoNombre.MaxLength = 255;
             }
             
@@ -2672,6 +2709,8 @@ namespace Principal {
             
             private global::System.Data.DataColumn columnsocioEstado;
             
+            private global::System.Data.DataColumn columnmesID;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public SocioDataTable() {
@@ -2851,6 +2890,14 @@ namespace Principal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn mesIDColumn {
+                get {
+                    return this.columnmesID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2903,7 +2950,8 @@ namespace Principal {
                         string socioFoto, 
                         string socioCategoria, 
                         string socioNivel, 
-                        bool socioEstado) {
+                        bool socioEstado, 
+                        MensualRow parentMensualRowByMensualSocio) {
                 SocioRow rowSocioRow = ((SocioRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -2923,9 +2971,13 @@ namespace Principal {
                         socioFoto,
                         socioCategoria,
                         socioNivel,
-                        socioEstado};
+                        socioEstado,
+                        null};
                 if ((parentGrupoRowByGrupoSocio != null)) {
                     columnValuesArray[10] = parentGrupoRowByGrupoSocio[0];
+                }
+                if ((parentMensualRowByMensualSocio != null)) {
+                    columnValuesArray[18] = parentMensualRowByMensualSocio[15];
                 }
                 rowSocioRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSocioRow);
@@ -2974,6 +3026,7 @@ namespace Principal {
                 this.columnsocioCategoria = base.Columns["socioCategoria"];
                 this.columnsocioNivel = base.Columns["socioNivel"];
                 this.columnsocioEstado = base.Columns["socioEstado"];
+                this.columnmesID = base.Columns["mesID"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3015,6 +3068,8 @@ namespace Principal {
                 base.Columns.Add(this.columnsocioNivel);
                 this.columnsocioEstado = new global::System.Data.DataColumn("socioEstado", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnsocioEstado);
+                this.columnmesID = new global::System.Data.DataColumn("mesID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmesID);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnsocioID}, true));
                 this.columnsocioID.AutoIncrement = true;
@@ -3163,8 +3218,6 @@ namespace Principal {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class MensualDataTable : global::System.Data.TypedTableBase<MensualRow> {
             
-            private global::System.Data.DataColumn columnsocioID;
-            
             private global::System.Data.DataColumn columnmesEnero;
             
             private global::System.Data.DataColumn columnmesFebrero;
@@ -3192,6 +3245,10 @@ namespace Principal {
             private global::System.Data.DataColumn columnmesTotal;
             
             private global::System.Data.DataColumn columnmesTotalPago;
+            
+            private global::System.Data.DataColumn columncatID;
+            
+            private global::System.Data.DataColumn columnmesID;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -3224,14 +3281,6 @@ namespace Principal {
             protected MensualDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn socioIDColumn {
-                get {
-                    return this.columnsocioID;
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3348,6 +3397,22 @@ namespace Principal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn catIDColumn {
+                get {
+                    return this.columncatID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn mesIDColumn {
+                get {
+                    return this.columnmesID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3383,10 +3448,9 @@ namespace Principal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public MensualRow AddMensualRow(string mesEnero, string mesFebrero, string mesMarzo, string mesAbril, string mesMayo, string mesJunio, string mesJulio, string mesAgosto, string mesSeptiembre, string mesOctubre, string mesNoviembre, string mesDiciembre, string mesTotal, int mesTotalPago) {
+            public MensualRow AddMensualRow(string mesEnero, string mesFebrero, string mesMarzo, string mesAbril, string mesMayo, string mesJunio, string mesJulio, string mesAgosto, string mesSeptiembre, string mesOctubre, string mesNoviembre, string mesDiciembre, string mesTotal, int mesTotalPago, int mesID) {
                 MensualRow rowMensualRow = ((MensualRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
                         mesEnero,
                         mesFebrero,
                         mesMarzo,
@@ -3400,7 +3464,9 @@ namespace Principal {
                         mesNoviembre,
                         mesDiciembre,
                         mesTotal,
-                        mesTotalPago};
+                        mesTotalPago,
+                        null,
+                        mesID};
                 rowMensualRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowMensualRow);
                 return rowMensualRow;
@@ -3408,9 +3474,9 @@ namespace Principal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public MensualRow FindBysocioID(int socioID) {
+            public MensualRow FindBycatID(int catID) {
                 return ((MensualRow)(this.Rows.Find(new object[] {
-                            socioID})));
+                            catID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3430,7 +3496,6 @@ namespace Principal {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
-                this.columnsocioID = base.Columns["socioID"];
                 this.columnmesEnero = base.Columns["mesEnero"];
                 this.columnmesFebrero = base.Columns["mesFebrero"];
                 this.columnmesMarzo = base.Columns["mesMarzo"];
@@ -3445,13 +3510,13 @@ namespace Principal {
                 this.columnmesDiciembre = base.Columns["mesDiciembre"];
                 this.columnmesTotal = base.Columns["mesTotal"];
                 this.columnmesTotalPago = base.Columns["mesTotalPago"];
+                this.columncatID = base.Columns["catID"];
+                this.columnmesID = base.Columns["mesID"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
-                this.columnsocioID = new global::System.Data.DataColumn("socioID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnsocioID);
                 this.columnmesEnero = new global::System.Data.DataColumn("mesEnero", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnmesEnero);
                 this.columnmesFebrero = new global::System.Data.DataColumn("mesFebrero", typeof(string), null, global::System.Data.MappingType.Element);
@@ -3480,13 +3545,12 @@ namespace Principal {
                 base.Columns.Add(this.columnmesTotal);
                 this.columnmesTotalPago = new global::System.Data.DataColumn("mesTotalPago", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnmesTotalPago);
+                this.columncatID = new global::System.Data.DataColumn("catID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncatID);
+                this.columnmesID = new global::System.Data.DataColumn("mesID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmesID);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnsocioID}, true));
-                this.columnsocioID.AutoIncrement = true;
-                this.columnsocioID.AutoIncrementSeed = -1;
-                this.columnsocioID.AutoIncrementStep = -1;
-                this.columnsocioID.AllowDBNull = false;
-                this.columnsocioID.Unique = true;
+                                this.columncatID}, true));
                 this.columnmesEnero.MaxLength = 255;
                 this.columnmesFebrero.MaxLength = 255;
                 this.columnmesMarzo.MaxLength = 255;
@@ -3500,6 +3564,11 @@ namespace Principal {
                 this.columnmesNoviembre.MaxLength = 255;
                 this.columnmesDiciembre.MaxLength = 255;
                 this.columnmesTotal.MaxLength = 255;
+                this.columncatID.AutoIncrement = true;
+                this.columncatID.AutoIncrementSeed = -1;
+                this.columncatID.AutoIncrementStep = -1;
+                this.columncatID.AllowDBNull = false;
+                this.columncatID.Unique = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3917,6 +3986,447 @@ namespace Principal {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class ValorFijoDataTable : global::System.Data.TypedTableBase<ValorFijoRow> {
+            
+            private global::System.Data.DataColumn columngrupoID;
+            
+            private global::System.Data.DataColumn columnfijoEnero;
+            
+            private global::System.Data.DataColumn columnfijoFebrero;
+            
+            private global::System.Data.DataColumn columnfijoMarzo;
+            
+            private global::System.Data.DataColumn columnfijoAbil;
+            
+            private global::System.Data.DataColumn columnfijoMayo;
+            
+            private global::System.Data.DataColumn columnfijoJunio;
+            
+            private global::System.Data.DataColumn columnfijoJulio;
+            
+            private global::System.Data.DataColumn columnfijoAgosto;
+            
+            private global::System.Data.DataColumn columnfijoSeptiembre;
+            
+            private global::System.Data.DataColumn columnfijoOctubre;
+            
+            private global::System.Data.DataColumn columnfijoNoviembre;
+            
+            private global::System.Data.DataColumn columnfijoDiciembre;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public ValorFijoDataTable() {
+                this.TableName = "ValorFijo";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal ValorFijoDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected ValorFijoDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn grupoIDColumn {
+                get {
+                    return this.columngrupoID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn fijoEneroColumn {
+                get {
+                    return this.columnfijoEnero;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn fijoFebreroColumn {
+                get {
+                    return this.columnfijoFebrero;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn fijoMarzoColumn {
+                get {
+                    return this.columnfijoMarzo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn fijoAbilColumn {
+                get {
+                    return this.columnfijoAbil;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn fijoMayoColumn {
+                get {
+                    return this.columnfijoMayo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn fijoJunioColumn {
+                get {
+                    return this.columnfijoJunio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn fijoJulioColumn {
+                get {
+                    return this.columnfijoJulio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn fijoAgostoColumn {
+                get {
+                    return this.columnfijoAgosto;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn fijoSeptiembreColumn {
+                get {
+                    return this.columnfijoSeptiembre;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn fijoOctubreColumn {
+                get {
+                    return this.columnfijoOctubre;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn fijoNoviembreColumn {
+                get {
+                    return this.columnfijoNoviembre;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn fijoDiciembreColumn {
+                get {
+                    return this.columnfijoDiciembre;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public ValorFijoRow this[int index] {
+                get {
+                    return ((ValorFijoRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event ValorFijoRowChangeEventHandler ValorFijoRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event ValorFijoRowChangeEventHandler ValorFijoRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event ValorFijoRowChangeEventHandler ValorFijoRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event ValorFijoRowChangeEventHandler ValorFijoRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void AddValorFijoRow(ValorFijoRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public ValorFijoRow AddValorFijoRow(string fijoEnero, string fijoFebrero, string fijoMarzo, string fijoAbil, string fijoMayo, string fijoJunio, string fijoJulio, string fijoAgosto, string fijoSeptiembre, string fijoOctubre, string fijoNoviembre, string fijoDiciembre) {
+                ValorFijoRow rowValorFijoRow = ((ValorFijoRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        fijoEnero,
+                        fijoFebrero,
+                        fijoMarzo,
+                        fijoAbil,
+                        fijoMayo,
+                        fijoJunio,
+                        fijoJulio,
+                        fijoAgosto,
+                        fijoSeptiembre,
+                        fijoOctubre,
+                        fijoNoviembre,
+                        fijoDiciembre};
+                rowValorFijoRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowValorFijoRow);
+                return rowValorFijoRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public ValorFijoRow FindBygrupoID(int grupoID) {
+                return ((ValorFijoRow)(this.Rows.Find(new object[] {
+                            grupoID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                ValorFijoDataTable cln = ((ValorFijoDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new ValorFijoDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal void InitVars() {
+                this.columngrupoID = base.Columns["grupoID"];
+                this.columnfijoEnero = base.Columns["fijoEnero"];
+                this.columnfijoFebrero = base.Columns["fijoFebrero"];
+                this.columnfijoMarzo = base.Columns["fijoMarzo"];
+                this.columnfijoAbil = base.Columns["fijoAbil"];
+                this.columnfijoMayo = base.Columns["fijoMayo"];
+                this.columnfijoJunio = base.Columns["fijoJunio"];
+                this.columnfijoJulio = base.Columns["fijoJulio"];
+                this.columnfijoAgosto = base.Columns["fijoAgosto"];
+                this.columnfijoSeptiembre = base.Columns["fijoSeptiembre"];
+                this.columnfijoOctubre = base.Columns["fijoOctubre"];
+                this.columnfijoNoviembre = base.Columns["fijoNoviembre"];
+                this.columnfijoDiciembre = base.Columns["fijoDiciembre"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            private void InitClass() {
+                this.columngrupoID = new global::System.Data.DataColumn("grupoID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columngrupoID);
+                this.columnfijoEnero = new global::System.Data.DataColumn("fijoEnero", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfijoEnero);
+                this.columnfijoFebrero = new global::System.Data.DataColumn("fijoFebrero", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfijoFebrero);
+                this.columnfijoMarzo = new global::System.Data.DataColumn("fijoMarzo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfijoMarzo);
+                this.columnfijoAbil = new global::System.Data.DataColumn("fijoAbil", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfijoAbil);
+                this.columnfijoMayo = new global::System.Data.DataColumn("fijoMayo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfijoMayo);
+                this.columnfijoJunio = new global::System.Data.DataColumn("fijoJunio", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfijoJunio);
+                this.columnfijoJulio = new global::System.Data.DataColumn("fijoJulio", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfijoJulio);
+                this.columnfijoAgosto = new global::System.Data.DataColumn("fijoAgosto", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfijoAgosto);
+                this.columnfijoSeptiembre = new global::System.Data.DataColumn("fijoSeptiembre", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfijoSeptiembre);
+                this.columnfijoOctubre = new global::System.Data.DataColumn("fijoOctubre", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfijoOctubre);
+                this.columnfijoNoviembre = new global::System.Data.DataColumn("fijoNoviembre", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfijoNoviembre);
+                this.columnfijoDiciembre = new global::System.Data.DataColumn("fijoDiciembre", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfijoDiciembre);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columngrupoID}, true));
+                this.columngrupoID.AutoIncrement = true;
+                this.columngrupoID.AutoIncrementSeed = -1;
+                this.columngrupoID.AutoIncrementStep = -1;
+                this.columngrupoID.AllowDBNull = false;
+                this.columngrupoID.Unique = true;
+                this.columnfijoEnero.MaxLength = 255;
+                this.columnfijoFebrero.MaxLength = 255;
+                this.columnfijoMarzo.MaxLength = 255;
+                this.columnfijoAbil.MaxLength = 255;
+                this.columnfijoMayo.MaxLength = 255;
+                this.columnfijoJunio.MaxLength = 255;
+                this.columnfijoJulio.MaxLength = 255;
+                this.columnfijoAgosto.MaxLength = 255;
+                this.columnfijoSeptiembre.MaxLength = 255;
+                this.columnfijoOctubre.MaxLength = 255;
+                this.columnfijoNoviembre.MaxLength = 255;
+                this.columnfijoDiciembre.MaxLength = 255;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public ValorFijoRow NewValorFijoRow() {
+                return ((ValorFijoRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new ValorFijoRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(ValorFijoRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.ValorFijoRowChanged != null)) {
+                    this.ValorFijoRowChanged(this, new ValorFijoRowChangeEvent(((ValorFijoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.ValorFijoRowChanging != null)) {
+                    this.ValorFijoRowChanging(this, new ValorFijoRowChangeEvent(((ValorFijoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.ValorFijoRowDeleted != null)) {
+                    this.ValorFijoRowDeleted(this, new ValorFijoRowChangeEvent(((ValorFijoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.ValorFijoRowDeleting != null)) {
+                    this.ValorFijoRowDeleting(this, new ValorFijoRowChangeEvent(((ValorFijoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void RemoveValorFijoRow(ValorFijoRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                Club_VistalbaDataSet ds = new Club_VistalbaDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "ValorFijoDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class ActividadesRow : global::System.Data.DataRow {
@@ -4268,6 +4778,28 @@ namespace Principal {
                     return ((CuotaRow[])(base.GetChildRows(this.Table.ChildRelations["CategoriaCuota"])));
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public GrupoRow[] GetGrupoRows() {
+                if ((this.Table.ChildRelations["CategoriaGrupo"] == null)) {
+                    return new GrupoRow[0];
+                }
+                else {
+                    return ((GrupoRow[])(base.GetChildRows(this.Table.ChildRelations["CategoriaGrupo"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public MensualRow[] GetMensualRows() {
+                if ((this.Table.ChildRelations["CategoriaMensual"] == null)) {
+                    return new MensualRow[0];
+                }
+                else {
+                    return ((MensualRow[])(base.GetChildRows(this.Table.ChildRelations["CategoriaMensual"])));
+                }
+            }
         }
         
         /// <summary>
@@ -4465,22 +4997,6 @@ namespace Principal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string grupoSocio3 {
-                get {
-                    try {
-                        return ((string)(this[this.tableGrupo.grupoSocio3Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'grupoSocio3\' de la tabla \'Grupo\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGrupo.grupoSocio3Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string grupoNombre {
                 get {
                     try {
@@ -4508,6 +5024,17 @@ namespace Principal {
                 }
                 set {
                     this[this.tableGrupo.catIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public CategoriaRow CategoriaRow {
+                get {
+                    return ((CategoriaRow)(this.GetParentRow(this.Table.ParentRelations["CategoriaGrupo"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["CategoriaGrupo"]);
                 }
             }
             
@@ -4557,18 +5084,6 @@ namespace Principal {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetgrupoSocio2Null() {
                 this[this.tableGrupo.grupoSocio2Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsgrupoSocio3Null() {
-                return this.IsNull(this.tableGrupo.grupoSocio3Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetgrupoSocio3Null() {
-                this[this.tableGrupo.grupoSocio3Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5327,12 +5842,39 @@ namespace Principal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int mesID {
+                get {
+                    try {
+                        return ((int)(this[this.tableSocio.mesIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'mesID\' de la tabla \'Socio\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSocio.mesIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public GrupoRow GrupoRow {
                 get {
                     return ((GrupoRow)(this.GetParentRow(this.Table.ParentRelations["GrupoSocio"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["GrupoSocio"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public MensualRow MensualRow {
+                get {
+                    return ((MensualRow)(this.GetParentRow(this.Table.ParentRelations["MensualSocio"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["MensualSocio"]);
                 }
             }
             
@@ -5542,23 +6084,24 @@ namespace Principal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsmesIDNull() {
+                return this.IsNull(this.tableSocio.mesIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetmesIDNull() {
+                this[this.tableSocio.mesIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public SaludRow[] GetSaludRows() {
                 if ((this.Table.ChildRelations["SocioSalud"] == null)) {
                     return new SaludRow[0];
                 }
                 else {
                     return ((SaludRow[])(base.GetChildRows(this.Table.ChildRelations["SocioSalud"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public MensualRow[] GetMensualRows() {
-                if ((this.Table.ChildRelations["SocioMensual"] == null)) {
-                    return new MensualRow[0];
-                }
-                else {
-                    return ((MensualRow[])(base.GetChildRows(this.Table.ChildRelations["SocioMensual"])));
                 }
             }
         }
@@ -5575,17 +6118,6 @@ namespace Principal {
             internal MensualRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
                 this.tableMensual = ((MensualDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int socioID {
-                get {
-                    return ((int)(this[this.tableMensual.socioIDColumn]));
-                }
-                set {
-                    this[this.tableMensual.socioIDColumn] = value;
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5814,12 +6346,39 @@ namespace Principal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public SocioRow SocioRow {
+            public int catID {
                 get {
-                    return ((SocioRow)(this.GetParentRow(this.Table.ParentRelations["SocioMensual"])));
+                    return ((int)(this[this.tableMensual.catIDColumn]));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["SocioMensual"]);
+                    this[this.tableMensual.catIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int mesID {
+                get {
+                    try {
+                        return ((int)(this[this.tableMensual.mesIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'mesID\' de la tabla \'Mensual\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMensual.mesIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public CategoriaRow CategoriaRow {
+                get {
+                    return ((CategoriaRow)(this.GetParentRow(this.Table.ParentRelations["CategoriaMensual"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["CategoriaMensual"]);
                 }
             }
             
@@ -5990,6 +6549,29 @@ namespace Principal {
             public void SetmesTotalPagoNull() {
                 this[this.tableMensual.mesTotalPagoColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsmesIDNull() {
+                return this.IsNull(this.tableMensual.mesIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetmesIDNull() {
+                this[this.tableMensual.mesIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public SocioRow[] GetSocioRows() {
+                if ((this.Table.ChildRelations["MensualSocio"] == null)) {
+                    return new SocioRow[0];
+                }
+                else {
+                    return ((SocioRow[])(base.GetChildRows(this.Table.ChildRelations["MensualSocio"])));
+                }
+            }
         }
         
         /// <summary>
@@ -6071,6 +6653,368 @@ namespace Principal {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetnivelNombreNull() {
                 this[this.tableNiveles.nivelNombreColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class ValorFijoRow : global::System.Data.DataRow {
+            
+            private ValorFijoDataTable tableValorFijo;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal ValorFijoRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableValorFijo = ((ValorFijoDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int grupoID {
+                get {
+                    return ((int)(this[this.tableValorFijo.grupoIDColumn]));
+                }
+                set {
+                    this[this.tableValorFijo.grupoIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string fijoEnero {
+                get {
+                    try {
+                        return ((string)(this[this.tableValorFijo.fijoEneroColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fijoEnero\' de la tabla \'ValorFijo\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableValorFijo.fijoEneroColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string fijoFebrero {
+                get {
+                    try {
+                        return ((string)(this[this.tableValorFijo.fijoFebreroColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fijoFebrero\' de la tabla \'ValorFijo\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableValorFijo.fijoFebreroColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string fijoMarzo {
+                get {
+                    try {
+                        return ((string)(this[this.tableValorFijo.fijoMarzoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fijoMarzo\' de la tabla \'ValorFijo\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableValorFijo.fijoMarzoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string fijoAbil {
+                get {
+                    try {
+                        return ((string)(this[this.tableValorFijo.fijoAbilColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fijoAbil\' de la tabla \'ValorFijo\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableValorFijo.fijoAbilColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string fijoMayo {
+                get {
+                    try {
+                        return ((string)(this[this.tableValorFijo.fijoMayoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fijoMayo\' de la tabla \'ValorFijo\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableValorFijo.fijoMayoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string fijoJunio {
+                get {
+                    try {
+                        return ((string)(this[this.tableValorFijo.fijoJunioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fijoJunio\' de la tabla \'ValorFijo\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableValorFijo.fijoJunioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string fijoJulio {
+                get {
+                    try {
+                        return ((string)(this[this.tableValorFijo.fijoJulioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fijoJulio\' de la tabla \'ValorFijo\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableValorFijo.fijoJulioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string fijoAgosto {
+                get {
+                    try {
+                        return ((string)(this[this.tableValorFijo.fijoAgostoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fijoAgosto\' de la tabla \'ValorFijo\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableValorFijo.fijoAgostoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string fijoSeptiembre {
+                get {
+                    try {
+                        return ((string)(this[this.tableValorFijo.fijoSeptiembreColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fijoSeptiembre\' de la tabla \'ValorFijo\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableValorFijo.fijoSeptiembreColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string fijoOctubre {
+                get {
+                    try {
+                        return ((string)(this[this.tableValorFijo.fijoOctubreColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fijoOctubre\' de la tabla \'ValorFijo\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableValorFijo.fijoOctubreColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string fijoNoviembre {
+                get {
+                    try {
+                        return ((string)(this[this.tableValorFijo.fijoNoviembreColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fijoNoviembre\' de la tabla \'ValorFijo\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableValorFijo.fijoNoviembreColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string fijoDiciembre {
+                get {
+                    try {
+                        return ((string)(this[this.tableValorFijo.fijoDiciembreColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fijoDiciembre\' de la tabla \'ValorFijo\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableValorFijo.fijoDiciembreColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsfijoEneroNull() {
+                return this.IsNull(this.tableValorFijo.fijoEneroColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetfijoEneroNull() {
+                this[this.tableValorFijo.fijoEneroColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsfijoFebreroNull() {
+                return this.IsNull(this.tableValorFijo.fijoFebreroColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetfijoFebreroNull() {
+                this[this.tableValorFijo.fijoFebreroColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsfijoMarzoNull() {
+                return this.IsNull(this.tableValorFijo.fijoMarzoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetfijoMarzoNull() {
+                this[this.tableValorFijo.fijoMarzoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsfijoAbilNull() {
+                return this.IsNull(this.tableValorFijo.fijoAbilColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetfijoAbilNull() {
+                this[this.tableValorFijo.fijoAbilColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsfijoMayoNull() {
+                return this.IsNull(this.tableValorFijo.fijoMayoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetfijoMayoNull() {
+                this[this.tableValorFijo.fijoMayoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsfijoJunioNull() {
+                return this.IsNull(this.tableValorFijo.fijoJunioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetfijoJunioNull() {
+                this[this.tableValorFijo.fijoJunioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsfijoJulioNull() {
+                return this.IsNull(this.tableValorFijo.fijoJulioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetfijoJulioNull() {
+                this[this.tableValorFijo.fijoJulioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsfijoAgostoNull() {
+                return this.IsNull(this.tableValorFijo.fijoAgostoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetfijoAgostoNull() {
+                this[this.tableValorFijo.fijoAgostoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsfijoSeptiembreNull() {
+                return this.IsNull(this.tableValorFijo.fijoSeptiembreColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetfijoSeptiembreNull() {
+                this[this.tableValorFijo.fijoSeptiembreColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsfijoOctubreNull() {
+                return this.IsNull(this.tableValorFijo.fijoOctubreColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetfijoOctubreNull() {
+                this[this.tableValorFijo.fijoOctubreColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsfijoNoviembreNull() {
+                return this.IsNull(this.tableValorFijo.fijoNoviembreColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetfijoNoviembreNull() {
+                this[this.tableValorFijo.fijoNoviembreColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsfijoDiciembreNull() {
+                return this.IsNull(this.tableValorFijo.fijoDiciembreColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetfijoDiciembreNull() {
+                this[this.tableValorFijo.fijoDiciembreColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -6366,6 +7310,40 @@ namespace Principal {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public NivelesRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public class ValorFijoRowChangeEvent : global::System.EventArgs {
+            
+            private ValorFijoRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public ValorFijoRowChangeEvent(ValorFijoRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public ValorFijoRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -6992,7 +7970,7 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[3];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[4];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT catID, catDesc, catNombre, catClubCard, catMesAct, catMesInact, catCant FR" +
@@ -7008,6 +7986,12 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
             this._commandCollection[2].CommandText = "SELECT        catID, catDesc, catNombre, catClubCard, catMesAct, catMesInact, cat" +
                 "Cant\r\nFROM            Categoria\r\nORDER BY catNombre";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT        catID, catDesc, catNombre, catClubCard, catMesAct, catMesInact, cat" +
+                "Cant\r\nFROM            Categoria\r\nWHERE        (catID = lblID.[text])\r\nORDER BY c" +
+                "atNombre";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7053,6 +8037,19 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillOrdenado(Club_VistalbaDataSet.CategoriaDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillOrdenadoCondicion(Club_VistalbaDataSet.CategoriaDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -7775,13 +8772,12 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("grupoApellido", "grupoApellido");
             tableMapping.ColumnMappings.Add("grupoSocio1", "grupoSocio1");
             tableMapping.ColumnMappings.Add("grupoSocio2", "grupoSocio2");
-            tableMapping.ColumnMappings.Add("grupoSocio3", "grupoSocio3");
             tableMapping.ColumnMappings.Add("grupoNombre", "grupoNombre");
             tableMapping.ColumnMappings.Add("catID", "catID");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `Grupo` WHERE ((`grupoID` = ?) AND ((? = 1 AND `grupoSocioPpal` IS NULL) OR (`grupoSocioPpal` = ?)) AND ((? = 1 AND `grupoApellido` IS NULL) OR (`grupoApellido` = ?)) AND ((? = 1 AND `grupoSocio1` IS NULL) OR (`grupoSocio1` = ?)) AND ((? = 1 AND `grupoSocio2` IS NULL) OR (`grupoSocio2` = ?)) AND ((? = 1 AND `grupoSocio3` IS NULL) OR (`grupoSocio3` = ?)) AND ((? = 1 AND `grupoNombre` IS NULL) OR (`grupoNombre` = ?)) AND ((? = 1 AND `catID` IS NULL) OR (`catID` = ?)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `Grupo` WHERE ((`grupoID` = ?) AND ((? = 1 AND `grupoSocioPpal` IS NULL) OR (`grupoSocioPpal` = ?)) AND ((? = 1 AND `grupoApellido` IS NULL) OR (`grupoApellido` = ?)) AND ((? = 1 AND `grupoSocio1` IS NULL) OR (`grupoSocio1` = ?)) AND ((? = 1 AND `grupoSocio2` IS NULL) OR (`grupoSocio2` = ?)) AND ((? = 1 AND `grupoNombre` IS NULL) OR (`grupoNombre` = ?)) AND ((? = 1 AND `catID` IS NULL) OR (`catID` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_grupoID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "grupoID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_grupoSocioPpal", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "grupoSocioPpal", global::System.Data.DataRowVersion.Original, true, null));
@@ -7792,8 +8788,6 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_grupoSocio1", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "grupoSocio1", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_grupoSocio2", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "grupoSocio2", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_grupoSocio2", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "grupoSocio2", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_grupoSocio3", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "grupoSocio3", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_grupoSocio3", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "grupoSocio3", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_grupoNombre", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "grupoNombre", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_grupoNombre", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "grupoNombre", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_catID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "catID", global::System.Data.DataRowVersion.Original, true, null));
@@ -7801,24 +8795,22 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO `Grupo` (`grupoSocioPpal`, `grupoApellido`, `grupoSocio1`, `grupoSoci" +
-                "o2`, `grupoSocio3`, `grupoNombre`, `catID`) VALUES (?, ?, ?, ?, ?, ?, ?)";
+                "o2`, `grupoNombre`, `catID`) VALUES (?, ?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("grupoSocioPpal", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "grupoSocioPpal", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("grupoApellido", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "grupoApellido", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("grupoSocio1", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "grupoSocio1", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("grupoSocio2", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "grupoSocio2", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("grupoSocio3", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "grupoSocio3", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("grupoNombre", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "grupoNombre", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("catID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "catID", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `Grupo` SET `grupoSocioPpal` = ?, `grupoApellido` = ?, `grupoSocio1` = ?, `grupoSocio2` = ?, `grupoSocio3` = ?, `grupoNombre` = ?, `catID` = ? WHERE ((`grupoID` = ?) AND ((? = 1 AND `grupoSocioPpal` IS NULL) OR (`grupoSocioPpal` = ?)) AND ((? = 1 AND `grupoApellido` IS NULL) OR (`grupoApellido` = ?)) AND ((? = 1 AND `grupoSocio1` IS NULL) OR (`grupoSocio1` = ?)) AND ((? = 1 AND `grupoSocio2` IS NULL) OR (`grupoSocio2` = ?)) AND ((? = 1 AND `grupoSocio3` IS NULL) OR (`grupoSocio3` = ?)) AND ((? = 1 AND `grupoNombre` IS NULL) OR (`grupoNombre` = ?)) AND ((? = 1 AND `catID` IS NULL) OR (`catID` = ?)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `Grupo` SET `grupoSocioPpal` = ?, `grupoApellido` = ?, `grupoSocio1` = ?, `grupoSocio2` = ?, `grupoNombre` = ?, `catID` = ? WHERE ((`grupoID` = ?) AND ((? = 1 AND `grupoSocioPpal` IS NULL) OR (`grupoSocioPpal` = ?)) AND ((? = 1 AND `grupoApellido` IS NULL) OR (`grupoApellido` = ?)) AND ((? = 1 AND `grupoSocio1` IS NULL) OR (`grupoSocio1` = ?)) AND ((? = 1 AND `grupoSocio2` IS NULL) OR (`grupoSocio2` = ?)) AND ((? = 1 AND `grupoNombre` IS NULL) OR (`grupoNombre` = ?)) AND ((? = 1 AND `catID` IS NULL) OR (`catID` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("grupoSocioPpal", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "grupoSocioPpal", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("grupoApellido", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "grupoApellido", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("grupoSocio1", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "grupoSocio1", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("grupoSocio2", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "grupoSocio2", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("grupoSocio3", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "grupoSocio3", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("grupoNombre", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "grupoNombre", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("catID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "catID", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_grupoID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "grupoID", global::System.Data.DataRowVersion.Original, false, null));
@@ -7830,8 +8822,6 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_grupoSocio1", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "grupoSocio1", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_grupoSocio2", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "grupoSocio2", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_grupoSocio2", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "grupoSocio2", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_grupoSocio3", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "grupoSocio3", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_grupoSocio3", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "grupoSocio3", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_grupoNombre", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "grupoNombre", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_grupoNombre", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "grupoNombre", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_catID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "catID", global::System.Data.DataRowVersion.Original, true, null));
@@ -7851,8 +8841,8 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT grupoID, grupoSocioPpal, grupoApellido, grupoSocio1, grupoSocio2, grupoSoc" +
-                "io3, grupoNombre, catID FROM Grupo";
+            this._commandCollection[0].CommandText = "SELECT grupoID, grupoSocioPpal, grupoApellido, grupoSocio1, grupoSocio2, grupoNom" +
+                "bre, catID FROM Grupo";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -7913,7 +8903,7 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_grupoID, string Original_grupoSocioPpal, string Original_grupoApellido, string Original_grupoSocio1, string Original_grupoSocio2, string Original_grupoSocio3, string Original_grupoNombre, int Original_catID) {
+        public virtual int Delete(int Original_grupoID, string Original_grupoSocioPpal, string Original_grupoApellido, string Original_grupoSocio1, string Original_grupoSocio2, string Original_grupoNombre, int Original_catID) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_grupoID));
             if ((Original_grupoSocioPpal == null)) {
                 throw new global::System.ArgumentNullException("Original_grupoSocioPpal");
@@ -7945,24 +8935,16 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_grupoSocio2));
             }
-            if ((Original_grupoSocio3 == null)) {
+            if ((Original_grupoNombre == null)) {
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_grupoSocio3));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_grupoNombre));
             }
-            if ((Original_grupoNombre == null)) {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_grupoNombre));
-            }
-            this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
-            this.Adapter.DeleteCommand.Parameters[14].Value = ((int)(Original_catID));
+            this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
+            this.Adapter.DeleteCommand.Parameters[12].Value = ((int)(Original_catID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -7983,7 +8965,7 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string grupoSocioPpal, string grupoApellido, string grupoSocio1, string grupoSocio2, string grupoSocio3, string grupoNombre, int catID) {
+        public virtual int Insert(string grupoSocioPpal, string grupoApellido, string grupoSocio1, string grupoSocio2, string grupoNombre, int catID) {
             if ((grupoSocioPpal == null)) {
                 throw new global::System.ArgumentNullException("grupoSocioPpal");
             }
@@ -8008,19 +8990,13 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = ((string)(grupoSocio2));
             }
-            if ((grupoSocio3 == null)) {
+            if ((grupoNombre == null)) {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(grupoSocio3));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(grupoNombre));
             }
-            if ((grupoNombre == null)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(grupoNombre));
-            }
-            this.Adapter.InsertCommand.Parameters[6].Value = ((int)(catID));
+            this.Adapter.InsertCommand.Parameters[5].Value = ((int)(catID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -8041,7 +9017,7 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string grupoSocioPpal, string grupoApellido, string grupoSocio1, string grupoSocio2, string grupoSocio3, string grupoNombre, int catID, int Original_grupoID, string Original_grupoSocioPpal, string Original_grupoApellido, string Original_grupoSocio1, string Original_grupoSocio2, string Original_grupoSocio3, string Original_grupoNombre, int Original_catID) {
+        public virtual int Update(string grupoSocioPpal, string grupoApellido, string grupoSocio1, string grupoSocio2, string grupoNombre, int catID, int Original_grupoID, string Original_grupoSocioPpal, string Original_grupoApellido, string Original_grupoSocio1, string Original_grupoSocio2, string Original_grupoNombre, int Original_catID) {
             if ((grupoSocioPpal == null)) {
                 throw new global::System.ArgumentNullException("grupoSocioPpal");
             }
@@ -8066,68 +9042,54 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(grupoSocio2));
             }
-            if ((grupoSocio3 == null)) {
+            if ((grupoNombre == null)) {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(grupoSocio3));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(grupoNombre));
             }
-            if ((grupoNombre == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(grupoNombre));
-            }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(catID));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_grupoID));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(catID));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_grupoID));
             if ((Original_grupoSocioPpal == null)) {
                 throw new global::System.ArgumentNullException("Original_grupoSocioPpal");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_grupoSocioPpal));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_grupoSocioPpal));
             }
             if ((Original_grupoApellido == null)) {
                 throw new global::System.ArgumentNullException("Original_grupoApellido");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_grupoApellido));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_grupoApellido));
             }
             if ((Original_grupoSocio1 == null)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_grupoSocio1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_grupoSocio1));
             }
             if ((Original_grupoSocio2 == null)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_grupoSocio2));
-            }
-            if ((Original_grupoSocio3 == null)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_grupoSocio3));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_grupoSocio2));
             }
             if ((Original_grupoNombre == null)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_grupoNombre));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_grupoNombre));
             }
-            this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-            this.Adapter.UpdateCommand.Parameters[21].Value = ((int)(Original_catID));
+            this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+            this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_catID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -9232,10 +10194,11 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("socioCategoria", "socioCategoria");
             tableMapping.ColumnMappings.Add("socioNivel", "socioNivel");
             tableMapping.ColumnMappings.Add("socioEstado", "socioEstado");
+            tableMapping.ColumnMappings.Add("mesID", "mesID");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `Socio` WHERE ((`socioID` = ?) AND ((? = 1 AND `socioNombre` IS NULL) OR (`socioNombre` = ?)) AND ((? = 1 AND `socioDNI` IS NULL) OR (`socioDNI` = ?)) AND ((? = 1 AND `socioDireccion` IS NULL) OR (`socioDireccion` = ?)) AND ((? = 1 AND `socioMail` IS NULL) OR (`socioMail` = ?)) AND ((? = 1 AND `socioTelefono` IS NULL) OR (`socioTelefono` = ?)) AND ((? = 1 AND `socioCelular` IS NULL) OR (`socioCelular` = ?)) AND ((? = 1 AND `socioFechaNac` IS NULL) OR (`socioFechaNac` = ?)) AND ((? = 1 AND `socioFechaIng` IS NULL) OR (`socioFechaIng` = ?)) AND ((? = 1 AND `socioFechaUltPago` IS NULL) OR (`socioFechaUltPago` = ?)) AND ((? = 1 AND `grupoId` IS NULL) OR (`grupoId` = ?)) AND ((? = 1 AND `catId` IS NULL) OR (`catId` = ?)) AND ((? = 1 AND `socioGenero` IS NULL) OR (`socioGenero` = ?)) AND ((? = 1 AND `socioNotas` IS NULL) OR (`socioNotas` = ?)) AND ((? = 1 AND `socioCategoria` IS NULL) OR (`socioCategoria` = ?)) AND ((? = 1 AND `socioEstado` IS NULL) OR (`socioEstado` = ?)) AND ((? = 1 AND `socioNivel` IS NULL) OR (`socioNivel` = ?)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `Socio` WHERE ((`socioID` = ?) AND ((? = 1 AND `socioNombre` IS NULL) OR (`socioNombre` = ?)) AND ((? = 1 AND `socioDNI` IS NULL) OR (`socioDNI` = ?)) AND ((? = 1 AND `socioDireccion` IS NULL) OR (`socioDireccion` = ?)) AND ((? = 1 AND `socioMail` IS NULL) OR (`socioMail` = ?)) AND ((? = 1 AND `socioTelefono` IS NULL) OR (`socioTelefono` = ?)) AND ((? = 1 AND `socioCelular` IS NULL) OR (`socioCelular` = ?)) AND ((? = 1 AND `socioFechaNac` IS NULL) OR (`socioFechaNac` = ?)) AND ((? = 1 AND `socioFechaIng` IS NULL) OR (`socioFechaIng` = ?)) AND ((? = 1 AND `socioFechaUltPago` IS NULL) OR (`socioFechaUltPago` = ?)) AND ((? = 1 AND `grupoId` IS NULL) OR (`grupoId` = ?)) AND ((? = 1 AND `catId` IS NULL) OR (`catId` = ?)) AND ((? = 1 AND `socioGenero` IS NULL) OR (`socioGenero` = ?)) AND ((? = 1 AND `socioNotas` IS NULL) OR (`socioNotas` = ?)) AND ((? = 1 AND `socioCategoria` IS NULL) OR (`socioCategoria` = ?)) AND ((? = 1 AND `socioEstado` IS NULL) OR (`socioEstado` = ?)) AND ((? = 1 AND `socioNivel` IS NULL) OR (`socioNivel` = ?)) AND ((? = 1 AND `mesID` IS NULL) OR (`mesID` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_socioID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "socioID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_socioNombre", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "socioNombre", global::System.Data.DataRowVersion.Original, true, null));
@@ -9270,9 +10233,11 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_socioEstado", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "socioEstado", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_socioNivel", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "socioNivel", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_socioNivel", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "socioNivel", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesID", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO `Socio` (`socioNombre`, `socioDNI`, `socioDireccion`, `socioMail`, `socioTelefono`, `socioCelular`, `socioFechaNac`, `socioFechaIng`, `socioFechaUltPago`, `grupoId`, `catId`, `socioGenero`, `socioNotas`, `socioFoto`, `socioCategoria`, `socioEstado`, `socioNivel`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO `Socio` (`socioNombre`, `socioDNI`, `socioDireccion`, `socioMail`, `socioTelefono`, `socioCelular`, `socioFechaNac`, `socioFechaIng`, `socioFechaUltPago`, `grupoId`, `catId`, `socioGenero`, `socioNotas`, `socioFoto`, `socioCategoria`, `socioEstado`, `socioNivel`, `mesID`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("socioNombre", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "socioNombre", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("socioDNI", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "socioDNI", global::System.Data.DataRowVersion.Current, false, null));
@@ -9291,9 +10256,10 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("socioCategoria", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "socioCategoria", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("socioEstado", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "socioEstado", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("socioNivel", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "socioNivel", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesID", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `Socio` SET `socioNombre` = ?, `socioDNI` = ?, `socioDireccion` = ?, `socioMail` = ?, `socioTelefono` = ?, `socioCelular` = ?, `socioFechaNac` = ?, `socioFechaIng` = ?, `socioFechaUltPago` = ?, `grupoId` = ?, `catId` = ?, `socioGenero` = ?, `socioNotas` = ?, `socioFoto` = ?, `socioCategoria` = ?, `socioEstado` = ?, `socioNivel` = ? WHERE ((`socioID` = ?) AND ((? = 1 AND `socioNombre` IS NULL) OR (`socioNombre` = ?)) AND ((? = 1 AND `socioDNI` IS NULL) OR (`socioDNI` = ?)) AND ((? = 1 AND `socioDireccion` IS NULL) OR (`socioDireccion` = ?)) AND ((? = 1 AND `socioMail` IS NULL) OR (`socioMail` = ?)) AND ((? = 1 AND `socioTelefono` IS NULL) OR (`socioTelefono` = ?)) AND ((? = 1 AND `socioCelular` IS NULL) OR (`socioCelular` = ?)) AND ((? = 1 AND `socioFechaNac` IS NULL) OR (`socioFechaNac` = ?)) AND ((? = 1 AND `socioFechaIng` IS NULL) OR (`socioFechaIng` = ?)) AND ((? = 1 AND `socioFechaUltPago` IS NULL) OR (`socioFechaUltPago` = ?)) AND ((? = 1 AND `grupoId` IS NULL) OR (`grupoId` = ?)) AND ((? = 1 AND `catId` IS NULL) OR (`catId` = ?)) AND ((? = 1 AND `socioGenero` IS NULL) OR (`socioGenero` = ?)) AND ((? = 1 AND `socioNotas` IS NULL) OR (`socioNotas` = ?)) AND ((? = 1 AND `socioCategoria` IS NULL) OR (`socioCategoria` = ?)) AND ((? = 1 AND `socioEstado` IS NULL) OR (`socioEstado` = ?)) AND ((? = 1 AND `socioNivel` IS NULL) OR (`socioNivel` = ?)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `Socio` SET `socioNombre` = ?, `socioDNI` = ?, `socioDireccion` = ?, `socioMail` = ?, `socioTelefono` = ?, `socioCelular` = ?, `socioFechaNac` = ?, `socioFechaIng` = ?, `socioFechaUltPago` = ?, `grupoId` = ?, `catId` = ?, `socioGenero` = ?, `socioNotas` = ?, `socioFoto` = ?, `socioCategoria` = ?, `socioEstado` = ?, `socioNivel` = ?, `mesID` = ? WHERE ((`socioID` = ?) AND ((? = 1 AND `socioNombre` IS NULL) OR (`socioNombre` = ?)) AND ((? = 1 AND `socioDNI` IS NULL) OR (`socioDNI` = ?)) AND ((? = 1 AND `socioDireccion` IS NULL) OR (`socioDireccion` = ?)) AND ((? = 1 AND `socioMail` IS NULL) OR (`socioMail` = ?)) AND ((? = 1 AND `socioTelefono` IS NULL) OR (`socioTelefono` = ?)) AND ((? = 1 AND `socioCelular` IS NULL) OR (`socioCelular` = ?)) AND ((? = 1 AND `socioFechaNac` IS NULL) OR (`socioFechaNac` = ?)) AND ((? = 1 AND `socioFechaIng` IS NULL) OR (`socioFechaIng` = ?)) AND ((? = 1 AND `socioFechaUltPago` IS NULL) OR (`socioFechaUltPago` = ?)) AND ((? = 1 AND `grupoId` IS NULL) OR (`grupoId` = ?)) AND ((? = 1 AND `catId` IS NULL) OR (`catId` = ?)) AND ((? = 1 AND `socioGenero` IS NULL) OR (`socioGenero` = ?)) AND ((? = 1 AND `socioNotas` IS NULL) OR (`socioNotas` = ?)) AND ((? = 1 AND `socioCategoria` IS NULL) OR (`socioCategoria` = ?)) AND ((? = 1 AND `socioEstado` IS NULL) OR (`socioEstado` = ?)) AND ((? = 1 AND `socioNivel` IS NULL) OR (`socioNivel` = ?)) AND ((? = 1 AND `mesID` IS NULL) OR (`mesID` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("socioNombre", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "socioNombre", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("socioDNI", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "socioDNI", global::System.Data.DataRowVersion.Current, false, null));
@@ -9312,6 +10278,7 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("socioCategoria", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "socioCategoria", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("socioEstado", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "socioEstado", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("socioNivel", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "socioNivel", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesID", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_socioID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "socioID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_socioNombre", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "socioNombre", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_socioNombre", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "socioNombre", global::System.Data.DataRowVersion.Original, false, null));
@@ -9345,6 +10312,8 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_socioEstado", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "socioEstado", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_socioNivel", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "socioNivel", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_socioNivel", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "socioNivel", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesID", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesID", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9362,8 +10331,8 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT socioID, socioNombre, socioDNI, socioDireccion, socioMail, socioTelefono, " +
                 "socioCelular, socioFechaNac, socioFechaIng, socioFechaUltPago, grupoId, catId, s" +
-                "ocioGenero, socioNotas, socioFoto, socioCategoria, socioEstado, socioNivel FROM " +
-                "Socio";
+                "ocioGenero, socioNotas, socioFoto, socioCategoria, socioEstado, socioNivel, mesI" +
+                "D FROM Socio";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -9441,7 +10410,8 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
                     string Original_socioNotas, 
                     string Original_socioCategoria, 
                     bool Original_socioEstado, 
-                    string Original_socioNivel) {
+                    string Original_socioNivel, 
+                    global::System.Nullable<int> Original_mesID) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_socioID));
             if ((Original_socioNombre == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -9559,6 +10529,14 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
                 this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[32].Value = ((string)(Original_socioNivel));
             }
+            if ((Original_mesID.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[33].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[34].Value = ((int)(Original_mesID.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[33].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[34].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -9596,7 +10574,8 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
                     string socioFoto, 
                     string socioCategoria, 
                     bool socioEstado, 
-                    string socioNivel) {
+                    string socioNivel, 
+                    global::System.Nullable<int> mesID) {
             if ((socioNombre == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -9689,6 +10668,12 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[16].Value = ((string)(socioNivel));
             }
+            if ((mesID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[17].Value = ((int)(mesID.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -9727,6 +10712,7 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
                     string socioCategoria, 
                     bool socioEstado, 
                     string socioNivel, 
+                    global::System.Nullable<int> mesID, 
                     int Original_socioID, 
                     string Original_socioNombre, 
                     global::System.Nullable<int> Original_socioDNI, 
@@ -9743,7 +10729,8 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
                     string Original_socioNotas, 
                     string Original_socioCategoria, 
                     bool Original_socioEstado, 
-                    string Original_socioNivel) {
+                    string Original_socioNivel, 
+                    global::System.Nullable<int> Original_mesID) {
             if ((socioNombre == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -9836,122 +10823,136 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(socioNivel));
             }
-            this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_socioID));
-            if ((Original_socioNombre == null)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+            if ((mesID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(mesID.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_socioNombre));
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_socioID));
+            if ((Original_socioNombre == null)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_socioNombre));
             }
             if ((Original_socioDNI.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((int)(Original_socioDNI.Value));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(Original_socioDNI.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
             if ((Original_socioDireccion == null)) {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(Original_socioDireccion));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_socioDireccion));
             }
             if ((Original_socioMail == null)) {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(Original_socioMail));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_socioMail));
             }
             if ((Original_socioTelefono.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((int)(Original_socioTelefono.Value));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((int)(Original_socioTelefono.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
             }
             if ((Original_socioCelular.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((int)(Original_socioCelular.Value));
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((int)(Original_socioCelular.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
             }
             if ((Original_socioFechaNac.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((System.DateTime)(Original_socioFechaNac.Value));
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((System.DateTime)(Original_socioFechaNac.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
             }
             if ((Original_socioFechaIng.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((System.DateTime)(Original_socioFechaIng.Value));
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((System.DateTime)(Original_socioFechaIng.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
             }
             if ((Original_socioFechaUltPago.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((System.DateTime)(Original_socioFechaUltPago.Value));
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((System.DateTime)(Original_socioFechaUltPago.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
             }
             if ((Original_grupoId.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((int)(Original_grupoId.Value));
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((int)(Original_grupoId.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[37].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[38].Value = global::System.DBNull.Value;
             }
             if ((Original_catId == null)) {
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[39].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[40].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((string)(Original_catId));
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((string)(Original_catId));
             }
-            this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(0));
-            this.Adapter.UpdateCommand.Parameters[41].Value = ((bool)(Original_socioGenero));
+            this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(0));
+            this.Adapter.UpdateCommand.Parameters[42].Value = ((bool)(Original_socioGenero));
             if ((Original_socioNotas == null)) {
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[43].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[44].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[43].Value = ((string)(Original_socioNotas));
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((string)(Original_socioNotas));
             }
             if ((Original_socioCategoria == null)) {
-                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[45].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[46].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[45].Value = ((string)(Original_socioCategoria));
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((string)(Original_socioCategoria));
             }
-            this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(0));
-            this.Adapter.UpdateCommand.Parameters[47].Value = ((bool)(Original_socioEstado));
+            this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(0));
+            this.Adapter.UpdateCommand.Parameters[48].Value = ((bool)(Original_socioEstado));
             if ((Original_socioNivel == null)) {
-                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[49].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[50].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[49].Value = ((string)(Original_socioNivel));
+                this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[50].Value = ((string)(Original_socioNivel));
+            }
+            if ((Original_mesID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[52].Value = ((int)(Original_mesID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[52].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -10091,7 +11092,6 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Mensual";
-            tableMapping.ColumnMappings.Add("socioID", "socioID");
             tableMapping.ColumnMappings.Add("mesEnero", "mesEnero");
             tableMapping.ColumnMappings.Add("mesFebrero", "mesFebrero");
             tableMapping.ColumnMappings.Add("mesMarzo", "mesMarzo");
@@ -10106,12 +11106,13 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("mesDiciembre", "mesDiciembre");
             tableMapping.ColumnMappings.Add("mesTotal", "mesTotal");
             tableMapping.ColumnMappings.Add("mesTotalPago", "mesTotalPago");
+            tableMapping.ColumnMappings.Add("catID", "catID");
+            tableMapping.ColumnMappings.Add("mesID", "mesID");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `Mensual` WHERE ((`socioID` = ?) AND ((? = 1 AND `mesEnero` IS NULL) OR (`mesEnero` = ?)) AND ((? = 1 AND `mesFebrero` IS NULL) OR (`mesFebrero` = ?)) AND ((? = 1 AND `mesMarzo` IS NULL) OR (`mesMarzo` = ?)) AND ((? = 1 AND `mesAbril` IS NULL) OR (`mesAbril` = ?)) AND ((? = 1 AND `mesMayo` IS NULL) OR (`mesMayo` = ?)) AND ((? = 1 AND `mesJunio` IS NULL) OR (`mesJunio` = ?)) AND ((? = 1 AND `mesJulio` IS NULL) OR (`mesJulio` = ?)) AND ((? = 1 AND `mesAgosto` IS NULL) OR (`mesAgosto` = ?)) AND ((? = 1 AND `mesSeptiembre` IS NULL) OR (`mesSeptiembre` = ?)) AND ((? = 1 AND `mesOctubre` IS NULL) OR (`mesOctubre` = ?)) AND ((? = 1 AND `mesNoviembre` IS NULL) OR (`mesNoviembre` = ?)) AND ((? = 1 AND `mesDiciembre` IS NULL) OR (`mesDiciembre` = ?)) AND ((? = 1 AND `mesTotal` IS NULL) OR (`mesTotal` = ?)) AND ((? = 1 AND `mesTotalPago` IS NULL) OR (`mesTotalPago` = ?)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `Mensual` WHERE (((? = 1 AND `mesEnero` IS NULL) OR (`mesEnero` = ?)) AND ((? = 1 AND `mesFebrero` IS NULL) OR (`mesFebrero` = ?)) AND ((? = 1 AND `mesMarzo` IS NULL) OR (`mesMarzo` = ?)) AND ((? = 1 AND `mesAbril` IS NULL) OR (`mesAbril` = ?)) AND ((? = 1 AND `mesMayo` IS NULL) OR (`mesMayo` = ?)) AND ((? = 1 AND `mesJunio` IS NULL) OR (`mesJunio` = ?)) AND ((? = 1 AND `mesJulio` IS NULL) OR (`mesJulio` = ?)) AND ((? = 1 AND `mesAgosto` IS NULL) OR (`mesAgosto` = ?)) AND ((? = 1 AND `mesSeptiembre` IS NULL) OR (`mesSeptiembre` = ?)) AND ((? = 1 AND `mesOctubre` IS NULL) OR (`mesOctubre` = ?)) AND ((? = 1 AND `mesNoviembre` IS NULL) OR (`mesNoviembre` = ?)) AND ((? = 1 AND `mesDiciembre` IS NULL) OR (`mesDiciembre` = ?)) AND ((? = 1 AND `mesTotal` IS NULL) OR (`mesTotal` = ?)) AND ((? = 1 AND `mesTotalPago` IS NULL) OR (`mesTotalPago` = ?)) AND (`catID` = ?) AND ((? = 1 AND `mesID` IS NULL) OR (`mesID` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_socioID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "socioID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesEnero", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesEnero", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesEnero", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesEnero", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesFebrero", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesFebrero", global::System.Data.DataRowVersion.Original, true, null));
@@ -10140,9 +11141,12 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesTotal", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesTotal", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesTotalPago", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesTotalPago", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesTotalPago", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesTotalPago", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_catID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "catID", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesID", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO `Mensual` (`mesEnero`, `mesFebrero`, `mesMarzo`, `mesAbril`, `mesMayo`, `mesJunio`, `mesJulio`, `mesAgosto`, `mesSeptiembre`, `mesOctubre`, `mesNoviembre`, `mesDiciembre`, `mesTotal`, `mesTotalPago`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO `Mensual` (`mesEnero`, `mesFebrero`, `mesMarzo`, `mesAbril`, `mesMayo`, `mesJunio`, `mesJulio`, `mesAgosto`, `mesSeptiembre`, `mesOctubre`, `mesNoviembre`, `mesDiciembre`, `mesTotal`, `mesTotalPago`, `mesID`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesEnero", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesEnero", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesFebrero", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesFebrero", global::System.Data.DataRowVersion.Current, false, null));
@@ -10158,9 +11162,10 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesDiciembre", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesDiciembre", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesTotal", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesTotal", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesTotalPago", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesTotalPago", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesID", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `Mensual` SET `mesEnero` = ?, `mesFebrero` = ?, `mesMarzo` = ?, `mesAbril` = ?, `mesMayo` = ?, `mesJunio` = ?, `mesJulio` = ?, `mesAgosto` = ?, `mesSeptiembre` = ?, `mesOctubre` = ?, `mesNoviembre` = ?, `mesDiciembre` = ?, `mesTotal` = ?, `mesTotalPago` = ? WHERE ((`socioID` = ?) AND ((? = 1 AND `mesEnero` IS NULL) OR (`mesEnero` = ?)) AND ((? = 1 AND `mesFebrero` IS NULL) OR (`mesFebrero` = ?)) AND ((? = 1 AND `mesMarzo` IS NULL) OR (`mesMarzo` = ?)) AND ((? = 1 AND `mesAbril` IS NULL) OR (`mesAbril` = ?)) AND ((? = 1 AND `mesMayo` IS NULL) OR (`mesMayo` = ?)) AND ((? = 1 AND `mesJunio` IS NULL) OR (`mesJunio` = ?)) AND ((? = 1 AND `mesJulio` IS NULL) OR (`mesJulio` = ?)) AND ((? = 1 AND `mesAgosto` IS NULL) OR (`mesAgosto` = ?)) AND ((? = 1 AND `mesSeptiembre` IS NULL) OR (`mesSeptiembre` = ?)) AND ((? = 1 AND `mesOctubre` IS NULL) OR (`mesOctubre` = ?)) AND ((? = 1 AND `mesNoviembre` IS NULL) OR (`mesNoviembre` = ?)) AND ((? = 1 AND `mesDiciembre` IS NULL) OR (`mesDiciembre` = ?)) AND ((? = 1 AND `mesTotal` IS NULL) OR (`mesTotal` = ?)) AND ((? = 1 AND `mesTotalPago` IS NULL) OR (`mesTotalPago` = ?)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `Mensual` SET `mesEnero` = ?, `mesFebrero` = ?, `mesMarzo` = ?, `mesAbril` = ?, `mesMayo` = ?, `mesJunio` = ?, `mesJulio` = ?, `mesAgosto` = ?, `mesSeptiembre` = ?, `mesOctubre` = ?, `mesNoviembre` = ?, `mesDiciembre` = ?, `mesTotal` = ?, `mesTotalPago` = ?, `mesID` = ? WHERE (((? = 1 AND `mesEnero` IS NULL) OR (`mesEnero` = ?)) AND ((? = 1 AND `mesFebrero` IS NULL) OR (`mesFebrero` = ?)) AND ((? = 1 AND `mesMarzo` IS NULL) OR (`mesMarzo` = ?)) AND ((? = 1 AND `mesAbril` IS NULL) OR (`mesAbril` = ?)) AND ((? = 1 AND `mesMayo` IS NULL) OR (`mesMayo` = ?)) AND ((? = 1 AND `mesJunio` IS NULL) OR (`mesJunio` = ?)) AND ((? = 1 AND `mesJulio` IS NULL) OR (`mesJulio` = ?)) AND ((? = 1 AND `mesAgosto` IS NULL) OR (`mesAgosto` = ?)) AND ((? = 1 AND `mesSeptiembre` IS NULL) OR (`mesSeptiembre` = ?)) AND ((? = 1 AND `mesOctubre` IS NULL) OR (`mesOctubre` = ?)) AND ((? = 1 AND `mesNoviembre` IS NULL) OR (`mesNoviembre` = ?)) AND ((? = 1 AND `mesDiciembre` IS NULL) OR (`mesDiciembre` = ?)) AND ((? = 1 AND `mesTotal` IS NULL) OR (`mesTotal` = ?)) AND ((? = 1 AND `mesTotalPago` IS NULL) OR (`mesTotalPago` = ?)) AND (`catID` = ?) AND ((? = 1 AND `mesID` IS NULL) OR (`mesID` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesEnero", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesEnero", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesFebrero", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesFebrero", global::System.Data.DataRowVersion.Current, false, null));
@@ -10176,7 +11181,7 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesDiciembre", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesDiciembre", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesTotal", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesTotal", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesTotalPago", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesTotalPago", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_socioID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "socioID", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesID", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesEnero", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesEnero", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesEnero", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesEnero", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesFebrero", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesFebrero", global::System.Data.DataRowVersion.Original, true, null));
@@ -10205,6 +11210,9 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesTotal", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesTotal", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesTotalPago", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesTotalPago", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesTotalPago", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesTotalPago", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_catID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "catID", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mesID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesID", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mesID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesID", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10220,9 +11228,9 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT socioID, mesEnero, mesFebrero, mesMarzo, mesAbril, mesMayo, mesJunio, mesJ" +
-                "ulio, mesAgosto, mesSeptiembre, mesOctubre, mesNoviembre, mesDiciembre, mesTotal" +
-                ", mesTotalPago FROM Mensual";
+            this._commandCollection[0].CommandText = "SELECT mesEnero, mesFebrero, mesMarzo, mesAbril, mesMayo, mesJunio, mesJulio, mes" +
+                "Agosto, mesSeptiembre, mesOctubre, mesNoviembre, mesDiciembre, mesTotal, mesTota" +
+                "lPago, catID, mesID FROM Mensual";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -10283,120 +11291,138 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_socioID, global::System.Nullable<int> Original_mesEnero, global::System.Nullable<int> Original_mesFebrero, global::System.Nullable<int> Original_mesMarzo, global::System.Nullable<int> Original_mesAbril, global::System.Nullable<int> Original_mesMayo, global::System.Nullable<int> Original_mesJunio, global::System.Nullable<int> Original_mesJulio, global::System.Nullable<int> Original_mesAgosto, global::System.Nullable<int> Original_mesSeptiembre, global::System.Nullable<int> Original_mesOctubre, global::System.Nullable<int> Original_mesNoviembre, global::System.Nullable<int> Original_mesDiciembre, global::System.Nullable<int> Original_mesTotal, global::System.Nullable<int> Original_mesTotalPago) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_socioID));
+        public virtual int Delete(
+                    global::System.Nullable<int> Original_mesEnero, 
+                    global::System.Nullable<int> Original_mesFebrero, 
+                    global::System.Nullable<int> Original_mesMarzo, 
+                    global::System.Nullable<int> Original_mesAbril, 
+                    global::System.Nullable<int> Original_mesMayo, 
+                    global::System.Nullable<int> Original_mesJunio, 
+                    global::System.Nullable<int> Original_mesJulio, 
+                    global::System.Nullable<int> Original_mesAgosto, 
+                    global::System.Nullable<int> Original_mesSeptiembre, 
+                    global::System.Nullable<int> Original_mesOctubre, 
+                    global::System.Nullable<int> Original_mesNoviembre, 
+                    global::System.Nullable<int> Original_mesDiciembre, 
+                    global::System.Nullable<int> Original_mesTotal, 
+                    global::System.Nullable<int> Original_mesTotalPago, 
+                    int Original_catID, 
+                    int Original_mesID) {
             if ((Original_mesEnero.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_mesEnero.Value));
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_mesEnero.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             if ((Original_mesFebrero.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_mesFebrero.Value));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_mesFebrero.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             if ((Original_mesMarzo.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_mesMarzo.Value));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_mesMarzo.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             if ((Original_mesAbril.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_mesAbril.Value));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((int)(Original_mesAbril.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             if ((Original_mesMayo.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((int)(Original_mesMayo.Value));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((int)(Original_mesMayo.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             if ((Original_mesJunio.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((int)(Original_mesJunio.Value));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((int)(Original_mesJunio.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             if ((Original_mesJulio.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((int)(Original_mesJulio.Value));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((int)(Original_mesJulio.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             if ((Original_mesAgosto.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[16].Value = ((int)(Original_mesAgosto.Value));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((int)(Original_mesAgosto.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             if ((Original_mesSeptiembre.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[18].Value = ((int)(Original_mesSeptiembre.Value));
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((int)(Original_mesSeptiembre.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
             if ((Original_mesOctubre.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[20].Value = ((int)(Original_mesOctubre.Value));
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[19].Value = ((int)(Original_mesOctubre.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[20].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
             if ((Original_mesNoviembre.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[22].Value = ((int)(Original_mesNoviembre.Value));
+                this.Adapter.DeleteCommand.Parameters[20].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[21].Value = ((int)(Original_mesNoviembre.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[22].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[20].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[21].Value = global::System.DBNull.Value;
             }
             if ((Original_mesDiciembre.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[24].Value = ((int)(Original_mesDiciembre.Value));
+                this.Adapter.DeleteCommand.Parameters[22].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[23].Value = ((int)(Original_mesDiciembre.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[24].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[22].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[23].Value = global::System.DBNull.Value;
             }
             if ((Original_mesTotal.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[26].Value = ((int)(Original_mesTotal.Value));
+                this.Adapter.DeleteCommand.Parameters[24].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[25].Value = ((int)(Original_mesTotal.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[26].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[24].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[25].Value = global::System.DBNull.Value;
             }
             if ((Original_mesTotalPago.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[28].Value = ((int)(Original_mesTotalPago.Value));
+                this.Adapter.DeleteCommand.Parameters[26].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[27].Value = ((int)(Original_mesTotalPago.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[28].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[26].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[27].Value = global::System.DBNull.Value;
             }
+            this.Adapter.DeleteCommand.Parameters[28].Value = ((int)(Original_catID));
+            this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(0));
+            this.Adapter.DeleteCommand.Parameters[30].Value = ((int)(Original_mesID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -10417,7 +11443,7 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<int> mesEnero, global::System.Nullable<int> mesFebrero, global::System.Nullable<int> mesMarzo, global::System.Nullable<int> mesAbril, global::System.Nullable<int> mesMayo, global::System.Nullable<int> mesJunio, global::System.Nullable<int> mesJulio, global::System.Nullable<int> mesAgosto, global::System.Nullable<int> mesSeptiembre, global::System.Nullable<int> mesOctubre, global::System.Nullable<int> mesNoviembre, global::System.Nullable<int> mesDiciembre, global::System.Nullable<int> mesTotal, global::System.Nullable<int> mesTotalPago) {
+        public virtual int Insert(global::System.Nullable<int> mesEnero, global::System.Nullable<int> mesFebrero, global::System.Nullable<int> mesMarzo, global::System.Nullable<int> mesAbril, global::System.Nullable<int> mesMayo, global::System.Nullable<int> mesJunio, global::System.Nullable<int> mesJulio, global::System.Nullable<int> mesAgosto, global::System.Nullable<int> mesSeptiembre, global::System.Nullable<int> mesOctubre, global::System.Nullable<int> mesNoviembre, global::System.Nullable<int> mesDiciembre, global::System.Nullable<int> mesTotal, global::System.Nullable<int> mesTotalPago, int mesID) {
             if ((mesEnero.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((int)(mesEnero.Value));
             }
@@ -10502,6 +11528,7 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
+            this.Adapter.InsertCommand.Parameters[14].Value = ((int)(mesID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -10537,7 +11564,7 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
                     global::System.Nullable<int> mesDiciembre, 
                     global::System.Nullable<int> mesTotal, 
                     global::System.Nullable<int> mesTotalPago, 
-                    int Original_socioID, 
+                    int mesID, 
                     global::System.Nullable<int> Original_mesEnero, 
                     global::System.Nullable<int> Original_mesFebrero, 
                     global::System.Nullable<int> Original_mesMarzo, 
@@ -10551,7 +11578,9 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
                     global::System.Nullable<int> Original_mesNoviembre, 
                     global::System.Nullable<int> Original_mesDiciembre, 
                     global::System.Nullable<int> Original_mesTotal, 
-                    global::System.Nullable<int> Original_mesTotalPago) {
+                    global::System.Nullable<int> Original_mesTotalPago, 
+                    int Original_catID, 
+                    int Original_mesID) {
             if ((mesEnero.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(mesEnero.Value));
             }
@@ -10636,7 +11665,7 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_socioID));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(mesID));
             if ((Original_mesEnero.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
                 this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_mesEnero.Value));
@@ -10749,6 +11778,9 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
                 this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[42].Value = global::System.DBNull.Value;
             }
+            this.Adapter.UpdateCommand.Parameters[43].Value = ((int)(Original_catID));
+            this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(0));
+            this.Adapter.UpdateCommand.Parameters[45].Value = ((int)(Original_mesID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -11116,6 +12148,730 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
     }
     
     /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class ValorFijoTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.OleDb.OleDbDataAdapter _adapter;
+        
+        private global::System.Data.OleDb.OleDbConnection _connection;
+        
+        private global::System.Data.OleDb.OleDbTransaction _transaction;
+        
+        private global::System.Data.OleDb.OleDbCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public ValorFijoTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        protected internal global::System.Data.OleDb.OleDbDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        internal global::System.Data.OleDb.OleDbConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.OleDb.OleDbCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        internal global::System.Data.OleDb.OleDbTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        protected global::System.Data.OleDb.OleDbCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.OleDb.OleDbDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "ValorFijo";
+            tableMapping.ColumnMappings.Add("grupoID", "grupoID");
+            tableMapping.ColumnMappings.Add("fijoEnero", "fijoEnero");
+            tableMapping.ColumnMappings.Add("fijoFebrero", "fijoFebrero");
+            tableMapping.ColumnMappings.Add("fijoMarzo", "fijoMarzo");
+            tableMapping.ColumnMappings.Add("fijoAbil", "fijoAbil");
+            tableMapping.ColumnMappings.Add("fijoMayo", "fijoMayo");
+            tableMapping.ColumnMappings.Add("fijoJunio", "fijoJunio");
+            tableMapping.ColumnMappings.Add("fijoJulio", "fijoJulio");
+            tableMapping.ColumnMappings.Add("fijoAgosto", "fijoAgosto");
+            tableMapping.ColumnMappings.Add("fijoSeptiembre", "fijoSeptiembre");
+            tableMapping.ColumnMappings.Add("fijoOctubre", "fijoOctubre");
+            tableMapping.ColumnMappings.Add("fijoNoviembre", "fijoNoviembre");
+            tableMapping.ColumnMappings.Add("fijoDiciembre", "fijoDiciembre");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `ValorFijo` WHERE ((`grupoID` = ?) AND ((? = 1 AND `fijoEnero` IS NULL) OR (`fijoEnero` = ?)) AND ((? = 1 AND `fijoFebrero` IS NULL) OR (`fijoFebrero` = ?)) AND ((? = 1 AND `fijoMarzo` IS NULL) OR (`fijoMarzo` = ?)) AND ((? = 1 AND `fijoAbil` IS NULL) OR (`fijoAbil` = ?)) AND ((? = 1 AND `fijoMayo` IS NULL) OR (`fijoMayo` = ?)) AND ((? = 1 AND `fijoJunio` IS NULL) OR (`fijoJunio` = ?)) AND ((? = 1 AND `fijoJulio` IS NULL) OR (`fijoJulio` = ?)) AND ((? = 1 AND `fijoAgosto` IS NULL) OR (`fijoAgosto` = ?)) AND ((? = 1 AND `fijoSeptiembre` IS NULL) OR (`fijoSeptiembre` = ?)) AND ((? = 1 AND `fijoOctubre` IS NULL) OR (`fijoOctubre` = ?)) AND ((? = 1 AND `fijoNoviembre` IS NULL) OR (`fijoNoviembre` = ?)) AND ((? = 1 AND `fijoDiciembre` IS NULL) OR (`fijoDiciembre` = ?)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_grupoID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "grupoID", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_fijoEnero", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoEnero", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_fijoEnero", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoEnero", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_fijoFebrero", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoFebrero", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_fijoFebrero", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoFebrero", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_fijoMarzo", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoMarzo", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_fijoMarzo", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoMarzo", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_fijoAbil", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoAbil", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_fijoAbil", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoAbil", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_fijoMayo", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoMayo", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_fijoMayo", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoMayo", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_fijoJunio", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoJunio", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_fijoJunio", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoJunio", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_fijoJulio", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoJulio", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_fijoJulio", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoJulio", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_fijoAgosto", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoAgosto", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_fijoAgosto", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoAgosto", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_fijoSeptiembre", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoSeptiembre", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_fijoSeptiembre", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoSeptiembre", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_fijoOctubre", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoOctubre", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_fijoOctubre", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoOctubre", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_fijoNoviembre", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoNoviembre", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_fijoNoviembre", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoNoviembre", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_fijoDiciembre", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoDiciembre", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_fijoDiciembre", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoDiciembre", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `ValorFijo` (`fijoEnero`, `fijoFebrero`, `fijoMarzo`, `fijoAbil`, `fi" +
+                "joMayo`, `fijoJunio`, `fijoJulio`, `fijoAgosto`, `fijoSeptiembre`, `fijoOctubre`" +
+                ", `fijoNoviembre`, `fijoDiciembre`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("fijoEnero", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoEnero", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("fijoFebrero", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoFebrero", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("fijoMarzo", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoMarzo", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("fijoAbil", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoAbil", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("fijoMayo", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoMayo", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("fijoJunio", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoJunio", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("fijoJulio", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoJulio", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("fijoAgosto", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoAgosto", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("fijoSeptiembre", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoSeptiembre", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("fijoOctubre", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoOctubre", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("fijoNoviembre", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoNoviembre", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("fijoDiciembre", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoDiciembre", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `ValorFijo` SET `fijoEnero` = ?, `fijoFebrero` = ?, `fijoMarzo` = ?, `fijoAbil` = ?, `fijoMayo` = ?, `fijoJunio` = ?, `fijoJulio` = ?, `fijoAgosto` = ?, `fijoSeptiembre` = ?, `fijoOctubre` = ?, `fijoNoviembre` = ?, `fijoDiciembre` = ? WHERE ((`grupoID` = ?) AND ((? = 1 AND `fijoEnero` IS NULL) OR (`fijoEnero` = ?)) AND ((? = 1 AND `fijoFebrero` IS NULL) OR (`fijoFebrero` = ?)) AND ((? = 1 AND `fijoMarzo` IS NULL) OR (`fijoMarzo` = ?)) AND ((? = 1 AND `fijoAbil` IS NULL) OR (`fijoAbil` = ?)) AND ((? = 1 AND `fijoMayo` IS NULL) OR (`fijoMayo` = ?)) AND ((? = 1 AND `fijoJunio` IS NULL) OR (`fijoJunio` = ?)) AND ((? = 1 AND `fijoJulio` IS NULL) OR (`fijoJulio` = ?)) AND ((? = 1 AND `fijoAgosto` IS NULL) OR (`fijoAgosto` = ?)) AND ((? = 1 AND `fijoSeptiembre` IS NULL) OR (`fijoSeptiembre` = ?)) AND ((? = 1 AND `fijoOctubre` IS NULL) OR (`fijoOctubre` = ?)) AND ((? = 1 AND `fijoNoviembre` IS NULL) OR (`fijoNoviembre` = ?)) AND ((? = 1 AND `fijoDiciembre` IS NULL) OR (`fijoDiciembre` = ?)))";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("fijoEnero", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoEnero", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("fijoFebrero", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoFebrero", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("fijoMarzo", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoMarzo", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("fijoAbil", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoAbil", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("fijoMayo", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoMayo", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("fijoJunio", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoJunio", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("fijoJulio", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoJulio", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("fijoAgosto", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoAgosto", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("fijoSeptiembre", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoSeptiembre", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("fijoOctubre", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoOctubre", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("fijoNoviembre", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoNoviembre", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("fijoDiciembre", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoDiciembre", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_grupoID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "grupoID", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_fijoEnero", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoEnero", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_fijoEnero", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoEnero", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_fijoFebrero", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoFebrero", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_fijoFebrero", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoFebrero", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_fijoMarzo", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoMarzo", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_fijoMarzo", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoMarzo", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_fijoAbil", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoAbil", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_fijoAbil", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoAbil", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_fijoMayo", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoMayo", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_fijoMayo", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoMayo", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_fijoJunio", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoJunio", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_fijoJunio", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoJunio", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_fijoJulio", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoJulio", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_fijoJulio", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoJulio", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_fijoAgosto", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoAgosto", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_fijoAgosto", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoAgosto", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_fijoSeptiembre", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoSeptiembre", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_fijoSeptiembre", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoSeptiembre", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_fijoOctubre", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoOctubre", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_fijoOctubre", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoOctubre", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_fijoNoviembre", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoNoviembre", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_fijoNoviembre", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoNoviembre", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_fijoDiciembre", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoDiciembre", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_fijoDiciembre", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fijoDiciembre", global::System.Data.DataRowVersion.Original, false, null));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.OleDb.OleDbConnection();
+            this._connection.ConnectionString = global::Principal.Properties.Settings.Default.Club_VistalbaConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
+            this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT grupoID, fijoEnero, fijoFebrero, fijoMarzo, fijoAbil, fijoMayo, fijoJunio," +
+                " fijoJulio, fijoAgosto, fijoSeptiembre, fijoOctubre, fijoNoviembre, fijoDiciembr" +
+                "e FROM ValorFijo";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(Club_VistalbaDataSet.ValorFijoDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual Club_VistalbaDataSet.ValorFijoDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            Club_VistalbaDataSet.ValorFijoDataTable dataTable = new Club_VistalbaDataSet.ValorFijoDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(Club_VistalbaDataSet.ValorFijoDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(Club_VistalbaDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "ValorFijo");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_grupoID, string Original_fijoEnero, string Original_fijoFebrero, string Original_fijoMarzo, string Original_fijoAbil, string Original_fijoMayo, string Original_fijoJunio, string Original_fijoJulio, string Original_fijoAgosto, string Original_fijoSeptiembre, string Original_fijoOctubre, string Original_fijoNoviembre, string Original_fijoDiciembre) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_grupoID));
+            if ((Original_fijoEnero == null)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_fijoEnero));
+            }
+            if ((Original_fijoFebrero == null)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_fijoFebrero));
+            }
+            if ((Original_fijoMarzo == null)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_fijoMarzo));
+            }
+            if ((Original_fijoAbil == null)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_fijoAbil));
+            }
+            if ((Original_fijoMayo == null)) {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_fijoMayo));
+            }
+            if ((Original_fijoJunio == null)) {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_fijoJunio));
+            }
+            if ((Original_fijoJulio == null)) {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_fijoJulio));
+            }
+            if ((Original_fijoAgosto == null)) {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_fijoAgosto));
+            }
+            if ((Original_fijoSeptiembre == null)) {
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_fijoSeptiembre));
+            }
+            if ((Original_fijoOctubre == null)) {
+                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[20].Value = ((string)(Original_fijoOctubre));
+            }
+            if ((Original_fijoNoviembre == null)) {
+                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[22].Value = ((string)(Original_fijoNoviembre));
+            }
+            if ((Original_fijoDiciembre == null)) {
+                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[24].Value = ((string)(Original_fijoDiciembre));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(string fijoEnero, string fijoFebrero, string fijoMarzo, string fijoAbil, string fijoMayo, string fijoJunio, string fijoJulio, string fijoAgosto, string fijoSeptiembre, string fijoOctubre, string fijoNoviembre, string fijoDiciembre) {
+            if ((fijoEnero == null)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(fijoEnero));
+            }
+            if ((fijoFebrero == null)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(fijoFebrero));
+            }
+            if ((fijoMarzo == null)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(fijoMarzo));
+            }
+            if ((fijoAbil == null)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(fijoAbil));
+            }
+            if ((fijoMayo == null)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(fijoMayo));
+            }
+            if ((fijoJunio == null)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(fijoJunio));
+            }
+            if ((fijoJulio == null)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(fijoJulio));
+            }
+            if ((fijoAgosto == null)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(fijoAgosto));
+            }
+            if ((fijoSeptiembre == null)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(fijoSeptiembre));
+            }
+            if ((fijoOctubre == null)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(fijoOctubre));
+            }
+            if ((fijoNoviembre == null)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(fijoNoviembre));
+            }
+            if ((fijoDiciembre == null)) {
+                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(fijoDiciembre));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(
+                    string fijoEnero, 
+                    string fijoFebrero, 
+                    string fijoMarzo, 
+                    string fijoAbil, 
+                    string fijoMayo, 
+                    string fijoJunio, 
+                    string fijoJulio, 
+                    string fijoAgosto, 
+                    string fijoSeptiembre, 
+                    string fijoOctubre, 
+                    string fijoNoviembre, 
+                    string fijoDiciembre, 
+                    int Original_grupoID, 
+                    string Original_fijoEnero, 
+                    string Original_fijoFebrero, 
+                    string Original_fijoMarzo, 
+                    string Original_fijoAbil, 
+                    string Original_fijoMayo, 
+                    string Original_fijoJunio, 
+                    string Original_fijoJulio, 
+                    string Original_fijoAgosto, 
+                    string Original_fijoSeptiembre, 
+                    string Original_fijoOctubre, 
+                    string Original_fijoNoviembre, 
+                    string Original_fijoDiciembre) {
+            if ((fijoEnero == null)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(fijoEnero));
+            }
+            if ((fijoFebrero == null)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(fijoFebrero));
+            }
+            if ((fijoMarzo == null)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(fijoMarzo));
+            }
+            if ((fijoAbil == null)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(fijoAbil));
+            }
+            if ((fijoMayo == null)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(fijoMayo));
+            }
+            if ((fijoJunio == null)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(fijoJunio));
+            }
+            if ((fijoJulio == null)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(fijoJulio));
+            }
+            if ((fijoAgosto == null)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(fijoAgosto));
+            }
+            if ((fijoSeptiembre == null)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(fijoSeptiembre));
+            }
+            if ((fijoOctubre == null)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(fijoOctubre));
+            }
+            if ((fijoNoviembre == null)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(fijoNoviembre));
+            }
+            if ((fijoDiciembre == null)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(fijoDiciembre));
+            }
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_grupoID));
+            if ((Original_fijoEnero == null)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_fijoEnero));
+            }
+            if ((Original_fijoFebrero == null)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_fijoFebrero));
+            }
+            if ((Original_fijoMarzo == null)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_fijoMarzo));
+            }
+            if ((Original_fijoAbil == null)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_fijoAbil));
+            }
+            if ((Original_fijoMayo == null)) {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_fijoMayo));
+            }
+            if ((Original_fijoJunio == null)) {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_fijoJunio));
+            }
+            if ((Original_fijoJulio == null)) {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_fijoJulio));
+            }
+            if ((Original_fijoAgosto == null)) {
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_fijoAgosto));
+            }
+            if ((Original_fijoSeptiembre == null)) {
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_fijoSeptiembre));
+            }
+            if ((Original_fijoOctubre == null)) {
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((string)(Original_fijoOctubre));
+            }
+            if ((Original_fijoNoviembre == null)) {
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(Original_fijoNoviembre));
+            }
+            if ((Original_fijoDiciembre == null)) {
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((string)(Original_fijoDiciembre));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+    }
+    
+    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11144,6 +12900,8 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
         private MensualTableAdapter _mensualTableAdapter;
         
         private NivelesTableAdapter _nivelesTableAdapter;
+        
+        private ValorFijoTableAdapter _valorFijoTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -11288,6 +13046,20 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public ValorFijoTableAdapter ValorFijoTableAdapter {
+            get {
+                return this._valorFijoTableAdapter;
+            }
+            set {
+                this._valorFijoTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -11341,6 +13113,10 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
                             && (this._nivelesTableAdapter.Connection != null))) {
                     return this._nivelesTableAdapter.Connection;
                 }
+                if (((this._valorFijoTableAdapter != null) 
+                            && (this._valorFijoTableAdapter.Connection != null))) {
+                    return this._valorFijoTableAdapter.Connection;
+                }
                 return null;
             }
             set {
@@ -11381,6 +13157,9 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
                 if ((this._nivelesTableAdapter != null)) {
                     count = (count + 1);
                 }
+                if ((this._valorFijoTableAdapter != null)) {
+                    count = (count + 1);
+                }
                 return count;
             }
         }
@@ -11392,6 +13171,15 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateUpdatedRows(Club_VistalbaDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
+            if ((this._categoriaTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Categoria.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._categoriaTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._grupoTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Grupo.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -11401,12 +13189,12 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._categoriaTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Categoria.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._mensualTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Mensual.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._categoriaTableAdapter.Update(updatedRows));
+                    result = (result + this._mensualTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -11455,21 +13243,21 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._mensualTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Mensual.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._mensualTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._nivelesTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Niveles.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._nivelesTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._valorFijoTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.ValorFijo.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._valorFijoTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -11483,6 +13271,14 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateInsertedRows(Club_VistalbaDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
+            if ((this._categoriaTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Categoria.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._categoriaTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._grupoTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Grupo.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -11491,11 +13287,11 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._categoriaTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Categoria.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._mensualTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Mensual.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._categoriaTableAdapter.Update(addedRows));
+                    result = (result + this._mensualTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -11539,19 +13335,19 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._mensualTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Mensual.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._mensualTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._nivelesTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Niveles.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._nivelesTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._valorFijoTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.ValorFijo.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._valorFijoTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -11565,19 +13361,19 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateDeletedRows(Club_VistalbaDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._valorFijoTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.ValorFijo.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._valorFijoTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._nivelesTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Niveles.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._nivelesTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._mensualTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Mensual.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._mensualTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -11621,11 +13417,11 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._categoriaTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Categoria.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._mensualTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Mensual.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._categoriaTableAdapter.Update(deletedRows));
+                    result = (result + this._mensualTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -11634,6 +13430,14 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._grupoTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._categoriaTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Categoria.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._categoriaTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -11718,6 +13522,11 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
             }
             if (((this._nivelesTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._nivelesTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi" +
+                        "sma cadena de conexión.");
+            }
+            if (((this._valorFijoTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._valorFijoTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi" +
                         "sma cadena de conexión.");
             }
@@ -11834,6 +13643,15 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
                         adaptersWithAcceptChangesDuringUpdate.Add(this._nivelesTableAdapter.Adapter);
                     }
                 }
+                if ((this._valorFijoTableAdapter != null)) {
+                    revertConnections.Add(this._valorFijoTableAdapter, this._valorFijoTableAdapter.Connection);
+                    this._valorFijoTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(workConnection));
+                    this._valorFijoTableAdapter.Transaction = ((global::System.Data.OleDb.OleDbTransaction)(workTransaction));
+                    if (this._valorFijoTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._valorFijoTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._valorFijoTableAdapter.Adapter);
+                    }
+                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -11927,6 +13745,10 @@ namespace Principal.Club_VistalbaDataSetTableAdapters {
                 if ((this._nivelesTableAdapter != null)) {
                     this._nivelesTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._nivelesTableAdapter]));
                     this._nivelesTableAdapter.Transaction = null;
+                }
+                if ((this._valorFijoTableAdapter != null)) {
+                    this._valorFijoTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._valorFijoTableAdapter]));
+                    this._valorFijoTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

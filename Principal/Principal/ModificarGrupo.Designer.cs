@@ -34,10 +34,10 @@
             System.Windows.Forms.Label grupoCategoriaLabel;
             System.Windows.Forms.Label grupoIDLabel;
             System.Windows.Forms.Label label2;
-            System.Windows.Forms.Label label1;
-            System.Windows.Forms.Label label3;
             System.Windows.Forms.Label label4;
-            System.Windows.Forms.Label label5;
+            this.lblPersona2 = new System.Windows.Forms.Label();
+            this.lblPersona3 = new System.Windows.Forms.Label();
+            this.lblPersona4 = new System.Windows.Forms.Label();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.grupoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.club_VistalbaDataSet = new Principal.Club_VistalbaDataSet();
@@ -52,20 +52,19 @@
             this.txtPersona2 = new System.Windows.Forms.TextBox();
             this.txtPersona3 = new System.Windows.Forms.TextBox();
             this.cbCategoria = new System.Windows.Forms.ComboBox();
+            this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtPersona4 = new System.Windows.Forms.TextBox();
             this.lblCantidad = new System.Windows.Forms.Label();
-            this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.categoriaTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.CategoriaTableAdapter();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnBuscar2 = new System.Windows.Forms.Button();
+            this.btnBuscar3 = new System.Windows.Forms.Button();
+            this.btnBuscar4 = new System.Windows.Forms.Button();
             grupoApellidoLabel = new System.Windows.Forms.Label();
             grupoSocioPpalLabel = new System.Windows.Forms.Label();
             grupoCategoriaLabel = new System.Windows.Forms.Label();
             grupoIDLabel = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
-            label1 = new System.Windows.Forms.Label();
-            label3 = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
-            label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grupoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
@@ -116,26 +115,6 @@
             label2.TabIndex = 12;
             label2.Text = "Nombre Grupo:";
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(12, 186);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(58, 13);
-            label1.TabIndex = 19;
-            label1.Text = "Persona 2:";
-            label1.Visible = false;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(12, 273);
-            label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(58, 13);
-            label3.TabIndex = 21;
-            label3.Text = "Persona 3:";
-            label3.Visible = false;
-            // 
             // label4
             // 
             label4.AutoSize = true;
@@ -145,15 +124,35 @@
             label4.TabIndex = 24;
             label4.Text = "Cantidad de Personas:";
             // 
-            // label5
+            // lblPersona2
             // 
-            label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(12, 299);
-            label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(58, 13);
-            label5.TabIndex = 26;
-            label5.Text = "Persona 4:";
-            label5.Visible = false;
+            this.lblPersona2.AutoSize = true;
+            this.lblPersona2.Location = new System.Drawing.Point(12, 186);
+            this.lblPersona2.Name = "lblPersona2";
+            this.lblPersona2.Size = new System.Drawing.Size(58, 13);
+            this.lblPersona2.TabIndex = 19;
+            this.lblPersona2.Text = "Persona 2:";
+            this.lblPersona2.Visible = false;
+            // 
+            // lblPersona3
+            // 
+            this.lblPersona3.AutoSize = true;
+            this.lblPersona3.Location = new System.Drawing.Point(12, 259);
+            this.lblPersona3.Name = "lblPersona3";
+            this.lblPersona3.Size = new System.Drawing.Size(58, 13);
+            this.lblPersona3.TabIndex = 21;
+            this.lblPersona3.Text = "Persona 3:";
+            this.lblPersona3.Visible = false;
+            // 
+            // lblPersona4
+            // 
+            this.lblPersona4.AutoSize = true;
+            this.lblPersona4.Location = new System.Drawing.Point(12, 332);
+            this.lblPersona4.Name = "lblPersona4";
+            this.lblPersona4.Size = new System.Drawing.Size(58, 13);
+            this.lblPersona4.TabIndex = 26;
+            this.lblPersona4.Text = "Persona 4:";
+            this.lblPersona4.Visible = false;
             // 
             // txtApellido
             // 
@@ -210,17 +209,18 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(15, 322);
+            this.btnGuardar.Location = new System.Drawing.Point(15, 400);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 41);
             this.btnGuardar.TabIndex = 17;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnCancelar
             // 
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelar.Location = new System.Drawing.Point(283, 322);
+            this.btnCancelar.Location = new System.Drawing.Point(283, 400);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 41);
             this.btnCancelar.TabIndex = 18;
@@ -244,6 +244,7 @@
             this.tableAdapterManager.SaludTableAdapter = null;
             this.tableAdapterManager.SocioTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Principal.Club_VistalbaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.ValorFijoTableAdapter = null;
             // 
             // txtPersona2
             // 
@@ -257,7 +258,7 @@
             // txtPersona3
             // 
             this.txtPersona3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.grupoBindingSource, "grupoApellido", true));
-            this.txtPersona3.Location = new System.Drawing.Point(109, 270);
+            this.txtPersona3.Location = new System.Drawing.Point(109, 256);
             this.txtPersona3.Name = "txtPersona3";
             this.txtPersona3.Size = new System.Drawing.Size(249, 20);
             this.txtPersona3.TabIndex = 22;
@@ -275,10 +276,15 @@
             this.cbCategoria.ValueMember = "catID";
             this.cbCategoria.TextChanged += new System.EventHandler(this.comboBox1_TextChanged);
             // 
+            // categoriaBindingSource
+            // 
+            this.categoriaBindingSource.DataMember = "Categoria";
+            this.categoriaBindingSource.DataSource = this.club_VistalbaDataSet;
+            // 
             // txtPersona4
             // 
             this.txtPersona4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.grupoBindingSource, "grupoApellido", true));
-            this.txtPersona4.Location = new System.Drawing.Point(109, 296);
+            this.txtPersona4.Location = new System.Drawing.Point(109, 329);
             this.txtPersona4.Name = "txtPersona4";
             this.txtPersona4.Size = new System.Drawing.Size(249, 20);
             this.txtPersona4.TabIndex = 27;
@@ -294,38 +300,56 @@
             this.lblCantidad.Text = "label1";
             this.lblCantidad.TextChanged += new System.EventHandler(this.lblCantidad_TextChanged);
             // 
-            // categoriaBindingSource
-            // 
-            this.categoriaBindingSource.DataMember = "Categoria";
-            this.categoriaBindingSource.DataSource = this.club_VistalbaDataSet;
-            // 
             // categoriaTableAdapter
             // 
             this.categoriaTableAdapter.ClearBeforeFill = true;
             // 
-            // button1
+            // btnBuscar2
             // 
-            this.button1.Location = new System.Drawing.Point(283, 209);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 41);
-            this.button1.TabIndex = 29;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnBuscar2.Location = new System.Drawing.Point(283, 209);
+            this.btnBuscar2.Name = "btnBuscar2";
+            this.btnBuscar2.Size = new System.Drawing.Size(75, 41);
+            this.btnBuscar2.TabIndex = 29;
+            this.btnBuscar2.Text = "Buscar";
+            this.btnBuscar2.UseVisualStyleBackColor = true;
+            this.btnBuscar2.Click += new System.EventHandler(this.btnBuscar2_Click);
+            // 
+            // btnBuscar3
+            // 
+            this.btnBuscar3.Location = new System.Drawing.Point(283, 282);
+            this.btnBuscar3.Name = "btnBuscar3";
+            this.btnBuscar3.Size = new System.Drawing.Size(75, 41);
+            this.btnBuscar3.TabIndex = 30;
+            this.btnBuscar3.Text = "Buscar";
+            this.btnBuscar3.UseVisualStyleBackColor = true;
+            this.btnBuscar3.Click += new System.EventHandler(this.btnBuscar3_Click);
+            // 
+            // btnBuscar4
+            // 
+            this.btnBuscar4.Location = new System.Drawing.Point(283, 353);
+            this.btnBuscar4.Name = "btnBuscar4";
+            this.btnBuscar4.Size = new System.Drawing.Size(75, 41);
+            this.btnBuscar4.TabIndex = 31;
+            this.btnBuscar4.Text = "Buscar";
+            this.btnBuscar4.UseVisualStyleBackColor = true;
+            this.btnBuscar4.Click += new System.EventHandler(this.btnBuscar4_Click);
             // 
             // ModificarGrupo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(374, 375);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(378, 453);
+            this.Controls.Add(this.btnBuscar4);
+            this.Controls.Add(this.btnBuscar3);
+            this.Controls.Add(this.btnBuscar2);
             this.Controls.Add(this.lblCantidad);
-            this.Controls.Add(label5);
+            this.Controls.Add(this.lblPersona4);
             this.Controls.Add(this.txtPersona4);
             this.Controls.Add(label4);
             this.Controls.Add(this.cbCategoria);
-            this.Controls.Add(label3);
+            this.Controls.Add(this.lblPersona3);
             this.Controls.Add(this.txtPersona3);
-            this.Controls.Add(label1);
+            this.Controls.Add(this.lblPersona2);
             this.Controls.Add(this.txtPersona2);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
@@ -370,6 +394,11 @@
         public System.Windows.Forms.Label lblID;
         private System.Windows.Forms.BindingSource categoriaBindingSource;
         private Club_VistalbaDataSetTableAdapters.CategoriaTableAdapter categoriaTableAdapter;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnBuscar2;
+        private System.Windows.Forms.Button btnBuscar3;
+        public System.Windows.Forms.Label lblPersona2;
+        public System.Windows.Forms.Label lblPersona3;
+        public System.Windows.Forms.Label lblPersona4;
+        private System.Windows.Forms.Button btnBuscar4;
     }
 }

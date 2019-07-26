@@ -61,25 +61,20 @@ Persist Security Info=False;";
             conActv.Open();
             ModificarGrupo mod = new ModificarGrupo();
 
-            string busqueda = "SELECT catID FROM Categoria WHERE (catNombre LIKE '" + dgvGrupos.CurrentRow.Cells[0].Value.ToString() + "')";
+            string busqueda = "SELECT grupoID FROM Grupo WHERE (grupoNombre LIKE '" + dgvGrupos.CurrentRow.Cells[0].Value.ToString() + "')";
             OleDbCommand comando = new OleDbCommand(busqueda, conActv);
 
             //MessageBox.Show(busqueda);
 
             string temporal = Convert.ToString(comando.ExecuteScalar());
 
-            //MessageBox.Show(temporal);
-
             mod.txtApellido.Text = dgvGrupos.CurrentRow.Cells[1].Value.ToString();
             mod.txtSocio.Text = dgvGrupos.CurrentRow.Cells[2].Value.ToString();
             mod.txtPersona2.Text = dgvGrupos.CurrentRow.Cells[3].Value.ToString();
             mod.txtPersona3.Text = dgvGrupos.CurrentRow.Cells[4].Value.ToString();
-            mod.txtPersona4.Text = dgvGrupos.CurrentRow.Cells[5].Value.ToString();
             mod.lblID.Text = temporal;
-
             
             mod.ShowDialog();
-
 
             conActv.Close();
         }
@@ -88,7 +83,7 @@ Persist Security Info=False;";
         {
             Metodos cargado = new Metodos();
 
-            string valores = "Categoria.catNombre, Grupo.grupoApellido, Grupo.grupoSocioPpal, Grupo.grupoSocio1, Grupo.grupoSocio2, Grupo.grupoSocio3";
+            string valores = "Grupo.grupoNombre, Grupo.grupoApellido, Grupo.grupoSocioPpal, Grupo.grupoSocio1, Grupo.grupoSocio2";
             string tabla = "(Categoria INNER JOIN Grupo ON Categoria.catID = Grupo.catID)";
             cargado.Inicializar();
 

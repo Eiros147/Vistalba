@@ -47,7 +47,6 @@
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnAbrir = new System.Windows.Forms.Button();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.smiActividades = new System.Windows.Forms.ToolStripMenuItem();
             this.smiProfesionales = new System.Windows.Forms.ToolStripMenuItem();
@@ -76,6 +75,7 @@
             this.miNovenaF = new System.Windows.Forms.ToolStripMenuItem();
             this.miDecimaF = new System.Windows.Forms.ToolStripMenuItem();
             this.miPreDecimaF = new System.Windows.Forms.ToolStripMenuItem();
+            this.smiNiveles = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.socioTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.SocioTableAdapter();
             this.tableAdapterManager = new Principal.Club_VistalbaDataSetTableAdapters.TableAdapterManager();
@@ -183,13 +183,13 @@
             // socioCategoria
             // 
             this.socioCategoria.DataPropertyName = "socioCategoria";
-            this.socioCategoria.HeaderText = "socioCategoria";
+            this.socioCategoria.HeaderText = "Categoria";
             this.socioCategoria.Name = "socioCategoria";
             // 
             // socioNivel
             // 
             this.socioNivel.DataPropertyName = "socioNivel";
-            this.socioNivel.HeaderText = "socioNivel";
+            this.socioNivel.HeaderText = "Nivel";
             this.socioNivel.Name = "socioNivel";
             // 
             // socioBindingSource
@@ -233,18 +233,6 @@
             this.txtBusqueda.TabIndex = 4;
             this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
             // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button1.Location = new System.Drawing.Point(213, 382);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(69, 32);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -254,7 +242,8 @@
             this.smiCategorias,
             this.smiPagos,
             this.smiInactivos,
-            this.divisionesToolStripMenuItem});
+            this.divisionesToolStripMenuItem,
+            this.smiNiveles});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(925, 24);
@@ -470,6 +459,13 @@
             this.miPreDecimaF.Text = "Pre-Decima";
             this.miPreDecimaF.Click += new System.EventHandler(this.miPreDecimaF_Click);
             // 
+            // smiNiveles
+            // 
+            this.smiNiveles.Name = "smiNiveles";
+            this.smiNiveles.Size = new System.Drawing.Size(57, 20);
+            this.smiNiveles.Text = "Niveles";
+            this.smiNiveles.Click += new System.EventHandler(this.smiNiveles_Click);
+            // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -492,6 +488,7 @@
             this.tableAdapterManager.CuotaTableAdapter = null;
             this.tableAdapterManager.GrupoTableAdapter = null;
             this.tableAdapterManager.MensualTableAdapter = null;
+            this.tableAdapterManager.NivelesTableAdapter = null;
             this.tableAdapterManager.ProfesionalTableAdapter = null;
             this.tableAdapterManager.SaludTableAdapter = null;
             this.tableAdapterManager.SocioTableAdapter = this.socioTableAdapter;
@@ -512,7 +509,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(925, 430);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.txtBusqueda);
             this.Controls.Add(this.btnAbrir);
             this.Controls.Add(this.btnNuevo);
@@ -520,7 +516,6 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Club Vistalba";
             this.Activated += new System.EventHandler(this.Form1_Activated);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSocio)).EndInit();
@@ -543,7 +538,6 @@
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnAbrir;
         private System.Windows.Forms.TextBox txtBusqueda;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.BindingSource socioSaludBindingSource;
         private Club_VistalbaDataSetTableAdapters.SaludTableAdapter saludTableAdapter;
         private System.Windows.Forms.MenuStrip menuStrip1;
@@ -553,18 +547,6 @@
         private System.Windows.Forms.ToolStripMenuItem smiCategorias;
         private System.Windows.Forms.ToolStripMenuItem smiPagos;
         public System.Windows.Forms.DataGridView dgvSocio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn socioGenero;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn socioCategoria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn socioNivel;
         private System.Windows.Forms.ToolStripMenuItem smiInactivos;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem divisionesToolStripMenuItem;
@@ -588,6 +570,19 @@
         private System.Windows.Forms.ToolStripMenuItem miNovenaF;
         private System.Windows.Forms.ToolStripMenuItem miDecimaF;
         private System.Windows.Forms.ToolStripMenuItem miPreDecimaF;
+        private System.Windows.Forms.ToolStripMenuItem smiNiveles;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn socioGenero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn socioCategoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn socioNivel;
     }
 }
 

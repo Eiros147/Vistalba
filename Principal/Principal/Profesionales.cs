@@ -106,5 +106,10 @@ Persist Security Info=False;");
                 this.dgvProfesional.EndEdit();
             }
         }
+
+        private void Profesionales_Activated(object sender, EventArgs e)
+        {
+            cargar();
+        }
     }
 }

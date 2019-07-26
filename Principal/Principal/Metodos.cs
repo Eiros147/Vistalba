@@ -89,7 +89,7 @@ namespace Principal
                 OleDbCommand comando = new OleDbCommand(query, conexion);
 
                 //Control de query para testeo de errores
-                //MessageBox.Show(query);
+                MessageBox.Show(query);
 
                 comando.ExecuteNonQuery();
                 MessageBox.Show(tabla + " actualizado");
@@ -175,7 +175,7 @@ namespace Principal
                 OleDbCommand comando = new OleDbCommand(query, conexion);
                 
                 //Control de query
-                MessageBox.Show(query);
+                //MessageBox.Show(query);
 
                 OleDbDataReader lector = comando.ExecuteReader();
 
@@ -232,7 +232,7 @@ namespace Principal
                 OleDbCommand comando = new OleDbCommand(query, conexion);
 
                 //Control de query para testeo de errores
-                MessageBox.Show(query);
+                //MessageBox.Show(query);
 
                 OleDbDataReader lector = null;
                 lector = comando.ExecuteReader();
@@ -290,7 +290,7 @@ namespace Principal
                 cb.DisplayMember = valor;
                 cb.DataSource = dt;
 
-                MessageBox.Show(query);
+                //MessageBox.Show(query);
 
             } catch (Exception ex)
             {

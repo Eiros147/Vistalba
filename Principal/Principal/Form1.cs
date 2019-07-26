@@ -98,6 +98,8 @@ Persist Security Info=False;");
             modificar.cbCategoria.Text = dgvSocio.CurrentRow.Cells[10].Value.ToString();
             modificar.cbNivel.Text = dgvSocio.CurrentRow.Cells[11].Value.ToString();
 
+            
+
             //MessageBox.Show(dgvSocio.CurrentRow.Cells[10].Value.ToString());
 
             if(dgvSocio.CurrentRow.Cells[6].Value.Equals(true))
@@ -157,11 +159,7 @@ Persist Security Info=False;");
             modificar();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Refresh();
-            this.dgvSocio.Refresh();
-        }
+
 
         private void dgvSocio_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
@@ -361,6 +359,12 @@ Persist Security Info=False;");
             int genero = 0;
             Divisiones predecimaf = new Divisiones(division, genero);
             predecimaf.ShowDialog();
+        }
+
+        private void smiNiveles_Click(object sender, EventArgs e)
+        {
+            Niveles nivel = new Niveles();
+            nivel.ShowDialog();
         }
     }
 }

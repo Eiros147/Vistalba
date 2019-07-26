@@ -44,6 +44,14 @@ Persist Security Info=False;";
             this.categoriaTableAdapter.Fill(this.club_VistalbaDataSet.Categoria);
             string key = lblID.Text.ToString();
 
+            //conModificar.Open();
+            //string query = "SELECT socioNotas FROM Socio WHERE socioID = " + lblID.Text + "";
+            //comando.Connection = conModificar;
+            //comando.CommandText = query;
+
+
+            //conModificar.Close();
+
             //Seleccionar(cbNivel, "nivelNombre", "Niveles", "nivelID", "nivelNumero", key, 1);
             //Seleccionar(cbCategoria, "catNombre", "Categoria", "catID", "catNombre", key, 1);
 
