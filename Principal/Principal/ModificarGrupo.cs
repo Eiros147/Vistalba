@@ -36,41 +36,73 @@ Persist Security Info=False;";
         {
             // TODO: esta línea de código carga datos en la tabla 'club_VistalbaDataSet.Categoria' Puede moverla o quitarla según sea necesario.
             this.categoriaTableAdapter.FillOrdenado(this.club_VistalbaDataSet.Categoria);
-            
+
             cargarcantidad();
-            //Seleccionar()
+            Seleccionar("catNombre", "Categoria", cbCategoria, "catID", "catNombre");
+            Desastre(cbCategoria);
         }
+
+
 
         private void cargarcantidad()
         {
-            conModificar.Open();
-            string query = "Select catCant FROM Categoria WHERE catNombre = '" + cbCategoria.Text + "'";
-
-            comando.Connection = conModificar;
-            comando.CommandText = query;
-
-            using (OleDbDataReader dr = comando.ExecuteReader())
+            try
             {
-                bool exito = dr.Read();
-                if (exito)
+                conModificar.Open();
+                string query = "Select catCant FROM Categoria WHERE catNombre = '" + cbCategoria.Text + "'";
+
+                comando.Connection = conModificar;
+                comando.CommandText = query;
+
+                using (OleDbDataReader dr = comando.ExecuteReader())
                 {
-                    lblCantidad.Text = dr["catCant"].ToString();
+                    bool exito = dr.Read();
+                    if (exito)
+                    {
+                        lblCantidad.Text = dr["catCant"].ToString();
+                    }
                 }
             }
-
-            conModificar.Close();
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex);
+            }
+            finally
+            {
+                conModificar.Close();
+            }
 
         }
 
         private void Seleccionar(string valor, string tabla, ComboBox cb, string id, string orden)
         {
+
             Metodos llenar = new Metodos();
             llenar.Inicializar();
             llenar.LlenarCombo(valor, tabla, cb, id, orden);
             
         }
 
-
+        private void Desastre(ComboBox cb)
+        {
+            try
+            {
+                conModificar.Open();
+                string busqueda = "SELECT catNombre FROM Categoria WHERE (catID LIKE '" + lblCatId.Text + "')";
+                OleDbCommand comando = new OleDbCommand(busqueda, conModificar);
+                string temporal = Convert.ToString(comando.ExecuteScalar());
+                MessageBox.Show(temporal);
+                cb.SelectedIndex = cb.FindStringExact(temporal);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex);
+            }
+            finally
+            {
+                conModificar.Close();
+            }
+        }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {

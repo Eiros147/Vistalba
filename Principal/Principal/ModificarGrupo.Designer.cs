@@ -35,6 +35,7 @@
             System.Windows.Forms.Label grupoIDLabel;
             System.Windows.Forms.Label label2;
             System.Windows.Forms.Label label4;
+            System.Windows.Forms.Label label3;
             this.lblPersona2 = new System.Windows.Forms.Label();
             this.lblPersona3 = new System.Windows.Forms.Label();
             this.lblPersona4 = new System.Windows.Forms.Label();
@@ -59,15 +60,19 @@
             this.btnBuscar2 = new System.Windows.Forms.Button();
             this.btnBuscar3 = new System.Windows.Forms.Button();
             this.btnBuscar4 = new System.Windows.Forms.Button();
+            this.lblCatId = new System.Windows.Forms.Label();
+            this.categoriaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             grupoApellidoLabel = new System.Windows.Forms.Label();
             grupoSocioPpalLabel = new System.Windows.Forms.Label();
             grupoCategoriaLabel = new System.Windows.Forms.Label();
             grupoIDLabel = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
+            label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grupoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // grupoApellidoLabel
@@ -102,9 +107,9 @@
             grupoIDLabel.AutoSize = true;
             grupoIDLabel.Location = new System.Drawing.Point(12, 9);
             grupoIDLabel.Name = "grupoIDLabel";
-            grupoIDLabel.Size = new System.Drawing.Size(21, 13);
+            grupoIDLabel.Size = new System.Drawing.Size(53, 13);
             grupoIDLabel.TabIndex = 1;
-            grupoIDLabel.Text = "ID:";
+            grupoIDLabel.Text = "ID Grupo:";
             // 
             // label2
             // 
@@ -266,14 +271,11 @@
             // 
             // cbCategoria
             // 
-            this.cbCategoria.DataSource = this.categoriaBindingSource;
-            this.cbCategoria.DisplayMember = "catNombre";
             this.cbCategoria.FormattingEnabled = true;
             this.cbCategoria.Location = new System.Drawing.Point(109, 31);
             this.cbCategoria.Name = "cbCategoria";
             this.cbCategoria.Size = new System.Drawing.Size(52, 21);
             this.cbCategoria.TabIndex = 23;
-            this.cbCategoria.ValueMember = "catID";
             this.cbCategoria.TextChanged += new System.EventHandler(this.comboBox1_TextChanged);
             // 
             // categoriaBindingSource
@@ -334,11 +336,36 @@
             this.btnBuscar4.UseVisualStyleBackColor = true;
             this.btnBuscar4.Click += new System.EventHandler(this.btnBuscar4_Click);
             // 
+            // lblCatId
+            // 
+            this.lblCatId.AutoSize = true;
+            this.lblCatId.Location = new System.Drawing.Point(323, 9);
+            this.lblCatId.Name = "lblCatId";
+            this.lblCatId.Size = new System.Drawing.Size(35, 13);
+            this.lblCatId.TabIndex = 33;
+            this.lblCatId.Text = "label1";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(229, 9);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(69, 13);
+            label3.TabIndex = 32;
+            label3.Text = "ID Categoria:";
+            // 
+            // categoriaBindingSource1
+            // 
+            this.categoriaBindingSource1.DataMember = "Categoria";
+            this.categoriaBindingSource1.DataSource = this.club_VistalbaDataSet;
+            // 
             // ModificarGrupo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(378, 453);
+            this.Controls.Add(this.lblCatId);
+            this.Controls.Add(label3);
             this.Controls.Add(this.btnBuscar4);
             this.Controls.Add(this.btnBuscar3);
             this.Controls.Add(this.btnBuscar2);
@@ -369,6 +396,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.grupoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -400,5 +428,7 @@
         public System.Windows.Forms.Label lblPersona3;
         public System.Windows.Forms.Label lblPersona4;
         private System.Windows.Forms.Button btnBuscar4;
+        public System.Windows.Forms.Label lblCatId;
+        private System.Windows.Forms.BindingSource categoriaBindingSource1;
     }
 }

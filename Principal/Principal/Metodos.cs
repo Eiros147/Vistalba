@@ -288,6 +288,7 @@ namespace Principal
 
                 cb.ValueMember = id;
                 cb.DisplayMember = valor;
+                //cb.Text = 
                 cb.DataSource = dt;
 
                 //MessageBox.Show(query);

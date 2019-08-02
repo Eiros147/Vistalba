@@ -61,19 +61,29 @@ Persist Security Info=False;";
             conActv.Open();
             ModificarGrupo mod = new ModificarGrupo();
 
-            string busqueda = "SELECT grupoID FROM Grupo WHERE (grupoNombre LIKE '" + dgvGrupos.CurrentRow.Cells[0].Value.ToString() + "')";
+            string busqueda = "SELECT grupoID FROM Grupo WHERE (grupoNombre LIKE '" + dgvGrupos.CurrentRow.Cells[1].Value.ToString() + "')";
             OleDbCommand comando = new OleDbCommand(busqueda, conActv);
 
             //MessageBox.Show(busqueda);
 
             string temporal = Convert.ToString(comando.ExecuteScalar());
 
-            mod.txtApellido.Text = dgvGrupos.CurrentRow.Cells[1].Value.ToString();
-            mod.txtSocio.Text = dgvGrupos.CurrentRow.Cells[2].Value.ToString();
-            mod.txtPersona2.Text = dgvGrupos.CurrentRow.Cells[3].Value.ToString();
-            mod.txtPersona3.Text = dgvGrupos.CurrentRow.Cells[4].Value.ToString();
+            string busquedacat = "SELECT catID FROM Categoria WHERE (catNombre LIKE '" + dgvGrupos.CurrentRow.Cells[0].Value.ToString() + "')";
+            OleDbCommand buscar = new OleDbCommand(busquedacat, conActv);
+
+            string temporalcat = Convert.ToString(buscar.ExecuteScalar());
+
+            MessageBox.Show(temporalcat);
+
+            //mod.cbCategoria.SelectedIndex = mod.cbCategoria.FindStringExact(dgvGrupos.CurrentRow.Cells[0].Value.ToString());
+            mod.txtNombre.Text = dgvGrupos.CurrentRow.Cells[1].Value.ToString();
+            mod.txtApellido.Text = dgvGrupos.CurrentRow.Cells[2].Value.ToString();
+            mod.txtSocio.Text = dgvGrupos.CurrentRow.Cells[3].Value.ToString();
+            mod.txtPersona2.Text = dgvGrupos.CurrentRow.Cells[4].Value.ToString();
+            mod.txtPersona3.Text = dgvGrupos.CurrentRow.Cells[5].Value.ToString();
             mod.lblID.Text = temporal;
-            
+            mod.lblCatId.Text = temporalcat;
+               
             mod.ShowDialog();
 
             conActv.Close();
@@ -83,8 +93,8 @@ Persist Security Info=False;";
         {
             Metodos cargado = new Metodos();
 
-            string valores = "Grupo.grupoNombre, Grupo.grupoApellido, Grupo.grupoSocioPpal, Grupo.grupoSocio1, Grupo.grupoSocio2";
-            string tabla = "(Categoria INNER JOIN Grupo ON Categoria.catID = Grupo.catID)";
+            string valores = "C.catNombre, G.grupoNombre, G.grupoApellido, G.grupoSocioPpal, G.grupoSocio1, G.grupoSocio2";
+            string tabla = "(Categoria C INNER JOIN Grupo G ON C.catID = G.catID)";
             cargado.Inicializar();
 
             cargado.Llenardgv(tabla, valores, dgvGrupos);
