@@ -89,7 +89,7 @@ namespace Principal
                 OleDbCommand comando = new OleDbCommand(query, conexion);
 
                 //Control de query para testeo de errores
-                MessageBox.Show(query);
+                //MessageBox.Show(query);
 
                 comando.ExecuteNonQuery();
                 MessageBox.Show(tabla + " actualizado");
@@ -115,7 +115,7 @@ namespace Principal
                 OleDbCommand comando = new OleDbCommand(query, conexion);
 
                 //Control de query para testeo de errores
-                MessageBox.Show(query);
+                //MessageBox.Show(query);
 
                 OleDbDataAdapter da = new OleDbDataAdapter(comando);
                 DataTable dt = new DataTable();
@@ -288,7 +288,6 @@ namespace Principal
 
                 cb.ValueMember = id;
                 cb.DisplayMember = valor;
-                //cb.Text = 
                 cb.DataSource = dt;
 
                 //MessageBox.Show(query);

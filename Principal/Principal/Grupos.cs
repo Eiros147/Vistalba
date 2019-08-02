@@ -58,35 +58,44 @@ Persist Security Info=False;";
 
         private void modificar()
         {
-            conActv.Open();
-            ModificarGrupo mod = new ModificarGrupo();
+            try
+            {
+                conActv.Open();
+                ModificarGrupo mod = new ModificarGrupo();
 
-            string busqueda = "SELECT grupoID FROM Grupo WHERE (grupoNombre LIKE '" + dgvGrupos.CurrentRow.Cells[1].Value.ToString() + "')";
-            OleDbCommand comando = new OleDbCommand(busqueda, conActv);
+                string busqueda = "SELECT grupoID FROM Grupo WHERE (grupoNombre LIKE '" + dgvGrupos.CurrentRow.Cells[1].Value.ToString() + "')";
+                OleDbCommand comando = new OleDbCommand(busqueda, conActv);
 
-            //MessageBox.Show(busqueda);
+                //MessageBox.Show(busqueda);
 
-            string temporal = Convert.ToString(comando.ExecuteScalar());
+                string temporal = Convert.ToString(comando.ExecuteScalar());
 
-            string busquedacat = "SELECT catID FROM Categoria WHERE (catNombre LIKE '" + dgvGrupos.CurrentRow.Cells[0].Value.ToString() + "')";
-            OleDbCommand buscar = new OleDbCommand(busquedacat, conActv);
+                string busquedacat = "SELECT catID FROM Categoria WHERE (catNombre LIKE '" + dgvGrupos.CurrentRow.Cells[0].Value.ToString() + "')";
+                OleDbCommand buscar = new OleDbCommand(busquedacat, conActv);
 
-            string temporalcat = Convert.ToString(buscar.ExecuteScalar());
+                string temporalcat = Convert.ToString(buscar.ExecuteScalar());
 
-            MessageBox.Show(temporalcat);
+                //MessageBox.Show(temporalcat);
 
-            //mod.cbCategoria.SelectedIndex = mod.cbCategoria.FindStringExact(dgvGrupos.CurrentRow.Cells[0].Value.ToString());
-            mod.txtNombre.Text = dgvGrupos.CurrentRow.Cells[1].Value.ToString();
-            mod.txtApellido.Text = dgvGrupos.CurrentRow.Cells[2].Value.ToString();
-            mod.txtSocio.Text = dgvGrupos.CurrentRow.Cells[3].Value.ToString();
-            mod.txtPersona2.Text = dgvGrupos.CurrentRow.Cells[4].Value.ToString();
-            mod.txtPersona3.Text = dgvGrupos.CurrentRow.Cells[5].Value.ToString();
-            mod.lblID.Text = temporal;
-            mod.lblCatId.Text = temporalcat;
-               
-            mod.ShowDialog();
+                //mod.cbCategoria.SelectedIndex = mod.cbCategoria.FindStringExact(dgvGrupos.CurrentRow.Cells[0].Value.ToString());
+                mod.txtNombre.Text = dgvGrupos.CurrentRow.Cells[1].Value.ToString();
+                mod.txtApellido.Text = dgvGrupos.CurrentRow.Cells[2].Value.ToString();
+                mod.txtSocio.Text = dgvGrupos.CurrentRow.Cells[3].Value.ToString();
+                mod.txtPersona2.Text = dgvGrupos.CurrentRow.Cells[4].Value.ToString();
+                mod.txtPersona3.Text = dgvGrupos.CurrentRow.Cells[5].Value.ToString();
+                mod.lblID.Text = temporal;
+                mod.lblCatId.Text = temporalcat;
 
-            conActv.Close();
+                mod.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex);
+            }
+            finally
+            {
+                conActv.Close();
+            }
         }
 
         private void cargar()

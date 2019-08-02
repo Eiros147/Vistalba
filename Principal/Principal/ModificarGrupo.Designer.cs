@@ -129,6 +129,16 @@
             label4.TabIndex = 24;
             label4.Text = "Cantidad de Personas:";
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(229, 9);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(69, 13);
+            label3.TabIndex = 32;
+            label3.Text = "ID Categoria:";
+            label3.Visible = false;
+            // 
             // lblPersona2
             // 
             this.lblPersona2.AutoSize = true;
@@ -344,15 +354,7 @@
             this.lblCatId.Size = new System.Drawing.Size(35, 13);
             this.lblCatId.TabIndex = 33;
             this.lblCatId.Text = "label1";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(229, 9);
-            label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(69, 13);
-            label3.TabIndex = 32;
-            label3.Text = "ID Categoria:";
+            this.lblCatId.Visible = false;
             // 
             // categoriaBindingSource1
             // 

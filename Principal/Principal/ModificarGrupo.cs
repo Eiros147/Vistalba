@@ -36,10 +36,11 @@ Persist Security Info=False;";
         {
             // TODO: esta línea de código carga datos en la tabla 'club_VistalbaDataSet.Categoria' Puede moverla o quitarla según sea necesario.
             this.categoriaTableAdapter.FillOrdenado(this.club_VistalbaDataSet.Categoria);
-
+            
             cargarcantidad();
             Seleccionar("catNombre", "Categoria", cbCategoria, "catID", "catNombre");
             Desastre(cbCategoria);
+            Mess();
         }
 
 
@@ -48,6 +49,7 @@ Persist Security Info=False;";
         {
             try
             {
+                conModificar.Close();
                 conModificar.Open();
                 string query = "Select catCant FROM Categoria WHERE catNombre = '" + cbCategoria.Text + "'";
 
@@ -91,8 +93,39 @@ Persist Security Info=False;";
                 string busqueda = "SELECT catNombre FROM Categoria WHERE (catID LIKE '" + lblCatId.Text + "')";
                 OleDbCommand comando = new OleDbCommand(busqueda, conModificar);
                 string temporal = Convert.ToString(comando.ExecuteScalar());
-                MessageBox.Show(temporal);
+                //MessageBox.Show(temporal);
                 cb.SelectedIndex = cb.FindStringExact(temporal);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex);
+            }
+            finally
+            {
+                conModificar.Close();
+            }
+        }
+
+        private void Mess()
+        {
+            try
+            {
+                conModificar.Open();
+                string query = "SELECT * FROM Grupo WHERE grupoID = " + lblID.Text + "";
+                
+                OleDbCommand comando = new OleDbCommand(query, conModificar);
+
+                //Control de query para testeo de errores
+                //MessageBox.Show(query);
+
+                OleDbDataReader lector = null;
+                lector = comando.ExecuteReader();
+
+                if (lector.Read())
+                {
+                    txtPersona2.Text = (lector["grupoSocio1"].ToString());
+                    txtPersona3.Text = (lector["grupoSocio2"].ToString());
+                }
             }
             catch (Exception ex)
             {
@@ -211,19 +244,31 @@ Persist Security Info=False;";
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            string query = "SELECT catID FROM Categoria WHERE catNombre LIKE '" + cbCategoria.Text + "'";
+
+            //MessageBox.Show(query);
+            
+                conModificar.Open();
+                OleDbCommand comando = new OleDbCommand(query, conModificar);
+                string temporal = Convert.ToString(comando.ExecuteScalar());
+                //MessageBox.Show(temporal);
+         
+                conModificar.Close();
+            
+
             string tabla = "Grupo";
             string key = "grupoID";
             int id = Convert.ToInt32(lblID.Text);
 
-            MessageBox.Show(lblID.Text);
-            MessageBox.Show(id.ToString());
+            //MessageBox.Show(lblID.Text);
+            //MessageBox.Show(id.ToString());
 
             Metodos guardado = new Metodos();
             guardado.Inicializar();
 
-            string valores = "grupoSocioPpal = '" + txtSocio.Text + "', grupoApellido = '" + txtApellido.Text + "', grupoNombre= '" + txtNombre.Text + "', grupoSocio1 = '" + txtPersona2.Text + "', grupoSocio2 = '" + txtPersona3.Text + "'";
+            string valores = "catID = '" +temporal+ "', grupoSocioPpal = '" + txtSocio.Text + "', grupoApellido = '" + txtApellido.Text + "', grupoNombre= '" + txtNombre.Text + "', grupoSocio1 = '" + txtPersona2.Text + "', grupoSocio2 = '" + txtPersona3.Text + "'";
 
-            MessageBox.Show(valores);
+            //MessageBox.Show(valores);
 
             guardado.Update(tabla, id, valores, key);
 
