@@ -44,17 +44,29 @@ Persist Security Info=False;";
             this.categoriaTableAdapter.Fill(this.club_VistalbaDataSet.Categoria);
             string key = lblID.Text.ToString();
 
-            //conModificar.Open();
-            //string query = "SELECT socioNotas FROM Socio WHERE socioID = " + lblID.Text + "";
-            //comando.Connection = conModificar;
-            //comando.CommandText = query;
-
-
-            //conModificar.Close();
+            CargaNota(txtNotas, lblID);
 
             //Seleccionar(cbNivel, "nivelNombre", "Niveles", "nivelID", "nivelNumero", key, 1);
             //Seleccionar(cbCategoria, "catNombre", "Categoria", "catID", "catNombre", key, 1);
 
+        }
+
+        private void CargaNota(TextBox tx, Label lbl)
+        {
+            conModificar.Open();
+            string query = "SELECT socioNotas FROM Socio WHERE socioID = " + lbl.Text + "";
+            comando.Connection = conModificar;
+            comando.CommandText = query;
+
+            MessageBox.Show(query);
+
+            OleDbDataReader lector = comando.ExecuteReader();
+            while (lector.Read())
+            {
+                tx.AppendText(lector["socioNotas"].ToString());
+            }
+
+            conModificar.Close();
         }
 
         private void btnHabilitar_Click(object sender, EventArgs e)
