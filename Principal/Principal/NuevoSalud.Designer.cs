@@ -53,6 +53,7 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.txtExtra = new System.Windows.Forms.TextBox();
+            this.lblID = new System.Windows.Forms.Label();
             saludAlergiaLabel = new System.Windows.Forms.Label();
             saludAlergiaDescLabel = new System.Windows.Forms.Label();
             saludSangreLabel = new System.Windows.Forms.Label();
@@ -160,10 +161,12 @@
             this.tableAdapterManager.CuotaTableAdapter = null;
             this.tableAdapterManager.GrupoTableAdapter = null;
             this.tableAdapterManager.MensualTableAdapter = null;
+            this.tableAdapterManager.NivelesTableAdapter = null;
             this.tableAdapterManager.ProfesionalTableAdapter = null;
             this.tableAdapterManager.SaludTableAdapter = this.saludTableAdapter;
             this.tableAdapterManager.SocioTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Principal.Club_VistalbaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.ValorFijoTableAdapter = null;
             // 
             // cbAlergia
             // 
@@ -264,11 +267,22 @@
             this.txtExtra.Size = new System.Drawing.Size(185, 71);
             this.txtExtra.TabIndex = 18;
             // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(234, 23);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(15, 13);
+            this.lblID.TabIndex = 22;
+            this.lblID.Text = "id";
+            this.lblID.Visible = false;
+            // 
             // NuevoSalud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(313, 345);
+            this.Controls.Add(this.lblID);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.lblNombre);
@@ -316,5 +330,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox txtExtra;
         public System.Windows.Forms.Label lblNombre;
+        public System.Windows.Forms.Label lblID;
     }
 }

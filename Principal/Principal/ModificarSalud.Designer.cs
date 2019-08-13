@@ -54,6 +54,7 @@
             this.socioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblNombre = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.lblid = new System.Windows.Forms.Label();
             saludAlergiaLabel = new System.Windows.Forms.Label();
             saludAlergiaDescLabel = new System.Windows.Forms.Label();
             saludSangreLabel = new System.Windows.Forms.Label();
@@ -161,10 +162,12 @@
             this.tableAdapterManager.CuotaTableAdapter = null;
             this.tableAdapterManager.GrupoTableAdapter = null;
             this.tableAdapterManager.MensualTableAdapter = null;
+            this.tableAdapterManager.NivelesTableAdapter = null;
             this.tableAdapterManager.ProfesionalTableAdapter = null;
             this.tableAdapterManager.SaludTableAdapter = this.saludTableAdapter;
             this.tableAdapterManager.SocioTableAdapter = this.socioTableAdapter;
             this.tableAdapterManager.UpdateOrder = Principal.Club_VistalbaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.ValorFijoTableAdapter = null;
             // 
             // socioTableAdapter
             // 
@@ -275,11 +278,21 @@
             this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // lblid
+            // 
+            this.lblid.AutoSize = true;
+            this.lblid.Location = new System.Drawing.Point(289, 15);
+            this.lblid.Name = "lblid";
+            this.lblid.Size = new System.Drawing.Size(35, 13);
+            this.lblid.TabIndex = 24;
+            this.lblid.Text = "label1";
+            // 
             // ModificarSalud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(359, 339);
+            this.Controls.Add(this.lblid);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(socioNombreLabel);
@@ -329,5 +342,6 @@
         public System.Windows.Forms.TextBox txtEmergencia;
         public System.Windows.Forms.TextBox txtExtra;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label lblid;
     }
 }

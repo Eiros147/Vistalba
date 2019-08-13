@@ -14,6 +14,7 @@ namespace Principal
     public partial class ModificarSalud : Form
     {
         OleDbConnection conModificar = new OleDbConnection();
+        bool control = false;
 
         public ModificarSalud()
         {
@@ -35,6 +36,7 @@ Persist Security Info=False;";
 
         private void ModificarSalud_Load(object sender, EventArgs e)
         {
+            lblid.Text = idsocio.ToString();
             try
             {
                 conModificar.Open();
@@ -95,20 +97,41 @@ Persist Security Info=False;";
             }
 
             conModificar.Open();
-            string query = "SELECT socioID FROM Socio WHERE socioNombre = '" + lblNombre.Text + "'";
-            comando.CommandText = query;
-            comando.Connection = conModificar;
 
-            int nombre = Convert.ToInt32(comando.ExecuteScalar().ToString());
+            OleDbCommand cmdchequeo = new OleDbCommand();
+            cmdchequeo.CommandText = "SELECT * FROM Salud";
+            cmdchequeo.Connection = conModificar;
 
-            string seters = "saludAlergia = '" + flag + "', saludAlergiaDesc = '" + txtDescripcion.Text + "', saludSangre = '" + txtSangre.Text + "', saludMed = '" + txtMedicamentos.Text + "', saludObraSoc = '" + txtObrasocial.Text + "', saludTelEm = " + txtEmergencia.Text + ", saludExtra = '" + txtExtra.Text + "'";
-            string tabla = "Salud";
-            string key = "saludID";
-            int id = nombre;
+            OleDbDataReader lector = cmdchequeo.ExecuteReader();
+            while (lector.Read())
+            {
+                if (lector[1].ToString() == idsocio.ToString())
+                {
+                    control = true;
+                    break;
+                }
+            }
 
-            Metodos guardar = new Metodos();
-            guardar.Inicializar();
-            guardar.Update(tabla, id, seters, key);
+            if(control== true)
+            {
+                string seters = "saludAlergia = '" + flag + "', saludAlergiaDesc = '" + txtDescripcion.Text + "', saludSangre = '" + txtSangre.Text + "', saludMed = '" + txtMedicamentos.Text + "', saludObraSoc = '" + txtObrasocial.Text + "', saludTelEm = " + txtEmergencia.Text + ", saludExtra = '" + txtExtra.Text + "'";
+                string tabla = "Salud";
+                string key = "socioID";
+
+                Metodos guardar = new Metodos();
+                guardar.Inicializar();
+                guardar.Update(tabla, idsocio, seters, key);
+            }
+            else
+            {
+                string tabla = "Salud";
+                string seters = "saludAlergia, saludAlergiaDesc, saludSangre, saludMed, saludObraSoc, saludTelEm, saludExtra, socioID";
+                string valores = "'" + flag + "','" + txtDescripcion.Text + "','" + txtSangre.Text + "','" + txtMedicamentos.Text + "','" + txtObrasocial.Text + "','" + txtEmergencia.Text + "','" + txtExtra.Text + "'," + idsocio.ToString() + "";
+
+                Metodos crear = new Metodos();
+                crear.Inicializar();
+                crear.Insertar(tabla, seters, valores);
+            }
 
             conModificar.Close();
         }

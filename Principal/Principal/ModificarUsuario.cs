@@ -58,7 +58,7 @@ Persist Security Info=False;";
             comando.Connection = conModificar;
             comando.CommandText = query;
 
-            MessageBox.Show(query);
+            //MessageBox.Show(query);
 
             OleDbDataReader lector = comando.ExecuteReader();
             while (lector.Read())
@@ -118,6 +118,7 @@ Persist Security Info=False;";
                 estado = 0;
             }
 
+            
             string seters = "socioNombre = '" + txtNombre.Text + "', socioDNI = " + txtDNI.Text + ", socioDireccion = '" + txtDireccion.Text + "', socioMail = '" + txtMail.Text + "', socioNotas = '" + txtNotas.Text + "', socioCategoria = '" + cbCategoria.Text + "', socioTelefono = " + txtTelefono.Text + ", socioCelular = " + txtCelular.Text + ", socioGenero = " + flag + ", socioEstado = " + estado + ", socioNivel = '" + cbNivel.Text + "'";
             string tabla = "Socio";
             string key = "socioID";
@@ -163,6 +164,7 @@ Persist Security Info=False;";
             salud.idsocio = Convert.ToInt32(lblID.Text);
 
             salud.ShowDialog();
+            conModificar.Close();
         }
               
         private void cbEstado_CheckedChanged(object sender, EventArgs e)
