@@ -45,10 +45,50 @@ Persist Security Info=False;";
             string key = lblID.Text.ToString();
 
             CargaNota(txtNotas, lblID);
+            CargaImagen(lblID);
 
-            //Seleccionar(cbNivel, "nivelNombre", "Niveles", "nivelID", "nivelNumero", key, 1);
-            //Seleccionar(cbCategoria, "catNombre", "Categoria", "catID", "catNombre", key, 1);
+            Seleccionar("catNombre", "Categoria", cbCategoria, "catID", "catNombre");
+            Seleccionar("nivelNombre", "Niveles", cbNivel, "nivelID", "nivelNombre");
 
+            Seleccion("catNombre", "Categoria", cbCategoria, "catID", lblcatID);
+            Seleccion("nivelNombre", "Niveles", cbNivel, "nivelID", lblnivelID);
+        }
+
+        private void Seleccion(string valor, string tabla, ComboBox cb, string id, Label lbl)
+        {
+            try
+            {
+                conModificar.Open();
+                string busqueda = "SELECT " + valor + " FROM " + tabla + " WHERE (" + id + " LIKE '" + lbl.Text + "')";
+                OleDbCommand comando = new OleDbCommand(busqueda, conModificar);
+                string temporal = Convert.ToString(comando.ExecuteScalar());
+                cb.SelectedIndex = cb.FindStringExact(temporal);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error " + ex);
+            }
+            finally
+            {
+                conModificar.Close();
+            }
+        }
+
+        private void Seleccionar(string valor, string tabla, ComboBox cb, string id, string orden)
+        {
+            Metodos llenar = new Metodos();
+            llenar.Inicializar();
+            llenar.LlenarCombo(valor, tabla, cb, id, orden);
+        }
+
+        private void CargaImagen(Label lbl)
+        {
+            conModificar.Open();
+            string query = "SELECT socioFoto FROM Socio WHERE socioID = " + lbl.Text + "";
+            comando.Connection = conModificar;
+            comando.CommandText = query;
+
+            conModificar.Close();
         }
 
         private void CargaNota(TextBox tx, Label lbl)

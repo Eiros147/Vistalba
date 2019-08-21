@@ -29,7 +29,7 @@ namespace Principal
         {
             // TODO: esta línea de código carga datos en la tabla 'club_VistalbaDataSet.Socio' Puede moverla o quitarla según sea necesario.
             this.socioTableAdapter.Fill(this.club_VistalbaDataSet.Socio);
-
+            
         }
 
         private void cbEstado_CheckedChanged(object sender, EventArgs e)

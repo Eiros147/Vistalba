@@ -180,7 +180,7 @@
             this.cbAlergia.Name = "cbAlergia";
             this.cbAlergia.Size = new System.Drawing.Size(104, 24);
             this.cbAlergia.TabIndex = 6;
-            this.cbAlergia.Text = "Si";
+            this.cbAlergia.Text = "No";
             this.cbAlergia.UseVisualStyleBackColor = true;
             this.cbAlergia.CheckedChanged += new System.EventHandler(this.cbAlergia_CheckedChanged);
             // 
@@ -286,6 +286,7 @@
             this.lblid.Size = new System.Drawing.Size(35, 13);
             this.lblid.TabIndex = 24;
             this.lblid.Text = "label1";
+            this.lblid.Visible = false;
             // 
             // ModificarSalud
             // 

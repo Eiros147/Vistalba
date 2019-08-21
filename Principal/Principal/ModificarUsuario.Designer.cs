@@ -73,6 +73,8 @@
             this.cbEstado = new System.Windows.Forms.CheckBox();
             this.cbNivel = new System.Windows.Forms.ComboBox();
             this.categoriaTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.CategoriaTableAdapter();
+            this.lblcatID = new System.Windows.Forms.Label();
+            this.lblnivelID = new System.Windows.Forms.Label();
             socioIDLabel = new System.Windows.Forms.Label();
             socioNombreLabel = new System.Windows.Forms.Label();
             socioDNILabel = new System.Windows.Forms.Label();
@@ -461,6 +463,7 @@
             this.pbFoto.Location = new System.Drawing.Point(438, 12);
             this.pbFoto.Name = "pbFoto";
             this.pbFoto.Size = new System.Drawing.Size(229, 192);
+            this.pbFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbFoto.TabIndex = 40;
             this.pbFoto.TabStop = false;
             // 
@@ -481,16 +484,6 @@
             // 
             this.cbNivel.Enabled = false;
             this.cbNivel.FormattingEnabled = true;
-            this.cbNivel.Items.AddRange(new object[] {
-            "Primera",
-            "Segunda",
-            "Quinta",
-            "Sexta",
-            "Septima",
-            "Octava",
-            "Novena",
-            "Decima",
-            "PreDecima"});
             this.cbNivel.Location = new System.Drawing.Point(130, 403);
             this.cbNivel.Name = "cbNivel";
             this.cbNivel.Size = new System.Drawing.Size(281, 21);
@@ -500,11 +493,31 @@
             // 
             this.categoriaTableAdapter.ClearBeforeFill = true;
             // 
+            // lblcatID
+            // 
+            this.lblcatID.AutoSize = true;
+            this.lblcatID.Location = new System.Drawing.Point(195, 9);
+            this.lblcatID.Name = "lblcatID";
+            this.lblcatID.Size = new System.Drawing.Size(35, 13);
+            this.lblcatID.TabIndex = 45;
+            this.lblcatID.Text = "label4";
+            // 
+            // lblnivelID
+            // 
+            this.lblnivelID.AutoSize = true;
+            this.lblnivelID.Location = new System.Drawing.Point(236, 9);
+            this.lblnivelID.Name = "lblnivelID";
+            this.lblnivelID.Size = new System.Drawing.Size(35, 13);
+            this.lblnivelID.TabIndex = 46;
+            this.lblnivelID.Text = "label4";
+            // 
             // ModificarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(687, 559);
+            this.Controls.Add(this.lblnivelID);
+            this.Controls.Add(this.lblcatID);
             this.Controls.Add(this.cbNivel);
             this.Controls.Add(label3);
             this.Controls.Add(this.cbEstado);
@@ -586,5 +599,7 @@
         public System.Windows.Forms.ComboBox cbNivel;
         private System.Windows.Forms.BindingSource categoriaBindingSource;
         private Club_VistalbaDataSetTableAdapters.CategoriaTableAdapter categoriaTableAdapter;
+        public System.Windows.Forms.Label lblcatID;
+        public System.Windows.Forms.Label lblnivelID;
     }
 }

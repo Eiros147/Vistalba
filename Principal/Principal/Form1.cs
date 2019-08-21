@@ -83,6 +83,14 @@ Persist Security Info=False;");
 
             string temporal = comando.ExecuteScalar().ToString();
 
+            string querycat = "Select catID FROM Categoria WHERE catNombre = '" + dgvSocio.CurrentRow.Cells[10].Value.ToString() + "'";
+            OleDbCommand categoria = new OleDbCommand(querycat, conexion);
+            string cattemp = Convert.ToString(categoria.ExecuteScalar());
+
+            string queryniv = "Select nivelID FROM Niveles WHERE nivelNombre = '" + dgvSocio.CurrentRow.Cells[11].Value.ToString() + "'";
+            OleDbCommand nivel = new OleDbCommand(queryniv, conexion);
+            string nivtemp = Convert.ToString(nivel.ExecuteScalar());
+
             ModificarUsuario modificar = new ModificarUsuario();
 
             //Seleccionar(modificar.cbCategoria, "catNombre", "Categoria", "catID", "catNombre");
@@ -95,9 +103,10 @@ Persist Security Info=False;");
             modificar.txtCelular.Text = dgvSocio.CurrentRow.Cells[5].Value.ToString();
             modificar.txtMail.Text = dgvSocio.CurrentRow.Cells[3].Value.ToString();
             modificar.txtTelefono.Text = dgvSocio.CurrentRow.Cells[4].Value.ToString();
-            modificar.cbCategoria.Text = dgvSocio.CurrentRow.Cells[10].Value.ToString();
-            modificar.cbNivel.Text = dgvSocio.CurrentRow.Cells[11].Value.ToString();
-
+            //modificar.cbCategoria.Text = dgvSocio.CurrentRow.Cells[10].Value.ToString();
+            //modificar.cbNivel.Text = dgvSocio.CurrentRow.Cells[11].Value.ToString();
+            modificar.lblcatID.Text = cattemp;
+            modificar.lblnivelID.Text = nivtemp;
             
 
             //MessageBox.Show(dgvSocio.CurrentRow.Cells[10].Value.ToString());
@@ -111,8 +120,9 @@ Persist Security Info=False;");
             }
 
             modificar.ShowDialog();
-
             conexion.Close();
+
+            cargar();
         }
 
         private void Seleccionar(ComboBox cb, string value, string table, string identificador, string orden)

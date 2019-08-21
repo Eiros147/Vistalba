@@ -42,9 +42,7 @@ Persist Security Info=False;";
             Desastre(cbCategoria);
             Mess();
         }
-
-
-
+        
         private void cargarcantidad()
         {
             try
