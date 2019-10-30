@@ -86,6 +86,26 @@ Persist Security Info=False;");
             llenado.LlenarCombo(value, table, cb, identificador, orden);
         }
 
+        private void Seleccion(string valor, string tabla, ComboBox cb, string id, Label lbl)
+        {
+            try
+            {
+                
+                string busqueda = "SELECT " + valor + " FROM " + tabla + " WHERE (" + id + " LIKE '" + lbl.Text + "')";
+                OleDbCommand comando = new OleDbCommand(busqueda, conexion);
+                string temporal = Convert.ToString(comando.ExecuteScalar());
+                cb.SelectedIndex = cb.FindStringExact(temporal);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex);
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             busqueda();
@@ -121,10 +141,16 @@ Persist Security Info=False;");
 
                 string temporal = comando.ExecuteScalar().ToString();
 
-                
-                neu.lblID.Text = temporal;
-                neu.ShowDialog();
+                neu.txtNombre.Text = dgvActividades.CurrentRow.Cells[0].Value.ToString();
+                neu.txtDesc.Text = dgvActividades.CurrentRow.Cells[1].Value.ToString();
+                neu.txtMeses.Text = dgvActividades.CurrentRow.Cells[2].Value.ToString();
 
+                neu.lblID.Text = temporal;
+
+                Seleccionar(neu.cbProfesor, "profNombre", "Profesional", "profId", "profNombre");
+                Seleccion("profNombre", "Profesional", neu.cbProfesor, "profID", neu.lblID);
+
+                neu.ShowDialog();
 
             }
             catch (Exception ex)
@@ -133,7 +159,7 @@ Persist Security Info=False;");
             }
             finally
             {
-                Seleccionar(neu.cbProfesor, "profNombre", "Profesional", "profId", "profNombre");
+                
                 conexion.Close();
             }
 

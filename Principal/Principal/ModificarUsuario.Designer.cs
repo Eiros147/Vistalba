@@ -501,6 +501,7 @@
             this.lblcatID.Size = new System.Drawing.Size(35, 13);
             this.lblcatID.TabIndex = 45;
             this.lblcatID.Text = "label4";
+            this.lblcatID.Visible = false;
             // 
             // lblnivelID
             // 
@@ -510,6 +511,7 @@
             this.lblnivelID.Size = new System.Drawing.Size(35, 13);
             this.lblnivelID.TabIndex = 46;
             this.lblnivelID.Text = "label4";
+            this.lblnivelID.Visible = false;
             // 
             // ModificarUsuario
             // 

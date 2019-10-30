@@ -23,7 +23,7 @@ Persist Security Info=False;");
 
         private void SociosInactivos_Activated(object sender, EventArgs e)
         {
-            cargar();
+            Cargar();
         }
 
         private void dgvInactivos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -43,16 +43,16 @@ Persist Security Info=False;");
         {
             if (txtBusqueda.Text == "")
             {
-                cargar();
+                Cargar();
             }
             else
             {
-                buscar();
+                Buscar();
                 this.dgvInactivos.EndEdit();
             }
         }
 
-        private void cargar()
+        private void Cargar()
         {
             Metodos cargametodo = new Metodos();
             string tabla = "Socio";
@@ -63,7 +63,7 @@ Persist Security Info=False;");
             cargametodo.Llenardgvcondiciones(tabla, valores, dgvInactivos, condicion);
         }
 
-        private void buscar()
+        private void Buscar()
         {
             DataTable dtDatos = new DataTable();
             string cadena = ("SELECT * FROM Socio WHERE socioNombre LIKE '" + txtBusqueda.Text + "%'");
@@ -74,7 +74,7 @@ Persist Security Info=False;");
 
         private void SociosInactivos_Load(object sender, EventArgs e)
         {
-            cargar();
+            Cargar();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

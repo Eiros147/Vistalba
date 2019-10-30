@@ -127,6 +127,7 @@
             this.tableAdapterManager.SaludTableAdapter = null;
             this.tableAdapterManager.SocioTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Principal.Club_VistalbaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.ValorFijoTableAdapter = null;
             // 
             // txtDesc
             // 
@@ -221,7 +222,7 @@
             this.Controls.Add(actNombreLabel);
             this.Controls.Add(this.txtNombre);
             this.Name = "ModificarActividad";
-            this.Text = "ModificarActividad";
+            this.Text = "Modificar Actividad";
             this.Load += new System.EventHandler(this.ModificarActividad_Load);
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.actividadesBindingSource)).EndInit();
@@ -236,13 +237,13 @@
         private System.Windows.Forms.BindingSource actividadesBindingSource;
         private Club_VistalbaDataSetTableAdapters.ActividadesTableAdapter actividadesTableAdapter;
         private Club_VistalbaDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.TextBox txtDesc;
-        private System.Windows.Forms.TextBox txtMeses;
-        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Button btnHabilitar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
         public System.Windows.Forms.Label lblID;
         public System.Windows.Forms.ComboBox cbProfesor;
+        public System.Windows.Forms.TextBox txtDesc;
+        public System.Windows.Forms.TextBox txtMeses;
+        public System.Windows.Forms.TextBox txtNombre;
     }
 }

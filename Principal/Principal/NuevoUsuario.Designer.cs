@@ -40,6 +40,7 @@
             System.Windows.Forms.Label label1;
             System.Windows.Forms.Label label2;
             System.Windows.Forms.Label label3;
+            System.Windows.Forms.Label label4;
             this.club_VistalbaDataSet = new Principal.Club_VistalbaDataSet();
             this.socioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.socioTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.SocioTableAdapter();
@@ -62,9 +63,10 @@
             this.lblNotas = new System.Windows.Forms.Label();
             this.cbEstado = new System.Windows.Forms.CheckBox();
             this.cbCategoria = new System.Windows.Forms.ComboBox();
-            this.btnSalud = new System.Windows.Forms.Button();
             this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnSalud = new System.Windows.Forms.Button();
             this.categoriaTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.CategoriaTableAdapter();
+            this.cbNivel = new System.Windows.Forms.ComboBox();
             socioIDLabel = new System.Windows.Forms.Label();
             socioNombreLabel = new System.Windows.Forms.Label();
             socioDNILabel = new System.Windows.Forms.Label();
@@ -76,6 +78,7 @@
             label1 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
+            label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.socioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grupoBindingSource)).BeginInit();
@@ -175,7 +178,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(12, 375);
+            label3.Location = new System.Drawing.Point(12, 402);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(43, 13);
             label3.TabIndex = 44;
@@ -208,6 +211,7 @@
             this.tableAdapterManager.SaludTableAdapter = null;
             this.tableAdapterManager.SocioTableAdapter = this.socioTableAdapter;
             this.tableAdapterManager.UpdateOrder = Principal.Club_VistalbaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.ValorFijoTableAdapter = null;
             // 
             // grupoTableAdapter1
             // 
@@ -280,7 +284,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(15, 408);
+            this.btnGuardar.Location = new System.Drawing.Point(15, 428);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 38);
             this.btnGuardar.TabIndex = 26;
@@ -290,7 +294,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(336, 408);
+            this.btnCancelar.Location = new System.Drawing.Point(336, 428);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 38);
             this.btnCancelar.TabIndex = 27;
@@ -347,7 +351,7 @@
             // cbEstado
             // 
             this.cbEstado.AutoSize = true;
-            this.cbEstado.Location = new System.Drawing.Point(130, 372);
+            this.cbEstado.Location = new System.Drawing.Point(130, 399);
             this.cbEstado.Name = "cbEstado";
             this.cbEstado.Size = new System.Drawing.Size(56, 17);
             this.cbEstado.TabIndex = 46;
@@ -364,9 +368,14 @@
             this.cbCategoria.Size = new System.Drawing.Size(281, 21);
             this.cbCategoria.TabIndex = 47;
             // 
+            // categoriaBindingSource
+            // 
+            this.categoriaBindingSource.DataMember = "Categoria";
+            this.categoriaBindingSource.DataSource = this.club_VistalbaDataSet;
+            // 
             // btnSalud
             // 
-            this.btnSalud.Location = new System.Drawing.Point(177, 408);
+            this.btnSalud.Location = new System.Drawing.Point(177, 428);
             this.btnSalud.Name = "btnSalud";
             this.btnSalud.Size = new System.Drawing.Size(75, 38);
             this.btnSalud.TabIndex = 48;
@@ -374,20 +383,35 @@
             this.btnSalud.UseVisualStyleBackColor = true;
             this.btnSalud.Click += new System.EventHandler(this.btnSalud_Click);
             // 
-            // categoriaBindingSource
-            // 
-            this.categoriaBindingSource.DataMember = "Categoria";
-            this.categoriaBindingSource.DataSource = this.club_VistalbaDataSet;
-            // 
             // categoriaTableAdapter
             // 
             this.categoriaTableAdapter.ClearBeforeFill = true;
+            // 
+            // cbNivel
+            // 
+            this.cbNivel.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.categoriaBindingSource, "catNombre", true));
+            this.cbNivel.FormattingEnabled = true;
+            this.cbNivel.Location = new System.Drawing.Point(130, 372);
+            this.cbNivel.Name = "cbNivel";
+            this.cbNivel.Size = new System.Drawing.Size(281, 21);
+            this.cbNivel.TabIndex = 50;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new System.Drawing.Point(12, 376);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(34, 13);
+            label4.TabIndex = 49;
+            label4.Text = "Nivel:";
             // 
             // NuevoUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(426, 457);
+            this.ClientSize = new System.Drawing.Size(426, 479);
+            this.Controls.Add(this.cbNivel);
+            this.Controls.Add(label4);
             this.Controls.Add(this.btnSalud);
             this.Controls.Add(this.cbCategoria);
             this.Controls.Add(this.cbEstado);
@@ -455,5 +479,6 @@
         private System.Windows.Forms.Button btnSalud;
         private System.Windows.Forms.BindingSource categoriaBindingSource;
         private Club_VistalbaDataSetTableAdapters.CategoriaTableAdapter categoriaTableAdapter;
+        private System.Windows.Forms.ComboBox cbNivel;
     }
 }

@@ -59,13 +59,15 @@
             this.socioFechaIngDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.socioFechaUltPagoDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.catIdTextBox = new System.Windows.Forms.TextBox();
-            this.socioCategoriaTextBox = new System.Windows.Forms.TextBox();
-            this.socioNivelTextBox = new System.Windows.Forms.TextBox();
             this.cbEstado = new System.Windows.Forms.CheckBox();
             this.rbHombre = new System.Windows.Forms.RadioButton();
             this.rbMujer = new System.Windows.Forms.RadioButton();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnCerrar = new System.Windows.Forms.Button();
+            this.cbCategoria = new System.Windows.Forms.ComboBox();
+            this.cbNivel = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             socioIDLabel = new System.Windows.Forms.Label();
             socioNombreLabel = new System.Windows.Forms.Label();
             socioDNILabel = new System.Windows.Forms.Label();
@@ -151,7 +153,7 @@
             // socioFechaNacLabel
             // 
             socioFechaNacLabel.AutoSize = true;
-            socioFechaNacLabel.Location = new System.Drawing.Point(10, 239);
+            socioFechaNacLabel.Location = new System.Drawing.Point(13, 241);
             socioFechaNacLabel.Name = "socioFechaNacLabel";
             socioFechaNacLabel.Size = new System.Drawing.Size(96, 13);
             socioFechaNacLabel.TabIndex = 15;
@@ -160,7 +162,7 @@
             // socioFechaIngLabel
             // 
             socioFechaIngLabel.AutoSize = true;
-            socioFechaIngLabel.Location = new System.Drawing.Point(10, 265);
+            socioFechaIngLabel.Location = new System.Drawing.Point(13, 267);
             socioFechaIngLabel.Name = "socioFechaIngLabel";
             socioFechaIngLabel.Size = new System.Drawing.Size(78, 13);
             socioFechaIngLabel.TabIndex = 17;
@@ -169,7 +171,7 @@
             // socioFechaUltPagoLabel
             // 
             socioFechaUltPagoLabel.AutoSize = true;
-            socioFechaUltPagoLabel.Location = new System.Drawing.Point(10, 291);
+            socioFechaUltPagoLabel.Location = new System.Drawing.Point(13, 293);
             socioFechaUltPagoLabel.Name = "socioFechaUltPagoLabel";
             socioFechaUltPagoLabel.Size = new System.Drawing.Size(100, 13);
             socioFechaUltPagoLabel.TabIndex = 19;
@@ -196,29 +198,29 @@
             // socioCategoriaLabel
             // 
             socioCategoriaLabel.AutoSize = true;
-            socioCategoriaLabel.Location = new System.Drawing.Point(10, 366);
+            socioCategoriaLabel.Location = new System.Drawing.Point(13, 431);
             socioCategoriaLabel.Name = "socioCategoriaLabel";
-            socioCategoriaLabel.Size = new System.Drawing.Size(83, 13);
+            socioCategoriaLabel.Size = new System.Drawing.Size(55, 13);
             socioCategoriaLabel.TabIndex = 31;
-            socioCategoriaLabel.Text = "socio Categoria:";
+            socioCategoriaLabel.Text = "Categoria:";
             // 
             // socioNivelLabel
             // 
             socioNivelLabel.AutoSize = true;
-            socioNivelLabel.Location = new System.Drawing.Point(10, 392);
+            socioNivelLabel.Location = new System.Drawing.Point(13, 457);
             socioNivelLabel.Name = "socioNivelLabel";
-            socioNivelLabel.Size = new System.Drawing.Size(62, 13);
+            socioNivelLabel.Size = new System.Drawing.Size(34, 13);
             socioNivelLabel.TabIndex = 33;
-            socioNivelLabel.Text = "socio Nivel:";
+            socioNivelLabel.Text = "Nivel:";
             // 
             // socioEstadoLabel
             // 
             socioEstadoLabel.AutoSize = true;
-            socioEstadoLabel.Location = new System.Drawing.Point(10, 420);
+            socioEstadoLabel.Location = new System.Drawing.Point(13, 485);
             socioEstadoLabel.Name = "socioEstadoLabel";
-            socioEstadoLabel.Size = new System.Drawing.Size(71, 13);
+            socioEstadoLabel.Size = new System.Drawing.Size(43, 13);
             socioEstadoLabel.TabIndex = 35;
-            socioEstadoLabel.Text = "socio Estado:";
+            socioEstadoLabel.Text = "Estado:";
             // 
             // club_VistalbaDataSet
             // 
@@ -242,10 +244,12 @@
             this.tableAdapterManager.CuotaTableAdapter = null;
             this.tableAdapterManager.GrupoTableAdapter = null;
             this.tableAdapterManager.MensualTableAdapter = null;
+            this.tableAdapterManager.NivelesTableAdapter = null;
             this.tableAdapterManager.ProfesionalTableAdapter = null;
             this.tableAdapterManager.SaludTableAdapter = null;
             this.tableAdapterManager.SocioTableAdapter = this.socioTableAdapter;
             this.tableAdapterManager.UpdateOrder = Principal.Club_VistalbaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.ValorFijoTableAdapter = null;
             // 
             // lblID
             // 
@@ -307,26 +311,26 @@
             // socioFechaNacDateTimePicker
             // 
             this.socioFechaNacDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.socioBindingSource, "socioFechaNac", true));
-            this.socioFechaNacDateTimePicker.Location = new System.Drawing.Point(128, 235);
+            this.socioFechaNacDateTimePicker.Location = new System.Drawing.Point(131, 235);
             this.socioFechaNacDateTimePicker.Name = "socioFechaNacDateTimePicker";
-            this.socioFechaNacDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.socioFechaNacDateTimePicker.Size = new System.Drawing.Size(280, 20);
             this.socioFechaNacDateTimePicker.TabIndex = 16;
             // 
             // socioFechaIngDateTimePicker
             // 
             this.socioFechaIngDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.socioBindingSource, "socioFechaIng", true));
             this.socioFechaIngDateTimePicker.Enabled = false;
-            this.socioFechaIngDateTimePicker.Location = new System.Drawing.Point(128, 261);
+            this.socioFechaIngDateTimePicker.Location = new System.Drawing.Point(131, 261);
             this.socioFechaIngDateTimePicker.Name = "socioFechaIngDateTimePicker";
-            this.socioFechaIngDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.socioFechaIngDateTimePicker.Size = new System.Drawing.Size(280, 20);
             this.socioFechaIngDateTimePicker.TabIndex = 18;
             // 
             // socioFechaUltPagoDateTimePicker
             // 
             this.socioFechaUltPagoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.socioBindingSource, "socioFechaUltPago", true));
-            this.socioFechaUltPagoDateTimePicker.Location = new System.Drawing.Point(128, 287);
+            this.socioFechaUltPagoDateTimePicker.Location = new System.Drawing.Point(131, 287);
             this.socioFechaUltPagoDateTimePicker.Name = "socioFechaUltPagoDateTimePicker";
-            this.socioFechaUltPagoDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.socioFechaUltPagoDateTimePicker.Size = new System.Drawing.Size(280, 20);
             this.socioFechaUltPagoDateTimePicker.TabIndex = 20;
             // 
             // catIdTextBox
@@ -334,29 +338,13 @@
             this.catIdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.socioBindingSource, "catId", true));
             this.catIdTextBox.Location = new System.Drawing.Point(131, 313);
             this.catIdTextBox.Name = "catIdTextBox";
-            this.catIdTextBox.Size = new System.Drawing.Size(200, 20);
+            this.catIdTextBox.Size = new System.Drawing.Size(197, 20);
             this.catIdTextBox.TabIndex = 24;
-            // 
-            // socioCategoriaTextBox
-            // 
-            this.socioCategoriaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.socioBindingSource, "socioCategoria", true));
-            this.socioCategoriaTextBox.Location = new System.Drawing.Point(128, 363);
-            this.socioCategoriaTextBox.Name = "socioCategoriaTextBox";
-            this.socioCategoriaTextBox.Size = new System.Drawing.Size(200, 20);
-            this.socioCategoriaTextBox.TabIndex = 32;
-            // 
-            // socioNivelTextBox
-            // 
-            this.socioNivelTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.socioBindingSource, "socioNivel", true));
-            this.socioNivelTextBox.Location = new System.Drawing.Point(128, 389);
-            this.socioNivelTextBox.Name = "socioNivelTextBox";
-            this.socioNivelTextBox.Size = new System.Drawing.Size(200, 20);
-            this.socioNivelTextBox.TabIndex = 34;
             // 
             // cbEstado
             // 
             this.cbEstado.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.socioBindingSource, "socioEstado", true));
-            this.cbEstado.Location = new System.Drawing.Point(128, 415);
+            this.cbEstado.Location = new System.Drawing.Point(131, 480);
             this.cbEstado.Name = "cbEstado";
             this.cbEstado.Size = new System.Drawing.Size(200, 24);
             this.cbEstado.TabIndex = 36;
@@ -367,7 +355,7 @@
             // rbHombre
             // 
             this.rbHombre.AutoSize = true;
-            this.rbHombre.Location = new System.Drawing.Point(131, 212);
+            this.rbHombre.Location = new System.Drawing.Point(134, 212);
             this.rbHombre.Name = "rbHombre";
             this.rbHombre.Size = new System.Drawing.Size(62, 17);
             this.rbHombre.TabIndex = 37;
@@ -378,7 +366,7 @@
             // rbMujer
             // 
             this.rbMujer.AutoSize = true;
-            this.rbMujer.Location = new System.Drawing.Point(211, 212);
+            this.rbMujer.Location = new System.Drawing.Point(214, 212);
             this.rbMujer.Name = "rbMujer";
             this.rbMujer.Size = new System.Drawing.Size(51, 17);
             this.rbMujer.TabIndex = 38;
@@ -386,31 +374,69 @@
             this.rbMujer.Text = "Mujer";
             this.rbMujer.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnGuardar
             // 
-            this.button1.Location = new System.Drawing.Point(11, 445);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 38);
-            this.button1.TabIndex = 39;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnGuardar.Location = new System.Drawing.Point(336, 511);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(75, 38);
+            this.btnGuardar.TabIndex = 39;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnCerrar
             // 
-            this.button2.Location = new System.Drawing.Point(253, 445);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 38);
-            this.button2.TabIndex = 40;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCerrar.Location = new System.Drawing.Point(16, 511);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(75, 38);
+            this.btnCerrar.TabIndex = 40;
+            this.btnCerrar.Text = "Cerrar";
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            // 
+            // cbCategoria
+            // 
+            this.cbCategoria.FormattingEnabled = true;
+            this.cbCategoria.Location = new System.Drawing.Point(131, 428);
+            this.cbCategoria.Name = "cbCategoria";
+            this.cbCategoria.Size = new System.Drawing.Size(200, 21);
+            this.cbCategoria.TabIndex = 41;
+            // 
+            // cbNivel
+            // 
+            this.cbNivel.FormattingEnabled = true;
+            this.cbNivel.Location = new System.Drawing.Point(131, 454);
+            this.cbNivel.Name = "cbNivel";
+            this.cbNivel.Size = new System.Drawing.Size(200, 21);
+            this.cbNivel.TabIndex = 42;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 345);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.TabIndex = 43;
+            this.label1.Text = "Notas:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(131, 338);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(200, 84);
+            this.textBox1.TabIndex = 44;
             // 
             // ModificarInactivos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(449, 499);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(427, 561);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cbNivel);
+            this.Controls.Add(this.cbCategoria);
+            this.Controls.Add(this.btnCerrar);
+            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.rbMujer);
             this.Controls.Add(this.rbHombre);
             this.Controls.Add(socioIDLabel);
@@ -437,13 +463,10 @@
             this.Controls.Add(this.catIdTextBox);
             this.Controls.Add(socioGeneroLabel);
             this.Controls.Add(socioCategoriaLabel);
-            this.Controls.Add(this.socioCategoriaTextBox);
             this.Controls.Add(socioNivelLabel);
-            this.Controls.Add(this.socioNivelTextBox);
             this.Controls.Add(socioEstadoLabel);
             this.Controls.Add(this.cbEstado);
             this.Name = "ModificarInactivos";
-            this.Text = "ModificarInactivos";
             this.Load += new System.EventHandler(this.ModificarInactivos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.socioBindingSource)).EndInit();
@@ -469,12 +492,14 @@
         private System.Windows.Forms.DateTimePicker socioFechaIngDateTimePicker;
         private System.Windows.Forms.DateTimePicker socioFechaUltPagoDateTimePicker;
         private System.Windows.Forms.TextBox catIdTextBox;
-        private System.Windows.Forms.TextBox socioCategoriaTextBox;
-        private System.Windows.Forms.TextBox socioNivelTextBox;
         private System.Windows.Forms.CheckBox cbEstado;
         private System.Windows.Forms.RadioButton rbHombre;
         private System.Windows.Forms.RadioButton rbMujer;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.ComboBox cbCategoria;
+        private System.Windows.Forms.ComboBox cbNivel;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

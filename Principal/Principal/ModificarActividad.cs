@@ -34,8 +34,7 @@ Persist Security Info=False;";
         {
             // TODO: esta línea de código carga datos en la tabla 'club_VistalbaDataSet.Actividades' Puede moverla o quitarla según sea necesario.
             //this.actividadesTableAdapter.Fill(this.club_VistalbaDataSet.Actividades);
-
-            
+ 
 
         }
 
@@ -69,13 +68,13 @@ Persist Security Info=False;";
 
         private void Selecccionar(ComboBox cb)
         {
-            string valor = "profNombre";
-            string tabla = "Profesional";
-            string id = "profId";
-            string ordenador = "profNombre";
+            //string valor = "profNombre";
+            //string tabla = "Profesional";
+            //string id = "profId";
+            //string ordenador = "profNombre";
 
-            Metodos elegirprof = new Metodos();
-            elegirprof.Inicializar();
+            //Metodos elegirprof = new Metodos();
+            //elegirprof.Inicializar();
             //elegirprof.LlenarCombo(valor, tabla, cb, id, ordenador);
         }
     }

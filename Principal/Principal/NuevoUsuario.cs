@@ -62,6 +62,7 @@ Persist Security Info=False;";
             }
 
             Seleccionar(cbCategoria, "catNombre", "Categoria", "catID", "catNombre");
+            Seleccionar(cbNivel, "nivelNombre", "Niveles", "nivelID", "nivelID");
         }
 
         private void Seleccionar(ComboBox cb, string valor, string tabla, string identificador, string orden)
