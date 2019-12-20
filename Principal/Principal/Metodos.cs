@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.OleDb;
 using System.Windows.Forms;
 using System.Data;
+using System.IO;
 
 namespace Principal
 {
@@ -243,6 +244,43 @@ namespace Principal
                 }
             }
             catch(Exception ex)
+            {
+                MessageBox.Show("Error " + ex);
+            }
+            finally
+            {
+                CerrarCon();
+            }
+        }
+
+        //Llenar imagen
+        public void Llenarimagen(string valor, string tabla, string key, string id, PictureBox pb)
+        {
+            try
+            {
+                string query = "SELECT " + valor + " FROM " + tabla + " WHERE " + key + " = '" + id + "'";
+                AbrirCon();
+
+                OleDbCommand comando = new OleDbCommand(query, conexion);
+
+                OleDbDataReader lector = null;
+                lector = comando.ExecuteReader();
+
+                if (lector.Read())
+                {
+                    byte[] imgg = (byte[])(lector[valor]);
+                    if (imgg == null)
+                    {
+                        pb.Image = null;
+                    }
+                    else
+                    {
+                        MemoryStream mstream = new MemoryStream(imgg);
+                        pb.Image = System.Drawing.Image.FromStream(mstream);
+                    }
+                }
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show("Error " + ex);
             }

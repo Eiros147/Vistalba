@@ -75,6 +75,7 @@ Persist Security Info=False;";
 
                 string temporalcat = Convert.ToString(buscar.ExecuteScalar());
 
+
                 //MessageBox.Show(temporalcat);
 
                 //mod.cbCategoria.SelectedIndex = mod.cbCategoria.FindStringExact(dgvGrupos.CurrentRow.Cells[0].Value.ToString());
@@ -109,6 +110,36 @@ Persist Security Info=False;";
             cargado.Llenardgv(tabla, valores, dgvGrupos);
 
           
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            busqueda();
+        }
+
+        private void busqueda()
+        {
+            Metodos buscar = new Metodos();
+            buscar.Inicializar();
+
+            string valores = "C.catNombre, G.grupoNombre, G.grupoApellido, G.grupoSocioPpal, G.grupoSocio1, G.grupoSocio2";
+            string tabla = "(Categoria C INNER JOIN Grupo G ON C.catID = G.catID)";
+            string condicion = "G.grupoSocioPpal LIKE '" + txtBusqueda.Text + "%'";
+
+            buscar.Llenardgvcondiciones(tabla, valores, dgvGrupos, condicion);
+        }
+
+        private void txtBusqueda_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBusqueda.Text == "")
+            {
+                cargar();
+            }
+            else
+            {
+                busqueda();
+                this.dgvGrupos.EndEdit();
+            }
         }
     }
 }

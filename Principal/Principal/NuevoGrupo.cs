@@ -55,19 +55,14 @@ Persist Security Info=False;";
                 conNuevo.Close();
             }
 
-            Seleccionar(cbCategoria);
+            Seleccionar("catNombre", "Categoria", cbCategoria, "catID", "catNombre");
         }
 
-        private void Seleccionar(ComboBox cb)
+        private void Seleccionar(string valor, string tabla, ComboBox cb, string id, string orden)
         {
-            string valor = "catNombre";
-            string tabla = "Categoria";
-            string id = "catID";
-            string orden = "catNombre";
-
             Metodos cargar = new Metodos();
             cargar.Inicializar();
-            //cargar.LlenarCombo(valor, tabla, cb, id, orden);
+            cargar.LlenarCombo(valor, tabla, cb, id, orden);
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -77,20 +72,29 @@ Persist Security Info=False;";
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            using(ListaMiembros lista = new ListaMiembros())
+            busqueda();
+        }
+
+        private void busqueda()
+        {
+            using (ListaMiembros lista = new ListaMiembros())
             {
-                if(lista.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                if (lista.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
                     txtSocioPpal.Text = lista.textoSeleccionado;
                 }
             }
         }
 
-        
-
         private void Notifyme(string s)
         {
-
+            using (ListaMiembros lista = new ListaMiembros())
+            {
+                if (lista.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    txtSocioPpal.Text = lista.textoSeleccionado;
+                }
+            }
         }
 
         private void cbCategoria_TextChanged(object sender, EventArgs e)
@@ -111,6 +115,21 @@ Persist Security Info=False;";
             string valores = "'" + cbCategoria.Text + "','" + txtSocioPpal.Text + "','" + txtApellido.Text + "','" + txtNombre.Text + "'";
 
             guardar.Insertar(tabla, seters, valores);
+        }
+
+        private void cbCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBuscar2_Click(object sender, EventArgs e)
+        {
+            busqueda();
+        }
+
+        private void btnBuscar3_Click(object sender, EventArgs e)
+        {
+            busqueda();
         }
     }
 }

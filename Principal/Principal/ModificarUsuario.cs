@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using System.IO;
 
 namespace Principal
 {
@@ -43,6 +44,8 @@ Persist Security Info=False;";
             // TODO: esta línea de código carga datos en la tabla 'club_VistalbaDataSet.Categoria' Puede moverla o quitarla según sea necesario.
             this.categoriaTableAdapter.Fill(this.club_VistalbaDataSet.Categoria);
             string key = lblID.Text.ToString();
+
+
 
             CargaNota(txtNotas, lblID);
             CargaImagen(lblID);
@@ -169,6 +172,8 @@ Persist Security Info=False;";
 
             modMetodo.Update(tabla, id, seters, key);
 
+            GuardarFoto();
+
         }
         
         private void Seleccionar(ComboBox cb, string value, string table, string identificador, string orden, string key, int mod)
@@ -262,6 +267,60 @@ Persist Security Info=False;";
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
 
+        }
+
+        private byte[] GuardarFoto()
+        {
+            MemoryStream ms = new MemoryStream();
+            socioFotoPictureBox.Image.Save(ms, socioFotoPictureBox.Image.RawFormat);
+            return ms.GetBuffer();
+        }
+
+        private void btnVer_Click(object sender, EventArgs e)
+        {
+            string query = "SELECT socioFoto FROM Socio WHERE socioID ='" + lblID.Text + "'";
+            comando = new OleDbCommand(query, conModificar);
+            OleDbDataReader lector;
+
+            try
+            {
+                conModificar.Open();
+                lector = comando.ExecuteReader();
+                while (lector.Read())
+                {
+
+                    if (lector.HasRows)
+                    {
+                        byte[] images = (byte[])(lector["socioFoto"]);
+
+                        if (images == null)
+                        {
+                            socioFotoPictureBox.Image = null;
+                        }
+                        else
+                        {
+                            MemoryStream mstream = new MemoryStream(images);
+                            socioFotoPictureBox.Image = Image.FromStream(mstream);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error" + ex);
+            }
+            finally
+            {
+                conModificar.Close();
+            }
+        }
+
+        private void socioFotoPictureBox_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Title = "Elija una foto";
+            //ofd.Filter
+            ofd.ShowDialog();
         }
     }
 }

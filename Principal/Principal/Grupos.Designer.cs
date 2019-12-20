@@ -39,6 +39,10 @@
             this.btnCerrar = new System.Windows.Forms.Button();
             this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.categoriaTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.CategoriaTableAdapter();
+            this.txtBusqueda = new System.Windows.Forms.TextBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.rbSocioPpal = new System.Windows.Forms.RadioButton();
+            this.rbApellido = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrupos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grupoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).BeginInit();
@@ -121,11 +125,55 @@
             // 
             this.categoriaTableAdapter.ClearBeforeFill = true;
             // 
+            // txtBusqueda
+            // 
+            this.txtBusqueda.Location = new System.Drawing.Point(543, 358);
+            this.txtBusqueda.Name = "txtBusqueda";
+            this.txtBusqueda.Size = new System.Drawing.Size(223, 20);
+            this.txtBusqueda.TabIndex = 5;
+            this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(462, 350);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 35);
+            this.btnBuscar.TabIndex = 6;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // rbSocioPpal
+            // 
+            this.rbSocioPpal.AutoSize = true;
+            this.rbSocioPpal.Checked = true;
+            this.rbSocioPpal.Location = new System.Drawing.Point(361, 350);
+            this.rbSocioPpal.Name = "rbSocioPpal";
+            this.rbSocioPpal.Size = new System.Drawing.Size(95, 17);
+            this.rbSocioPpal.TabIndex = 7;
+            this.rbSocioPpal.TabStop = true;
+            this.rbSocioPpal.Text = "Socio Principal";
+            this.rbSocioPpal.UseVisualStyleBackColor = true;
+            // 
+            // rbApellido
+            // 
+            this.rbApellido.AutoSize = true;
+            this.rbApellido.Location = new System.Drawing.Point(361, 373);
+            this.rbApellido.Name = "rbApellido";
+            this.rbApellido.Size = new System.Drawing.Size(62, 17);
+            this.rbApellido.TabIndex = 8;
+            this.rbApellido.Text = "Apellido";
+            this.rbApellido.UseVisualStyleBackColor = true;
+            // 
             // Grupos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(778, 397);
+            this.Controls.Add(this.rbApellido);
+            this.Controls.Add(this.rbSocioPpal);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.txtBusqueda);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnNuevo);
@@ -138,6 +186,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -154,5 +203,9 @@
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.BindingSource categoriaBindingSource;
         private Club_VistalbaDataSetTableAdapters.CategoriaTableAdapter categoriaTableAdapter;
+        private System.Windows.Forms.TextBox txtBusqueda;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.RadioButton rbSocioPpal;
+        private System.Windows.Forms.RadioButton rbApellido;
     }
 }

@@ -141,9 +141,16 @@ Persist Security Info=False;");
 
                 string temporal = comando.ExecuteScalar().ToString();
 
+                string busquedaprof = "SELECT profID FROM Profesional WHERE (profNombre = '" + dgvActividades.CurrentRow.Cells[3].Value.ToString() + "')";
+                OleDbCommand comprof = new OleDbCommand(busquedaprof, conexion);
+                string temporalprof = Convert.ToString(comando.ExecuteScalar());
+
+                MessageBox.Show(temporalprof);
+
                 neu.txtNombre.Text = dgvActividades.CurrentRow.Cells[0].Value.ToString();
                 neu.txtDesc.Text = dgvActividades.CurrentRow.Cells[1].Value.ToString();
                 neu.txtMeses.Text = dgvActividades.CurrentRow.Cells[2].Value.ToString();
+                neu.lblProfID.Text = temporalprof;
 
                 neu.lblID.Text = temporal;
 

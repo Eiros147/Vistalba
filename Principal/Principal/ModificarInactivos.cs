@@ -43,5 +43,37 @@ namespace Principal
                 cbEstado.Text = "Inactivo";
             }
         }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            int genero;
+            if (rbHombre.Checked)
+            {
+                genero = 1;
+            }
+            else
+            {
+                genero = 0;
+            }
+
+            int activo;
+            if (cbEstado.Checked)
+            {
+                activo = 1;
+            }
+            else
+            {
+                activo = 0;
+            }
+
+            string seters = "socioNombre = '" + txtNombre.Text + "', socioDNI = " + txtDNI.Text + ", socioDireccion = '" + txtDireccion.Text + "', socioMail = '" + txtMail.Text + "', socioNotas = '" + txtNotas.Text + "', socioCategoria = '" + cbCategoria.Text + "', socioTelefono = " + txtTelefono.Text + ", socioCelular = " + txtCelular.Text + ", socioGenero = " + genero + ", socioEstado = " + activo + ", socioNivel = '" + cbNivel.Text + "'";
+            string tabla = "Socio";
+            string key = "socioID";
+            int id = Convert.ToInt32(lblID.Text);
+
+            Metodos grabar = new Metodos();
+            grabar.Inicializar();
+            grabar.Update(tabla, id, seters, key);
+        }
     }
 }

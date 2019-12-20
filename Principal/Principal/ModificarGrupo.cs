@@ -165,42 +165,22 @@ Persist Security Info=False;";
         {
             if(lblCantidad.Text == "1")
             {
-                txtPersona2.Visible = false;
-                txtPersona2.Text = " ";
-                btnBuscar2.Visible = false;
-                lblPersona2.Visible = false;
-                lblPersona3.Visible = false;
-                txtPersona3.Visible = false;
-                txtPersona3.Text = " ";
-                btnBuscar3.Visible = false;
+                gbPersona2.Enabled = false;
+                gbPersona3.Enabled = false;
             }
             else if(lblCantidad.Text == "2")
             {
-                txtPersona2.Visible = true;
-                btnBuscar2.Visible = true;
-                txtPersona3.Visible = false;
-                txtPersona3.Text = " ";
-                btnBuscar3.Visible = false;
-                lblPersona2.Visible = true;
-                lblPersona3.Visible = false;
+                gbPersona2.Enabled = true;
+                gbPersona3.Enabled = false;
             }
             else if(lblCantidad.Text == "3")
             {
-                txtPersona2.Visible = true;
-                btnBuscar2.Visible = true;
-                txtPersona3.Visible = true;
-                btnBuscar3.Visible = true;
-                lblPersona2.Visible = true;
-                lblPersona3.Visible = true;
+                gbPersona2.Enabled = true;
+                gbPersona3.Enabled = true;
             }
             else if(lblCantidad.Text == "4")
             {
-                txtPersona2.Visible = true;
-                btnBuscar2.Visible = true;
-                txtPersona3.Visible = true;
-                btnBuscar3.Visible = true;
-                lblPersona2.Visible = true;
-                lblPersona3.Visible = true;
+               
             }
         }
 
@@ -272,9 +252,5 @@ Persist Security Info=False;";
 
         }
 
-        private void btnBuscar4_Click(object sender, EventArgs e)
-        {
-            busqueda(txtPersona4);
-        }
     }
 }

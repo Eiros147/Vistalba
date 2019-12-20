@@ -46,6 +46,7 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.lblID = new System.Windows.Forms.Label();
             this.cbProfesor = new System.Windows.Forms.ComboBox();
+            this.lblProfID = new System.Windows.Forms.Label();
             actIdLabel = new System.Windows.Forms.Label();
             actDescLabel = new System.Windows.Forms.Label();
             profIdLabel = new System.Windows.Forms.Label();
@@ -203,11 +204,21 @@
             this.cbProfesor.Size = new System.Drawing.Size(146, 21);
             this.cbProfesor.TabIndex = 15;
             // 
+            // lblProfID
+            // 
+            this.lblProfID.AutoSize = true;
+            this.lblProfID.Location = new System.Drawing.Point(229, 15);
+            this.lblProfID.Name = "lblProfID";
+            this.lblProfID.Size = new System.Drawing.Size(35, 13);
+            this.lblProfID.TabIndex = 16;
+            this.lblProfID.Text = "label1";
+            // 
             // ModificarActividad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(287, 203);
+            this.Controls.Add(this.lblProfID);
             this.Controls.Add(this.cbProfesor);
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.btnGuardar);
@@ -245,5 +256,6 @@
         public System.Windows.Forms.TextBox txtDesc;
         public System.Windows.Forms.TextBox txtMeses;
         public System.Windows.Forms.TextBox txtNombre;
+        public System.Windows.Forms.Label lblProfID;
     }
 }
