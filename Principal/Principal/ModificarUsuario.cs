@@ -15,6 +15,8 @@ namespace Principal
     public partial class ModificarUsuario : Form
     {
         OleDbConnection conModificar = new OleDbConnection();
+        Image File;
+        Bitmap MyImage;
 
         public ModificarUsuario()
         {
@@ -48,13 +50,15 @@ Persist Security Info=False;";
 
 
             CargaNota(txtNotas, lblID);
-            CargaImagen(lblID);
+            //CargaImagen(lblID);
 
             Seleccionar("catNombre", "Categoria", cbCategoria, "catID", "catNombre");
             Seleccionar("nivelNombre", "Niveles", cbNivel, "nivelID", "nivelNombre");
 
             Seleccion("catNombre", "Categoria", cbCategoria, "catID", lblcatID);
             Seleccion("nivelNombre", "Niveles", cbNivel, "nivelID", lblnivelID);
+
+            AutoCargaFoto();
         }
 
         private void Seleccion(string valor, string tabla, ComboBox cb, string id, Label lbl)
@@ -272,55 +276,85 @@ Persist Security Info=False;";
         private byte[] GuardarFoto()
         {
             MemoryStream ms = new MemoryStream();
-            socioFotoPictureBox.Image.Save(ms, socioFotoPictureBox.Image.RawFormat);
+            pbSocioFoto.Image.Save(ms, pbSocioFoto.Image.RawFormat);
             return ms.GetBuffer();
         }
 
         private void btnVer_Click(object sender, EventArgs e)
         {
-            string query = "SELECT socioFoto FROM Socio WHERE socioID ='" + lblID.Text + "'";
-            comando = new OleDbCommand(query, conModificar);
-            OleDbDataReader lector;
+            //string query = "SELECT socioFoto FROM Socio WHERE socioID ='" + lblID.Text + "'";
+            //comando = new OleDbCommand(query, conModificar);
+            //OleDbDataReader lector;
 
-            try
-            {
-                conModificar.Open();
-                lector = comando.ExecuteReader();
-                while (lector.Read())
-                {
+            //try
+            //{
+            //    conModificar.Open();
+            //    lector = comando.ExecuteReader();
+            //    while (lector.Read())
+            //    {
 
-                    if (lector.HasRows)
-                    {
-                        byte[] images = (byte[])(lector["socioFoto"]);
+            //        if (lector.HasRows)
+            //        {
+            //            byte[] images = (byte[])(lector["socioFoto"]);
 
-                        if (images == null)
-                        {
-                            socioFotoPictureBox.Image = null;
-                        }
-                        else
-                        {
-                            MemoryStream mstream = new MemoryStream(images);
-                            socioFotoPictureBox.Image = Image.FromStream(mstream);
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error" + ex);
-            }
-            finally
-            {
-                conModificar.Close();
-            }
+            //            if (images == null)
+            //            {
+            //                socioFotoPictureBox.Image = null;
+            //            }
+            //            else
+            //            {
+            //                MemoryStream mstream = new MemoryStream(images);
+            //                socioFotoPictureBox.Image = Image.FromStream(mstream);
+            //            }
+            //        }
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Error" + ex);
+            //}
+            //finally
+            //{
+            //    conModificar.Close();
+            //}
         }
 
         private void socioFotoPictureBox_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Title = "Elija una foto";
-            //ofd.Filter
-            ofd.ShowDialog();
+            //ofd.InitialDirectory();
+            ofd.Filter = "JPG(*.JPG)|*.jpg";
+            if(ofd.ShowDialog() == DialogResult.OK)
+            {
+                File = Image.FromFile(ofd.FileName);
+                pbSocioFoto.Image = File;
+            }
+        }
+
+        private void AutoCargaFoto()
+        {
+            String nombreimagen = txtNombre.Text;
+            MessageBox.Show(nombreimagen);
+            if (MyImage != null)
+            {
+                MyImage.Dispose();
+            }
+
+            pbSocioFoto.ImageLocation = @"C:\Users\Mi PC\Documents\Proyecto Club\Vistalba\Vistalba\Principal\fotos\" + nombreimagen + ".jpg";
+            //pbSocioFoto.ImageLocation = @"C:\Users\Mi PC\Documents\Proyecto Club\Vistalba\Vistalba\Principal\fotos\" + nombreimagen;
+            pbSocioFoto.Load();
+        }
+
+        private void btnGuardarFoto_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog f = new SaveFileDialog();
+            f.Filter = "JPG(*.JPG)|*.jpg";
+
+            if(f.ShowDialog() == DialogResult.OK)
+            {
+                File.Save(f.FileName);
+            }
         }
     }
 }

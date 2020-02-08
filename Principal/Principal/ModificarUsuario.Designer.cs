@@ -43,6 +43,7 @@
             System.Windows.Forms.Label label1;
             System.Windows.Forms.Label label2;
             System.Windows.Forms.Label label3;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModificarUsuario));
             this.club_VistalbaDataSet = new Principal.Club_VistalbaDataSet();
             this.socioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.socioTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.SocioTableAdapter();
@@ -74,8 +75,9 @@
             this.categoriaTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.CategoriaTableAdapter();
             this.lblcatID = new System.Windows.Forms.Label();
             this.lblnivelID = new System.Windows.Forms.Label();
-            this.socioFotoPictureBox = new System.Windows.Forms.PictureBox();
+            this.pbSocioFoto = new System.Windows.Forms.PictureBox();
             this.btnVer = new System.Windows.Forms.Button();
+            this.btnGuardarFoto = new System.Windows.Forms.Button();
             socioIDLabel = new System.Windows.Forms.Label();
             socioNombreLabel = new System.Windows.Forms.Label();
             socioDNILabel = new System.Windows.Forms.Label();
@@ -94,7 +96,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.socioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grupoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.socioFotoPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSocioFoto)).BeginInit();
             this.SuspendLayout();
             // 
             // socioIDLabel
@@ -325,6 +327,7 @@
             this.dtpNacimiento.Name = "dtpNacimiento";
             this.dtpNacimiento.Size = new System.Drawing.Size(200, 20);
             this.dtpNacimiento.TabIndex = 16;
+            this.dtpNacimiento.Value = new System.DateTime(2019, 12, 25, 23, 59, 59, 0);
             // 
             // dtpIngreso
             // 
@@ -505,35 +508,47 @@
             this.lblnivelID.Text = "label4";
             this.lblnivelID.Visible = false;
             // 
-            // socioFotoPictureBox
+            // pbSocioFoto
             // 
-            this.socioFotoPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.socioFotoPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.socioBindingSource, "socioFoto", true));
-            this.socioFotoPictureBox.Location = new System.Drawing.Point(433, 12);
-            this.socioFotoPictureBox.Name = "socioFotoPictureBox";
-            this.socioFotoPictureBox.Size = new System.Drawing.Size(250, 250);
-            this.socioFotoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.socioFotoPictureBox.TabIndex = 47;
-            this.socioFotoPictureBox.TabStop = false;
-            this.socioFotoPictureBox.Click += new System.EventHandler(this.socioFotoPictureBox_Click);
+            this.pbSocioFoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbSocioFoto.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.socioBindingSource, "socioFoto", true));
+            this.pbSocioFoto.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbSocioFoto.InitialImage")));
+            this.pbSocioFoto.Location = new System.Drawing.Point(433, 12);
+            this.pbSocioFoto.Name = "pbSocioFoto";
+            this.pbSocioFoto.Size = new System.Drawing.Size(250, 250);
+            this.pbSocioFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbSocioFoto.TabIndex = 47;
+            this.pbSocioFoto.TabStop = false;
+            this.pbSocioFoto.Click += new System.EventHandler(this.socioFotoPictureBox_Click);
             // 
             // btnVer
             // 
-            this.btnVer.Location = new System.Drawing.Point(608, 275);
+            this.btnVer.Location = new System.Drawing.Point(433, 282);
             this.btnVer.Name = "btnVer";
             this.btnVer.Size = new System.Drawing.Size(75, 23);
             this.btnVer.TabIndex = 48;
-            this.btnVer.Text = "ver";
+            this.btnVer.Text = "Seleccionar";
             this.btnVer.UseVisualStyleBackColor = true;
             this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
+            // 
+            // btnGuardarFoto
+            // 
+            this.btnGuardarFoto.Location = new System.Drawing.Point(608, 282);
+            this.btnGuardarFoto.Name = "btnGuardarFoto";
+            this.btnGuardarFoto.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardarFoto.TabIndex = 49;
+            this.btnGuardarFoto.Text = "Guardar";
+            this.btnGuardarFoto.UseVisualStyleBackColor = true;
+            this.btnGuardarFoto.Click += new System.EventHandler(this.btnGuardarFoto_Click);
             // 
             // ModificarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(707, 559);
+            this.Controls.Add(this.btnGuardarFoto);
             this.Controls.Add(this.btnVer);
-            this.Controls.Add(this.socioFotoPictureBox);
+            this.Controls.Add(this.pbSocioFoto);
             this.Controls.Add(this.lblnivelID);
             this.Controls.Add(this.lblcatID);
             this.Controls.Add(this.cbNivel);
@@ -578,7 +593,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.socioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grupoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.socioFotoPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSocioFoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -617,7 +632,8 @@
         private Club_VistalbaDataSetTableAdapters.CategoriaTableAdapter categoriaTableAdapter;
         public System.Windows.Forms.Label lblcatID;
         public System.Windows.Forms.Label lblnivelID;
-        private System.Windows.Forms.PictureBox socioFotoPictureBox;
+        private System.Windows.Forms.PictureBox pbSocioFoto;
         private System.Windows.Forms.Button btnVer;
+        private System.Windows.Forms.Button btnGuardarFoto;
     }
 }
