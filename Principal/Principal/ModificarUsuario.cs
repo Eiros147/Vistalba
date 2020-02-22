@@ -15,7 +15,7 @@ namespace Principal
     public partial class ModificarUsuario : Form
     {
         OleDbConnection conModificar = new OleDbConnection();
-        Image File;
+        Image Foto;
         Bitmap MyImage;
 
         public ModificarUsuario()
@@ -327,23 +327,30 @@ Persist Security Info=False;";
             ofd.Filter = "JPG(*.JPG)|*.jpg";
             if(ofd.ShowDialog() == DialogResult.OK)
             {
-                File = Image.FromFile(ofd.FileName);
-                pbSocioFoto.Image = File;
+                Foto = Image.FromFile(ofd.FileName);
+                pbSocioFoto.Image = Foto;
             }
         }
 
         private void AutoCargaFoto()
         {
-            String nombreimagen = txtNombre.Text;
+            String nombreimagen = txtDNI.Text;
             MessageBox.Show(nombreimagen);
             if (MyImage != null)
             {
                 MyImage.Dispose();
             }
 
-            pbSocioFoto.ImageLocation = @"C:\Users\Mi PC\Documents\Proyecto Club\Vistalba\Vistalba\Principal\fotos\" + nombreimagen + ".jpg";
-            //pbSocioFoto.ImageLocation = @"C:\Users\Mi PC\Documents\Proyecto Club\Vistalba\Vistalba\Principal\fotos\" + nombreimagen;
-            pbSocioFoto.Load();
+            if (File.Exists(@"C:\Users\Mi PC\Documents\Proyecto Club\Vistalba\Vistalba\Principal\fotos\" + nombreimagen + ".jpg")) { 
+                pbSocioFoto.ImageLocation = @"C:\Users\Mi PC\Documents\Proyecto Club\Vistalba\Vistalba\Principal\fotos\" + nombreimagen + ".jpg";
+                //pbSocioFoto.ImageLocation = @"C:\Users\Mi PC\Documents\Proyecto Club\Vistalba\Vistalba\Principal\fotos\" + nombreimagen;
+                pbSocioFoto.Load();
+            }
+            else
+            {
+                pbSocioFoto.ImageLocation = @"C:\Users\Mi PC\Documents\Proyecto Club\Vistalba\Vistalba\Principal\fotos\default.jpg";
+                pbSocioFoto.Load();
+            }
         }
 
         private void btnGuardarFoto_Click(object sender, EventArgs e)
@@ -353,7 +360,7 @@ Persist Security Info=False;";
 
             if(f.ShowDialog() == DialogResult.OK)
             {
-                File.Save(f.FileName);
+                Foto.Save(f.FileName);
             }
         }
     }

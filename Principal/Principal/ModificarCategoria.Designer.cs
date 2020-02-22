@@ -34,7 +34,6 @@
             System.Windows.Forms.Label catNombreLabel;
             System.Windows.Forms.Label catMesActLabel;
             System.Windows.Forms.Label catMesInactLabel;
-            System.Windows.Forms.Label catClubCardLabel;
             System.Windows.Forms.Label label1;
             this.club_VistalbaDataSet = new Principal.Club_VistalbaDataSet();
             this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -46,7 +45,6 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtMesAct = new System.Windows.Forms.TextBox();
             this.lblID = new System.Windows.Forms.Label();
-            this.cbCard = new System.Windows.Forms.CheckBox();
             this.txtMesInact = new System.Windows.Forms.TextBox();
             this.cbCant = new System.Windows.Forms.ComboBox();
             catIDLabel = new System.Windows.Forms.Label();
@@ -54,7 +52,6 @@
             catNombreLabel = new System.Windows.Forms.Label();
             catMesActLabel = new System.Windows.Forms.Label();
             catMesInactLabel = new System.Windows.Forms.Label();
-            catClubCardLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
@@ -105,15 +102,6 @@
             catMesInactLabel.TabIndex = 13;
             catMesInactLabel.Text = "Cantidad personas:";
             // 
-            // catClubCardLabel
-            // 
-            catClubCardLabel.AutoSize = true;
-            catClubCardLabel.Location = new System.Drawing.Point(12, 165);
-            catClubCardLabel.Name = "catClubCardLabel";
-            catClubCardLabel.Size = new System.Drawing.Size(56, 13);
-            catClubCardLabel.TabIndex = 15;
-            catClubCardLabel.Text = "Club Card:";
-            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -150,10 +138,11 @@
             this.tableAdapterManager.SaludTableAdapter = null;
             this.tableAdapterManager.SocioTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Principal.Club_VistalbaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.ValorFijoTableAdapter = null;
             // 
             // v
             // 
-            this.v.Location = new System.Drawing.Point(12, 189);
+            this.v.Location = new System.Drawing.Point(12, 163);
             this.v.Name = "v";
             this.v.Size = new System.Drawing.Size(75, 40);
             this.v.TabIndex = 4;
@@ -163,7 +152,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(307, 189);
+            this.btnCancelar.Location = new System.Drawing.Point(307, 163);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 40);
             this.btnCancelar.TabIndex = 5;
@@ -204,17 +193,6 @@
             this.lblID.TabIndex = 16;
             this.lblID.Text = "ID Categoria";
             // 
-            // cbCard
-            // 
-            this.cbCard.AutoSize = true;
-            this.cbCard.Location = new System.Drawing.Point(130, 165);
-            this.cbCard.Name = "cbCard";
-            this.cbCard.Size = new System.Drawing.Size(92, 17);
-            this.cbCard.TabIndex = 17;
-            this.cbCard.Text = "Con Beneficio";
-            this.cbCard.UseVisualStyleBackColor = true;
-            this.cbCard.CheckedChanged += new System.EventHandler(this.cbCard_CheckedChanged);
-            // 
             // txtMesInact
             // 
             this.txtMesInact.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.categoriaBindingSource, "catMesAct", true));
@@ -240,11 +218,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(394, 241);
+            this.ClientSize = new System.Drawing.Size(394, 215);
             this.Controls.Add(this.cbCant);
             this.Controls.Add(label1);
             this.Controls.Add(this.txtMesInact);
-            this.Controls.Add(this.cbCard);
             this.Controls.Add(this.lblID);
             this.Controls.Add(catIDLabel);
             this.Controls.Add(catDescLabel);
@@ -254,7 +231,6 @@
             this.Controls.Add(catMesActLabel);
             this.Controls.Add(this.txtMesAct);
             this.Controls.Add(catMesInactLabel);
-            this.Controls.Add(catClubCardLabel);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.v);
             this.Name = "ModificarCategoria";
@@ -279,7 +255,6 @@
         public System.Windows.Forms.Label lblID;
         public System.Windows.Forms.TextBox txtNombre;
         public System.Windows.Forms.TextBox txtMesAct;
-        public System.Windows.Forms.CheckBox cbCard;
         public System.Windows.Forms.TextBox txtMesInact;
         public System.Windows.Forms.ComboBox cbCant;
     }

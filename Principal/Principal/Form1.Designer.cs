@@ -274,8 +274,8 @@
             // smiCategorias
             // 
             this.smiCategorias.Name = "smiCategorias";
-            this.smiCategorias.Size = new System.Drawing.Size(75, 20);
-            this.smiCategorias.Text = "Categorias";
+            this.smiCategorias.Size = new System.Drawing.Size(91, 20);
+            this.smiCategorias.Text = "Tipo de Socio";
             this.smiCategorias.Click += new System.EventHandler(this.smiCategorias_Click);
             // 
             // smiPagos
@@ -298,8 +298,8 @@
             this.hombresToolStripMenuItem,
             this.mujeresToolStripMenuItem});
             this.divisionesToolStripMenuItem.Name = "divisionesToolStripMenuItem";
-            this.divisionesToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
-            this.divisionesToolStripMenuItem.Text = "Divisiones";
+            this.divisionesToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
+            this.divisionesToolStripMenuItem.Text = "Categorias";
             // 
             // hombresToolStripMenuItem
             // 
@@ -314,69 +314,69 @@
             this.miDecimaH,
             this.miPreDecimaH});
             this.hombresToolStripMenuItem.Name = "hombresToolStripMenuItem";
-            this.hombresToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.hombresToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.hombresToolStripMenuItem.Text = "Hombres";
             // 
             // miPrimeraH
             // 
             this.miPrimeraH.Name = "miPrimeraH";
-            this.miPrimeraH.Size = new System.Drawing.Size(136, 22);
+            this.miPrimeraH.Size = new System.Drawing.Size(152, 22);
             this.miPrimeraH.Text = "Primera";
             this.miPrimeraH.Click += new System.EventHandler(this.miPrimeraH_Click);
             // 
             // segundaToolStripMenuItem
             // 
             this.segundaToolStripMenuItem.Name = "segundaToolStripMenuItem";
-            this.segundaToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.segundaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.segundaToolStripMenuItem.Text = "Segunda";
             this.segundaToolStripMenuItem.Click += new System.EventHandler(this.segundaToolStripMenuItem_Click);
             // 
             // quintaToolStripMenuItem
             // 
             this.quintaToolStripMenuItem.Name = "quintaToolStripMenuItem";
-            this.quintaToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.quintaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.quintaToolStripMenuItem.Text = "Quinta";
             this.quintaToolStripMenuItem.Click += new System.EventHandler(this.quintaToolStripMenuItem_Click);
             // 
             // sextaToolStripMenuItem
             // 
             this.sextaToolStripMenuItem.Name = "sextaToolStripMenuItem";
-            this.sextaToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.sextaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.sextaToolStripMenuItem.Text = "Sexta";
             this.sextaToolStripMenuItem.Click += new System.EventHandler(this.sextaToolStripMenuItem_Click);
             // 
             // septimaToolStripMenuItem
             // 
             this.septimaToolStripMenuItem.Name = "septimaToolStripMenuItem";
-            this.septimaToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.septimaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.septimaToolStripMenuItem.Text = "Septima";
             this.septimaToolStripMenuItem.Click += new System.EventHandler(this.septimaToolStripMenuItem_Click);
             // 
             // miOctavaH
             // 
             this.miOctavaH.Name = "miOctavaH";
-            this.miOctavaH.Size = new System.Drawing.Size(136, 22);
+            this.miOctavaH.Size = new System.Drawing.Size(152, 22);
             this.miOctavaH.Text = "Octava";
             this.miOctavaH.Click += new System.EventHandler(this.miOctavaH_Click);
             // 
             // miNovenaH
             // 
             this.miNovenaH.Name = "miNovenaH";
-            this.miNovenaH.Size = new System.Drawing.Size(136, 22);
+            this.miNovenaH.Size = new System.Drawing.Size(152, 22);
             this.miNovenaH.Text = "Novena";
             this.miNovenaH.Click += new System.EventHandler(this.miNovenaH_Click);
             // 
             // miDecimaH
             // 
             this.miDecimaH.Name = "miDecimaH";
-            this.miDecimaH.Size = new System.Drawing.Size(136, 22);
+            this.miDecimaH.Size = new System.Drawing.Size(152, 22);
             this.miDecimaH.Text = "Decima";
             this.miDecimaH.Click += new System.EventHandler(this.miDecimaH_Click);
             // 
             // miPreDecimaH
             // 
             this.miPreDecimaH.Name = "miPreDecimaH";
-            this.miPreDecimaH.Size = new System.Drawing.Size(136, 22);
+            this.miPreDecimaH.Size = new System.Drawing.Size(152, 22);
             this.miPreDecimaH.Text = "Pre-Decima";
             this.miPreDecimaH.Click += new System.EventHandler(this.miPreDecimaH_Click);
             // 
@@ -393,7 +393,7 @@
             this.miDecimaF,
             this.miPreDecimaF});
             this.mujeresToolStripMenuItem.Name = "mujeresToolStripMenuItem";
-            this.mujeresToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.mujeresToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.mujeresToolStripMenuItem.Text = "Mujeres";
             // 
             // miPrimeraF
@@ -493,6 +493,7 @@
             this.tableAdapterManager.SaludTableAdapter = null;
             this.tableAdapterManager.SocioTableAdapter = this.socioTableAdapter;
             this.tableAdapterManager.UpdateOrder = Principal.Club_VistalbaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.ValorFijoTableAdapter = null;
             // 
             // saludTableAdapter
             // 

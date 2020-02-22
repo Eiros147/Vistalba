@@ -36,7 +36,7 @@ Persist Security Info=False;");
             Metodos cargarcat = new Metodos();
             cargarcat.Inicializar();
 
-            string query = "catNombre, catDesc, catClubCard, catMesAct, catMesInact, catCant";
+            string query = "catNombre, catDesc, catMesAct, catMesInact, catCant";
             string orden = "catNombre";
             string tabla = "Categoria";
 
@@ -48,10 +48,9 @@ Persist Security Info=False;");
             this.dgvCategorias.Columns[0].HeaderText = "Nombre";
             this.dgvCategorias.Columns[1].HeaderText = "Descripción";
             this.dgvCategorias.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.dgvCategorias.Columns[2].HeaderText = "Club Card";
-            this.dgvCategorias.Columns[3].HeaderText = "Costo Meses Activos";
-            this.dgvCategorias.Columns[4].HeaderText = "Costo Meses Inactivos";
-            this.dgvCategorias.Columns[5].HeaderText = "Cantidad Personas";
+            this.dgvCategorias.Columns[2].HeaderText = "Costo Meses Activos";
+            this.dgvCategorias.Columns[3].HeaderText = "Costo Meses Inactivos";
+            this.dgvCategorias.Columns[4].HeaderText = "Cantidad Personas";
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -80,18 +79,9 @@ Persist Security Info=False;");
             nuovo.lblID.Text = temporal;
             nuovo.txtDescripcion.Text = dgvCategorias.CurrentRow.Cells[1].Value.ToString();
             nuovo.txtNombre.Text = dgvCategorias.CurrentRow.Cells[0].Value.ToString();
-            nuovo.txtMesAct.Text = dgvCategorias.CurrentRow.Cells[3].Value.ToString();
-            nuovo.txtMesInact.Text = dgvCategorias.CurrentRow.Cells[4].Value.ToString();
-            nuovo.cbCant.Text = dgvCategorias.CurrentRow.Cells[5].Value.ToString();
-
-            if (dgvCategorias.CurrentRow.Cells[2].Value.Equals(true))
-            {
-                nuovo.cbCard.Checked = true;
-            }
-            else
-            {
-                nuovo.cbCard.Checked = false;
-            }
+            nuovo.txtMesAct.Text = dgvCategorias.CurrentRow.Cells[2].Value.ToString();
+            nuovo.txtMesInact.Text = dgvCategorias.CurrentRow.Cells[3].Value.ToString();
+            nuovo.cbCant.Text = dgvCategorias.CurrentRow.Cells[4].Value.ToString();
 
             nuovo.ShowDialog();
 

@@ -49,13 +49,13 @@ namespace Principal
 
         private void cbCard_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbCard.Checked == true)
-            {
-                cbCard.Text = "Con beneficios";
-            }else if(cbCard.Checked == false)
-            {
-                cbCard.Text = "Sin beneficios";
-            }
+            //if (cbCard.Checked == true)
+            //{
+            //    cbCard.Text = "Con beneficios";
+            //}else if(cbCard.Checked == false)
+            //{
+            //    cbCard.Text = "Sin beneficios";
+            //}
           
         }
     }

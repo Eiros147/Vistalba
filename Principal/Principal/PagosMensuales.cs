@@ -13,6 +13,9 @@ namespace Principal
 {
     public partial class PagosMensuales : Form
     {
+        DateTime dt = DateTime.Now;
+        
+
         public PagosMensuales()
         {
             InitializeComponent();
@@ -37,29 +40,42 @@ Persist Security Info=False;");
             Metodos cargapagos = new Metodos();
             cargapagos.Inicializar();
 
-            string query = "Socio.socioID, Socio.socioNombre, Socio.socioCategoria, Mensual.mesEnero, Mensual.mesFebrero, Mensual.mesMarzo, Mensual.mesAbril, Mensual.mesMayo, Mensual.mesJunio, Mensual.mesTotalPago, Mensual.mesTotal";
-            string tabla = "(Mensual INNER JOIN Socio ON Mensual.mesID = Socio.mesID)";
+            DateTime dt = DateTime.Now;
+            String mes = dt.Month.ToString();
+            String nombremes = dt.ToString("MMMM");
+
+            //MessageBox.Show(mes);
+            //MessageBox.Show(nombremes);
+
+            if (mes == "11" || mes == "12")
+            {
+                //MessageBox.Show(mes);  
+            string query = "Socio.socioNombre, Socio.socioCategoria, Categoria.catMesInact";
+            string tabla = "(Categoria INNER JOIN Socio ON Categoria.catID = Socio.catID)";
 
             cargapagos.Llenardgv(tabla, query, dgvPagos);
-            
-            
+
+            }
+            else
+            {
+                //MessageBox.Show("no anduvo");
+                string query = "Socio.socioNombre, Socio.socioCategoria, Categoria.catMesAct";
+                string tabla = "(Categoria INNER JOIN Socio ON Categoria.catID = Socio.catID";
+
+                cargapagos.Llenardgv(tabla, query, dgvPagos);
+            }
         }
+
 
         private void dgvPagos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
+            String mes = dt.Month.ToString();
 
-            dgvPagos.Columns[0].HeaderText = "ID";
-            dgvPagos.Columns[1].HeaderText = "Nombre";
-            dgvPagos.Columns[2].HeaderText = "Categoria";
-            dgvPagos.Columns[3].HeaderText = "Enero";
-            dgvPagos.Columns[4].HeaderText = "Febrero";
-            dgvPagos.Columns[5].HeaderText = "Marzo";
-            dgvPagos.Columns[6].HeaderText = "Abril";
-            dgvPagos.Columns[7].HeaderText = "Mayo";
-            dgvPagos.Columns[8].HeaderText = "Junio";
-            dgvPagos.Columns[9].HeaderText = "Pagado";
-            dgvPagos.Columns[10].HeaderText = "Total";
-
+            dgvPagos.Columns[0].HeaderText = "Nombre";
+            dgvPagos.Columns[1].HeaderText = "Categoria";
+            dgvPagos.Columns[2].HeaderText = mes;
+            dgvPagos.Columns[3].HeaderText = "Deuda" + mes;
+            dgvPagos.Columns[4].HeaderText = "Deuda anual";
         }
 
         private void btnSemestre_Click(object sender, EventArgs e)

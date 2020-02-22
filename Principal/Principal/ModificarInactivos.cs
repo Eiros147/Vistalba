@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,9 @@ namespace Principal
 {
     public partial class ModificarInactivos : Form
     {
+        Image Foto;
+        Bitmap MyImage;
+
         public ModificarInactivos()
         {
             InitializeComponent();
@@ -74,6 +78,24 @@ namespace Principal
             Metodos grabar = new Metodos();
             grabar.Inicializar();
             grabar.Update(tabla, id, seters, key);
+        }
+
+        private void AutoCargaFoto()
+        {
+            String nombreimagen = txtDNI.Text;
+
+            if(File.Exists(@"C:\Users\Mi PC\Documents\Proyecto Club\Vistalba\Vistalba\Principal\fotos\" + nombreimagen + ".jpg"))
+            {
+                pbFoto.ImageLocation = @"C:\Users\Mi PC\Documents\Proyecto Club\Vistalba\Vistalba\Principal\fotos\" + nombreimagen + ".jpg";
+                pbFoto.Load();
+            }
+            else
+            {
+                pbFoto.ImageLocation = @"C:\Users\Mi PC\Documents\Proyecto Club\Vistalba\Vistalba\Principal\fotos\default.jpg";
+                pbFoto.Load();
+            }
+
+
         }
     }
 }
