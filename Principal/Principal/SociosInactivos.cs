@@ -20,6 +20,7 @@ namespace Principal
 
         OleDbConnection conexion = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Club Vistalba.accdb;
 Persist Security Info=False;");
+        OleDbCommand comando = new OleDbCommand();
 
         private void SociosInactivos_Activated(object sender, EventArgs e)
         {
@@ -37,6 +38,19 @@ Persist Security Info=False;");
                     e.FormattingApplied = true;
                 }
             }
+        }
+
+        private void Modificar()
+        {
+            conexion.Open();
+            string query = "SELECT socioID FROM Socio WHERE socioNombre '" + dgvInactivos.CurrentRow.Cells[0].ToString() + "'";
+
+            comando.Connection = conexion;
+            comando.CommandText = query;
+
+            string temporal = comando.ExecuteScalar().ToString();
+
+
         }
 
         private void txtBusqueda_TextChanged(object sender, EventArgs e)

@@ -32,7 +32,8 @@ namespace Principal
         private void ModificarInactivos_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'club_VistalbaDataSet.Socio' Puede moverla o quitarla según sea necesario.
-            this.socioTableAdapter.Fill(this.club_VistalbaDataSet.Socio);
+            //this.socioTableAdapter.Fill(this.club_VistalbaDataSet.Socio);
+            this.socioTableAdapter.FillBy(this.club_VistalbaDataSet.Socio);
             
         }
 
@@ -96,6 +97,17 @@ namespace Principal
             }
 
 
+        }
+
+        private void cbEliminar_CheckedChanged(object sender, EventArgs e)
+        {
+            if(cbEliminar.Checked == true)
+            {
+                btnEliminar.Enabled = true;
+            }else if (cbEliminar.Checked == false)
+            {
+                btnEliminar.Enabled = false;
+            }
         }
     }
 }

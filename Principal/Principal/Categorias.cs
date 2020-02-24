@@ -13,6 +13,7 @@ namespace Principal
 {
     public partial class Categorias : Form
     {
+
         public Categorias()
         {
             InitializeComponent();
@@ -21,6 +22,7 @@ namespace Principal
         OleDbConnection conPagos = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Club Vistalba.accdb;
 Persist Security Info=False;");
         OleDbCommand comando = new OleDbCommand();
+        DateTime dt = DateTime.Today;
 
         private void Categorias_Load(object sender, EventArgs e)
         {
@@ -36,11 +38,25 @@ Persist Security Info=False;");
             Metodos cargarcat = new Metodos();
             cargarcat.Inicializar();
 
-            string query = "catNombre, catDesc, catMesAct, catMesInact, catCant";
-            string orden = "catNombre";
-            string tabla = "Categoria";
+            string mes = dt.Month.ToString();
 
-            cargarcat.Llenardgvordenado(tabla, query, dgvCategorias, orden);
+            if (mes == "1" || mes == "2" || mes == "3" || mes == "4" || mes == "5" || mes == "6")
+            {
+                string query = "catNombre, catDesc, catMesAct, catMesInact, catSeguro1, catDer1, catCant";
+                string orden = "catNombre";
+                string tabla = "Categoria";
+
+                cargarcat.Llenardgvordenado(tabla, query, dgvCategorias, orden);
+
+            }
+            else
+            {
+                string query = "catNombre, catDesc, catMesAct2, catMesInact2, catSeguro2, catDer2, catCant";
+                string orden = "catNombre";
+                string tabla = "Categoria";
+
+                cargarcat.Llenardgvordenado(tabla, query, dgvCategorias, orden);
+            }
         }
 
         private void formatear()
@@ -50,7 +66,9 @@ Persist Security Info=False;");
             this.dgvCategorias.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.dgvCategorias.Columns[2].HeaderText = "Costo Meses Activos";
             this.dgvCategorias.Columns[3].HeaderText = "Costo Meses Inactivos";
-            this.dgvCategorias.Columns[4].HeaderText = "Cantidad Personas";
+            this.dgvCategorias.Columns[4].HeaderText = "Seguro";
+            this.dgvCategorias.Columns[5].HeaderText = "Derecho";
+            this.dgvCategorias.Columns[6].HeaderText = "Cantidad Personas";
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)

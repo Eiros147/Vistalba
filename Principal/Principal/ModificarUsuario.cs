@@ -335,7 +335,7 @@ Persist Security Info=False;";
         private void AutoCargaFoto()
         {
             String nombreimagen = txtDNI.Text;
-            MessageBox.Show(nombreimagen);
+            //MessageBox.Show(nombreimagen);
             if (MyImage != null)
             {
                 MyImage.Dispose();

@@ -44,11 +44,6 @@
             System.Windows.Forms.Label label2;
             System.Windows.Forms.Label label3;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModificarUsuario));
-            this.club_VistalbaDataSet = new Principal.Club_VistalbaDataSet();
-            this.socioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.socioTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.SocioTableAdapter();
-            this.tableAdapterManager = new Principal.Club_VistalbaDataSetTableAdapters.TableAdapterManager();
-            this.grupoTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.GrupoTableAdapter();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtDNI = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
@@ -59,25 +54,30 @@
             this.dtpIngreso = new System.Windows.Forms.DateTimePicker();
             this.dtpPago = new System.Windows.Forms.DateTimePicker();
             this.lblID = new System.Windows.Forms.Label();
-            this.grupoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button2 = new System.Windows.Forms.Button();
             this.btnHabilitar = new System.Windows.Forms.Button();
             this.btnSalud = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.cbCategoria = new System.Windows.Forms.ComboBox();
-            this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rbHombre = new System.Windows.Forms.RadioButton();
             this.rbMujer = new System.Windows.Forms.RadioButton();
             this.lblNotas = new System.Windows.Forms.Label();
             this.txtNotas = new System.Windows.Forms.TextBox();
             this.cbEstado = new System.Windows.Forms.CheckBox();
             this.cbNivel = new System.Windows.Forms.ComboBox();
-            this.categoriaTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.CategoriaTableAdapter();
             this.lblcatID = new System.Windows.Forms.Label();
             this.lblnivelID = new System.Windows.Forms.Label();
             this.pbSocioFoto = new System.Windows.Forms.PictureBox();
             this.btnVer = new System.Windows.Forms.Button();
             this.btnGuardarFoto = new System.Windows.Forms.Button();
+            this.socioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.club_VistalbaDataSet = new Principal.Club_VistalbaDataSet();
+            this.socioTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.SocioTableAdapter();
+            this.tableAdapterManager = new Principal.Club_VistalbaDataSetTableAdapters.TableAdapterManager();
+            this.grupoTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.GrupoTableAdapter();
+            this.grupoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.categoriaTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.CategoriaTableAdapter();
             socioIDLabel = new System.Windows.Forms.Label();
             socioNombreLabel = new System.Windows.Forms.Label();
             socioDNILabel = new System.Windows.Forms.Label();
@@ -92,11 +92,11 @@
             label1 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSocioFoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.socioBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grupoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSocioFoto)).BeginInit();
             this.SuspendLayout();
             // 
             // socioIDLabel
@@ -225,39 +225,6 @@
             label3.TabIndex = 43;
             label3.Text = "Nivel:";
             // 
-            // club_VistalbaDataSet
-            // 
-            this.club_VistalbaDataSet.DataSetName = "Club_VistalbaDataSet";
-            this.club_VistalbaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // socioBindingSource
-            // 
-            this.socioBindingSource.DataMember = "Socio";
-            this.socioBindingSource.DataSource = this.club_VistalbaDataSet;
-            // 
-            // socioTableAdapter
-            // 
-            this.socioTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.ActividadesTableAdapter = null;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.CategoriaTableAdapter = null;
-            this.tableAdapterManager.CuotaTableAdapter = null;
-            this.tableAdapterManager.GrupoTableAdapter = this.grupoTableAdapter;
-            this.tableAdapterManager.MensualTableAdapter = null;
-            this.tableAdapterManager.NivelesTableAdapter = null;
-            this.tableAdapterManager.ProfesionalTableAdapter = null;
-            this.tableAdapterManager.SaludTableAdapter = null;
-            this.tableAdapterManager.SocioTableAdapter = this.socioTableAdapter;
-            this.tableAdapterManager.UpdateOrder = Principal.Club_VistalbaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.ValorFijoTableAdapter = null;
-            // 
-            // grupoTableAdapter
-            // 
-            this.grupoTableAdapter.ClearBeforeFill = true;
-            // 
             // txtNombre
             // 
             this.txtNombre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.socioBindingSource, "socioNombre", true));
@@ -360,11 +327,6 @@
             this.lblID.TabIndex = 25;
             this.lblID.Text = "Id Usuario";
             // 
-            // grupoBindingSource
-            // 
-            this.grupoBindingSource.DataMember = "Grupo";
-            this.grupoBindingSource.DataSource = this.club_VistalbaDataSet;
-            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(336, 505);
@@ -413,11 +375,6 @@
             this.cbCategoria.Name = "cbCategoria";
             this.cbCategoria.Size = new System.Drawing.Size(281, 21);
             this.cbCategoria.TabIndex = 33;
-            // 
-            // categoriaBindingSource
-            // 
-            this.categoriaBindingSource.DataMember = "Categoria";
-            this.categoriaBindingSource.DataSource = this.club_VistalbaDataSet;
             // 
             // rbHombre
             // 
@@ -484,10 +441,6 @@
             this.cbNivel.Size = new System.Drawing.Size(281, 21);
             this.cbNivel.TabIndex = 44;
             // 
-            // categoriaTableAdapter
-            // 
-            this.categoriaTableAdapter.ClearBeforeFill = true;
-            // 
             // lblcatID
             // 
             this.lblcatID.AutoSize = true;
@@ -529,6 +482,7 @@
             this.btnVer.TabIndex = 48;
             this.btnVer.Text = "Seleccionar";
             this.btnVer.UseVisualStyleBackColor = true;
+            this.btnVer.Visible = false;
             this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
             // 
             // btnGuardarFoto
@@ -539,7 +493,55 @@
             this.btnGuardarFoto.TabIndex = 49;
             this.btnGuardarFoto.Text = "Guardar";
             this.btnGuardarFoto.UseVisualStyleBackColor = true;
+            this.btnGuardarFoto.Visible = false;
             this.btnGuardarFoto.Click += new System.EventHandler(this.btnGuardarFoto_Click);
+            // 
+            // socioBindingSource
+            // 
+            this.socioBindingSource.DataMember = "Socio";
+            this.socioBindingSource.DataSource = this.club_VistalbaDataSet;
+            // 
+            // club_VistalbaDataSet
+            // 
+            this.club_VistalbaDataSet.DataSetName = "Club_VistalbaDataSet";
+            this.club_VistalbaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // socioTableAdapter
+            // 
+            this.socioTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.ActividadesTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CategoriaTableAdapter = null;
+            this.tableAdapterManager.CuotaTableAdapter = null;
+            this.tableAdapterManager.GrupoTableAdapter = this.grupoTableAdapter;
+            this.tableAdapterManager.MensualTableAdapter = null;
+            this.tableAdapterManager.NivelesTableAdapter = null;
+            this.tableAdapterManager.ProfesionalTableAdapter = null;
+            this.tableAdapterManager.SaludTableAdapter = null;
+            this.tableAdapterManager.SocioTableAdapter = this.socioTableAdapter;
+            this.tableAdapterManager.UpdateOrder = Principal.Club_VistalbaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.ValorFijoTableAdapter = null;
+            // 
+            // grupoTableAdapter
+            // 
+            this.grupoTableAdapter.ClearBeforeFill = true;
+            // 
+            // grupoBindingSource
+            // 
+            this.grupoBindingSource.DataMember = "Grupo";
+            this.grupoBindingSource.DataSource = this.club_VistalbaDataSet;
+            // 
+            // categoriaBindingSource
+            // 
+            this.categoriaBindingSource.DataMember = "Categoria";
+            this.categoriaBindingSource.DataSource = this.club_VistalbaDataSet;
+            // 
+            // categoriaTableAdapter
+            // 
+            this.categoriaTableAdapter.ClearBeforeFill = true;
             // 
             // ModificarUsuario
             // 
@@ -589,11 +591,11 @@
             this.Name = "ModificarUsuario";
             this.Text = "Modificar Socio";
             this.Load += new System.EventHandler(this.ModificarUsuario_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSocioFoto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.socioBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grupoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSocioFoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

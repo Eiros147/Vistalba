@@ -7,7 +7,7 @@
 <DiagramLayout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ex:showrelationlabel="False" ViewPortX="381" ViewPortY="18" xmlns:ex="urn:schemas-microsoft-com:xml-msdatasource-layout-extended" xmlns="urn:schemas-microsoft-com:xml-msdatasource-layout">
   <Shapes>
     <Shape ID="DesignTable:Actividades" ZOrder="17" X="70" Y="70" Height="172" Width="212" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
-    <Shape ID="DesignTable:Categoria" ZOrder="16" X="881" Y="54" Height="267" Width="200" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="159" />
+    <Shape ID="DesignTable:Categoria" ZOrder="16" X="881" Y="54" Height="362" Width="200" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:Cuota" ZOrder="15" X="632" Y="70" Height="134" Width="179" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
     <Shape ID="DesignTable:Grupo" ZOrder="14" X="681" Y="305" Height="210" Width="181" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="159" />
     <Shape ID="DesignTable:Profesional" ZOrder="13" X="352" Y="70" Height="172" Width="210" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
@@ -85,12 +85,16 @@
     <Connector ID="DesignRelation:CategoriaGrupo" ZOrder="2" LineWidth="11">
       <RoutePoints>
         <Point>
-          <X>881</X>
-          <Y>313</Y>
+          <X>898</X>
+          <Y>416</Y>
+        </Point>
+        <Point>
+          <X>898</X>
+          <Y>424</Y>
         </Point>
         <Point>
           <X>862</X>
-          <Y>313</Y>
+          <Y>424</Y>
         </Point>
       </RoutePoints>
     </Connector>

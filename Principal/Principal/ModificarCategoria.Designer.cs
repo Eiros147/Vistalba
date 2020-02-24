@@ -35,6 +35,8 @@
             System.Windows.Forms.Label catMesActLabel;
             System.Windows.Forms.Label catMesInactLabel;
             System.Windows.Forms.Label label1;
+            System.Windows.Forms.Label label2;
+            System.Windows.Forms.Label label3;
             this.club_VistalbaDataSet = new Principal.Club_VistalbaDataSet();
             this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.categoriaTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.CategoriaTableAdapter();
@@ -47,12 +49,22 @@
             this.lblID = new System.Windows.Forms.Label();
             this.txtMesInact = new System.Windows.Forms.TextBox();
             this.cbCant = new System.Windows.Forms.ComboBox();
+            this.txtMesInact2 = new System.Windows.Forms.TextBox();
+            this.txtMesAct2 = new System.Windows.Forms.TextBox();
+            this.txtSeguro2 = new System.Windows.Forms.TextBox();
+            this.txtSeguro = new System.Windows.Forms.TextBox();
+            this.txtDerecho2 = new System.Windows.Forms.TextBox();
+            this.txtDerecho = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             catIDLabel = new System.Windows.Forms.Label();
             catDescLabel = new System.Windows.Forms.Label();
             catNombreLabel = new System.Windows.Forms.Label();
             catMesActLabel = new System.Windows.Forms.Label();
             catMesInactLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
+            label2 = new System.Windows.Forms.Label();
+            label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -87,7 +99,7 @@
             // catMesActLabel
             // 
             catMesActLabel.AutoSize = true;
-            catMesActLabel.Location = new System.Drawing.Point(12, 87);
+            catMesActLabel.Location = new System.Drawing.Point(12, 129);
             catMesActLabel.Name = "catMesActLabel";
             catMesActLabel.Size = new System.Drawing.Size(79, 13);
             catMesActLabel.TabIndex = 11;
@@ -96,7 +108,7 @@
             // catMesInactLabel
             // 
             catMesInactLabel.AutoSize = true;
-            catMesInactLabel.Location = new System.Drawing.Point(12, 139);
+            catMesInactLabel.Location = new System.Drawing.Point(12, 227);
             catMesInactLabel.Name = "catMesInactLabel";
             catMesInactLabel.Size = new System.Drawing.Size(98, 13);
             catMesInactLabel.TabIndex = 13;
@@ -105,7 +117,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(12, 113);
+            label1.Location = new System.Drawing.Point(12, 155);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(87, 13);
             label1.TabIndex = 18;
@@ -142,7 +154,7 @@
             // 
             // v
             // 
-            this.v.Location = new System.Drawing.Point(12, 163);
+            this.v.Location = new System.Drawing.Point(12, 251);
             this.v.Name = "v";
             this.v.Size = new System.Drawing.Size(75, 40);
             this.v.TabIndex = 4;
@@ -152,7 +164,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(307, 163);
+            this.btnCancelar.Location = new System.Drawing.Point(307, 251);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 40);
             this.btnCancelar.TabIndex = 5;
@@ -179,9 +191,9 @@
             // txtMesAct
             // 
             this.txtMesAct.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.categoriaBindingSource, "catMesAct", true));
-            this.txtMesAct.Location = new System.Drawing.Point(130, 80);
+            this.txtMesAct.Location = new System.Drawing.Point(130, 122);
             this.txtMesAct.Name = "txtMesAct";
-            this.txtMesAct.Size = new System.Drawing.Size(252, 20);
+            this.txtMesAct.Size = new System.Drawing.Size(118, 20);
             this.txtMesAct.TabIndex = 12;
             // 
             // lblID
@@ -196,9 +208,9 @@
             // txtMesInact
             // 
             this.txtMesInact.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.categoriaBindingSource, "catMesAct", true));
-            this.txtMesInact.Location = new System.Drawing.Point(130, 106);
+            this.txtMesInact.Location = new System.Drawing.Point(130, 148);
             this.txtMesInact.Name = "txtMesInact";
-            this.txtMesInact.Size = new System.Drawing.Size(252, 20);
+            this.txtMesInact.Size = new System.Drawing.Size(118, 20);
             this.txtMesInact.TabIndex = 19;
             // 
             // cbCant
@@ -209,16 +221,110 @@
             "2",
             "3",
             "4"});
-            this.cbCant.Location = new System.Drawing.Point(130, 136);
+            this.cbCant.Location = new System.Drawing.Point(130, 224);
             this.cbCant.Name = "cbCant";
             this.cbCant.Size = new System.Drawing.Size(252, 21);
             this.cbCant.TabIndex = 20;
+            // 
+            // txtMesInact2
+            // 
+            this.txtMesInact2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.categoriaBindingSource, "catMesAct", true));
+            this.txtMesInact2.Location = new System.Drawing.Point(272, 148);
+            this.txtMesInact2.Name = "txtMesInact2";
+            this.txtMesInact2.Size = new System.Drawing.Size(110, 20);
+            this.txtMesInact2.TabIndex = 22;
+            // 
+            // txtMesAct2
+            // 
+            this.txtMesAct2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.categoriaBindingSource, "catMesAct", true));
+            this.txtMesAct2.Location = new System.Drawing.Point(272, 122);
+            this.txtMesAct2.Name = "txtMesAct2";
+            this.txtMesAct2.Size = new System.Drawing.Size(110, 20);
+            this.txtMesAct2.TabIndex = 21;
+            // 
+            // txtSeguro2
+            // 
+            this.txtSeguro2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.categoriaBindingSource, "catMesAct", true));
+            this.txtSeguro2.Location = new System.Drawing.Point(272, 174);
+            this.txtSeguro2.Name = "txtSeguro2";
+            this.txtSeguro2.Size = new System.Drawing.Size(110, 20);
+            this.txtSeguro2.TabIndex = 25;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(12, 181);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(44, 13);
+            label2.TabIndex = 23;
+            label2.Text = "Seguro:";
+            // 
+            // txtSeguro
+            // 
+            this.txtSeguro.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.categoriaBindingSource, "catMesAct", true));
+            this.txtSeguro.Location = new System.Drawing.Point(130, 174);
+            this.txtSeguro.Name = "txtSeguro";
+            this.txtSeguro.Size = new System.Drawing.Size(118, 20);
+            this.txtSeguro.TabIndex = 24;
+            // 
+            // txtDerecho2
+            // 
+            this.txtDerecho2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.categoriaBindingSource, "catMesAct", true));
+            this.txtDerecho2.Location = new System.Drawing.Point(272, 200);
+            this.txtDerecho2.Name = "txtDerecho2";
+            this.txtDerecho2.Size = new System.Drawing.Size(110, 20);
+            this.txtDerecho2.TabIndex = 28;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(12, 207);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(51, 13);
+            label3.TabIndex = 26;
+            label3.Text = "Derecho:";
+            // 
+            // txtDerecho
+            // 
+            this.txtDerecho.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.categoriaBindingSource, "catMesAct", true));
+            this.txtDerecho.Location = new System.Drawing.Point(130, 200);
+            this.txtDerecho.Name = "txtDerecho";
+            this.txtDerecho.Size = new System.Drawing.Size(118, 20);
+            this.txtDerecho.TabIndex = 27;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(147, 97);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(83, 13);
+            this.label4.TabIndex = 29;
+            this.label4.Text = "Primer Semestre";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(279, 97);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(97, 13);
+            this.label5.TabIndex = 30;
+            this.label5.Text = "Segundo Semestre";
             // 
             // ModificarCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(394, 215);
+            this.ClientSize = new System.Drawing.Size(394, 303);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtDerecho2);
+            this.Controls.Add(label3);
+            this.Controls.Add(this.txtDerecho);
+            this.Controls.Add(this.txtSeguro2);
+            this.Controls.Add(label2);
+            this.Controls.Add(this.txtSeguro);
+            this.Controls.Add(this.txtMesInact2);
+            this.Controls.Add(this.txtMesAct2);
             this.Controls.Add(this.cbCant);
             this.Controls.Add(label1);
             this.Controls.Add(this.txtMesInact);
@@ -257,5 +363,13 @@
         public System.Windows.Forms.TextBox txtMesAct;
         public System.Windows.Forms.TextBox txtMesInact;
         public System.Windows.Forms.ComboBox cbCant;
+        public System.Windows.Forms.TextBox txtMesInact2;
+        public System.Windows.Forms.TextBox txtMesAct2;
+        public System.Windows.Forms.TextBox txtSeguro2;
+        public System.Windows.Forms.TextBox txtSeguro;
+        public System.Windows.Forms.TextBox txtDerecho2;
+        public System.Windows.Forms.TextBox txtDerecho;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }

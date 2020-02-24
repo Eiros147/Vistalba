@@ -6,3 +6,10 @@
     {
     }
 }
+
+namespace Principal.Club_VistalbaDataSetTableAdapters {
+    
+    
+    public partial class SocioTableAdapter {
+    }
+}

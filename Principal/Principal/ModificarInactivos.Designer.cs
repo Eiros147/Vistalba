@@ -44,6 +44,7 @@
             System.Windows.Forms.Label socioCategoriaLabel;
             System.Windows.Forms.Label socioNivelLabel;
             System.Windows.Forms.Label socioEstadoLabel;
+            System.Windows.Forms.Label label2;
             this.club_VistalbaDataSet = new Principal.Club_VistalbaDataSet();
             this.socioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.socioTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.SocioTableAdapter();
@@ -69,6 +70,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtNotas = new System.Windows.Forms.TextBox();
             this.pbFoto = new System.Windows.Forms.PictureBox();
+            this.cbEliminar = new System.Windows.Forms.CheckBox();
+            this.btnEliminar = new System.Windows.Forms.Button();
             socioIDLabel = new System.Windows.Forms.Label();
             socioNombreLabel = new System.Windows.Forms.Label();
             socioDNILabel = new System.Windows.Forms.Label();
@@ -84,6 +87,7 @@
             socioCategoriaLabel = new System.Windows.Forms.Label();
             socioNivelLabel = new System.Windows.Forms.Label();
             socioEstadoLabel = new System.Windows.Forms.Label();
+            label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.socioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbFoto)).BeginInit();
@@ -223,6 +227,15 @@
             socioEstadoLabel.Size = new System.Drawing.Size(43, 13);
             socioEstadoLabel.TabIndex = 35;
             socioEstadoLabel.Text = "Estado:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(13, 515);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(43, 13);
+            label2.TabIndex = 46;
+            label2.Text = "Eliminar";
             // 
             // club_VistalbaDataSet
             // 
@@ -378,7 +391,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(336, 511);
+            this.btnGuardar.Location = new System.Drawing.Point(332, 545);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 38);
             this.btnGuardar.TabIndex = 39;
@@ -389,7 +402,7 @@
             // btnCerrar
             // 
             this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCerrar.Location = new System.Drawing.Point(16, 511);
+            this.btnCerrar.Location = new System.Drawing.Point(12, 545);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(75, 38);
             this.btnCerrar.TabIndex = 40;
@@ -437,11 +450,34 @@
             this.pbFoto.TabIndex = 45;
             this.pbFoto.TabStop = false;
             // 
+            // cbEliminar
+            // 
+            this.cbEliminar.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.socioBindingSource, "socioEstado", true));
+            this.cbEliminar.Location = new System.Drawing.Point(131, 510);
+            this.cbEliminar.Name = "cbEliminar";
+            this.cbEliminar.Size = new System.Drawing.Size(200, 24);
+            this.cbEliminar.TabIndex = 47;
+            this.cbEliminar.Text = "Confirmar";
+            this.cbEliminar.UseVisualStyleBackColor = true;
+            this.cbEliminar.CheckedChanged += new System.EventHandler(this.cbEliminar_CheckedChanged);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(173, 545);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 38);
+            this.btnEliminar.TabIndex = 48;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            // 
             // ModificarInactivos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(661, 561);
+            this.ClientSize = new System.Drawing.Size(661, 595);
+            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(label2);
+            this.Controls.Add(this.cbEliminar);
             this.Controls.Add(this.pbFoto);
             this.Controls.Add(this.txtNotas);
             this.Controls.Add(this.label1);
@@ -515,5 +551,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNotas;
         private System.Windows.Forms.PictureBox pbFoto;
+        private System.Windows.Forms.CheckBox cbEliminar;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }
