@@ -45,6 +45,8 @@
             System.Windows.Forms.Label label3;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModificarUsuario));
             this.txtNombre = new System.Windows.Forms.TextBox();
+            this.socioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.club_VistalbaDataSet = new Principal.Club_VistalbaDataSet();
             this.txtDNI = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.txtMail = new System.Windows.Forms.TextBox();
@@ -70,8 +72,6 @@
             this.pbSocioFoto = new System.Windows.Forms.PictureBox();
             this.btnVer = new System.Windows.Forms.Button();
             this.btnGuardarFoto = new System.Windows.Forms.Button();
-            this.socioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.club_VistalbaDataSet = new Principal.Club_VistalbaDataSet();
             this.socioTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.SocioTableAdapter();
             this.tableAdapterManager = new Principal.Club_VistalbaDataSetTableAdapters.TableAdapterManager();
             this.grupoTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.GrupoTableAdapter();
@@ -92,9 +92,9 @@
             label1 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSocioFoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.socioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSocioFoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grupoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -233,6 +233,16 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(281, 20);
             this.txtNombre.TabIndex = 4;
+            // 
+            // socioBindingSource
+            // 
+            this.socioBindingSource.DataMember = "Socio";
+            this.socioBindingSource.DataSource = this.club_VistalbaDataSet;
+            // 
+            // club_VistalbaDataSet
+            // 
+            this.club_VistalbaDataSet.DataSetName = "Club_VistalbaDataSet";
+            this.club_VistalbaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // txtDNI
             // 
@@ -496,16 +506,6 @@
             this.btnGuardarFoto.Visible = false;
             this.btnGuardarFoto.Click += new System.EventHandler(this.btnGuardarFoto_Click);
             // 
-            // socioBindingSource
-            // 
-            this.socioBindingSource.DataMember = "Socio";
-            this.socioBindingSource.DataSource = this.club_VistalbaDataSet;
-            // 
-            // club_VistalbaDataSet
-            // 
-            this.club_VistalbaDataSet.DataSetName = "Club_VistalbaDataSet";
-            this.club_VistalbaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // socioTableAdapter
             // 
             this.socioTableAdapter.ClearBeforeFill = true;
@@ -591,9 +591,9 @@
             this.Name = "ModificarUsuario";
             this.Text = "Modificar Socio";
             this.Load += new System.EventHandler(this.ModificarUsuario_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pbSocioFoto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.socioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSocioFoto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grupoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -607,7 +607,6 @@
         private System.Windows.Forms.BindingSource socioBindingSource;
         private Club_VistalbaDataSetTableAdapters.SocioTableAdapter socioTableAdapter;
         private Club_VistalbaDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.DateTimePicker dtpNacimiento;
         private System.Windows.Forms.DateTimePicker dtpIngreso;
         private System.Windows.Forms.DateTimePicker dtpPago;
         private Club_VistalbaDataSetTableAdapters.GrupoTableAdapter grupoTableAdapter;
@@ -637,5 +636,6 @@
         private System.Windows.Forms.PictureBox pbSocioFoto;
         private System.Windows.Forms.Button btnVer;
         private System.Windows.Forms.Button btnGuardarFoto;
+        public System.Windows.Forms.DateTimePicker dtpNacimiento;
     }
 }

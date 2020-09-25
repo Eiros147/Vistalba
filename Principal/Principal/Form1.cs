@@ -107,6 +107,7 @@ Persist Security Info=False;");
             //modificar.cbNivel.Text = dgvSocio.CurrentRow.Cells[11].Value.ToString();
             modificar.lblcatID.Text = cattemp;
             modificar.lblnivelID.Text = nivtemp;
+            modificar.dtpNacimiento.Text = dgvSocio.CurrentRow.Cells[7].Value.ToString();
             
 
             //MessageBox.Show(dgvSocio.CurrentRow.Cells[10].Value.ToString());

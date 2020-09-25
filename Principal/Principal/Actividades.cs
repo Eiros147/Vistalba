@@ -138,14 +138,14 @@ Persist Security Info=False;");
 
                 comando.Connection = conexion;
                 comando.CommandText = query;
-
+                 
                 string temporal = comando.ExecuteScalar().ToString();
 
                 string busquedaprof = "SELECT profID FROM Profesional WHERE (profNombre = '" + dgvActividades.CurrentRow.Cells[3].Value.ToString() + "')";
                 OleDbCommand comprof = new OleDbCommand(busquedaprof, conexion);
-                string temporalprof = Convert.ToString(comando.ExecuteScalar());
+                string temporalprof = Convert.ToString(comprof.ExecuteScalar());
 
-                MessageBox.Show(temporalprof);
+                //MessageBox.Show(temporalprof);
 
                 neu.txtNombre.Text = dgvActividades.CurrentRow.Cells[0].Value.ToString();
                 neu.txtDesc.Text = dgvActividades.CurrentRow.Cells[1].Value.ToString();
@@ -155,7 +155,7 @@ Persist Security Info=False;");
                 neu.lblID.Text = temporal;
 
                 Seleccionar(neu.cbProfesor, "profNombre", "Profesional", "profId", "profNombre");
-                Seleccion("profNombre", "Profesional", neu.cbProfesor, "profID", neu.lblID);
+                Seleccion("profNombre", "Profesional", neu.cbProfesor, "profID", neu.lblProfID);
 
                 neu.ShowDialog();
 
