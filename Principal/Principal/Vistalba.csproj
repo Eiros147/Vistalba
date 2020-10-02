@@ -127,6 +127,12 @@
     <Compile Include="ModificarInactivos.Designer.cs">
       <DependentUpon>ModificarInactivos.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModificarNiveles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificarNiveles.Designer.cs">
+      <DependentUpon>ModificarNiveles.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModificarProfesional.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +174,12 @@
     </Compile>
     <Compile Include="NuevoGrupo.Designer.cs">
       <DependentUpon>NuevoGrupo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NuevoNivel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NuevoNivel.Designer.cs">
+      <DependentUpon>NuevoNivel.cs</DependentUpon>
     </Compile>
     <Compile Include="NuevoProfesional.cs">
       <SubType>Form</SubType>
@@ -261,6 +273,9 @@
     <EmbeddedResource Include="ModificarInactivos.resx">
       <DependentUpon>ModificarInactivos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ModificarNiveles.resx">
+      <DependentUpon>ModificarNiveles.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ModificarProfesional.resx">
       <DependentUpon>ModificarProfesional.cs</DependentUpon>
     </EmbeddedResource>
@@ -281,6 +296,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NuevoGrupo.resx">
       <DependentUpon>NuevoGrupo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NuevoNivel.resx">
+      <DependentUpon>NuevoNivel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NuevoProfesional.resx">
       <DependentUpon>NuevoProfesional.cs</DependentUpon>

@@ -23,5 +23,22 @@ namespace Principal
             this.nivelesTableAdapter.Fill(this.club_VistalbaDataSet.Niveles);
 
         }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            ModificarNiveles modnivel = new ModificarNiveles();
+
+            modnivel.lblID.Text = dgvNiveles.CurrentRow.Cells[0].Value.ToString();
+            modnivel.txtNombre.Text = dgvNiveles.CurrentRow.Cells[1].Value.ToString();
+
+            modnivel.ShowDialog();
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            NuevoNivel nuevonivel = new NuevoNivel();
+
+            nuevonivel.ShowDialog();
+        }
     }
 }
