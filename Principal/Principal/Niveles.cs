@@ -28,7 +28,7 @@ namespace Principal
         {
             ModificarNiveles modnivel = new ModificarNiveles();
 
-            modnivel.lblID.Text = dgvNiveles.CurrentRow.Cells[0].Value.ToString();
+            modnivel.txtNumero.Text = dgvNiveles.CurrentRow.Cells[0].Value.ToString();
             modnivel.txtNombre.Text = dgvNiveles.CurrentRow.Cells[1].Value.ToString();
 
             modnivel.ShowDialog();

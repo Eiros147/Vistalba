@@ -110,6 +110,7 @@
             this.btnActualizar.TabIndex = 3;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Visible = false;
             // 
             // Niveles
             // 
