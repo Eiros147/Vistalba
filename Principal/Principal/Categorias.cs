@@ -101,6 +101,9 @@ Persist Security Info=False;");
             nuovo.txtMesInact.Text = dgvCategorias.CurrentRow.Cells[3].Value.ToString();
             nuovo.cbCant.Text = dgvCategorias.CurrentRow.Cells[4].Value.ToString();
 
+            Seleccionar(nuovo.cbCant, "catCant", "Categoria", "catID", "catCant");
+            Seleccion("catCant", "Categoria", nuovo.cbCant, "catID", nuovo.lblID);
+
             nuovo.ShowDialog();
 
             conPagos.Close();
@@ -110,5 +113,33 @@ Persist Security Info=False;");
         {
 
         }
+
+        private void Seleccionar(ComboBox cb, string value, string table, string identificador, string orden)
+        {
+            Metodos llenado = new Metodos();
+            llenado.Inicializar();
+            llenado.LlenarCombo(value, table, cb, identificador, orden);
+        }
+
+        private void Seleccion(string valor, string tabla, ComboBox cb, string id, Label lbl)
+        {
+            try
+            {
+                string busqueda = "SELECT " + valor + " FROM " + tabla + " WHERE (" + id + " LIKE '" + lbl.Text + "')";
+                OleDbCommand comando = new OleDbCommand(busqueda, conPagos);
+                string temporal = Convert.ToString(comando.ExecuteScalar());
+                cb.SelectedIndex = cb.FindStringExact(temporal);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex);
+            }
+            finally
+            {
+                conPagos.Close();
+            }
+        }
+
+
     }
 }

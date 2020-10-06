@@ -150,6 +150,7 @@
             this.tableAdapterManager.SaludTableAdapter = null;
             this.tableAdapterManager.SocioTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Principal.Club_VistalbaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.ValorFijoTableAdapter = null;
             // 
             // txtDescripcion
             // 
@@ -258,7 +259,7 @@
             this.Controls.Add(this.txtMesInact);
             this.Controls.Add(catClubCardLabel);
             this.Name = "NuevaCategoria";
-            this.Text = "NuevaCategoria";
+            this.Text = "Nuevo Tipo de Socio";
             this.Load += new System.EventHandler(this.NuevaCategoria_Load);
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).EndInit();

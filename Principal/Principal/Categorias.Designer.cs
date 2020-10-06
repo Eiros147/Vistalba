@@ -92,7 +92,7 @@
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.dgvCategorias);
             this.Name = "Categorias";
-            this.Text = "Categorias";
+            this.Text = "Tipo de Socios";
             this.Load += new System.EventHandler(this.Categorias_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).EndInit();
             this.ResumeLayout(false);

@@ -123,6 +123,24 @@
             label1.TabIndex = 18;
             label1.Text = "Meses Inactivos:";
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(12, 181);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(44, 13);
+            label2.TabIndex = 23;
+            label2.Text = "Seguro:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(12, 207);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(51, 13);
+            label3.TabIndex = 26;
+            label3.Text = "Derecho:";
+            // 
             // club_VistalbaDataSet
             // 
             this.club_VistalbaDataSet.DataSetName = "Club_VistalbaDataSet";
@@ -250,15 +268,6 @@
             this.txtSeguro2.Size = new System.Drawing.Size(110, 20);
             this.txtSeguro2.TabIndex = 25;
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(12, 181);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(44, 13);
-            label2.TabIndex = 23;
-            label2.Text = "Seguro:";
-            // 
             // txtSeguro
             // 
             this.txtSeguro.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.categoriaBindingSource, "catMesAct", true));
@@ -274,15 +283,6 @@
             this.txtDerecho2.Name = "txtDerecho2";
             this.txtDerecho2.Size = new System.Drawing.Size(110, 20);
             this.txtDerecho2.TabIndex = 28;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(12, 207);
-            label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(51, 13);
-            label3.TabIndex = 26;
-            label3.Text = "Derecho:";
             // 
             // txtDerecho
             // 
@@ -340,7 +340,7 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.v);
             this.Name = "ModificarCategoria";
-            this.Text = "ModificarCategoria";
+            this.Text = "Modificar Tipo de Socio";
             this.Load += new System.EventHandler(this.ModificarCategoria_Load);
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).EndInit();
