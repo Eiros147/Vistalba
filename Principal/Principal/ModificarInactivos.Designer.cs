@@ -39,7 +39,6 @@
             System.Windows.Forms.Label socioFechaNacLabel;
             System.Windows.Forms.Label socioFechaIngLabel;
             System.Windows.Forms.Label socioFechaUltPagoLabel;
-            System.Windows.Forms.Label catIdLabel;
             System.Windows.Forms.Label socioGeneroLabel;
             System.Windows.Forms.Label socioCategoriaLabel;
             System.Windows.Forms.Label socioNivelLabel;
@@ -59,7 +58,6 @@
             this.socioFechaNacDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.socioFechaIngDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.socioFechaUltPagoDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.catIdTextBox = new System.Windows.Forms.TextBox();
             this.cbEstado = new System.Windows.Forms.CheckBox();
             this.rbHombre = new System.Windows.Forms.RadioButton();
             this.rbMujer = new System.Windows.Forms.RadioButton();
@@ -82,7 +80,6 @@
             socioFechaNacLabel = new System.Windows.Forms.Label();
             socioFechaIngLabel = new System.Windows.Forms.Label();
             socioFechaUltPagoLabel = new System.Windows.Forms.Label();
-            catIdLabel = new System.Windows.Forms.Label();
             socioGeneroLabel = new System.Windows.Forms.Label();
             socioCategoriaLabel = new System.Windows.Forms.Label();
             socioNivelLabel = new System.Windows.Forms.Label();
@@ -182,15 +179,6 @@
             socioFechaUltPagoLabel.Size = new System.Drawing.Size(100, 13);
             socioFechaUltPagoLabel.TabIndex = 19;
             socioFechaUltPagoLabel.Text = "Fecha Último Pago:";
-            // 
-            // catIdLabel
-            // 
-            catIdLabel.AutoSize = true;
-            catIdLabel.Location = new System.Drawing.Point(13, 316);
-            catIdLabel.Name = "catIdLabel";
-            catIdLabel.Size = new System.Drawing.Size(37, 13);
-            catIdLabel.TabIndex = 23;
-            catIdLabel.Text = "cat Id:";
             // 
             // socioGeneroLabel
             // 
@@ -348,16 +336,10 @@
             this.socioFechaUltPagoDateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.socioFechaUltPagoDateTimePicker.TabIndex = 20;
             // 
-            // catIdTextBox
-            // 
-            this.catIdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.socioBindingSource, "catId", true));
-            this.catIdTextBox.Location = new System.Drawing.Point(131, 313);
-            this.catIdTextBox.Name = "catIdTextBox";
-            this.catIdTextBox.Size = new System.Drawing.Size(197, 20);
-            this.catIdTextBox.TabIndex = 24;
-            // 
             // cbEstado
             // 
+            this.cbEstado.Checked = true;
+            this.cbEstado.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbEstado.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.socioBindingSource, "socioEstado", true));
             this.cbEstado.Location = new System.Drawing.Point(131, 480);
             this.cbEstado.Name = "cbEstado";
@@ -428,7 +410,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 345);
+            this.label1.Location = new System.Drawing.Point(13, 320);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 43;
@@ -436,7 +418,7 @@
             // 
             // txtNotas
             // 
-            this.txtNotas.Location = new System.Drawing.Point(131, 338);
+            this.txtNotas.Location = new System.Drawing.Point(131, 313);
             this.txtNotas.Multiline = true;
             this.txtNotas.Name = "txtNotas";
             this.txtNotas.Size = new System.Drawing.Size(248, 84);
@@ -463,6 +445,7 @@
             // 
             // btnEliminar
             // 
+            this.btnEliminar.Enabled = false;
             this.btnEliminar.Location = new System.Drawing.Point(173, 545);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 38);
@@ -507,8 +490,6 @@
             this.Controls.Add(this.socioFechaIngDateTimePicker);
             this.Controls.Add(socioFechaUltPagoLabel);
             this.Controls.Add(this.socioFechaUltPagoDateTimePicker);
-            this.Controls.Add(catIdLabel);
-            this.Controls.Add(this.catIdTextBox);
             this.Controls.Add(socioGeneroLabel);
             this.Controls.Add(socioCategoriaLabel);
             this.Controls.Add(socioNivelLabel);
@@ -540,7 +521,6 @@
         private System.Windows.Forms.DateTimePicker socioFechaNacDateTimePicker;
         private System.Windows.Forms.DateTimePicker socioFechaIngDateTimePicker;
         private System.Windows.Forms.DateTimePicker socioFechaUltPagoDateTimePicker;
-        private System.Windows.Forms.TextBox catIdTextBox;
         private System.Windows.Forms.CheckBox cbEstado;
         private System.Windows.Forms.RadioButton rbHombre;
         private System.Windows.Forms.RadioButton rbMujer;

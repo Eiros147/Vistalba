@@ -130,6 +130,9 @@ Persist Security Info=False;";
             txtNotas.Enabled = true;
             cbCategoria.Enabled = true;
             cbNivel.Enabled = true;
+            rbHombre.Enabled = true;
+            rbMujer.Enabled = true;
+            cbEstado.Enabled = true;
         }
 
         private void button2_Click(object sender, EventArgs e)

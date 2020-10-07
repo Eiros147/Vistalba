@@ -390,6 +390,7 @@
             // 
             this.rbHombre.AutoSize = true;
             this.rbHombre.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.socioBindingSource, "socioGenero", true));
+            this.rbHombre.Enabled = false;
             this.rbHombre.Location = new System.Drawing.Point(130, 189);
             this.rbHombre.Name = "rbHombre";
             this.rbHombre.Size = new System.Drawing.Size(62, 17);
@@ -403,6 +404,7 @@
             // 
             this.rbMujer.AutoSize = true;
             this.rbMujer.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.socioBindingSource, "socioGenero", true));
+            this.rbMujer.Enabled = false;
             this.rbMujer.Location = new System.Drawing.Point(198, 189);
             this.rbMujer.Name = "rbMujer";
             this.rbMujer.Size = new System.Drawing.Size(51, 17);
@@ -434,6 +436,7 @@
             this.cbEstado.AutoSize = true;
             this.cbEstado.Checked = true;
             this.cbEstado.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbEstado.Enabled = false;
             this.cbEstado.Location = new System.Drawing.Point(130, 457);
             this.cbEstado.Name = "cbEstado";
             this.cbEstado.Size = new System.Drawing.Size(56, 17);

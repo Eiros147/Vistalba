@@ -8,17 +8,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.OleDb;
 
 namespace Principal
 {
     public partial class ModificarInactivos : Form
     {
+        OleDbConnection conModificar = new OleDbConnection();
         Image Foto;
         Bitmap MyImage;
 
         public ModificarInactivos()
         {
             InitializeComponent();
+            conModificar.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Club Vistalba.accdb;
+Persist Security Info=False;";
         }
 
         private void socioBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -108,6 +112,33 @@ namespace Principal
             {
                 btnEliminar.Enabled = false;
             }
+        }
+
+        private void Seleccion(string valor, string tabla, string id, ComboBox cb, Label lbl)
+        {
+            try
+            {
+                conModificar.Open();
+                string busqueda = "SELECT " + valor + " FROM " + tabla + " WHERE (" + id + " LIKE '" + lbl.Text + "')";
+                OleDbCommand comando = new OleDbCommand(busqueda, conModificar);
+                string temporal = Convert.ToString(comando.ExecuteScalar());
+                cb.SelectedIndex = cb.FindStringExact(temporal);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex);
+            }
+            finally
+            {
+                conModificar.Close();
+            }
+        }
+
+        private void Seleccionar(string valor, string tabla, string id, string orden, ComboBox cb)
+        {
+            Metodos llenar = new Metodos();
+            llenar.Inicializar();
+            llenar.LlenarCombo(valor, tabla, cb, id, orden);
         }
     }
 }
