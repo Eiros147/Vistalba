@@ -44,6 +44,8 @@
             System.Windows.Forms.Label socioNivelLabel;
             System.Windows.Forms.Label socioEstadoLabel;
             System.Windows.Forms.Label label2;
+            System.Windows.Forms.Label lblIDCat;
+            System.Windows.Forms.Label lblIDNivel;
             this.club_VistalbaDataSet = new Principal.Club_VistalbaDataSet();
             this.socioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.socioTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.SocioTableAdapter();
@@ -85,6 +87,8 @@
             socioNivelLabel = new System.Windows.Forms.Label();
             socioEstadoLabel = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
+            lblIDCat = new System.Windows.Forms.Label();
+            lblIDNivel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.socioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbFoto)).BeginInit();
@@ -453,11 +457,33 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             // 
+            // lblIDCat
+            // 
+            lblIDCat.AutoSize = true;
+            lblIDCat.Location = new System.Drawing.Point(13, 345);
+            lblIDCat.Name = "lblIDCat";
+            lblIDCat.Size = new System.Drawing.Size(76, 13);
+            lblIDCat.TabIndex = 49;
+            lblIDCat.Text = "label categoria";
+            lblIDCat.Visible = false;
+            // 
+            // lblIDNivel
+            // 
+            lblIDNivel.AutoSize = true;
+            lblIDNivel.Location = new System.Drawing.Point(13, 368);
+            lblIDNivel.Name = "lblIDNivel";
+            lblIDNivel.Size = new System.Drawing.Size(54, 13);
+            lblIDNivel.TabIndex = 50;
+            lblIDNivel.Text = "label nivel";
+            lblIDNivel.Visible = false;
+            // 
             // ModificarInactivos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(661, 595);
+            this.Controls.Add(lblIDNivel);
+            this.Controls.Add(lblIDCat);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(label2);
             this.Controls.Add(this.cbEliminar);

@@ -38,7 +38,13 @@ Persist Security Info=False;";
             // TODO: esta línea de código carga datos en la tabla 'club_VistalbaDataSet.Socio' Puede moverla o quitarla según sea necesario.
             //this.socioTableAdapter.Fill(this.club_VistalbaDataSet.Socio);
             this.socioTableAdapter.FillBy(this.club_VistalbaDataSet.Socio);
-            
+
+            Seleccionar("catNombre", "Categoria", "catID", "catNombre", cbCategoria);
+            Seleccionar("nivelNombre", "Niveles", "nivelID", "nivelNombre", cbNivel);
+
+            Seleccion("catNombre", "Categoria", "catID", cbCategoria, lblID);
+            Seleccion("nivelNombre", "Niveles", "nivelID", cbNivel, lblID);
+
         }
 
         private void cbEstado_CheckedChanged(object sender, EventArgs e)
