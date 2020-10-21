@@ -194,9 +194,9 @@
             catIdLabel.AutoSize = true;
             catIdLabel.Location = new System.Drawing.Point(12, 433);
             catIdLabel.Name = "catIdLabel";
-            catIdLabel.Size = new System.Drawing.Size(55, 13);
+            catIdLabel.Size = new System.Drawing.Size(76, 13);
             catIdLabel.TabIndex = 23;
-            catIdLabel.Text = "Categoria:";
+            catIdLabel.Text = "Tipo de Socio:";
             // 
             // label1
             // 
@@ -221,9 +221,9 @@
             label3.AutoSize = true;
             label3.Location = new System.Drawing.Point(12, 406);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(34, 13);
+            label3.Size = new System.Drawing.Size(47, 13);
             label3.TabIndex = 43;
-            label3.Text = "Nivel:";
+            label3.Text = "División:";
             // 
             // txtNombre
             // 

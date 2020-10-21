@@ -99,6 +99,18 @@ Persist Security Info=False;");
         private void btnModificar_Click(object sender, EventArgs e)
         {
             ModificarInactivos nuevo = new ModificarInactivos();
+
+            string querycat = "Select catID FROM Categoria WHERE catNombre = '" + dgvInactivos.CurrentRow.Cells[9].Value.ToString() + "'";
+            OleDbCommand categoria = new OleDbCommand(querycat, conexion);
+            string cattemp = Convert.ToString(categoria.ExecuteScalar());
+
+            string queryniv = "Select nivelID FROM Niveles WHERE nivelNombre = '" + dgvInactivos.CurrentRow.Cells[10].Value.ToString() + "'";
+            OleDbCommand nivel = new OleDbCommand(queryniv, conexion);
+            string nivtemp = Convert.ToString(nivel.ExecuteScalar());
+
+            nuevo.lblIDCat.Text = cattemp;
+            nuevo.lblIDNivel.Text = nivtemp;
+
             nuevo.ShowDialog();
         }
     }

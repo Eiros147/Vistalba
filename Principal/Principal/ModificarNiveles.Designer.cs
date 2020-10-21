@@ -122,7 +122,7 @@
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblNameID);
             this.Name = "ModificarNiveles";
-            this.Text = "ModificarNiveles";
+            this.Text = "Modificar Divisiones";
             this.ResumeLayout(false);
             this.PerformLayout();
 

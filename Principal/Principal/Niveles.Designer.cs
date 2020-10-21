@@ -122,7 +122,7 @@
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.dgvNiveles);
             this.Name = "Niveles";
-            this.Text = "Niveles";
+            this.Text = "División";
             this.Load += new System.EventHandler(this.Niveles_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNiveles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nivelesBindingSource)).EndInit();

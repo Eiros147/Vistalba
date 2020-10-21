@@ -344,14 +344,14 @@ Persist Security Info=False;";
                 MyImage.Dispose();
             }
 
-            if (File.Exists(@"C:\Users\Mi PC\Documents\Proyecto Club\Vistalba\Vistalba\Principal\fotos\" + nombreimagen + ".jpg")) { 
-                pbSocioFoto.ImageLocation = @"C:\Users\Mi PC\Documents\Proyecto Club\Vistalba\Vistalba\Principal\fotos\" + nombreimagen + ".jpg";
+            if (File.Exists(@"C:\Users\Usuario\Socios\" + nombreimagen + ".jpg")) { 
+                pbSocioFoto.ImageLocation = @"C:\Users\Usuario\Socios\" + nombreimagen + ".jpg";
                 //pbSocioFoto.ImageLocation = @"C:\Users\Mi PC\Documents\Proyecto Club\Vistalba\Vistalba\Principal\fotos\" + nombreimagen;
                 pbSocioFoto.Load();
             }
             else
             {
-                pbSocioFoto.ImageLocation = @"C:\Users\Mi PC\Documents\Proyecto Club\Vistalba\Vistalba\Principal\fotos\default.jpg";
+                pbSocioFoto.ImageLocation = @"C:\Users\Usuario\Socios\default.jpg";
                 pbSocioFoto.Load();
             }
         }

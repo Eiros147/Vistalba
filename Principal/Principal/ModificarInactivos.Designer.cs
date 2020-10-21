@@ -44,8 +44,8 @@
             System.Windows.Forms.Label socioNivelLabel;
             System.Windows.Forms.Label socioEstadoLabel;
             System.Windows.Forms.Label label2;
-            System.Windows.Forms.Label lblIDCat;
-            System.Windows.Forms.Label lblIDNivel;
+            this.lblIDCat = new System.Windows.Forms.Label();
+            this.lblIDNivel = new System.Windows.Forms.Label();
             this.club_VistalbaDataSet = new Principal.Club_VistalbaDataSet();
             this.socioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.socioTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.SocioTableAdapter();
@@ -87,8 +87,6 @@
             socioNivelLabel = new System.Windows.Forms.Label();
             socioEstadoLabel = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
-            lblIDCat = new System.Windows.Forms.Label();
-            lblIDNivel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.club_VistalbaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.socioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbFoto)).BeginInit();
@@ -196,20 +194,21 @@
             // socioCategoriaLabel
             // 
             socioCategoriaLabel.AutoSize = true;
-            socioCategoriaLabel.Location = new System.Drawing.Point(13, 431);
+            socioCategoriaLabel.Location = new System.Drawing.Point(13, 445);
             socioCategoriaLabel.Name = "socioCategoriaLabel";
-            socioCategoriaLabel.Size = new System.Drawing.Size(55, 13);
+            socioCategoriaLabel.Size = new System.Drawing.Size(76, 13);
             socioCategoriaLabel.TabIndex = 31;
-            socioCategoriaLabel.Text = "Categoria:";
+            socioCategoriaLabel.Text = "Tipo de Socio:";
+            socioCategoriaLabel.Click += new System.EventHandler(this.socioCategoriaLabel_Click);
             // 
             // socioNivelLabel
             // 
             socioNivelLabel.AutoSize = true;
-            socioNivelLabel.Location = new System.Drawing.Point(13, 457);
+            socioNivelLabel.Location = new System.Drawing.Point(13, 418);
             socioNivelLabel.Name = "socioNivelLabel";
-            socioNivelLabel.Size = new System.Drawing.Size(34, 13);
+            socioNivelLabel.Size = new System.Drawing.Size(55, 13);
             socioNivelLabel.TabIndex = 33;
-            socioNivelLabel.Text = "Nivel:";
+            socioNivelLabel.Text = "Categoria:";
             // 
             // socioEstadoLabel
             // 
@@ -228,6 +227,26 @@
             label2.Size = new System.Drawing.Size(43, 13);
             label2.TabIndex = 46;
             label2.Text = "Eliminar";
+            // 
+            // lblIDCat
+            // 
+            this.lblIDCat.AutoSize = true;
+            this.lblIDCat.Location = new System.Drawing.Point(13, 345);
+            this.lblIDCat.Name = "lblIDCat";
+            this.lblIDCat.Size = new System.Drawing.Size(76, 13);
+            this.lblIDCat.TabIndex = 49;
+            this.lblIDCat.Text = "label categoria";
+            this.lblIDCat.Visible = false;
+            // 
+            // lblIDNivel
+            // 
+            this.lblIDNivel.AutoSize = true;
+            this.lblIDNivel.Location = new System.Drawing.Point(13, 368);
+            this.lblIDNivel.Name = "lblIDNivel";
+            this.lblIDNivel.Size = new System.Drawing.Size(54, 13);
+            this.lblIDNivel.TabIndex = 50;
+            this.lblIDNivel.Text = "label nivel";
+            this.lblIDNivel.Visible = false;
             // 
             // club_VistalbaDataSet
             // 
@@ -398,7 +417,7 @@
             // cbCategoria
             // 
             this.cbCategoria.FormattingEnabled = true;
-            this.cbCategoria.Location = new System.Drawing.Point(131, 428);
+            this.cbCategoria.Location = new System.Drawing.Point(131, 442);
             this.cbCategoria.Name = "cbCategoria";
             this.cbCategoria.Size = new System.Drawing.Size(200, 21);
             this.cbCategoria.TabIndex = 41;
@@ -406,7 +425,7 @@
             // cbNivel
             // 
             this.cbNivel.FormattingEnabled = true;
-            this.cbNivel.Location = new System.Drawing.Point(131, 454);
+            this.cbNivel.Location = new System.Drawing.Point(131, 415);
             this.cbNivel.Name = "cbNivel";
             this.cbNivel.Size = new System.Drawing.Size(200, 21);
             this.cbNivel.TabIndex = 42;
@@ -457,33 +476,13 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             // 
-            // lblIDCat
-            // 
-            lblIDCat.AutoSize = true;
-            lblIDCat.Location = new System.Drawing.Point(13, 345);
-            lblIDCat.Name = "lblIDCat";
-            lblIDCat.Size = new System.Drawing.Size(76, 13);
-            lblIDCat.TabIndex = 49;
-            lblIDCat.Text = "label categoria";
-            lblIDCat.Visible = false;
-            // 
-            // lblIDNivel
-            // 
-            lblIDNivel.AutoSize = true;
-            lblIDNivel.Location = new System.Drawing.Point(13, 368);
-            lblIDNivel.Name = "lblIDNivel";
-            lblIDNivel.Size = new System.Drawing.Size(54, 13);
-            lblIDNivel.TabIndex = 50;
-            lblIDNivel.Text = "label nivel";
-            lblIDNivel.Visible = false;
-            // 
             // ModificarInactivos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(661, 595);
-            this.Controls.Add(lblIDNivel);
-            this.Controls.Add(lblIDCat);
+            this.Controls.Add(this.lblIDNivel);
+            this.Controls.Add(this.lblIDCat);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(label2);
             this.Controls.Add(this.cbEliminar);
@@ -559,5 +558,7 @@
         private System.Windows.Forms.PictureBox pbFoto;
         private System.Windows.Forms.CheckBox cbEliminar;
         private System.Windows.Forms.Button btnEliminar;
+        public System.Windows.Forms.Label lblIDCat;
+        public System.Windows.Forms.Label lblIDNivel;
     }
 }

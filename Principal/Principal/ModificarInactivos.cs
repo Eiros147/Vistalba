@@ -42,9 +42,9 @@ Persist Security Info=False;";
             Seleccionar("catNombre", "Categoria", "catID", "catNombre", cbCategoria);
             Seleccionar("nivelNombre", "Niveles", "nivelID", "nivelNombre", cbNivel);
 
-            Seleccion("catNombre", "Categoria", "catID", cbCategoria, lblID);
-            Seleccion("nivelNombre", "Niveles", "nivelID", cbNivel, lblID);
-
+            Seleccion("catNombre", "Categoria", "catID", cbCategoria, lblIDCat);
+            Seleccion("nivelNombre", "Niveles", "nivelID", cbNivel, lblIDNivel);
+            
         }
 
         private void cbEstado_CheckedChanged(object sender, EventArgs e)
@@ -95,14 +95,19 @@ Persist Security Info=False;";
         {
             String nombreimagen = txtDNI.Text;
 
-            if(File.Exists(@"C:\Users\Mi PC\Documents\Proyecto Club\Vistalba\Vistalba\Principal\fotos\" + nombreimagen + ".jpg"))
+            if(MyImage != null)
             {
-                pbFoto.ImageLocation = @"C:\Users\Mi PC\Documents\Proyecto Club\Vistalba\Vistalba\Principal\fotos\" + nombreimagen + ".jpg";
+                MyImage.Dispose();
+            }
+
+            if(File.Exists(@"C:\Users\Usuario\Socios\" + nombreimagen + ".jpg"))
+            {
+                pbFoto.ImageLocation = @"C:\Users\Usuario\Socios\" + nombreimagen + ".jpg";
                 pbFoto.Load();
             }
             else
             {
-                pbFoto.ImageLocation = @"C:\Users\Mi PC\Documents\Proyecto Club\Vistalba\Vistalba\Principal\fotos\default.jpg";
+                pbFoto.ImageLocation = @"C:\Users\Usuario\Socios\default.jpg";
                 pbFoto.Load();
             }
 
@@ -145,6 +150,11 @@ Persist Security Info=False;";
             Metodos llenar = new Metodos();
             llenar.Inicializar();
             llenar.LlenarCombo(valor, tabla, cb, id, orden);
+        }
+
+        private void socioCategoriaLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
