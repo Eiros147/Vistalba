@@ -396,7 +396,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(332, 545);
+            this.btnGuardar.Location = new System.Drawing.Point(16, 545);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 38);
             this.btnGuardar.TabIndex = 39;
@@ -407,7 +407,7 @@
             // btnCerrar
             // 
             this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCerrar.Location = new System.Drawing.Point(12, 545);
+            this.btnCerrar.Location = new System.Drawing.Point(304, 545);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(75, 38);
             this.btnCerrar.TabIndex = 40;
@@ -469,12 +469,13 @@
             // btnEliminar
             // 
             this.btnEliminar.Enabled = false;
-            this.btnEliminar.Location = new System.Drawing.Point(173, 545);
+            this.btnEliminar.Location = new System.Drawing.Point(160, 545);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 38);
             this.btnEliminar.TabIndex = 48;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // ModificarInactivos
             // 

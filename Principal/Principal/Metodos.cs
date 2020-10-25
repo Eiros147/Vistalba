@@ -104,6 +104,11 @@ namespace Principal
                 this.CerrarCon();
             }
         }
+
+        public void Eliminar(string tabla, int id, string valor, string key)
+        {
+
+        }
                
         //Llenar tabla
         public void Llenardgv (string tabla, string valores, DataGridView dgv)

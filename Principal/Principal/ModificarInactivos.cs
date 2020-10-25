@@ -156,5 +156,10 @@ Persist Security Info=False;";
         {
 
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
