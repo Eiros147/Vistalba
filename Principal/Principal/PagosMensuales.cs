@@ -51,7 +51,7 @@ Persist Security Info=False;");
             {
                 //MessageBox.Show(mes);  
             string query = "Socio.socioNombre, Socio.socioCategoria, Categoria.catMesInact";
-            string tabla = "(Categoria INNER JOIN Socio ON Categoria.catID = Socio.catID)";
+            string tabla = "(Categoria INNER JOIN Socio ON Categoria.catID = Socio.catId)";
 
             cargapagos.Llenardgv(tabla, query, dgvPagos);
 
@@ -60,7 +60,8 @@ Persist Security Info=False;");
             {
                 //MessageBox.Show("no anduvo");
                 string query = "Socio.socioNombre, Socio.socioCategoria, Categoria.catMesAct";
-                string tabla = "(Categoria INNER JOIN Socio ON Categoria.catID = Socio.catID";
+                //string query = "socioNombre, socioCategoria, catMesAct";
+                string tabla = "(Categoria INNER JOIN Socio ON Categoria.catID = Socio.catId)";
 
                 cargapagos.Llenardgv(tabla, query, dgvPagos);
             }

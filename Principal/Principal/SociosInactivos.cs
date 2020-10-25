@@ -42,15 +42,14 @@ Persist Security Info=False;");
 
         private void Modificar()
         {
+            comando.Connection = conexion;
             conexion.Open();
             string query = "SELECT socioID FROM Socio WHERE socioNombre '" + dgvInactivos.CurrentRow.Cells[0].ToString() + "'";
-
-            comando.Connection = conexion;
             comando.CommandText = query;
 
             string temporal = comando.ExecuteScalar().ToString();
 
-
+            conexion.Close();
         }
 
         private void txtBusqueda_TextChanged(object sender, EventArgs e)
@@ -98,6 +97,8 @@ Persist Security Info=False;");
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
+            conexion.Open();
+
             ModificarInactivos nuevo = new ModificarInactivos();
 
             string querycat = "Select catID FROM Categoria WHERE catNombre = '" + dgvInactivos.CurrentRow.Cells[9].Value.ToString() + "'";
@@ -112,6 +113,7 @@ Persist Security Info=False;");
             nuevo.lblIDNivel.Text = nivtemp;
 
             nuevo.ShowDialog();
+            conexion.Close();
         }
     }
 }
