@@ -168,8 +168,14 @@ Persist Security Info=False;";
                 estado = 0;
             }
 
-            
-            string seters = "socioNombre = '" + txtNombre.Text + "', socioDNI = " + txtDNI.Text + ", socioDireccion = '" + txtDireccion.Text + "', socioMail = '" + txtMail.Text + "', socioNotas = '" + txtNotas.Text + "', socioCategoria = '" + cbCategoria.Text + "', socioTelefono = " + txtTelefono.Text + ", socioCelular = " + txtCelular.Text + ", socioGenero = " + flag + ", socioEstado = " + estado + ", socioNivel = '" + cbNivel.Text + "'";
+            //MessageBox.Show(dtpNacimiento.Value.ToString());
+            //MessageBox.Show(dtpNacimiento.Value.ToShortDateString());
+            double intermedio = dtpNacimiento.Value.ToOADate();
+            string segundo = intermedio.ToString();
+            //MessageBox.Show(segundo);
+
+
+            string seters = "socioNombre = '" + txtNombre.Text + "', socioFechaNac = " + dtpNacimiento.Value.ToOADate() + ", socioDNI = " + txtDNI.Text + ", socioDireccion = '" + txtDireccion.Text + "', socioMail = '" + txtMail.Text + "', socioNotas = '" + txtNotas.Text + "', socioCategoria = '" + cbCategoria.Text + "', socioTelefono = " + txtTelefono.Text + ", socioCelular = " + txtCelular.Text + ", socioGenero = " + flag + ", socioEstado = " + estado + ", socioNivel = '" + cbNivel.Text + "'";
             string tabla = "Socio";
             string key = "socioID";
             int id = Convert.ToInt32(lblID.Text);

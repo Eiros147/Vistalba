@@ -298,20 +298,21 @@
             this.dtpNacimiento.CustomFormat = "dd-MM-yyyy";
             this.dtpNacimiento.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.socioBindingSource, "socioFechaNac", true));
             this.dtpNacimiento.Enabled = false;
+            this.dtpNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNacimiento.Location = new System.Drawing.Point(130, 229);
             this.dtpNacimiento.MaxDate = new System.DateTime(2019, 12, 25, 23, 59, 59, 0);
             this.dtpNacimiento.MinDate = new System.DateTime(1950, 1, 1, 0, 0, 0, 0);
             this.dtpNacimiento.Name = "dtpNacimiento";
             this.dtpNacimiento.Size = new System.Drawing.Size(200, 20);
             this.dtpNacimiento.TabIndex = 16;
-            this.dtpNacimiento.Value = new System.DateTime(2019, 12, 25, 23, 59, 59, 0);
+            this.dtpNacimiento.Value = new System.DateTime(2019, 12, 25, 0, 0, 0, 0);
             // 
             // dtpIngreso
             // 
             this.dtpIngreso.CustomFormat = "dd-MM-yyyy";
             this.dtpIngreso.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.socioBindingSource, "socioFechaIng", true));
             this.dtpIngreso.Enabled = false;
-            this.dtpIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpIngreso.Location = new System.Drawing.Point(130, 255);
             this.dtpIngreso.Name = "dtpIngreso";
             this.dtpIngreso.Size = new System.Drawing.Size(200, 20);

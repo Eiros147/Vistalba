@@ -184,6 +184,15 @@
             label3.TabIndex = 44;
             label3.Text = "Estado:";
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new System.Drawing.Point(12, 376);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(34, 13);
+            label4.TabIndex = 49;
+            label4.Text = "Nivel:";
+            // 
             // club_VistalbaDataSet
             // 
             this.club_VistalbaDataSet.DataSetName = "Club_VistalbaDataSet";
@@ -351,6 +360,8 @@
             // cbEstado
             // 
             this.cbEstado.AutoSize = true;
+            this.cbEstado.Checked = true;
+            this.cbEstado.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbEstado.Location = new System.Drawing.Point(130, 399);
             this.cbEstado.Name = "cbEstado";
             this.cbEstado.Size = new System.Drawing.Size(56, 17);
@@ -395,15 +406,6 @@
             this.cbNivel.Name = "cbNivel";
             this.cbNivel.Size = new System.Drawing.Size(281, 21);
             this.cbNivel.TabIndex = 50;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(12, 376);
-            label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(34, 13);
-            label4.TabIndex = 49;
-            label4.Text = "Nivel:";
             // 
             // NuevoUsuario
             // 

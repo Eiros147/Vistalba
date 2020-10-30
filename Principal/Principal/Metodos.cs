@@ -105,6 +105,7 @@ namespace Principal
             }
         }
 
+        //Eliminar
         public void Eliminar(string tabla, int id, string valor, string key)
         {
 

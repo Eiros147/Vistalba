@@ -77,7 +77,7 @@ namespace Principal
             string setters = "saludAlergia, saludAlergiaDesc, saludSangre, saludMed, saludObraSoc, saludTelEm, saludExtra, socioID";
             string valores = "'" + flag + "','" + txtDescripcion.Text + "','" + txtSangre.Text + "','" + txtMedicamentos.Text + "','" + txtObra.Text + "','" + txtTelefonoEmerg.Text + "','" + txtExtra.Text + "'," + lblID.Text + "";
 
-            MessageBox.Show(valores);
+            //MessageBox.Show(valores);
 
             guardarsalud.Insertar(tabla,setters,valores);
 
