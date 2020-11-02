@@ -175,7 +175,7 @@
             this.cbAlergia.Name = "cbAlergia";
             this.cbAlergia.Size = new System.Drawing.Size(104, 24);
             this.cbAlergia.TabIndex = 6;
-            this.cbAlergia.Text = "No";
+            this.cbAlergia.Text = "Si";
             this.cbAlergia.UseVisualStyleBackColor = true;
             this.cbAlergia.CheckedChanged += new System.EventHandler(this.saludAlergiaCheckBox_CheckedChanged);
             // 
@@ -275,7 +275,6 @@
             this.lblID.Size = new System.Drawing.Size(15, 13);
             this.lblID.TabIndex = 22;
             this.lblID.Text = "id";
-            this.lblID.Visible = false;
             // 
             // NuevoSalud
             // 

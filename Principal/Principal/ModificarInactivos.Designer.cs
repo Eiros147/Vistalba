@@ -57,9 +57,9 @@
             this.txtMail = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.txtCelular = new System.Windows.Forms.TextBox();
-            this.socioFechaNacDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.dtpNacimiento = new System.Windows.Forms.DateTimePicker();
             this.socioFechaIngDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.socioFechaUltPagoDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.dtpPago = new System.Windows.Forms.DateTimePicker();
             this.cbEstado = new System.Windows.Forms.CheckBox();
             this.rbHombre = new System.Windows.Forms.RadioButton();
             this.rbMujer = new System.Windows.Forms.RadioButton();
@@ -334,30 +334,39 @@
             this.txtCelular.Size = new System.Drawing.Size(248, 20);
             this.txtCelular.TabIndex = 14;
             // 
-            // socioFechaNacDateTimePicker
+            // dtpNacimiento
             // 
-            this.socioFechaNacDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.socioBindingSource, "socioFechaNac", true));
-            this.socioFechaNacDateTimePicker.Location = new System.Drawing.Point(131, 235);
-            this.socioFechaNacDateTimePicker.Name = "socioFechaNacDateTimePicker";
-            this.socioFechaNacDateTimePicker.Size = new System.Drawing.Size(200, 20);
-            this.socioFechaNacDateTimePicker.TabIndex = 16;
+            this.dtpNacimiento.CustomFormat = "dd-MM-yyyy";
+            this.dtpNacimiento.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.socioBindingSource, "socioFechaNac", true));
+            this.dtpNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNacimiento.Location = new System.Drawing.Point(131, 235);
+            this.dtpNacimiento.Name = "dtpNacimiento";
+            this.dtpNacimiento.Size = new System.Drawing.Size(200, 20);
+            this.dtpNacimiento.TabIndex = 16;
+            this.dtpNacimiento.Value = new System.DateTime(2020, 11, 2, 0, 0, 0, 0);
             // 
             // socioFechaIngDateTimePicker
             // 
+            this.socioFechaIngDateTimePicker.CustomFormat = "dd-MM-yyyy";
             this.socioFechaIngDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.socioBindingSource, "socioFechaIng", true));
             this.socioFechaIngDateTimePicker.Enabled = false;
+            this.socioFechaIngDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.socioFechaIngDateTimePicker.Location = new System.Drawing.Point(131, 261);
             this.socioFechaIngDateTimePicker.Name = "socioFechaIngDateTimePicker";
             this.socioFechaIngDateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.socioFechaIngDateTimePicker.TabIndex = 18;
+            this.socioFechaIngDateTimePicker.Value = new System.DateTime(2020, 11, 2, 0, 0, 0, 0);
             // 
-            // socioFechaUltPagoDateTimePicker
+            // dtpPago
             // 
-            this.socioFechaUltPagoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.socioBindingSource, "socioFechaUltPago", true));
-            this.socioFechaUltPagoDateTimePicker.Location = new System.Drawing.Point(131, 287);
-            this.socioFechaUltPagoDateTimePicker.Name = "socioFechaUltPagoDateTimePicker";
-            this.socioFechaUltPagoDateTimePicker.Size = new System.Drawing.Size(200, 20);
-            this.socioFechaUltPagoDateTimePicker.TabIndex = 20;
+            this.dtpPago.CustomFormat = "dd-MM-yyyy";
+            this.dtpPago.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.socioBindingSource, "socioFechaUltPago", true));
+            this.dtpPago.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpPago.Location = new System.Drawing.Point(131, 287);
+            this.dtpPago.Name = "dtpPago";
+            this.dtpPago.Size = new System.Drawing.Size(200, 20);
+            this.dtpPago.TabIndex = 20;
+            this.dtpPago.Value = new System.DateTime(2020, 11, 2, 0, 0, 0, 0);
             // 
             // cbEstado
             // 
@@ -511,11 +520,11 @@
             this.Controls.Add(socioCelularLabel);
             this.Controls.Add(this.txtCelular);
             this.Controls.Add(socioFechaNacLabel);
-            this.Controls.Add(this.socioFechaNacDateTimePicker);
+            this.Controls.Add(this.dtpNacimiento);
             this.Controls.Add(socioFechaIngLabel);
             this.Controls.Add(this.socioFechaIngDateTimePicker);
             this.Controls.Add(socioFechaUltPagoLabel);
-            this.Controls.Add(this.socioFechaUltPagoDateTimePicker);
+            this.Controls.Add(this.dtpPago);
             this.Controls.Add(socioGeneroLabel);
             this.Controls.Add(socioCategoriaLabel);
             this.Controls.Add(socioNivelLabel);
@@ -544,9 +553,9 @@
         private System.Windows.Forms.TextBox txtMail;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.TextBox txtCelular;
-        private System.Windows.Forms.DateTimePicker socioFechaNacDateTimePicker;
+        private System.Windows.Forms.DateTimePicker dtpNacimiento;
         private System.Windows.Forms.DateTimePicker socioFechaIngDateTimePicker;
-        private System.Windows.Forms.DateTimePicker socioFechaUltPagoDateTimePicker;
+        private System.Windows.Forms.DateTimePicker dtpPago;
         private System.Windows.Forms.CheckBox cbEstado;
         private System.Windows.Forms.RadioButton rbHombre;
         private System.Windows.Forms.RadioButton rbMujer;

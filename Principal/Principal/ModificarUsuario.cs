@@ -126,6 +126,7 @@ Persist Security Info=False;";
             txtTelefono.Enabled = true;
             cbCategoria.Enabled = true;
             //dtpIngreso.Enabled = true;
+            dtpPago.Enabled = true;
             dtpNacimiento.Enabled = true;
             txtNotas.Enabled = true;
             cbCategoria.Enabled = true;
@@ -172,10 +173,10 @@ Persist Security Info=False;";
             //MessageBox.Show(dtpNacimiento.Value.ToShortDateString());
             double intermedio = dtpNacimiento.Value.ToOADate();
             string segundo = intermedio.ToString();
-            //MessageBox.Show(segundo);
+            MessageBox.Show(segundo);
 
 
-            string seters = "socioNombre = '" + txtNombre.Text + "', socioFechaNac = " + dtpNacimiento.Value.ToOADate() + ", socioDNI = " + txtDNI.Text + ", socioDireccion = '" + txtDireccion.Text + "', socioMail = '" + txtMail.Text + "', socioNotas = '" + txtNotas.Text + "', socioCategoria = '" + cbCategoria.Text + "', socioTelefono = " + txtTelefono.Text + ", socioCelular = " + txtCelular.Text + ", socioGenero = " + flag + ", socioEstado = " + estado + ", socioNivel = '" + cbNivel.Text + "'";
+            string seters = "socioNombre = '" + txtNombre.Text + "', socioFechaUltPago = " + dtpPago.Value.ToOADate() + ", socioFechaNac = " + dtpNacimiento.Value.ToOADate() + ", socioDNI = " + txtDNI.Text + ", socioDireccion = '" + txtDireccion.Text + "', socioMail = '" + txtMail.Text + "', socioNotas = '" + txtNotas.Text + "', socioCategoria = '" + cbCategoria.Text + "', socioTelefono = " + txtTelefono.Text + ", socioCelular = " + txtCelular.Text + ", socioGenero = " + flag + ", socioEstado = " + estado + ", socioNivel = '" + cbNivel.Text + "'";
             string tabla = "Socio";
             string key = "socioID";
             int id = Convert.ToInt32(lblID.Text);
@@ -350,14 +351,24 @@ Persist Security Info=False;";
                 MyImage.Dispose();
             }
 
-            if (File.Exists(@"C:\Users\Usuario\Socios\" + nombreimagen + ".jpg")) { 
+            if (File.Exists(@"C:\Users\Usuario\Socios\" + nombreimagen + ".jpeg"))
+            {
+                pbSocioFoto.ImageLocation = @"C:\Users\Usuario\Socios\" + nombreimagen + ".jpeg";
+                pbSocioFoto.Load();
+            }
+            else if (File.Exists(@"C:\Users\Usuario\Socios\" + nombreimagen + ".jpg"))
+            {
                 pbSocioFoto.ImageLocation = @"C:\Users\Usuario\Socios\" + nombreimagen + ".jpg";
-                //pbSocioFoto.ImageLocation = @"C:\Users\Mi PC\Documents\Proyecto Club\Vistalba\Vistalba\Principal\fotos\" + nombreimagen;
+                pbSocioFoto.Load();
+            }
+            else if (File.Exists(@"C:\Users\Usuario\Socios\" + nombreimagen + ".png"))
+            {
+                pbSocioFoto.ImageLocation = @"C:\Users\Usuario\Socios\" + nombreimagen + ".png";
                 pbSocioFoto.Load();
             }
             else
             {
-                pbSocioFoto.ImageLocation = @"C:\Users\Usuario\Socios\default.jpg";
+                pbSocioFoto.ImageLocation = @"C:\Users\Usuario\Socios\default.jpeg";
                 pbSocioFoto.Load();
             }
         }

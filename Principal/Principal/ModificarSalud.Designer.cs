@@ -180,7 +180,7 @@
             this.cbAlergia.Name = "cbAlergia";
             this.cbAlergia.Size = new System.Drawing.Size(104, 24);
             this.cbAlergia.TabIndex = 6;
-            this.cbAlergia.Text = "No";
+            this.cbAlergia.Text = "Si";
             this.cbAlergia.UseVisualStyleBackColor = true;
             this.cbAlergia.CheckedChanged += new System.EventHandler(this.cbAlergia_CheckedChanged);
             // 

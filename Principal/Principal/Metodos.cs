@@ -64,7 +64,7 @@ namespace Principal
                     OleDbCommand comando = new OleDbCommand(query, conexion);
 
                     //Control de query para testeo de errores
-                    //MessageBox.Show(query);
+                    MessageBox.Show(query);
 
                     comando.ExecuteNonQuery();
                     MessageBox.Show("Nuevo "+tabla+" guardado");
@@ -106,9 +106,29 @@ namespace Principal
         }
 
         //Eliminar
-        public void Eliminar(string tabla, int id, string valor, string key)
+        public void Delete(string tabla, int valor, string campo)
         {
+            try
+            {
+                string query = "DELETE * FROM " + tabla + " WHERE " + campo + " = " + valor + "";
+                AbrirCon();
 
+                OleDbCommand comando = new OleDbCommand(query, conexion);
+
+                //Control de query para testeo de errores
+                //MessageBox.Show(query);
+
+                comando.ExecuteNonQuery();
+                MessageBox.Show(tabla + " eliminado");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex);
+            }
+            finally
+            {
+                this.CerrarCon();
+            }
         }
                
         //Llenar tabla

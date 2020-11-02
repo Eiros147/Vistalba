@@ -98,6 +98,7 @@ Persist Security Info=False;";
             NuevoSalud nuevo = new NuevoSalud();
             nuevo.Show();
             nuevo.lblNombre.Text = txtNombre.Text;
+            nuevo.lblID.Text = lblSocioID.Text;
             nuevo.TopMost = true;
             
         }
@@ -114,12 +115,28 @@ Persist Security Info=False;";
                 flag = 0;
             }
 
+            int estado;
+            if (cbEstado.Checked)
+            {
+                estado = 1;
+            }
+            else
+            {
+                estado = 0;
+            }
+
             Metodos nuevometodo = new Metodos();
             nuevometodo.Inicializar();
 
+
             string tabla = "Socio";
-            string seters = "socioNombre, socioDNI, socioDireccion, socioMail, socioTelefono, socioCelular, socioGenero, socioNotas, socioFechaIng";
-            string valores = "'" + txtNombre.Text + "','" + txtDNI.Text + "','" + txtDireccion.Text + "','" + txtMail.Text + "','" + txtTelefono.Text + "','" + txtCelular.Text + "','" + flag + "','" + txtNotas.Text + "','" + DateTime.Now + "'";
+            string seters = "socioNombre, socioDNI, socioDireccion, socioMail, socioTelefono, socioCelular, socioGenero, socioNotas, socioFechaIng, socioFechaNac, socioCategoria, socioNivel, socioEstado";
+            string valores = "'" + txtNombre.Text + "'," + txtDNI.Text + ",'" + txtDireccion.Text + "','" + txtMail.Text + "'," + txtTelefono.Text + "," + txtCelular.Text + ",'" + flag + "','" + txtNotas.Text + "'," + dtpHoy.Value.ToOADate() + "," + dtpNacimiento.Value.ToOADate() + ",'" + cbCategoria.Text + "','" + cbNivel.Text + "'," + estado + "";
+
+            //double intermedio = DateTime.Now.ToOADate();
+            //MessageBox.Show(intermedio.ToString());
+            //MessageBox.Show(valores);
+
 
             nuevometodo.Insertar(tabla,seters,valores);
         }

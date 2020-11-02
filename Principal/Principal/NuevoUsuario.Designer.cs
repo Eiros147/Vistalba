@@ -67,6 +67,7 @@
             this.btnSalud = new System.Windows.Forms.Button();
             this.categoriaTableAdapter = new Principal.Club_VistalbaDataSetTableAdapters.CategoriaTableAdapter();
             this.cbNivel = new System.Windows.Forms.ComboBox();
+            this.dtpHoy = new System.Windows.Forms.DateTimePicker();
             socioIDLabel = new System.Windows.Forms.Label();
             socioNombreLabel = new System.Windows.Forms.Label();
             socioDNILabel = new System.Windows.Forms.Label();
@@ -171,9 +172,9 @@
             label2.AutoSize = true;
             label2.Location = new System.Drawing.Point(12, 349);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(55, 13);
+            label2.Size = new System.Drawing.Size(47, 13);
             label2.TabIndex = 42;
-            label2.Text = "Categoria:";
+            label2.Text = "División:";
             // 
             // label3
             // 
@@ -189,9 +190,9 @@
             label4.AutoSize = true;
             label4.Location = new System.Drawing.Point(12, 376);
             label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(34, 13);
+            label4.Size = new System.Drawing.Size(76, 13);
             label4.TabIndex = 49;
-            label4.Text = "Nivel:";
+            label4.Text = "Tipo de Socio:";
             // 
             // club_VistalbaDataSet
             // 
@@ -276,11 +277,16 @@
             // 
             // dtpNacimiento
             // 
+            this.dtpNacimiento.CustomFormat = "dd-MM-yyyy";
             this.dtpNacimiento.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.socioBindingSource, "socioFechaNac", true));
+            this.dtpNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNacimiento.Location = new System.Drawing.Point(130, 228);
+            this.dtpNacimiento.MaxDate = new System.DateTime(2030, 12, 31, 0, 0, 0, 0);
+            this.dtpNacimiento.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dtpNacimiento.Name = "dtpNacimiento";
             this.dtpNacimiento.Size = new System.Drawing.Size(281, 20);
             this.dtpNacimiento.TabIndex = 16;
+            this.dtpNacimiento.Value = new System.DateTime(2020, 11, 2, 0, 0, 0, 0);
             // 
             // lblSocioID
             // 
@@ -374,7 +380,7 @@
             // 
             this.cbCategoria.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.categoriaBindingSource, "catNombre", true));
             this.cbCategoria.FormattingEnabled = true;
-            this.cbCategoria.Location = new System.Drawing.Point(130, 345);
+            this.cbCategoria.Location = new System.Drawing.Point(130, 373);
             this.cbCategoria.Name = "cbCategoria";
             this.cbCategoria.Size = new System.Drawing.Size(281, 21);
             this.cbCategoria.TabIndex = 47;
@@ -392,6 +398,7 @@
             this.btnSalud.TabIndex = 48;
             this.btnSalud.Text = "Salud";
             this.btnSalud.UseVisualStyleBackColor = true;
+            this.btnSalud.Visible = false;
             this.btnSalud.Click += new System.EventHandler(this.btnSalud_Click);
             // 
             // categoriaTableAdapter
@@ -402,16 +409,31 @@
             // 
             this.cbNivel.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.categoriaBindingSource, "catNombre", true));
             this.cbNivel.FormattingEnabled = true;
-            this.cbNivel.Location = new System.Drawing.Point(130, 372);
+            this.cbNivel.Location = new System.Drawing.Point(130, 346);
             this.cbNivel.Name = "cbNivel";
             this.cbNivel.Size = new System.Drawing.Size(281, 21);
             this.cbNivel.TabIndex = 50;
+            // 
+            // dtpHoy
+            // 
+            this.dtpHoy.CustomFormat = "dd-MM-yyyy";
+            this.dtpHoy.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.socioBindingSource, "socioFechaNac", true));
+            this.dtpHoy.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpHoy.Location = new System.Drawing.Point(221, 17);
+            this.dtpHoy.MaxDate = new System.DateTime(2030, 12, 31, 0, 0, 0, 0);
+            this.dtpHoy.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            this.dtpHoy.Name = "dtpHoy";
+            this.dtpHoy.Size = new System.Drawing.Size(79, 20);
+            this.dtpHoy.TabIndex = 51;
+            this.dtpHoy.Value = new System.DateTime(2020, 11, 2, 0, 0, 0, 0);
+            this.dtpHoy.Visible = false;
             // 
             // NuevoUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(426, 479);
+            this.Controls.Add(this.dtpHoy);
             this.Controls.Add(this.cbNivel);
             this.Controls.Add(label4);
             this.Controls.Add(this.btnSalud);
@@ -482,5 +504,6 @@
         private System.Windows.Forms.BindingSource categoriaBindingSource;
         private Club_VistalbaDataSetTableAdapters.CategoriaTableAdapter categoriaTableAdapter;
         private System.Windows.Forms.ComboBox cbNivel;
+        private System.Windows.Forms.DateTimePicker dtpHoy;
     }
 }

@@ -7,14 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.OleDb;
 
 namespace Principal
 {
     public partial class NuevoSalud : Form
     {
+        OleDbConnection conNuevo = new OleDbConnection();
+
         public NuevoSalud()
         {
             InitializeComponent();
+            conNuevo.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Club Vistalba.accdb;
+Persist Security Info=False;";
         }
 
         private void saludBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -75,7 +80,7 @@ namespace Principal
 
             string tabla = "Salud";
             string setters = "saludAlergia, saludAlergiaDesc, saludSangre, saludMed, saludObraSoc, saludTelEm, saludExtra, socioID";
-            string valores = "'" + flag + "','" + txtDescripcion.Text + "','" + txtSangre.Text + "','" + txtMedicamentos.Text + "','" + txtObra.Text + "','" + txtTelefonoEmerg.Text + "','" + txtExtra.Text + "'," + lblID.Text + "";
+            string valores = "'" + flag + "','" + txtDescripcion.Text + "','" + txtSangre.Text + "','" + txtMedicamentos.Text + "','" + txtObra.Text + "'," + txtTelefonoEmerg.Text + ",'" + txtExtra.Text + "'," + lblID.Text + "";
 
             //MessageBox.Show(valores);
 

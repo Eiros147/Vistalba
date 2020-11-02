@@ -210,7 +210,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(11, 458);
+            label2.Location = new System.Drawing.Point(12, 462);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(43, 13);
             label2.TabIndex = 41;
@@ -317,6 +317,7 @@
             this.dtpIngreso.Name = "dtpIngreso";
             this.dtpIngreso.Size = new System.Drawing.Size(200, 20);
             this.dtpIngreso.TabIndex = 18;
+            this.dtpIngreso.Value = new System.DateTime(2020, 11, 2, 0, 0, 0, 0);
             // 
             // dtpPago
             // 
@@ -328,6 +329,7 @@
             this.dtpPago.Name = "dtpPago";
             this.dtpPago.Size = new System.Drawing.Size(200, 20);
             this.dtpPago.TabIndex = 20;
+            this.dtpPago.Value = new System.DateTime(2020, 11, 2, 0, 0, 0, 0);
             // 
             // lblID
             // 
@@ -340,7 +342,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(336, 505);
+            this.button2.Location = new System.Drawing.Point(336, 488);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 34);
             this.button2.TabIndex = 28;
@@ -350,7 +352,7 @@
             // 
             // btnHabilitar
             // 
-            this.btnHabilitar.Location = new System.Drawing.Point(12, 505);
+            this.btnHabilitar.Location = new System.Drawing.Point(12, 488);
             this.btnHabilitar.Name = "btnHabilitar";
             this.btnHabilitar.Size = new System.Drawing.Size(75, 34);
             this.btnHabilitar.TabIndex = 29;
@@ -360,7 +362,7 @@
             // 
             // btnSalud
             // 
-            this.btnSalud.Location = new System.Drawing.Point(130, 505);
+            this.btnSalud.Location = new System.Drawing.Point(130, 488);
             this.btnSalud.Name = "btnSalud";
             this.btnSalud.Size = new System.Drawing.Size(75, 34);
             this.btnSalud.TabIndex = 30;
@@ -370,7 +372,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(235, 505);
+            this.btnGuardar.Location = new System.Drawing.Point(235, 488);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 34);
             this.btnGuardar.TabIndex = 32;
@@ -438,7 +440,7 @@
             this.cbEstado.Checked = true;
             this.cbEstado.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbEstado.Enabled = false;
-            this.cbEstado.Location = new System.Drawing.Point(130, 457);
+            this.cbEstado.Location = new System.Drawing.Point(130, 461);
             this.cbEstado.Name = "cbEstado";
             this.cbEstado.Size = new System.Drawing.Size(56, 17);
             this.cbEstado.TabIndex = 42;
@@ -460,9 +462,9 @@
             this.lblcatID.AutoSize = true;
             this.lblcatID.Location = new System.Drawing.Point(195, 9);
             this.lblcatID.Name = "lblcatID";
-            this.lblcatID.Size = new System.Drawing.Size(35, 13);
+            this.lblcatID.Size = new System.Drawing.Size(31, 13);
             this.lblcatID.TabIndex = 45;
-            this.lblcatID.Text = "label4";
+            this.lblcatID.Text = "idCat";
             this.lblcatID.Visible = false;
             // 
             // lblnivelID
@@ -470,9 +472,9 @@
             this.lblnivelID.AutoSize = true;
             this.lblnivelID.Location = new System.Drawing.Point(236, 9);
             this.lblnivelID.Name = "lblnivelID";
-            this.lblnivelID.Size = new System.Drawing.Size(35, 13);
+            this.lblnivelID.Size = new System.Drawing.Size(39, 13);
             this.lblnivelID.TabIndex = 46;
-            this.lblnivelID.Text = "label4";
+            this.lblnivelID.Text = "idNivel";
             this.lblnivelID.Visible = false;
             // 
             // pbSocioFoto
@@ -551,7 +553,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(707, 559);
+            this.ClientSize = new System.Drawing.Size(707, 537);
             this.Controls.Add(this.btnGuardarFoto);
             this.Controls.Add(this.btnVer);
             this.Controls.Add(this.pbSocioFoto);

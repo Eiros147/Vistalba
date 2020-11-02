@@ -81,7 +81,7 @@ Persist Security Info=False;";
                 activo = 0;
             }
 
-            string seters = "socioNombre = '" + txtNombre.Text + "', socioDNI = " + txtDNI.Text + ", socioDireccion = '" + txtDireccion.Text + "', socioMail = '" + txtMail.Text + "', socioNotas = '" + txtNotas.Text + "', socioCategoria = '" + cbCategoria.Text + "', socioTelefono = " + txtTelefono.Text + ", socioCelular = " + txtCelular.Text + ", socioGenero = " + genero + ", socioEstado = " + activo + ", socioNivel = '" + cbNivel.Text + "'";
+            string seters = "socioNombre = '" + txtNombre.Text + "', socioDNI = " + txtDNI.Text + ", socioDireccion = '" + txtDireccion.Text + "', socioMail = '" + txtMail.Text + "', socioNotas = '" + txtNotas.Text + "', socioCategoria = '" + cbCategoria.Text + "', socioTelefono = " + txtTelefono.Text + ", socioCelular = " + txtCelular.Text + ", socioGenero = " + genero + ", socioEstado = " + activo + ", socioNivel = '" + cbNivel.Text + "', socioFechaUltPago = " + dtpPago.Value.ToOADate() + ", socioFechaNac = " + dtpNacimiento.Value.ToOADate() + "";
             string tabla = "Socio";
             string key = "socioID";
             int id = Convert.ToInt32(lblID.Text);
@@ -100,17 +100,26 @@ Persist Security Info=False;";
                 MyImage.Dispose();
             }
 
-            if(File.Exists(@"C:\Users\Usuario\Socios\" + nombreimagen + ".jpg"))
+            if (File.Exists(@"C:\Users\Usuario\Socios\" + nombreimagen + ".jpeg"))
+            {
+                pbFoto.ImageLocation = @"C:\Users\Usuario\Socios\" + nombreimagen + ".jpeg";
+                pbFoto.Load();
+            }
+            else if (File.Exists(@"C:\Users\Usuario\Socios\" + nombreimagen + ".jpg"))
             {
                 pbFoto.ImageLocation = @"C:\Users\Usuario\Socios\" + nombreimagen + ".jpg";
                 pbFoto.Load();
             }
-            else
+            else if (File.Exists(@"C:\Users\Usuario\Socios\" + nombreimagen + ".png"))
             {
-                pbFoto.ImageLocation = @"C:\Users\Usuario\Socios\default.jpg";
+                pbFoto.ImageLocation = @"C:\Users\Usuario\Socios\" + nombreimagen + ".png";
                 pbFoto.Load();
             }
-
+            else
+            {
+                pbFoto.ImageLocation = @"C:\Users\Usuario\Socios\default.jpeg";
+                pbFoto.Load();
+            }
 
         }
 
@@ -159,7 +168,14 @@ Persist Security Info=False;";
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            Eliminar("Socio", Int32.Parse(txtDNI.Text), "socioDNI");
+        }
 
+        private void Eliminar(string tabla, int valor, string campo)
+        {
+            Metodos eliminar = new Metodos();
+            eliminar.Inicializar();
+            eliminar.Delete(tabla, valor, campo);
         }
     }
 }
