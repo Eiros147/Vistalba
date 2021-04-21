@@ -351,24 +351,24 @@ Persist Security Info=False;";
                 MyImage.Dispose();
             }
 
-            if (File.Exists(@"C:\Users\Usuario\Socios\" + nombreimagen + ".jpeg"))
+            if (File.Exists(@"C:\Users\Usuario\Pictures\Socios\" + nombreimagen + ".jpeg"))
             {
-                pbSocioFoto.ImageLocation = @"C:\Users\Usuario\Socios\" + nombreimagen + ".jpeg";
+                pbSocioFoto.ImageLocation = @"C:\Users\Usuario\Pictures\Socios\" + nombreimagen + ".jpeg";
                 pbSocioFoto.Load();
             }
-            else if (File.Exists(@"C:\Users\Usuario\Socios\" + nombreimagen + ".jpg"))
+            else if (File.Exists(@"C:\Users\Usuario\Pictures\Socios\" + nombreimagen + ".jpg"))
             {
-                pbSocioFoto.ImageLocation = @"C:\Users\Usuario\Socios\" + nombreimagen + ".jpg";
+                pbSocioFoto.ImageLocation = @"C:\Users\Usuario\Pictures\Socios\" + nombreimagen + ".jpg";
                 pbSocioFoto.Load();
             }
-            else if (File.Exists(@"C:\Users\Usuario\Socios\" + nombreimagen + ".png"))
+            else if (File.Exists(@"C:\Users\Usuario\Pictures\Socios\" + nombreimagen + ".png"))
             {
-                pbSocioFoto.ImageLocation = @"C:\Users\Usuario\Socios\" + nombreimagen + ".png";
+                pbSocioFoto.ImageLocation = @"C:\Users\Usuario\Pictures\Socios\" + nombreimagen + ".png";
                 pbSocioFoto.Load();
             }
             else
             {
-                pbSocioFoto.ImageLocation = @"C:\Users\Usuario\Socios\default.jpeg";
+                pbSocioFoto.ImageLocation = @"C:\Users\Usuario\Pictures\Socios\default.jpeg";
                 pbSocioFoto.Load();
             }
         }

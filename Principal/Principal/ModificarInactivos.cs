@@ -100,24 +100,24 @@ Persist Security Info=False;";
                 MyImage.Dispose();
             }
 
-            if (File.Exists(@"C:\Users\Usuario\Socios\" + nombreimagen + ".jpeg"))
+            if (File.Exists(@"C:\Users\Usuario\Pictures\Socios\" + nombreimagen + ".jpeg"))
             {
-                pbFoto.ImageLocation = @"C:\Users\Usuario\Socios\" + nombreimagen + ".jpeg";
+                pbFoto.ImageLocation = @"C:\Users\Usuario\Pictures\Socios\" + nombreimagen + ".jpeg";
                 pbFoto.Load();
             }
-            else if (File.Exists(@"C:\Users\Usuario\Socios\" + nombreimagen + ".jpg"))
+            else if (File.Exists(@"C:\Users\Usuario\Pictures\Socios\" + nombreimagen + ".jpg"))
             {
-                pbFoto.ImageLocation = @"C:\Users\Usuario\Socios\" + nombreimagen + ".jpg";
+                pbFoto.ImageLocation = @"C:\Users\Usuario\Pictures\Socios\" + nombreimagen + ".jpg";
                 pbFoto.Load();
             }
-            else if (File.Exists(@"C:\Users\Usuario\Socios\" + nombreimagen + ".png"))
+            else if (File.Exists(@"C:\Users\Usuario\Pictures\Socios\" + nombreimagen + ".png"))
             {
-                pbFoto.ImageLocation = @"C:\Users\Usuario\Socios\" + nombreimagen + ".png";
+                pbFoto.ImageLocation = @"C:\Users\Usuario\Pictures\Socios\" + nombreimagen + ".png";
                 pbFoto.Load();
             }
             else
             {
-                pbFoto.ImageLocation = @"C:\Users\Usuario\Socios\default.jpeg";
+                pbFoto.ImageLocation = @"C:\Users\Usuario\Pictures\Socios\default.jpeg";
                 pbFoto.Load();
             }
 
